@@ -10,9 +10,10 @@
 
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-	<link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
-	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
+	<link rel="alternate" type="application/rss+xml" title="magnetiq.com RSS 2.0 feed" href="http://feeds.feedburner.com/magnetiq_rss" />
+	<link rel="alternate" type="text/xml" title="magnetiq.com RSS 0.92 feed" href="http://feeds.feedburner.com/magnetiq_rss092" />
+	<link rel="alternate" type="application/atom+xml" title="magnetiq.com Atom 0.3 feed" href="http://feeds.feedburner.com/magnetiq_atom" />
+
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php wp_get_archives('type=monthly&format=link'); ?>

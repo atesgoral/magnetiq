@@ -1,4 +1,14 @@
 <?php // Do not delete these lines
+function _comments_number($zero, $one, $more, $number) {
+	if ($number == 0) {
+		echo $zero;
+	} elseif ($number == 1) {
+		echo $one;
+	} elseif ($number  > 1) {
+		echo str_replace('%', $number, $more);
+	}
+}
+
 	if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 		die ('Please do not load this page directly. Thanks!');
 
@@ -13,42 +23,43 @@
             }
         }
 
-		/* This variable is for alternating comment background */
-		$oddcomment = 'alt';
+		foreach ($comments as $comment):
+			$comments_by_type[get_comment_type()][] = $comment;
+		endforeach;
 ?>
 
 <!-- You can start editing here. -->
 
-<?php if ($comments) : ?>
-	<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3> 
+<?php
+	$_comments = $comments_by_type["comment"];
+	if ($_comments):
+?>
+	<h3 id="comments"><?php _comments_number('No Comments', 'One Comment', '% Comments', count($_comments));?></h3>
 
 	<ol class="commentlist">
 
-	<?php foreach ($comments as $comment) : ?>
+<?php foreach ($_comments as $comment): ?>
 
-		<li class="<?php echo $oddcomment; ?>" id="comment-<?php comment_ID() ?>">
-			<cite><?php comment_author_link() ?></cite> Says:
+		<li class="<?php echo bm_commentHighlight(); ?>" id="comment-<?php comment_ID() ?>">
+			<cite><?php comment_author_link() ?></cite>
 			<?php if ($comment->comment_approved == '0') : ?>
 			<em>Your comment is awaiting moderation.</em>
 			<?php endif; ?>
 			<br />
 
-			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('e','',''); ?></small>
+			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('e','| ',''); ?></small>
 
 			<?php comment_text() ?>
 
 		</li>
 
-	<?php /* Changes every other comment to a different class */	
-		if ('alt' == $oddcomment) $oddcomment = '';
-		else $oddcomment = 'alt';
-	?>
-
-	<?php endforeach; /* end for each comment */ ?>
+<?php endforeach; /* end for each comment */ ?>
 
 	</ol>
 
- <?php else : // this is displayed if there are no comments so far ?>
+<?php endif; ?>
+
+<?php if (!$comments): // this is displayed if there are no comments so far ?>
 
   <?php if ('open' == $post-> comment_status) : ?> 
 		<!-- If comments are open, but there are no comments. -->
@@ -63,7 +74,7 @@
 
 <?php if ('open' == $post-> comment_status) : ?>
 
-<h3 id="respond">Leave a Reply</h3>
+<h3 id="respond">Add a Comment</h3>
 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 <p>You must be <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php the_permalink(); ?>">logged in</a> to post a comment.</p>
@@ -90,7 +101,7 @@
 
 <!--<p><small><strong>XHTML:</strong> You can use these tags: <?php echo allowed_tags(); ?></small></p>-->
 
-<p><textarea name="comment" id="comment" cols="90%" rows="10" tabindex="4"></textarea></p>
+<p><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea></p>
 
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" />
@@ -100,5 +111,55 @@
 </form>
 
 <?php endif; // If registration required and not logged in ?>
+
+<?php
+	$_comments = $comments_by_type["trackback"];
+	if ($_comments):
+?>
+	<div id="trackbacks">
+	<h3 id="comments"><?php _comments_number('No Trackbacks', 'One Trackback', '% Trackbacks', count($_comments));?></h3>
+	<ol class="commentlist">
+<?php foreach ($_comments as $comment): ?>
+		<li class="<?php echo bm_commentHighlight(); ?>" id="comment-<?php comment_ID() ?>">
+			<cite><?php comment_author_link() ?></cite>
+			<?php if ($comment->comment_approved == '0') : ?>
+			<em>Your comment is awaiting moderation.</em>
+			<?php endif; ?>
+			<br />
+
+			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('e','| ',''); ?></small>
+
+			<?php comment_text() ?>
+
+		</li>
+<?php endforeach; /* end for each comment */ ?>
+	</ol>
+	</div>
+<?php endif; ?>
+
+<?php
+	$_comments = $comments_by_type["pingback"];
+	if ($_comments):
+?>
+	<div id="pingbacks">
+	<h3 id="comments"><?php _comments_number('No Pingbacks', 'One Pingback', '% Pingbacks', count($_comments));?></h3>
+	<ol class="commentlist">
+<?php foreach ($_comments as $comment): ?>
+		<li class="<?php echo bm_commentHighlight(); ?>" id="comment-<?php comment_ID() ?>">
+			<cite><?php comment_author_link() ?></cite>
+			<?php if ($comment->comment_approved == '0') : ?>
+			<em>Your comment is awaiting moderation.</em>
+			<?php endif; ?>
+			<br />
+
+			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('F jS, Y') ?> at <?php comment_time() ?></a> <?php edit_comment_link('e','| ',''); ?></small>
+
+			<?php comment_text() ?>
+
+		</li>
+<?php endforeach; /* end for each comment */ ?>
+	</ol>
+	</div>
+<?php endif; ?>
 
 <?php endif; // if you delete this the sky will fall on your head ?>

@@ -36,14 +36,15 @@
 
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post">
-				<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h3>
-				<small><?php the_time('l, F jS, Y') ?></small>
+				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+				<small><?php the_time('F jS, Y') ?></small>
 				
 				<div class="entry">
 					<?php the_content('Read the rest of this entry &raquo;'); ?>
 				</div>
 		
-				<p class="postmetadata">Posted in <?php the_category(', ') ?> <strong>|</strong> <?php edit_post_link('Edit','','<strong>|</strong>'); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p> 
+				<p class="postmetadata">Posted in <?php the_category(', ') ?> <span class="delim">|</span> <?php edit_post_link('Edit','',' |'); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></p> 
+				<hr />
 				
 				<!--
 				<?php trackback_rdf(); ?>

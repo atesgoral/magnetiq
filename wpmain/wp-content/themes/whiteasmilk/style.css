@@ -21,15 +21,16 @@ html { height: 100%; margin-bottom: 1px;}
 body {
 
 	font-size: 62.5%; /* Resets 1em to 10px */
-	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font-family: Arial, Helvetica, sans-serif;
 
 	color: #333;
 	text-align: center;
 	background-color:#FFFFFF;
+	
+	background: url(/i/bg.gif) repeat-x;
 	}
 
 #page {
-	background-color:#FFFFFF;
 	text-align: left;
 	}
 
@@ -60,42 +61,80 @@ body {
 	line-height: 1.6em;
 	}
 	
-.narrowcolumn .postmetadata {
+.narrowcolumn .postmetadata, .narrowcolumn .ad {
 	text-align: left;
 	font-size:.8em;
+	font-family: Verdana, Geneva, sans-serif;
 	}
 
-.alt {
+.alt, .odd {
+	background-color: #f8f8f8;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	}
+
+.ad, .author {
+	background-color: #F4F9FF;
+	border-top: 1px solid #C6E2FF;
+	border-bottom: 1px solid #C6E2FF;
+	}
+
+.ad {
+	padding: 10px;
+	}
+
+.output {
+	background-color: #f8f8f8;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	}
+
+pre {
+	font-family: 'Lucida Console', Monaco, monospace;
+	overflow: auto;
+	}	
+
+.entry pre {
 	background-color: #f8f8f8;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	}
 
 small {
-	font-family: Arial, Helvetica, Sans-Serif;
-	font-size: 0.9em;
+	font-family: Verdana, Geneva, sans-serif;
+	/*font-size: 0.9em;*/
 	line-height: 1.5em;
 	}
 
-h1, h2, h3 {
-	font-family: 'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Sans-Serif;
+h1 {
+	/*text-align: left;
+	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif
+	font-weight: bold;*/
+	}
+	
+h1 a {
+	display: block;
+	background: url(/i/magnetiq.gif) no-repeat;
+	height: 34px;
+	overflow: hidden;
+	color: #8CB5DA !important;
+	padding-left: 209px;
+	}
+
+h2, h3 {
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-weight: bold;
 	}
 
-h1 {
-	font-size: 2em;
-	text-align: left;
-	}
-
 #headerimg {
-	
 }
 
 #blog_description {
-
+	/*font-size: 1.05em;*/
+	font-family: Verdana, Geneva, sans-serif;
 }
 
-#header a{
+#header a {
 	font-size:2em;
 	color:#3b6ea5;
 	margin-left:190px;
@@ -120,8 +159,9 @@ h2.pagetitle {
 	}
 
 #sidebar h2 {
-	font-family: 'Lucida Grande', Verdana, Sans-Serif;
+	font-family: Verdana, Geneva, sans-serif;
 	font-size: 1.2em;
+	text-transform: lowercase;
 	}
 
 h3 {
@@ -145,17 +185,26 @@ h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar
 	}
 
 .commentlist li, #commentform input, #commentform textarea {
-	font: 0.9em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font: 0.9em;
 	}
 	
 .commentlist li {
-	font-weight: bold;
+	/*font-weight: bold;*/
 	}
+
+.commentlist li.pingback p, .commentlist li.trackback p {
+	display: none;
+	}
+/*
+.commentlist li.pingback:hover p, .commentlist li.trackback:hover p {
+	display: block;
+	}
+*/
 
 .commentlist cite, .commentlist cite a {
 	font-weight: bold;
 	font-style: normal;
-	font-size: 1.1em;
+	/*font-size: 1.1em;*/
 	}
 
 .commentlist p {
@@ -165,7 +214,8 @@ h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar
 	}
 
 #commentform p {
-	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 0.8em;
 	}
 
 .commentmetadata {
@@ -173,10 +223,10 @@ h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar
 	}
 
 #sidebar {
-	font: 1em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font: 1em Verdana, Geneva, sans-serif;
 	}
 
-small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, blockquote, strike {
+small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, .ad, blockquote, strike {
 	color: #777;
 	}
 	
@@ -186,7 +236,7 @@ code {
 
 acronym, abbr, span.caps
 {
-	font-size: 0.9em;
+	/*font-size: 0.9em;*/
 	letter-spacing: .07em;
 	}
 
@@ -199,7 +249,7 @@ a:hover {
 	color: #147;
 	text-decoration: underline;
 	}
-	
+
 #wp-calendar #prev a {
 	font-size: 9pt;
 	}
@@ -209,7 +259,7 @@ a:hover {
 	}
 
 #wp-calendar caption {
-	font: bold 1.3em 'Lucida Grande', Verdana, Arial, Sans-Serif;
+	font: bold 1.3em Verdana, Geneva, sans-serif;
 	text-align: center;
 	}
 
@@ -231,7 +281,6 @@ body {
 	margin: 0px auto;
 	padding: 0;
 	width: 740px;
-	background-color:#FFFFFF;
 	}
 	
 #header {
@@ -250,6 +299,22 @@ body {
 	margin-top:0px;
 }
 
+#digg {
+	background-color: #fff;
+	padding: 0 2px 2px 0;
+	border-bottom: 1px solid #C6E2FF;
+	border-right: 1px solid #C6E2FF;
+	float: left;
+	margin-right: 1em;
+}
+	
+#digg iframe {
+	}
+
+.entry {
+	/*clear: left;*/
+	}
+	
 .narrowcolumn {
 	float: left;
 	padding: 0 0 10px 15px;
@@ -264,7 +329,7 @@ body {
 	
 .post h2{
 	margin: 0 0 0px;
-	text-align: justify;
+	/*text-align: justify;*/
 	margin:0px;
 	font-size:1.4em;
 	}
@@ -277,30 +342,35 @@ color:#3b6ea5;
 	margin: 0;
 	}
 
-.narrowcolumn .postmetadata {
+.narrowcolumn .postmetadata, .narrowcolumn .ad {
 	padding-top: 5px;
 	}
 
-.widecolumn .postmetadata {
+.widecolumn .postmetadata, .widecolumn .ad {
 	margin: 30px 0;
+	font-size:.8em;
 	}
 	
 #footer {
-	padding: 0 0 0 1px;
+	padding: 0 0 30px 190px;
 	margin: 0 auto;
 	width: 100%;
 	clear: both;
-	text-align:center;
+	font-family: Verdana, Geneva, sans-serif;
 	}
 
 #footer p {
 	margin-left: 220px;
-	margin-top:0px;
+	margin-top: 0;
 	}
 /* End Structure */
 
 hr {
 	margin-left:0px;
+	border: 0;
+	color: #ddd;
+	background-color: #ddd;
+	height: 1px;
 }
 
 /*	Begin Headers */
@@ -320,7 +390,7 @@ h2.pagetitle {
 #sidebar h2 {
 	margin: 5px 0 0;
 	padding: 0;
-	text-transform:uppercase;
+	/*text-transform:uppercase;*/
 	}
 
 h3 {
@@ -366,6 +436,11 @@ img.alignleft {
 	display: inline;
 	}
 
+img.bordered {
+    border: 1px dashed #ddd;
+    margin: 2px;
+	}
+	
 .alignright {
 	float: right;
 }
@@ -384,20 +459,42 @@ img.alignleft {
 	Do not work in Internet Explorer, which merely default to normal bullets. */
 
 html>body .entry ul {
-	margin-left: 0px;
+	/*margin-left: 0px;*/
 	padding: 0 0 0 30px;
-	list-style: none;
+	/*list-style: none;*/
 	padding-left: 10px;
-	text-indent: -10px;
+	/*text-indent: -10px;*/
 	} 
 
 html>body .entry li {
-	margin: 7px 0 8px 10px;
+	/*margin: 7px 0 8px 10px;*/
 	}
 
+.entry table {
+	border-collapse: separate;
+	border-spacing: 0.25em;
+	/*border: 1px solid #ddd;*/
+	margin: 10px 0;
+	}
+
+.entry th {
+	text-transform: uppercase;
+	font-size: 0.85em;
+	color: #fff;
+	background-color: #666;
+	border: 1px solid #666;
+	padding: 0 0.25em;
+	}
+
+.entry td {
+	border: 1px solid #ddd;
+	padding: 0 0.25em;
+	}
+/*
 .entry ul li:before, #sidebar ul ul li:before {
 	content: "\00BB \0020";
 	}
+*/
 
 .entry ol {
 	padding: 0 0 0 35px;
@@ -502,7 +599,7 @@ select {
 
 .commentlist {
 	padding: 0;
-	text-align: justify;
+	/*text-align: justify;*/
 	}
 
 .commentlist li {
@@ -529,6 +626,15 @@ select {
 	margin: 0;
 	display: block;
 	}
+	
+#trackbacks, #pingbacks {
+	/*width: 50%;*/
+	/*font-size: 0.8em;*/
+	}
+
+#trackbacks {
+	/*float: left;*/
+	}
 /* End Comments */
 
 
@@ -545,10 +651,17 @@ select {
 	margin: 0;
 	}
 	
-#sidebar a{
-	color:#3b6ea5;
-	}	
+#sidebar a {
+	/*color:#3b6ea5;*/
+	/*color: #6EA53B;*/
+	color: #666;
+	}
 	
+#sidebar a:hover {
+	/*color: #457811;*/
+	color: #444;
+	}	
+
 #pagenav {
 	margin:0px;
 }	
@@ -632,6 +745,17 @@ a img {
 	display: block;
 	text-align: center;
 	height:30px;
+	font-size:.8em;
+	font-family: Verdana, Geneva, sans-serif;
 	}
 	
+dt {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-top: 0.5em;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	}
+
+.delim {
+	}
 /* End Various Tags & Classes*/
