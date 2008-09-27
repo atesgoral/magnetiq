@@ -1,0 +1,37 @@
+<script>
+var g_font_data;
+var g_starts = [ 0 ];
+var g_widths;
+
+function ge(id) { return document.getElementById(id); }
+
+window.onload = function () {
+	g_font_data = ge("font").value.split(/\r?\n/);
+	g_widths = g_font_data[0].split(" ").map(function(tok) {
+		var len = tok.length;
+		
+		g_starts.push(g_starts[g_starts.length - 1] + len + 1);
+		
+		return len;
+	});
+	
+	ge("out").innerHTML =
+		"data = " + g_font_data.slice(1, g_font_data.length - 2).map(function (row) { return row.replace(/#/g, "1").replace(/ /g, "0"); } ).toSource() + "\n" +
+		"starts = " + g_starts.toSource() + "\n";
+		//"widths = " + g_widths.toSource() + "\n";
+}
+
+</script>
+<textarea id="font" rows="7">
+------ ------ ------ ------ ------ ------ ------ ------ ------ ---- ----- ------ ----- -------- ------ ------ ------ ------ ------ ------ ------ ------ ------ -------- ------ ------ ------ -
+        ###   ####    ###   ####   #####  #####   ####  #   #  ###  ####  #   #  #     ##   ##  #   #   ###   ####    ###   ####    ####  #####  #   #  #   #  #  #  #  #   #  #   #  #####  #
+       #   #  #   #  #   #  #   #  #      #      #      #   #   #      #  #  #   #     # # # #  ##  #  #   #  #   #  #   #  #   #  #        #    #   #  #   #  #  #  #   # #    # #       #  #
+       #####  ####   #      #   #  ####   ####   # ###  #####   #      #  ###    #     #  #  #  # # #  #   #  ####   #   #  ####    ###     #    #   #  #   #  #  #  #    #      #     ###   #
+       #   #  #   #  #   #  #   #  #      #      #   #  #   #   #   #  #  #  #   #     #  #  #  #  ##  #   #  #      # # #  #  #       #    #    #   #   # #   # # # #   # #     #    #      #
+       #   #  ####    ###   ####   #####  #       ###   #   #  ###   ##   #   #  ####  #  #  #  #   #   ###   #       ##    #   #  ####     #     ###     #     #   #   #   #    #    #####  #
+                                                                                                                        #                                                                    #
+Accents Redensek by Fontalicious
+</textarea>
+<pre id="out">
+</pre>
+ 
