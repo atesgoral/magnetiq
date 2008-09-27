@@ -1,37 +1,24 @@
 <?php
+/**
+ * Outputs the RSS2 feed XML format. This file is a shortcut or compatibility
+ * layer for easily finding the RSS feed for the site. It loads WordPress using
+ * the wp-blog-header.php file and running do_feed() function.
+ *
+ * @see do_feed() Used to display the RSS2 feed
+ *
+ * This file is no longer used in WordPress and while it is not deprecated now.
+ * This file will most likely be deprecated or removed in a later version.
+ *
+ * The link for the rss2 feed is /index.php?feed=rss2 with permalinks off.
+ *
+ * @package WordPress
+ */
 
 if (empty($doing_rss)) {
-    $doing_rss = 1;
-    require(dirname(__FILE__) . '/wp-blog-header.php');
+	$doing_rss = 1;
+	require(dirname(__FILE__) . '/wp-blog-header.php');
 }
 
-// Remove the pad, if present.
-$feed = preg_replace('/^_+/', '', $feed);
-
-if ($feed == '' || $feed == 'feed') {
-    $feed = 'rss2';
-}
-
-if ( is_single() || ($withcomments == 1) ) {
-    require(ABSPATH . 'wp-commentsrss2.php');
-} else {
-    switch ($feed) {
-    case 'atom':
-        require(ABSPATH . 'wp-atom.php');
-        break;
-    case 'rdf':
-        require(ABSPATH . 'wp-rdf.php');
-        break;
-    case 'rss':
-        require(ABSPATH . 'wp-rss.php');
-        break;
-    case 'rss2':
-        require(ABSPATH . 'wp-rss2.php');
-        break;
-    case 'comments-rss2':
-        require(ABSPATH . 'wp-commentsrss2.php');
-        break;
-    }
-}
+do_feed();
 
 ?>
