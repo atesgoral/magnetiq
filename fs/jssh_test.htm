@@ -1,0 +1,203 @@
+<style>
+.syn_cmnt {
+    color: gray;
+    font-style: italic;
+}
+
+.syn_str {
+    color: magenta;
+}
+
+.syn_re {
+    color: orange;
+}
+
+.syn_obj {
+    color: red;
+}
+
+.syn_pv {
+    color: purple;
+}
+
+.syn_so {
+    font-weight: bold;
+    color: blue;
+}
+
+.syn_bool {
+    font-weight: bold;
+    color: maroon;
+}
+
+.syn_num {
+    color: teal;
+}
+
+</style>
+<script src="jssh.js"></script>
+<script>
+function initialize()
+{
+    var pre = document.getElementById('test');
+    pre.innerHTML = syntaxHighlightJS(pre.innerHTML);
+}
+</script>
+<body onload="initialize()">
+<pre id="test">
+/* Comment block */
+
+/* Multi-line
+   comment
+   block */
+
+// Single-line comment
+
+/* // Not a single-line comment */
+
+var naslc = "// Not a single-line comment";
+
+var nabc = "/* Not a block comment */";
+
+/* Regular-expression literal */
+var re = /^var.*;$/g;
+
+/* function keyword (comment with keyword) */
+function myFunction()
+{
+}
+
+/* var and new keywords */
+var obj = new Object();
+
+/* string literal */
+obj.str1 = "Hello there";
+
+/* string literal with quote */
+obj.str2 = "I said \"hello\"\r\n";
+
+/* string literal */
+obj.str1 = 'Hello there';
+
+/* string literal with quote */
+obj.str2 = 'I said \'hello\'\r\n';
+
+/* string literal with single/double quotes */
+obj.str2 = "I said 'hello'\r\n";
+obj.str2 = 'I said "hello"\r\n';
+
+/* string literal with keyword */
+obj.str3 = "I have a function in life";
+
+/* numeric literal - integer */
+obj.int = 42;
+
+/* numeric literal - negative integer */
+obj.int2 = -42;
+
+/* numeric literal - decimal */
+obj.dec = 42.0;
+
+/* numeric literal - hexadecimal */
+obj.hex = 0xff;
+
+/* numeric literal - exponential */
+obj.exps = [-3.1E12, .1e12, 2E-12 ];
+
+/* Objects */
+var a = new Array();
+var b = new Boolean();
+var c = new Date();
+var d = new Function();
+var e = new Math();
+var f = new Number();
+var g = new Object();
+var h = new RegExp();
+var i = new String();
+
+/* Top-level properties */
+a = Infinity;
+b = NaN;
+c = undefined;
+
+/* Statements */
+const PI = 3.14;
+
+function doit(b)
+{
+    for (var k in obj)
+    {
+        if (k == "str1")
+        {
+            break;
+        }
+        else if (k == "str2")
+        {
+            try
+            {
+                if (obj[k].test(/hello/i)
+                {
+                    throw "hello";
+                }
+            }
+            catch (ex)
+            {
+                return ex;
+            }
+        }
+        else
+        {
+            continue;
+        }
+    }
+
+    if (b)
+    {
+        var x = 1;
+        
+        do
+        {
+            with (document)
+            {
+                switch (x)
+                {
+                case 1:
+                    write("one");
+                    break;
+                case 2:
+                    write("two");
+                    break;
+                default:
+                    write(x);
+                    break;
+                }
+            }
+            
+            x += x;
+        }
+        while (x < 4096);
+    }
+    else
+    {
+        return false;
+    }
+}
+</pre>
+</body>
+<!--
+2 re:
+regexp
+[label]:
+decimal: .454 and 5.
+negative: -34
+
+2 example:
+export
+import
+
+
+
+wtf:
+get set ????
+__defineGetter__ __defineSetter__ ???
+-->

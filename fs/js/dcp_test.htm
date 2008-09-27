@@ -1,0 +1,163 @@
+<script src="dcp.js"></script>
+<style>
+body
+{
+    font: 11px "Trebuchet MS";
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+.menu
+{
+    width: 200px;
+    position: absolute;
+    display: none;
+}
+
+.menu .inner
+{
+    padding: 3px;
+    background-color: white;
+    border: 1px solid #E0E0E0;
+}
+
+.menu .outer
+{
+    border: solid black;
+    border-width: 0px 1px 1px 0px;
+}
+
+.menu a
+{
+    color: black;
+    display: block;
+    width: 99%; // For IE
+}
+
+.menu a:hover
+{
+    background-color: #C0C0C0;
+    text-decoration: none;
+}
+
+.menu ul
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+</style>
+
+<script>
+
+function handlePopup1(menu, source)
+{
+    return document.getElementById("cb1").checked;
+}
+
+function handlePopup2(menu, source)
+{
+    var lis = menu.getElementsByTagName("li");
+    
+    for (var i = 0; i < lis.length; i++)
+    {
+        var li = lis[i];
+        var a = li.getElementsByTagName("a")[0];
+
+        if (Math.random() > 0.5)
+        {
+            a.style.color = "black";
+            a.onclick = null;
+            a.ctxmenu_disabled = undefined;
+        }
+        else
+        {
+            a.style.color = "#c0c0c0";
+            a.onclick = new Function("return false");
+            a.ctxmenu_disabled = true;
+        }
+    }
+    
+    return true;
+}
+
+function show(str)
+{
+    document.getElementById("show").innerHTML = str;
+}
+</script>
+
+<body>
+
+<h3 id="show">Decoupled Context Popup 1.0</h3>
+   
+<p>
+<input type="checkbox" id="cb1" checked> <a href="javascript:show('Link 1')" rel="menu:m1">Link 1</a>
+</p>
+
+<p>
+<a href="javascript:show('Link 2')" rel="menu:m2">Link 2</a> 
+</p>
+
+<div id="menu.m1" class="menu" onpopup="handlePopup1">
+    <div class="outer">
+        <div class="inner">
+            <ul>
+                <li><a href="javascript:show('This')">This</a></li>
+                <li><a href="javascript:show('And')">And</a></li>
+                <li><a href="javascript:show('That')">That</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="menu.m2" class="menu" onpopup="handlePopup2">
+    <div class="outer">
+        <div class="inner">
+            <ul>
+                <li><a href="javascript:show('A')">A</a></li>
+                <hr/>
+                <li><a href="javascript:show('Taste')">Taste</a></li>
+                <li><a href="javascript:show('Of')">Of</a></li>
+                <li><a href="javascript:show('Things')">Things</a></li>
+                <hr/>
+                <li><a href="javascript:show('To')">To</a></li>
+                <li><a href="javascript:show('Come')">Come</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+
+
+
+
+
+
+<!--
+# Alternate specifies an alternate version of the document. When used with the LINK element's HREFLANG attribute, this value implies a translation of the document. When used with LINK's MEDIA attribute, a media-specific version (e.g., for printing) is implied.
+# StyleSheet specifies an external style sheet for the document. This link type can be combined with the Alternate link type to define an alternate style sheet for the user to choose.
+# Start specifies the first document in a collection.
+# Next specifies the next document in a suggested sequence of reading. Browsers such as WebTV will preload documents identified as "next" to improve the perceived load time.
+# Prev specifies the previous document in a suggested sequence of reading.
+# Contents specifies a table of contents for the document.
+# Index gives an index for the document.
+# Glossary gives a glossary of terms used in the document.
+# Copyright specifies a document with copyright information.
+# Chapter specifies the chapter of a collection of documents.
+# Section specifies the section of a collection of documents.
+# Subsection specifies a subsection of a collection of documents.
+# Appendix gives an appendix for the collection of documents.
+# Help specifies a help document.
+# Bookmark refers to a key related document. The TITLE attribute provides a label for the 
+-->

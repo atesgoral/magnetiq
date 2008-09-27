@@ -1,0 +1,39 @@
+pre {
+    font-family: Lucida Console;
+    font-size: 0.7em;
+}
+
+.synh_cmnt {
+    color: gray;
+    font-style: italic;
+}
+
+.synh_str {
+    color: magenta;
+}
+
+.synh_re {
+    color: orange;
+}
+
+.synh_obj {
+    color: red;
+}
+
+.synh_pv {
+    color: purple;
+}
+
+.synh_so {
+    color: blue;
+    font-weight: bold;
+}
+
+.synh_bool {
+    color: maroon;
+    font-weight: bold;
+}
+
+.synh_num {
+    color: teal;
+}

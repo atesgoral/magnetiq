@@ -1,0 +1,45 @@
+<style>
+.synh_pi {
+    color: navy;
+    font-style: italic;
+}
+
+.synh_cmnt {
+    color: gray;
+    font-style: italic;
+}
+
+.synh_elem {
+    color: blue;
+    font-weight: bold;
+}
+</style>
+<script src="synh.js"></script>
+<body onload="syntaxHighlightStr(document.getElementById('test'), 'en-xml')">
+<pre id="test">
+&lt;!-- 2 Processing instructions ======================================= --&gt;
+
+&lt;!-- 2.1 Processing instruction --&gt;
+
+        &lt;? This is a
+              processing instruction ?&gt;
+
+&lt;!-- 1 Comments ====================================================== --&gt;
+
+&lt;!-- 1.1 Comment --&gt;
+
+        &lt;!-- This is a
+                comment --&gt;
+
+&lt;!-- 1.2 Comment with "--&amp;g" --&gt;
+
+        &lt;!-- This is --&g a comment --&gt;
+
+&lt;!-- 3 Elements ====================================================== --&gt;
+
+&lt;!-- 1.1 Opening element --&gt;
+
+        &lt;element&gt;
+        &lt;element attr1&gt;
+</pre>
+</body>
