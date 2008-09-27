@@ -1,285 +1,298 @@
-/* Import plugin specific language pack */
-tinyMCE.importPluginLanguagePack('wordpress', '');
+/**
+ * WordPress plugin.
+ */
 
-function TinyMCE_wordpress_initInstance(inst) {
-	if (!tinyMCE.settings['wordpress_skip_plugin_css'])
-		tinyMCE.importCSS(inst.getDoc(), tinyMCE.baseURL + "/plugins/wordpress/wordpress.css");
-}
+(function() {
+	var DOM = tinymce.DOM;
 
-function TinyMCE_wordpress_getControlHTML(control_name) {
-	switch (control_name) {
-		case "wordpress":
-			var titleMore = tinyMCE.getLang('lang_wordpress_more_button');
-			var titlePage = tinyMCE.getLang('lang_wordpress_page_button');
-			var titleHelp = tinyMCE.getLang('lang_wordpress_help_button');
-			var buttons = '<a href="javascript:tinyMCE.execInstanceCommand(\'{$editor_id}\',\'mcewordpressmore\')" target="_self" onclick="tinyMCE.execInstanceCommand(\'{$editor_id}\',\'mcewordpressmore\');return false;"><img id="{$editor_id}_wordpress_more" src="{$pluginurl}/images/more.gif" title="'+titleMore+'" width="20" height="20" class="mceButtonNormal" onmouseover="tinyMCE.switchClass(this,\'mceButtonOver\');" onmouseout="tinyMCE.restoreClass(this);" onmousedown="tinyMCE.restoreAndSwitchClass(this,\'mceButtonDown\');" /></a>';
-			// Add this to the buttons var to put the Page button into the toolbar.
-			// '<a href="javascript:tinyMCE.execInstanceCommand(\'{$editor_id}\',\'mcewordpresspage\')" target="_self" onclick="javascript:tinyMCE.execInstanceCommand(\'{$editor_id}\',\'mcewordpresspage\');return false;"><img id="{$editor_id}_wordpress_page" src="{$pluginurl}/images/page.gif" title="'+titlePage+'" width="20" height="20" class="mceButtonNormal" onmouseover="tinyMCE.switchClass(this,\'mceButtonOver\');" onmouseout="tinyMCE.restoreClass(this);" onmousedown="tinyMCE.restoreAndSwitchClass(this,\'mceButtonDown\');" /></a>';
-			return buttons;
-	}
+	// Load plugin specific language pack
+	tinymce.PluginManager.requireLangPack('wordpress');
 
-	return '';
-}
+	tinymce.create('tinymce.plugins.WordPress', {
+		init : function(ed, url) {
+			var t = this, tbId = ed.getParam('wordpress_adv_toolbar', 'toolbar2');
+			var moreHTML = '<img src="' + url + '/img/trans.gif" class="mceWPmore mceItemNoResize" title="'+ed.getLang('wordpress.wp_more_alt')+'" />';
+			var nextpageHTML = '<img src="' + url + '/img/trans.gif" class="mceWPnextpage mceItemNoResize" title="'+ed.getLang('wordpress.wp_page_alt')+'" />';
 
-function TinyMCE_wordpress_parseAttributes(attribute_string) {
-	var attributeName = "";
-	var attributeValue = "";
-	var withInName;
-	var withInValue;
-	var attributes = new Array();
-	var whiteSpaceRegExp = new RegExp('^[ \n\r\t]+', 'g');
-	var titleText = tinyMCE.getLang('lang_wordpress_more');
-	var titleTextPage = tinyMCE.getLang('lang_wordpress_page');
+			if ( tinymce.util.Cookie.get('kitchenSink') == '1' )
+				ed.settings.wordpress_adv_hidden = 0;
 
-	if (attribute_string == null || attribute_string.length < 2)
-		return null;
-
-	withInName = withInValue = false;
-
-	for (var i=0; i<attribute_string.length; i++) {
-		var chr = attribute_string.charAt(i);
-
-		if ((chr == '"' || chr == "'") && !withInValue)
-			withInValue = true;
-		else if ((chr == '"' || chr == "'") && withInValue) {
-			withInValue = false;
-
-			var pos = attributeName.lastIndexOf(' ');
-			if (pos != -1)
-				attributeName = attributeName.substring(pos+1);
-
-			attributes[attributeName.toLowerCase()] = attributeValue.substring(1).toLowerCase();
-
-			attributeName = "";
-			attributeValue = "";
-		} else if (!whiteSpaceRegExp.test(chr) && !withInName && !withInValue)
-			withInName = true;
-
-		if (chr == '=' && withInName)
-			withInName = false;
-
-		if (withInName)
-			attributeName += chr;
-
-		if (withInValue)
-			attributeValue += chr;
-	}
-
-	return attributes;
-}
-
-function TinyMCE_wordpress_execCommand(editor_id, element, command, user_interface, value) {
-	var inst = tinyMCE.getInstanceById(editor_id);
-	var focusElm = inst.getFocusElement();
-	var doc = inst.getDoc();
-
-	function getAttrib(elm, name) {
-		return elm.getAttribute(name) ? elm.getAttribute(name) : "";
-	}
-
-	// Handle commands
-	switch (command) {
-			case "mcewordpressmore":
-				var flag = "";
-				var template = new Array();
-				var altMore = tinyMCE.getLang('lang_wordpress_more_alt');
-
-				// Is selection a image
-				if (focusElm != null && focusElm.nodeName.toLowerCase() == "img") {
-					flag = getAttrib(focusElm, 'class');
-	
-					if (flag != 'mce_plugin_wordpress_more') // Not a wordpress
-						return true;
-	
-					action = "update";
+			// Hides the specified toolbar and resizes the iframe
+			ed.onPostRender.add(function() {
+				if ( ed.getParam('wordpress_adv_hidden', 1) ) {
+					DOM.hide(ed.controlManager.get(tbId).id);
+					t._resizeIframe(ed, tbId, 28);
 				}
-	
-				html = ''
-					+ '<img src="' + (tinyMCE.getParam("theme_href") + "/images/spacer.gif") + '" '
-					+ ' width="100%" height="10px" '
-					+ 'alt="'+altMore+'" title="'+altMore+'" class="mce_plugin_wordpress_more" name="mce_plugin_wordpress_more" />';
-				tinyMCE.execCommand("mceInsertContent",true,html);
-				tinyMCE.selectedInstance.repaint();
-				return true;
-			case "mcewordpresspage":
-				var flag = "";
-				var template = new Array();
-				var altPage = tinyMCE.getLang('lang_wordpress_more_alt');
-	
-				// Is selection a image
-				if (focusElm != null && focusElm.nodeName.toLowerCase() == "img") {
-					flag = getAttrib(focusElm, 'name');
-	
-					if (flag != 'mce_plugin_wordpress_page') // Not a wordpress
-						return true;
-	
-					action = "update";
+			});
+
+			// Register commands
+			ed.addCommand('WP_More', function() {
+				ed.execCommand('mceInsertContent', 0, moreHTML);
+			});
+
+			ed.addCommand('WP_Page', function() {
+				ed.execCommand('mceInsertContent', 0, nextpageHTML);
+			});
+
+			ed.addCommand('WP_Help', function() {
+					ed.windowManager.open({
+						url : tinymce.baseURL + '/wp-mce-help.php',
+						width : 450,
+						height : 420,
+						inline : 1
+					});
+				});
+
+			ed.addCommand('WP_Adv', function() {
+				var id = ed.controlManager.get(tbId).id, cm = ed.controlManager, cook = tinymce.util.Cookie, date;
+
+				date = new Date();
+				date.setTime(date.getTime()+(10*365*24*60*60*1000));
+
+				if (DOM.isHidden(id)) {
+					cm.setActive('wp_adv', 1);
+					DOM.show(id);
+					t._resizeIframe(ed, tbId, -28);
+					ed.settings.wordpress_adv_hidden = 0;
+					cook.set('kitchenSink', '1', date);
+				} else {
+					cm.setActive('wp_adv', 0);
+					DOM.hide(id);
+					t._resizeIframe(ed, tbId, 28);
+					ed.settings.wordpress_adv_hidden = 1;
+					cook.set('kitchenSink', '0', date);
 				}
-	
-				html = ''
-					+ '<img src="' + (tinyMCE.getParam("theme_href") + "/images/spacer.gif") + '" '
-					+ ' width="100%" height="10px" '
-					+ 'alt="'+altPage+'" title="'+altPage+'" class="mce_plugin_wordpress_page" name="mce_plugin_wordpress_page" />';
-				tinyMCE.execCommand("mceInsertContent",true,html);
-				tinyMCE.selectedInstance.repaint();
-				return true;
-	}
+			});
 
-	// Pass to next handler in chain
-	return false;
-}
+			// Register buttons
+			ed.addButton('wp_more', {
+				title : 'wordpress.wp_more_desc',
+				image : url + '/img/more.gif',
+				cmd : 'WP_More'
+			});
 
-function TinyMCE_wordpress_cleanup(type, content) {
-	switch (type) {
-	
-		case "insert_to_editor":
-			var startPos = 0;
-			var altMore = tinyMCE.getLang('lang_wordpress_more_alt');
-			var altPage = tinyMCE.getLang('lang_wordpress_page_alt');
+			ed.addButton('wp_page', {
+				title : 'wordpress.wp_page_desc',
+				image : url + '/img/page.gif',
+				cmd : 'WP_Page'
+			});
 
-			// Parse all <!--more--> tags and replace them with images
-			while ((startPos = content.indexOf('<!--more-->', startPos)) != -1) {
-				// Insert image
-				var contentAfter = content.substring(startPos + 11);
-				content = content.substring(0, startPos);
-				content += '<img src="' + (tinyMCE.getParam("theme_href") + "/images/spacer.gif") + '" ';
-				content += ' width="100%" height="10px" ';
-				content += 'alt="'+altMore+'" title="'+altMore+'" class="mce_plugin_wordpress_more" />';
-				content += contentAfter;
+			ed.addButton('wp_help', {
+				title : 'wordpress.wp_help_desc',
+				image : url + '/img/help.gif',
+				cmd : 'WP_Help'
+			});
 
-				startPos++;
+			ed.addButton('wp_adv', {
+				title : 'wordpress.wp_adv_desc',
+				image : url + '/img/toolbars.gif',
+				cmd : 'WP_Adv'
+			});
+
+			// Add Media buttons
+			ed.addButton('add_media', {
+				title : 'wordpress.add_media',
+				image : url + '/img/media.gif',
+				onclick : function() {
+					tb_show('', tinymce.DOM.get('add_media').href);
+					tinymce.DOM.setStyle( ['TB_overlay','TB_window','TB_load'], 'z-index', '999999' );
+				}
+			});
+
+			ed.addButton('add_image', {
+				title : 'wordpress.add_image',
+				image : url + '/img/image.gif',
+				onclick : function() {
+					tb_show('', tinymce.DOM.get('add_image').href);
+					tinymce.DOM.setStyle( ['TB_overlay','TB_window','TB_load'], 'z-index', '999999' );
+				}
+			});
+
+			ed.addButton('add_video', {
+				title : 'wordpress.add_video',
+				image : url + '/img/video.gif',
+				onclick : function() {
+					tb_show('', tinymce.DOM.get('add_video').href);
+					tinymce.DOM.setStyle( ['TB_overlay','TB_window','TB_load'], 'z-index', '999999' );
+				}
+			});
+
+			ed.addButton('add_audio', {
+				title : 'wordpress.add_audio',
+				image : url + '/img/audio.gif',
+				onclick : function() {
+					tb_show('', tinymce.DOM.get('add_audio').href);
+					tinymce.DOM.setStyle( ['TB_overlay','TB_window','TB_load'], 'z-index', '999999' );
+				}
+			});
+
+			// Add Media buttons to fullscreen
+			ed.onBeforeExecCommand.add(function(ed, cmd, ui, val) {
+				if ( 'mceFullScreen' != cmd ) return;
+				if ( 'mce_fullscreen' != ed.id )
+					ed.settings.theme_advanced_buttons1 += ',|,add_image,add_video,add_audio,add_media';
+			});
+
+			// Add class "alignleft", "alignright" and "aligncenter" when selecting align for images.
+			ed.addCommand('JustifyLeft', function() {
+				var n = ed.selection.getNode();
+
+				if ( n.nodeName != 'IMG' )
+					ed.editorCommands.mceJustify('JustifyLeft', 'left');
+				else ed.plugins.wordpress.do_align(n, 'alignleft');
+			});
+
+			ed.addCommand('JustifyRight', function() {
+				var n = ed.selection.getNode();
+
+				if ( n.nodeName != 'IMG' )
+					ed.editorCommands.mceJustify('JustifyRight', 'right');
+				else ed.plugins.wordpress.do_align(n, 'alignright');
+			});
+
+			ed.addCommand('JustifyCenter', function() {
+				var n = ed.selection.getNode(), P = ed.dom.getParent(n, 'p'), DL = ed.dom.getParent(n, 'dl');
+
+				if ( n.nodeName == 'IMG' && ( P || DL ) )
+					ed.plugins.wordpress.do_align(n, 'aligncenter');
+				else ed.editorCommands.mceJustify('JustifyCenter', 'center');
+			});
+
+			// Word count if script is loaded
+			if ( 'undefined' != typeof wpWordCount ) {
+				var last = 0;
+				ed.onKeyUp.add(function(ed, e) {
+					if ( e.keyCode == last ) return;
+					if ( 13 == e.keyCode || 8 == last || 46 == last ) wpWordCount.wc( ed.getContent({format : 'raw'}) );
+					last = e.keyCode;
+				});
+			};
+
+			// Add listeners to handle more break
+			t._handleMoreBreak(ed, url);
+
+			// Add custom shortcuts
+			ed.addShortcut('alt+shift+c', ed.getLang('justifycenter_desc'), 'JustifyCenter');
+			ed.addShortcut('alt+shift+r', ed.getLang('justifyright_desc'), 'JustifyRight');
+			ed.addShortcut('alt+shift+l', ed.getLang('justifyleft_desc'), 'JustifyLeft');
+			ed.addShortcut('alt+shift+j', ed.getLang('justifyfull_desc'), 'JustifyFull');
+			ed.addShortcut('alt+shift+q', ed.getLang('blockquote_desc'), 'mceBlockQuote');
+			ed.addShortcut('alt+shift+u', ed.getLang('bullist_desc'), 'InsertUnorderedList');
+			ed.addShortcut('alt+shift+o', ed.getLang('numlist_desc'), 'InsertOrderedList');
+			ed.addShortcut('alt+shift+d', ed.getLang('striketrough_desc'), 'Strikethrough');
+			ed.addShortcut('alt+shift+n', ed.getLang('spellchecker.desc'), 'mceSpellCheck');
+			ed.addShortcut('alt+shift+a', ed.getLang('link_desc'), 'mceLink');
+			ed.addShortcut('alt+shift+s', ed.getLang('unlink_desc'), 'unlink');
+			ed.addShortcut('alt+shift+m', ed.getLang('image_desc'), 'mceImage');
+			ed.addShortcut('alt+shift+g', ed.getLang('fullscreen.desc'), 'mceFullScreen');
+			ed.addShortcut('alt+shift+z', ed.getLang('wp_adv_desc'), 'WP_Adv');
+			ed.addShortcut('alt+shift+h', ed.getLang('help_desc'), 'WP_Help');
+			ed.addShortcut('alt+shift+t', ed.getLang('wp_more_desc'), 'WP_More');
+			ed.addShortcut('alt+shift+p', ed.getLang('wp_page_desc'), 'WP_Page');
+
+			if ( tinymce.isWebKit ) {
+				ed.addShortcut('alt+shift+b', ed.getLang('bold_desc'), 'Bold');
+				ed.addShortcut('alt+shift+i', ed.getLang('italic_desc'), 'Italic');
 			}
-			var startPos = 0;
+		},
 
-			// Parse all <!--page--> tags and replace them with images
-			while ((startPos = content.indexOf('<!--nextpage-->', startPos)) != -1) {
-				// Insert image
-				var contentAfter = content.substring(startPos + 15);
-				content = content.substring(0, startPos);
-				content += '<img src="' + (tinyMCE.getParam("theme_href") + "/images/spacer.gif") + '" ';
-				content += ' width="100%" height="10px" ';
-				content += 'alt="'+altPage+'" title="'+altPage+'" class="mce_plugin_wordpress_page" />';
-				content += contentAfter;
+		getInfo : function() {
+			return {
+				longname : 'WordPress Plugin',
+				author : 'WordPress', // add Moxiecode?
+				authorurl : 'http://wordpress.org',
+				infourl : 'http://wordpress.org',
+				version : '3.0'
+			};
+		},
 
-				startPos++;
+		// Internal functions
+		do_align : function(n, a) {
+			var P, DL, DIV, cls, c, ed = tinyMCE.activeEditor;
+
+			P = ed.dom.getParent(n, 'p');
+			DL = ed.dom.getParent(n, 'dl');
+			DIV = ed.dom.getParent(n, 'div');
+
+			if ( DL && DIV ) {
+				cls = ed.dom.hasClass(DL, a) ? 'alignnone' : a;
+				DL.className = DL.className.replace(/align[^ '"]+\s?/g, '');
+				ed.dom.addClass(DL, cls);
+				c = (cls == 'aligncenter') ? ed.dom.addClass(DIV, 'mceIEcenter') : ed.dom.removeClass(DIV, 'mceIEcenter');
+			} else if ( P ) {
+				cls = ed.dom.hasClass(n, a) ? 'alignnone' : a;
+				n.className = n.className.replace(/align[^ '"]+\s?/g, '');
+				ed.dom.addClass(n, cls);
+				if ( cls == 'aligncenter' )
+					ed.dom.setStyle(P, 'textAlign', 'center');
+				else if (P.style && P.style.textAlign == 'center')
+					ed.dom.setStyle(P, 'textAlign', '');
 			}
 
-			// It's supposed to be WYSIWYG, right?
-			content = content.replace(new RegExp('&', 'g'), '&amp;');
+			ed.execCommand('mceRepaint');
+		},
 
-			break;
+		// Resizes the iframe by a relative height value
+		_resizeIframe : function(ed, tb_id, dy) {
+			var ifr = ed.getContentAreaContainer().firstChild;
 
-		case "get_from_editor":
-			// Parse all img tags and replace them with <!--more-->
-			var startPos = -1;
-			while ((startPos = content.indexOf('<img', startPos+1)) != -1) {
-				var endPos = content.indexOf('/>', startPos);
-				var attribs = TinyMCE_wordpress_parseAttributes(content.substring(startPos + 4, endPos));
+			DOM.setStyle(ifr, 'height', ifr.clientHeight + dy); // Resize iframe
+			ed.theme.deltaHeight += dy; // For resize cookie
+		},
 
-				if (attribs['class'] == "mce_plugin_wordpress_more") {
-					endPos += 2;
-	
-					var embedHTML = '<!--more-->';
-	
-					// Insert embed/object chunk
-					chunkBefore = content.substring(0, startPos);
-					chunkAfter = content.substring(endPos);
-					content = chunkBefore + embedHTML + chunkAfter;
+		_handleMoreBreak : function(ed, url) {
+			var moreHTML = '<img src="' + url + '/img/trans.gif" alt="$1" class="mceWPmore mceItemNoResize" title="'+ed.getLang('wordpress.wp_more_alt')+'" />';
+			var nextpageHTML = '<img src="' + url + '/img/trans.gif" class="mceWPnextpage mceItemNoResize" title="'+ed.getLang('wordpress.wp_page_alt')+'" />';
+
+			// Load plugin specific CSS into editor
+			ed.onInit.add(function() {
+				ed.dom.loadCSS(url + '/css/content.css');
+			});
+
+			// Display morebreak instead if img in element path
+			ed.onPostRender.add(function() {
+				if (ed.theme.onResolveName) {
+					ed.theme.onResolveName.add(function(th, o) {
+						if (o.node.nodeName == 'IMG') {
+							if ( ed.dom.hasClass(o.node, 'mceWPmore') )
+								o.name = 'wpmore';
+							if ( ed.dom.hasClass(o.node, 'mceWPnextpage') )
+								o.name = 'wppage';
+						}
+
+					});
 				}
-				if (attribs['class'] == "mce_plugin_wordpress_page") {
-					endPos += 2;
-	
-					var embedHTML = '<!--nextpage-->';
-	
-					// Insert embed/object chunk
-					chunkBefore = content.substring(0, startPos);
-					chunkAfter = content.substring(endPos);
-					content = chunkBefore + embedHTML + chunkAfter;
-				}
-			}
+			});
 
-			// If it says & in the WYSIWYG editor, it should say &amp; in the html.
-			content = content.replace(new RegExp('&', 'g'), '&amp;');
-			content = content.replace(new RegExp('&amp;nbsp;', 'g'), '&nbsp;');
+			// Replace morebreak with images
+			ed.onBeforeSetContent.add(function(ed, o) {
+				o.content = o.content.replace(/<!--more(.*?)-->/g, moreHTML);
+				o.content = o.content.replace(/<!--nextpage-->/g, nextpageHTML);
+			});
 
-			// Remove anonymous, empty paragraphs.
-			content = content.replace(new RegExp('<p>(\\s|&nbsp;)*</p>', 'mg'), '');
+			// Replace images with morebreak
+			ed.onPostProcess.add(function(ed, o) {
+				if (o.get)
+					o.content = o.content.replace(/<img[^>]+>/g, function(im) {
+						if (im.indexOf('class="mceWPmore') !== -1) {
+							var m, moretext = (m = im.match(/alt="(.*?)"/)) ? m[1] : '';
+							im = '<!--more'+moretext+'-->';
+						}
+						if (im.indexOf('class="mceWPnextpage') !== -1)
+							im = '<!--nextpage-->';
 
-			// Handle table badness.
-			content = content.replace(new RegExp('<(table( [^>]*)?)>.*?<((tr|thead)( [^>]*)?)>', 'mg'), '<$1><$3>');
-			content = content.replace(new RegExp('<(tr|thead|tfoot)>.*?<((td|th)( [^>]*)?)>', 'mg'), '<$1><$2>');
-			content = content.replace(new RegExp('</(td|th)>.*?<(td( [^>]*)?|th( [^>]*)?|/tr|/thead|/tfoot)>', 'mg'), '</$1><$2>');
-			content = content.replace(new RegExp('</tr>.*?<(tr|/table)>', 'mg'), '</tr><$1>');
-			content = content.replace(new RegExp('<(/?(table|tbody|tr|th|td)[^>]*)>(\\s*|(<br ?/?>)*)*', 'g'), '<$1>');
+						return im;
+					});
+			});
 
-			// Pretty it up for the source editor.
-			var blocklist = 'blockquote|ul|ol|li|table|thead|tr|th|td|div|h\\d|pre|p';
-			content = content.replace(new RegExp('\\s*</('+blocklist+')>\\s*', 'mg'), '</$1>\n');
-			content = content.replace(new RegExp('\\s*<(('+blocklist+')[^>]*)>\\s*', 'mg'), '\n<$1>');
-			content = content.replace(new RegExp('<((li|/?tr|/?thead|/?tfoot)( [^>]*)?)>', 'g'), '\t<$1>');
-			content = content.replace(new RegExp('<((td|th)( [^>]*)?)>', 'g'), '\t\t<$1>');
-			content = content.replace(new RegExp('\\s*<br ?/?>\\s*', 'mg'), '<br />\n');
-			content = content.replace(new RegExp('^\\s*', ''), '');
-			content = content.replace(new RegExp('\\s*$', ''), '');
-			
-			break;
-	}
+			// Set active buttons if user selected pagebreak or more break
+			ed.onNodeChange.add(function(ed, cm, n) {
+				cm.setActive('wp_page', n.nodeName === 'IMG' && ed.dom.hasClass(n, 'mceWPnextpage'));
+				cm.setActive('wp_more', n.nodeName === 'IMG' && ed.dom.hasClass(n, 'mceWPmore'));
+			});
+		}
+	});
 
-	// Pass through to next handler in chain
-	return content;
-}
-
-function TinyMCE_wordpress_handleNodeChange(editor_id, node, undo_index, undo_levels, visual_aid, any_selection) {
-	function getAttrib(elm, name) {
-		return elm.getAttribute(name) ? elm.getAttribute(name) : "";
-	}
-
-	tinyMCE.switchClassSticky(editor_id + '_wordpress_more', 'mceButtonNormal');
-	tinyMCE.switchClassSticky(editor_id + '_wordpress_page', 'mceButtonNormal');
-
-	if (node == null)
-		return;
-
-	do {
-		if (node.nodeName.toLowerCase() == "img" && getAttrib(node, 'class').indexOf('mce_plugin_wordpress_more') == 0)
-			tinyMCE.switchClassSticky(editor_id + '_wordpress_more', 'mceButtonSelected');
-		if (node.nodeName.toLowerCase() == "img" && getAttrib(node, 'class').indexOf('mce_plugin_wordpress_page') == 0)
-			tinyMCE.switchClassSticky(editor_id + '_wordpress_page', 'mceButtonSelected');
-	} while ((node = node.parentNode));
-
-	return true;
-}
-
-function wp_save_callback(el, content, body) {
-	// We have a TON of cleanup to do.
-
-	// Mark </p> if it has any attributes.
-	content = content.replace(new RegExp('(<p[^>]+>.*?)</p>', 'mg'), '$1</p#>');
-
-	// Decode the ampersands of time.
-	content = content.replace(new RegExp('&amp;', 'g'), '&');
-
-	// Get it ready for wpautop.
-	content = content.replace(new RegExp('[\\s]*<p>[\\s]*', 'mgi'), '');
-	content = content.replace(new RegExp('[\\s]*</p>[\\s]*', 'mgi'), '\n\n');
-	content = content.replace(new RegExp('\\n\\s*\\n\\s*\\n*', 'mgi'), '\n\n');
-	content = content.replace(new RegExp('\\s*<br ?/?>\\s*', 'gi'), '\n');
-
-	// Fix some block element newline issues
-	var blocklist = 'blockquote|ul|ol|li|table|thead|tr|th|td|div|h\\d|pre';
-	content = content.replace(new RegExp('\\s*<(('+blocklist+') ?[^>]*)\\s*>', 'mg'), '\n<$1>');
-	content = content.replace(new RegExp('\\s*</('+blocklist+')>\\s*', 'mg'), '</$1>\n');
-	content = content.replace(new RegExp('<li>', 'g'), '\t<li>');
-
-	// Unmark special paragraph closing tags
-	content = content.replace(new RegExp('</p#>', 'g'), '</p>\n');
-	content = content.replace(new RegExp('\\s*(<p[^>]+>.*</p>)', 'mg'), '\n$1');
-
-	// Trim any whitespace
-	content = content.replace(new RegExp('^\\s*', ''), '');
-	content = content.replace(new RegExp('\\s*$', ''), '');
-
-	// Hope.
-	return content;
-
-}
+	// Register plugin
+	tinymce.PluginManager.add('wordpress', tinymce.plugins.WordPress);
+})();
