@@ -1,0 +1,1 @@
+pref("cocoa.cc_url", "");
