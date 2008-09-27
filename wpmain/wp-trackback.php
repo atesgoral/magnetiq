@@ -31,9 +31,9 @@ if ( !$_GET['tb_id'] ) {
 }
 
 $tb_url    = $_POST['url'];
-$title     = $_POST['title'];
-$excerpt   = $_POST['excerpt'];
-$blog_name = $_POST['blog_name'];
+$title     = stripslashes($_POST['title']);
+$excerpt   = stripslashes($_POST['excerpt']);
+$blog_name = stripslashes($_POST['blog_name']);
 $charset   = $_POST['charset'];
 
 if ($charset)
@@ -46,6 +46,10 @@ if ( function_exists('mb_convert_encoding') ) { // For international trackbacks
 	$excerpt   = mb_convert_encoding($excerpt, get_settings('blog_charset'), $charset);
 	$blog_name = mb_convert_encoding($blog_name, get_settings('blog_charset'), $charset);
 }
+
+$title     = $wpdb->escape($title);
+$excerpt   = $wpdb->escape($excerpt);
+$blog_name = $wpdb->escape($blog_name);
 
 if ( is_single() || is_page() ) 
     $tb_id = $posts[0]->ID;
