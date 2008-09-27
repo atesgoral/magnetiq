@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>DHTML Polygon Rendering Demo</title>
+<link rel="stylesheet" href="poly.css" type="text/css" media="screen"/>
+<script src="poly.js"></script>
+</head>
+
+<body onload="init()">
+
+<div id="canvas">
+    <h2>DHTML Polygon Rendering Demo</h2>
+    <div id="footnote">
+        N-sided polygons in real time, using only DHTML + JavaScript<br/>
+        &copy; 2006 Ates Goral, <a href="http://magnetiq.com/" onclick="window.open(this.href, '_blank'); return false;">magnetiq.com</a><br/>
+        Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/" onclick="window.open(this.href, '_blank'); return false;">Creative Commons License</a>
+    </div>
+    <div id="options">
+        <h5>Fun Options</h5>
+        <div class="opt">
+            <a class="cb" href="#" onclick="return toggleOpt('show_vertices', this)">Show vertices</a>
+        </div>
+        <div class="opt">
+            <a class="cb" href="#" onclick="return toggleOpt('show_triangles', this)">Show triangles</a>
+        </div>
+        <div class="opt">
+            <a class="cb" href="#" onclick="return toggleOpt('show_rectangles', this)">Show rectangles</a>
+        </div>
+        <div class="opt">
+            <a class="cb" href="#" onclick="return toggleOpt('fake_splines', this)">Fake splines</a>
+        </div>
+        <div class="opt">
+            <a class="cb" href="#" onclick="return toggleOpt('evil_twin', this)">Evil twin</a>
+        </div>
+    </div>
+    <div id="params">
+        <div class="field">
+            <label for="prop_sides">Sides</label><input type="text" maxlength="9" id="prop_sides" onchange="setProp('sides', this.value)"/><a href="#" onclick="return spinProp('sides', 1)"><img class="incdec inc" src="inc.gif" width="9" height="9" alt="Increase"/></a><a href="#" onclick="return spinProp('sides', -1)"><img class="incdec dec" src="dec.gif" width="9" height="9" alt="Decrease"/></a>
+        </div>
+        <div class="field">
+            <label for="prop_fps">FPS</label><input type="text" maxlength="9" id="prop_fps" onchange="setProp('fps', this.value)"/><a href="#" onclick="return spinProp('fps', 5)"><img class="incdec inc" src="inc.gif" width="9" height="9" alt="Increase"/></a><a href="#" onclick="return spinProp('fps', -5)"><img class="incdec dec" src="dec.gif" width="9" height="9" alt="Decrease"/></a>
+        </div>
+        <div class="field">
+            <label for="prop_speed">Speed</label><input type="text" maxlength="9" id="prop_speed" onchange="setProp('speed', this.value)"/><a href="#" onclick="return spinProp('speed', 10)"><img class="incdec inc" src="inc.gif" width="9" height="9" alt="Increase"/></a><a href="#" onclick="return spinProp('speed', -10)"><img class="incdec dec" src="dec.gif" width="9" height="9" alt="Decrease"/></a>
+        </div>
+        <div class="field">
+            <label for="load">Load</label><input disabled="disabled" type="text" id="load"/><img class="hidden" src="inc.gif" width="18" height="9" alt=""/>
+        </div>
+    </div>
+</div>
+
+<div id="tmp">
+    <div class="point" id="tmp_point"></div>
+    <div class="rect" id="tmp_rect"></div>
+    <div class="fill" id="tmp_fill"></div>
+    <img src="sw.gif" class="tri" id="tmp_tri0" alt=""/>
+    <img src="nw.gif" class="tri" id="tmp_tri1" alt=""/>
+    <img src="se.gif" class="tri" id="tmp_tri2" alt=""/>
+    <img src="ne.gif" class="tri" id="tmp_tri3" alt=""/>
+    <img src="sw_r.gif" class="tri" id="tmp_trir0" alt=""/>
+    <img src="nw_r.gif" class="tri" id="tmp_trir1" alt=""/>
+    <img src="se_r.gif" class="tri" id="tmp_trir2" alt=""/>
+    <img src="ne_r.gif" class="tri" id="tmp_trir3" alt=""/>
+</div>
+
+</body>
+
+</html>

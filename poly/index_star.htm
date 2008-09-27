@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<style>
+#tmp {
+    display: none;
+}
+
+#canvas {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #356AA0;
+    background-image: url(bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+#params {
+    position: absolute;
+    z-index: 3;
+}
+
+.point {
+    width: 1px;
+    height: 1px;
+    background-color: black;
+    border: 1px solid #00ffff;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.rect {
+    background-color: #ffffff;
+    position: absolute;
+}
+
+.tri {
+    position: absolute;
+}
+</style>
+<script>
+//<![CDATA[
+
+var g_primitives = {};
+
+function getPrimitive(name)
+{
+    var p = g_primitives[name];
+    var prim;
+    
+    if (p != undefined)
+    {
+        if (prim = p.available.pop())
+        {
+            prim.style.visibility = "visible";
+        }
+    }
+    else
+    {
+        p = { available: [], used: [] };
+        g_primitives[name] = p;
+    }
+    
+    if (prim == undefined)
+    {
+        prim = document.getElementById("tmp_" + name).cloneNode(false);
+        
+        prim.id = "";
+        
+        document.getElementById("canvas").appendChild(prim);
+    }
+    
+    p.used.push(prim);
+    
+    return prim;
+}
+
+function point(x, y)
+{
+    var node = getPrimitive("point");
+    
+    node.style.left = (x - 1) + "px";
+    node.style.top = (y - 1) + "px";
+}
+
+function rect(x, y, w, h, mark)
+{
+    var node = getPrimitive("rect");
+    
+    node.style.left = x + "px";
+    node.style.top = y + "px";
+    node.style.width = w + "px";
+    node.style.height = h + "px";
+    
+    node.style.backgroundColor = mark ? "red" : "white";
+}
+
+function triangle(x, y, w, h, norm)
+{
+    var node = getPrimitive("tri" + norm);
+
+    node.style.left = x + "px";
+    node.style.top = y + "px";
+    node.style.width = w + "px";
+    node.style.height = h + "px";
+}
+
+function edge(vec)
+{
+    var dx = vec.x2 - vec.x1;
+    var dy = vec.y2 - vec.y1;
+    var norm = -1;
+    
+    if (dx * dy)
+    {
+        var sdx = Math.abs(dx) / dx;
+        var sdy = Math.abs(dy) / dy;
+        
+        norm = sdx / 2 + sdy + 1.5;
+        
+        switch (norm)
+        {
+        case 0:
+            /* sw norm */
+            triangle(vec.x2, vec.y2, -dx, -dy, norm);
+            rect(0, vec.y2, vec.x2, vec.y1 - vec.y2);
+            break;
+        case 1:
+            /* nw norm */
+            triangle(vec.x1, vec.y2, dx, -dy, norm);
+            rect(0, vec.y2, vec.x1, vec.y1 - vec.y2);
+            break;
+        case 2:
+            /* se norm */
+            triangle(vec.x2, vec.y1, -dx, dy, norm);
+            rect(vec.x1, vec.y1, g_canvasw - vec.x1, vec.y2 - vec.y1);
+            break;
+        case 3:
+            /* ne norm */
+            triangle(vec.x1, vec.y1, dx, dy, norm);
+            rect(vec.x2, vec.y1, g_canvasw - vec.x2, vec.y2 - vec.y1);
+            break;
+        }
+    }
+    else if (dx == 0)
+    {
+        if (dy < 0)
+        {
+            rect(0, vec.y2, vec.x1, vec.y1 - vec.y2);
+        }
+        else
+        {
+            rect(vec.x1, vec.y1, g_canvasw - vec.x1, vec.y2 - vec.y1);
+        }
+        norm = -1;
+    }
+        
+    if (g_vertices)
+    {
+        point(vec.x1, vec.y1);
+    }
+
+    //g_minx = Math.min(g_minx, Math.min(vec.x1, vec.x2));
+    g_miny = Math.min(g_miny, Math.min(vec.y1, vec.y2));
+    //g_maxx = Math.max(g_maxx, Math.max(vec.x1, vec.x2));
+    g_maxy = Math.max(g_maxy, Math.max(vec.y1, vec.y2));
+    
+    return norm;
+}
+
+function polygon(x, y, r, n, tilt)
+{
+    var prevvec;
+    var prevnorm;
+   
+    for (var i = 0; i <= n; i++)
+    {
+        var a = Math.PI * 2 / n * i + tilt;
+        
+        var rmul = !g_star || (g_sides & 1) ? 1 : 1 - (i & 1) / 2;
+        
+        var newvec = {
+            x2: x + Math.round(r * rmul * Math.cos(a)),
+            y2: y + Math.round(r * rmul * Math.sin(a))
+        };
+        
+        if (prevvec != undefined)
+        {
+            newvec.x1 = prevvec.x2;
+            newvec.y1 = prevvec.y2;
+            
+            var norm = edge(newvec);
+
+/*
+            if (norm == prevnorm)
+            {
+                switch (norm)
+                {
+                case 0: // sw
+                    rect(newvec.x2, prevvec.y2,
+                        newvec.x1 - newvec.x2, g_canvash - prevvec.y2);
+                    break;
+                case 1: /// nw
+                    rect(prevvec.x1, 0,
+                        prevvec.x2 - prevvec.x1, newvec.y1);
+                    break;
+                case 2: // se
+                    rect(prevvec.x2, prevvec.y2,
+                        prevvec.x1 - prevvec.x2, g_canvash - prevvec.y2);
+                    break;
+                case 3: // ne
+                    rect(prevvec.x2, 0,
+                        newvec.x2 - newvec.x1, prevvec.y2);
+                    break;
+                }
+            }
+            
+            prevnorm = norm;
+*/
+        }
+        
+        prevvec = newvec;
+    }
+}
+
+function beginUpdate()
+{
+    for (var name in g_primitives)
+    {
+        var p = g_primitives[name];
+        var prim;
+        
+        while (prim = p.used.pop())
+        {
+            prim.style.visibility = "hidden";
+            p.available.push(prim);
+        }
+    }   
+
+    g_minx = g_miny = Number.POSITIVE_INFINITY;
+    g_maxx = g_maxy = Number.NEGATIVE_INFINITY;
+}
+
+function endUpdate()
+{
+    if (g_miny > 0)
+    {
+        rect(0, 0, g_canvasw, g_miny);
+    }
+
+    if (g_maxy < g_canvash)
+    {
+        rect(0, g_maxy, g_canvasw, g_canvash - g_maxy);
+    }
+/*
+    if (g_minx > 0)
+    {
+        rect(0, 0, g_minx, g_canvash);
+    }
+
+    if (g_maxx < g_canvasw - 1)
+    {
+        rect(g_maxx, 0, g_canvasw - g_maxx, g_canvash);
+    }
+
+    if (g_miny > 0)
+    {
+        rect(g_minx, 0, g_maxx - g_minx, g_miny);
+    }
+
+    if (g_maxy < g_canvash - 1)
+    {
+        rect(g_minx, g_maxy, g_maxx - g_minx, g_canvash - g_maxy);
+    }
+*/
+    /*
+    for (var name in g_primitives)
+    {
+        var p = g_primitives[name];
+        var prim;
+        
+        while (prim = p.available.pop())
+        {
+            prim.style.visibility = "none";
+            p.available.push(prim);
+        }
+    }
+    */  
+}
+
+var g_fps = 25;
+var g_vel = 0.25; // Animation velocity in degrees per second
+var g_epoch;
+
+var g_canvasw = g_canvash = 600;
+
+var g_minx, g_miny, g_maxx, g_maxy;
+
+var g_phase = 0;
+var g_sides = 3;
+var g_star = false;
+var g_vertices = false;
+
+function tick()
+{
+    var start = new Date();
+    
+    beginUpdate();
+
+/*
+    polygon(
+        300 + Math.round(50 * Math.sin(g_phase)),
+        300 + Math.round(50 * Math.cos(g_phase)),
+        150 + Math.round(60 * Math.sin(g_phase)),
+        g_sides + g_phase,
+        g_phase);
+*/
+    polygon(
+        /* x: */ 300,
+        /* y: */ 300,
+        /* r: */ 150,
+        /* n: */ g_sides,
+        /* t: */ g_phase
+    );
+
+    endUpdate();
+
+    var now = new Date();    
+    var t = now - g_epoch;
+    
+    g_phase = t / 1000 * g_vel;
+
+    var elapsed = now - start;
+    var sleep = 1000 / g_fps;
+    
+    if (sleep > elapsed)
+    {
+        window.status = sleep - elapsed;
+        setTimeout("tick()", sleep - elapsed);
+    }
+    else
+    {
+        window.status = "*Choke*";
+        setTimeout("tick()", 0);
+    }
+}
+
+function init()
+{
+    document.getElementById("f_sides").value = g_sides;
+    document.getElementById("f_star").checked = g_star;
+    document.getElementById("f_star").disabled = g_sides & 1;
+    document.getElementById("f_fps").value = g_fps;
+    document.getElementById("f_vel").value = g_vel;
+    
+    g_epoch = new Date();
+    
+    tick();
+}
+//]]>
+</script>
+</head>
+<body onload="init()">
+
+<div id="tmp">
+<div class="point" id="tmp_point"></div>
+<div class="rect" id="tmp_rect"></div>
+<image src="sw_w.gif" class="tri" id="tmp_tri0"/>
+<image src="nw_w.gif" class="tri" id="tmp_tri1"/>
+<image src="se_w.gif" class="tri" id="tmp_tri2"/>
+<image src="ne_w.gif" class="tri" id="tmp_tri3"/>
+<!--
+<image src="l1.gif" class="tri" id="tmp_tri0"/>
+<image src="l2.gif" class="tri" id="tmp_tri1"/>
+<image src="l2.gif" class="tri" id="tmp_tri2"/>
+<image src="l1.gif" class="tri" id="tmp_tri3"/>
+-->
+</div>
+
+<div id="canvas">
+</div>
+
+<div id="params">
+Sides: <input type="text" size="5" id="f_sides" onchange="g_sides = this.value; document.getElementById('f_star').disabled = g_sides & 1;"/><input type="checkbox" id="f_star" onclick="g_star = this.checked"/> Star
+<br/>
+FPS: <input type="text" size="5" id="f_fps" onchange="g_fps = this.value"/>
+<br/>
+Velocity: <input type="text" size="5" id="f_vel" onchange="g_vel = this.value"/>
+</div>
+
+</body>
+</html>
