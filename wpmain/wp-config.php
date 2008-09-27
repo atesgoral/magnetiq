@@ -4,7 +4,7 @@ define('DB_NAME', 'db23241_magnetiq');    // The name of the database
 define('DB_USER', 'db23241');     // Your MySQL username
 define('DB_PASSWORD', 'rX26VpK7'); // ...and password
 define('DB_HOST', 'internal-db.s23241.gridserver.com');    // 99% chance you won't need to change this value
-define('DB_CHARSET', 'utf8');
+define('DB_CHARSET', '');
 define('DB_COLLATE', '');
 
 // Change each KEY to a different unique phrase.  You won't have to remember the phrases later,
