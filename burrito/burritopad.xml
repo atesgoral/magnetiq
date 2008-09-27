@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<XML_DIZ_INFO>
+<MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>1.15</MASTER_PAD_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+</MASTER_PAD_VERSION_INFO>
+<Company_Info>
+        <Company_Name>Magnetiq</Company_Name>
+        <Address_1 />
+        <Address_2 />
+        <City_Town>Toronto</City_Town>
+        <State_Province />
+        <Zip_Postal_Code />
+        <Country>Canada</Country>
+        <Company_WebSite_URL>http://magnetiq.com/</Company_WebSite_URL>
+<Contact_Info>
+        <Author_First_Name>Ates</Author_First_Name>
+        <Author_Last_Name>Goral</Author_Last_Name>
+        <Author_Email>ates@magnetiq.com</Author_Email>
+        <Contact_First_Name>Ates</Contact_First_Name>
+        <Contact_Last_Name>Goral</Contact_Last_Name>
+        <Contact_Email>ates@magnetiq.com</Contact_Email>
+    </Contact_Info>
+<Support_Info>
+        <Sales_Email>ates@magnetiq.com</Sales_Email>
+        <Support_Email>ates@magnetiq.com</Support_Email>
+        <General_Email>ates@magnetiq.com</General_Email>
+        <Sales_Phone />
+        <Support_Phone />
+        <General_Phone />
+        <Fax_Phone />
+    </Support_Info>
+</Company_Info>
+<Program_Info>
+        <Program_Name>Burrito</Program_Name>
+        <Program_Version>1.0</Program_Version>
+        <Program_Release_Month>10</Program_Release_Month>
+        <Program_Release_Day>03</Program_Release_Day>
+        <Program_Release_Year>2002</Program_Release_Year>
+        <Program_Cost_Dollars>0</Program_Cost_Dollars>
+        <Program_Cost_Other_Code />
+        <Program_Cost_Other />
+        <Program_Type>Freeware</Program_Type>
+        <Program_Release_Status>Beta</Program_Release_Status>
+        <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+        <Program_OS_Support>Win95,Win98,WinME,WinNT 4.x,WinXP,Windows2000</Program_OS_Support>
+        <Program_Language>English</Program_Language>
+<File_Info>
+        <Filename_Versioned />
+        <Filename_Previous />
+        <Filename_Generic />
+        <Filename_Long>burrito10b.exe</Filename_Long>
+        <File_Size_Bytes>491131</File_Size_Bytes>
+        <File_Size_K>480</File_Size_K>
+        <File_Size_MB>0.48</File_Size_MB>
+    </File_Info>
+<Expire_Info>
+        <Has_Expire_Info>N</Has_Expire_Info>
+        <Expire_Count />
+        <Expire_Based_On>Days</Expire_Based_On>
+        <Expire_Other_Info />
+        <Expire_Month />
+        <Expire_Day />
+        <Expire_Year />
+    </Expire_Info>
+        <Program_Change_Info />
+        <Program_Specific_Category>Internet</Program_Specific_Category>
+        <Program_Categories>E-mail tools</Program_Categories>
+        <Program_System_Requirements />
+        <Includes_JAVA_VM>N</Includes_JAVA_VM>
+        <Includes_VB_Runtime>N</Includes_VB_Runtime>
+        <Includes_DirectX>N</Includes_DirectX>
+</Program_Info>
+<Program_Descriptions>
+<English>
+        <Keywords>E-mail Mail FTP Wrap Proxy Utility POP3 Spam Organize Rescue</Keywords>
+        <Char_Desc_45>Read and manage your e-mails via FTP!</Char_Desc_45>
+        <Char_Desc_80>Enables you to read and manage your e-mails with any FTP client.</Char_Desc_80>
+        <Char_Desc_250>Enables you to read and manage your e-mails with any FTP client by acting as a POP3/FTP protocol wrapper. Burrito is actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files.</Char_Desc_250>
+        <Char_Desc_450>Burrito enables you to read and manage your e-mails with any FTP client by acting as a POP3/FTP protocol wrapper. Burrito is actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files. Simply speaking, for an FTP connection you establish with Burrito, Burrito will establish a corresponding POP3 connection with your mail server and serve you the messages as files.</Char_Desc_450>
+        <Char_Desc_2000>Burrito enables you to read and manage your e-mails with any FTP client by acting as a POP3/FTP protocol wrapper. Burrito is actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files.
+
+Simply speaking, for an FTP connection you establish with Burrito, Burrito will establish a corresponding POP3 connection with your mail server and serve you the messages as files. You can view, copy and delete messages by using your standard FTP client (such as Windows Commander).
+
+Because Burrito initially downloads and parses only the message headers, access to your messages is really fast (faster than most conventional e-mail applications such as Outlook Express). Hence, Burrito can actually be used as a mailbox rescue / anti-spam tool in cases where you have to delete tons of spam messages or several huge messages that clog up your mailbox. Burrito takes advantage of smart message and connection caching mechanisms for faster and reliable operation.
+
+Burrito itself doesn't have to be configured to connect to specific POP3 servers with specific username and passwords; it extracts the mail connection settings from the FTP username and password you provide to Burrito. For example, if you want to connect to the POP3 server &quot;mail.magnetiq.com&quot; with username &quot;ates&quot; and password &quot;boogie&quot;, you simply configure your FTP client to connect to the machine that Burrito runs on (&quot;localhost&quot; if Burrito is running on your local machine) with &quot;ates\mail.magnetiq.com&quot; as the username and &quot;boogie&quot; as the password. The &quot;\&quot; is the default separator and can be set to any character of your liking.
+
+The way Burrito composes filenames for individual e-mail messages is configurable. You can specify what attributes of a message (eg. Sender, Subject, Date) should take part in the composition of a filename.</Char_Desc_2000>
+</English>
+</Program_Descriptions>
+<Web_Info>
+<Application_URLs>
+        <Application_Info_URL>http://magnetiq.com/burrito/</Application_Info_URL>
+        <Application_Order_URL />
+        <Application_Screenshot_URL>http://magnetiq.com/burrito/i/burritoss1.gif</Application_Screenshot_URL>
+        <Application_Icon_URL>http://magnetiq.com/burrito/i/burritoicon.gif</Application_Icon_URL>
+        <Application_XML_File_URL>http://magnetiq.com/burrito/burritopad.xml</Application_XML_File_URL>
+    </Application_URLs>
+<Download_URLs>
+        <Primary_Download_URL>http://magnetiq.com/downloads/burrito10b.exe</Primary_Download_URL>
+        <Secondary_Download_URL />
+        <Additional_Download_URL_1 />
+        <Additional_Download_URL_2 />
+    </Download_URLs>
+</Web_Info>
+<Permissions>
+        <Distribution_Permissions>This software can be distributed freely and free of charge, without permission from the author.</Distribution_Permissions>
+        <EULA>Use at your own risk! Though, there aren't apparent risks...</EULA>
+</Permissions>
+</XML_DIZ_INFO>

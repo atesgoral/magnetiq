@@ -1,0 +1,12 @@
+body { background: #e0e0e0; margin: 0px; font: 11px Verdana; }
+div.top { background: white; padding-left: 17px; padding-top: 17px; }
+div.nav { background: #808080; color: white; padding-left: 20px; }
+div.pad { padding: 20px; }
+div.banner { position: absolute; top: 20px; left: 300px; z-order: 1; }
+td { font: 11px Verdana; }
+a.nav { text-decoration: none; color: white; }
+a.nav:hover { color: black; }
+.sep { background: #c0c0c0; }
+.white { background: white; }
+.large { font-size: 14px; font-weight: bold; }
+.footer { font-size: 9px; padding-top: 40px; }

@@ -1,0 +1,1 @@
+<?php  header("Location: http://magnetiq.com/freeware/burrito.php"); ?>
