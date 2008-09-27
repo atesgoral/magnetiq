@@ -1,28 +1,30 @@
 <?php
 require_once ('admin.php');
 $title = __('Import');
-$parent_file = 'import.php';
+$parent_file = 'edit.php';
 require_once ('admin-header.php');
 ?>
 
 <div class="wrap">
 <h2><?php _e('Import'); ?></h2>
-<p><?php _e('If you have posts or comments in another system WordPress can import them into your current blog. To get started, choose a system to import from below:'); ?></p>
+<p><?php _e('If you have posts or comments in another system, WordPress can import those into this blog. To get started, choose a system to import from below:'); ?></p>
 
 <?php
 
 // Load all importers so that they can register.
 $import_loc = 'wp-admin/import';
 $import_root = ABSPATH.$import_loc;
-$imports_dir = @ dir($import_root);
+$imports_dir = @ opendir($import_root);
 if ($imports_dir) {
-	while (($file = $imports_dir->read()) !== false) {
-		if (preg_match('|^\.+$|', $file))
+	while (($file = readdir($imports_dir)) !== false) {
+		if ($file{0} == '.') {
 			continue;
-		if (preg_match('|\.php$|', $file))
-			require_once("$import_root/$file");
+		} elseif (substr($file, -4) == '.php') {
+			require_once($import_root . '/' . $file);
+		}
 	}
 }
+@closedir($imports_dir);
 
 $importers = get_importers();
 
@@ -30,20 +32,20 @@ if (empty ($importers)) {
 	echo '<p>'.__('No importers are available.').'</p>'; // TODO: make more helpful
 } else {
 ?>
-<table width="100%" cellpadding="3" cellspacing="3">
+<table class="widefat">
 
 <?php
 	$style = '';
 	foreach ($importers as $id => $data) {
 		$style = ('class="alternate"' == $style || 'class="alternate active"' == $style) ? '' : 'alternate';
-		$action = "<a href='admin.php?import=$id' title='{$data[1]}'>{$data[0]}</a>";
+		$action = "<a href='admin.php?import=$id' title='".wptexturize(strip_tags($data[1]))."'>{$data[0]}</a>";
 
 		if ($style != '')
 			$style = 'class="'.$style.'"';
 		echo "
 			<tr $style>
-				<td class=\"togl\">$action</td>
-				<td class=\"desc\">{$data[1]}</td>
+				<td class='import-system row-title'>$action</td>
+				<td class='desc'>{$data[1]}</td>
 			</tr>";
 	}
 ?>

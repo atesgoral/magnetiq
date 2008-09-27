@@ -1,299 +1,244 @@
 <?php
 require_once('admin.php');
 
+// Handle bulk deletes
+if ( isset($_GET['deleteit']) && isset($_GET['delete']) ) {
+	check_admin_referer('bulk-posts');
+	foreach( (array) $_GET['delete'] as $post_id_del ) {
+		$post_del = & get_post($post_id_del);
+
+		if ( !current_user_can('delete_post', $post_id_del) )
+			wp_die( __('You are not allowed to delete this post.') );
+
+		if ( $post_del->post_type == 'attachment' ) {
+			if ( ! wp_delete_attachment($post_id_del) )
+				wp_die( __('Error in deleting...') );
+		} else {
+			if ( !wp_delete_post($post_id_del) )
+				wp_die( __('Error in deleting...') );
+		}
+	}
+
+	$sendback = wp_get_referer();
+	if (strpos($sendback, 'post.php') !== false) $sendback = admin_url('post-new.php');
+	elseif (strpos($sendback, 'attachments.php') !== false) $sendback = admin_url('attachments.php');
+	$sendback = preg_replace('|[^a-z0-9-~+_.?#=&;,/:]|i', '', $sendback);
+
+	wp_redirect($sendback);
+	exit();
+} elseif ( !empty($_GET['_wp_http_referer']) ) {
+	 wp_redirect(remove_query_arg(array('_wp_http_referer', '_wpnonce'), stripslashes($_SERVER['REQUEST_URI'])));
+	 exit;
+}
+
 $title = __('Posts');
 $parent_file = 'edit.php';
-$list_js = true;
+wp_enqueue_script('admin-forms');
+
+list($post_stati, $avail_post_stati) = wp_edit_posts_query();
+
+if ( 1 == count($posts) && is_singular() )
+	wp_enqueue_script( 'admin-comments' );
 require_once('admin-header.php');
 
-$_GET['m'] = (int) $_GET['m'];
+if ( !isset( $_GET['paged'] ) )
+	$_GET['paged'] = 1;
 
-$drafts = get_users_drafts( $user_ID );
-$other_drafts = get_others_drafts( $user_ID);
-
-if ($drafts || $other_drafts) {
-?> 
-<div class="wrap">
-<?php if ($drafts) { ?>
-    <p><strong><?php _e('Your Drafts:') ?></strong> 
-    <?php
-	$i = 0;
-	foreach ($drafts as $draft) {
-		if (0 != $i)
-			echo ', ';
-		$draft->post_title = stripslashes($draft->post_title);
-		if ($draft->post_title == '')
-			$draft->post_title = sprintf(__('Post #%s'), $draft->ID);
-		echo "<a href='post.php?action=edit&amp;post=$draft->ID' title='" . __('Edit this draft') . "'>$draft->post_title</a>";
-		++$i;
-		}
-	?> 
-    .</p> 
-<?php } ?>
-
-<?php if ($other_drafts) { ?> 
-    <p><strong><?php _e('Other&#8217;s Drafts:') ?></strong> 
-    <?php
-	$i = 0;
-	foreach ($other_drafts as $draft) {
-		if (0 != $i)
-			echo ', ';
-		$draft->post_title = stripslashes($draft->post_title);
-		if ($draft->post_title == '')
-			$draft->post_title = sprintf(__('Post #%s'), $draft->ID);
-		echo "<a href='post.php?action=edit&amp;post=$draft->ID' title='" . __('Edit this draft') . "'>$draft->post_title</a>";
-		++$i;
-		}
-	?> 
-    .</p> 
-
-<?php } ?>
-
-</div>
-<?php } ?>
+?>
 
 <div class="wrap">
-<h2>
-<?php
-$what_to_show = 'posts';
-$posts_per_page = 15;
-$posts_per_archive_page = -1;
 
-wp();
-
-if ( is_month() ) {
-	single_month_title(' ');
-} elseif ( is_search() ) {
-	printf(__('Search for &#8220;%s&#8221;'), wp_specialchars($_GET['s']) );
+<form id="posts-filter" action="" method="get">
+<h2><?php
+if ( is_single() ) {
+	printf(__('Comments on %s'), apply_filters( "the_title", $post->post_title));
 } else {
-	if ( is_single() )
-		printf(__('Comments on %s'), $post->post_title);
-	elseif ( ! is_paged() || get_query_var('paged') == 1 )
-		_e('Last 15 Posts');
+	$post_status_label = _c('Manage Posts|manage posts header');
+	if ( isset($_GET['post_status']) && in_array( $_GET['post_status'], array_keys($post_stati) ) )
+        $post_status_label = $post_stati[$_GET['post_status']][1];
+	if ( $post_listing_pageable && !is_archive() && !is_search() )
+		$h2_noun = is_paged() ? sprintf(__( 'Previous %s' ), $post_status_label) : sprintf(__('Latest %s'), $post_status_label);
 	else
-		_e('Previous Posts');
-}
-?>
-</h2>
-
-<form name="searchform" action="" method="get" style="float: left; width: 16em; margin-right: 3em;"> 
-  <fieldset> 
-  <legend><?php _e('Search Posts&hellip;') ?></legend> 
-  <input type="text" name="s" value="<?php if (isset($s)) echo wp_specialchars($s, 1); ?>" size="17" /> 
-  <input type="submit" name="submit" value="<?php _e('Search') ?>"  /> 
-  </fieldset>
-</form>
-
-<?php $arc_result = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) AS yyear, MONTH(post_date) AS mmonth FROM $wpdb->posts WHERE post_date != '0000-00-00 00:00:00' ORDER BY post_date DESC");
-
-if ( count($arc_result) ) { ?>
-
-<form name="viewarc" action="" method="get" style="float: left; width: 20em; margin-bottom: 1em;">
-	<fieldset>
-	<legend><?php _e('Browse Month&hellip;') ?></legend>
-    <select name='m'>
-	<?php
-		foreach ($arc_result as $arc_row) {			
-			$arc_year  = $arc_row->yyear;
-			$arc_month = $arc_row->mmonth;
-			
-			if( isset($_GET['m']) && $arc_year . zeroise($arc_month, 2) == (int) $_GET['m'] )
-				$default = 'selected="selected"';
-			else
-				$default = null;
-			
-			echo "<option $default value=\"" . $arc_year.zeroise($arc_month, 2) . '">';
-			echo $month[zeroise($arc_month, 2)] . " $arc_year";
-			echo "</option>\n";
+		$h2_noun = $post_status_label;
+	// Use $_GET instead of is_ since they can override each other
+	$h2_author = '';
+	$_GET['author'] = (int) $_GET['author'];
+	if ( $_GET['author'] != 0 ) {
+		if ( $_GET['author'] == '-' . $user_ID ) { // author exclusion
+			$h2_author = ' ' . __('by other authors');
+		} else {
+			$author_user = get_userdata( get_query_var( 'author' ) );
+			$h2_author = ' ' . sprintf(__('by %s'), wp_specialchars( $author_user->display_name ));
 		}
-	?>
-	</select>
-		<input type="submit" name="submit" value="<?php _e('Show Month') ?>"  /> 
-	</fieldset>
-</form>
-
-<?php } ?>
-
-<br style="clear:both;" />
-
-<?php
-
-// define the columns to display, the syntax is 'internal name' => 'display name'
-$posts_columns = array(
-  'id'         => __('ID'),
-  'date'       => __('When'),
-  'title'      => __('Title'),
-  'categories' => __('Categories'),
-  'comments'   => __('Comments'),
-  'author'     => __('Author')
-);
-$posts_columns = apply_filters('manage_posts_columns', $posts_columns);
-
-// you can not edit these at the moment
-$posts_columns['control_view']   = '';
-$posts_columns['control_edit']   = '';
-$posts_columns['control_delete'] = '';
-
-?>
-
-<table id="the-list-x" width="100%" cellpadding="3" cellspacing="3"> 
-	<tr>
-
-<?php foreach($posts_columns as $column_display_name) { ?>
-	<th scope="col"><?php echo $column_display_name; ?></th>
-<?php } ?>
-
-	</tr>
-<?php
-if ($posts) {
-$bgcolor = '';
-foreach ($posts as $post) { start_wp();
-$class = ('alternate' == $class) ? '' : 'alternate';
-?> 
-	<tr id='post-<?php echo $id; ?>' class='<?php echo $class; ?>'>
-
-<?php
-
-foreach($posts_columns as $column_name=>$column_display_name) {
-
-	switch($column_name) {
-	
-	case 'id':
-		?>
-		<th scope="row"><?php echo $id ?></th>
-		<?php
-		break;
-
-	case 'date':
-		?>
-		<td><?php the_time('Y-m-d \<\b\r \/\> g:i:s a'); ?></td>
-		<?php
-		break;
-	case 'title':
-		?>
-		<td><?php the_title() ?>
-		<?php if ('private' == $post->post_status) _e(' - <strong>Private</strong>'); ?></td>
-		<?php
-		break;
-
-	case 'categories':
-		?>
-		<td><?php the_category(','); ?></td>
-		<?php
-		break;
-
-	case 'comments':
-		?>
-		<td><a href="edit.php?p=<?php echo $id ?>&amp;c=1"> 
-      <?php comments_number(__('0'), __('1'), __('%')) ?> 
-      </a></td>
-		<?php
-		break;
-
-	case 'author':
-		?>
-		<td><?php the_author() ?></td>
-		<?php
-		break;
-
-	case 'control_view':
-		?>
-		<td><a href="<?php the_permalink(); ?>" rel="permalink" class="edit"><?php _e('View'); ?></a></td>
-		<?php
-		break;
-
-	case 'control_edit':
-		?>
-		<td><?php if ( current_user_can('edit_post',$post->ID) ) { echo "<a href='post.php?action=edit&amp;post=$id' class='edit'>" . __('Edit') . "</a>"; } ?></td>
-		<?php
-		break;
-
-	case 'control_delete':
-		?>
-		<td><?php if ( current_user_can('edit_post',$post->ID) ) { echo "<a href='post.php?action=delete&amp;post=$id' class='delete' onclick=\"return deleteSomething( 'post', " . $id . ", '" . sprintf(__("You are about to delete this post &quot;%s&quot;.\\n&quot;OK&quot; to delete, &quot;Cancel&quot; to stop."), wp_specialchars(get_the_title('', ''), 1) ) . "' );\">" . __('Delete') . "</a>"; } ?></td>
-		<?php
-		break;
-
-	default:
-		?>
-		<td><?php do_action('manage_posts_custom_column', $column_name, $id); ?></td>
-		<?php
-		break;
 	}
+	$h2_search = isset($_GET['s'])   && $_GET['s']   ? ' ' . sprintf(__('matching &#8220;%s&#8221;'), wp_specialchars( get_search_query() ) ) : '';
+	$h2_cat    = isset($_GET['cat']) && $_GET['cat'] ? ' ' . sprintf( __('in &#8220;%s&#8221;'), single_cat_title('', false) ) : '';
+	$h2_tag    = isset($_GET['tag']) && $_GET['tag'] ? ' ' . sprintf( __('tagged with &#8220;%s&#8221;'), single_tag_title('', false) ) : '';
+	$h2_month  = isset($_GET['m'])   && $_GET['m']   ? ' ' . sprintf( __('during %s'), single_month_title(' ', false) ) : '';
+	printf( _c( '%1$s%2$s%3$s%4$s%5$s%6$s|You can reorder these: 1: Posts, 2: by {s}, 3: matching {s}, 4: in {s}, 5: tagged with {s}, 6: during {s}' ), $h2_noun, $h2_author, $h2_search, $h2_cat, $h2_tag, $h2_month );
+}
+?></h2>
+
+<ul class="subsubsub">
+<?php
+$status_links = array();
+$num_posts = wp_count_posts( 'post', 'readable' );
+$class = empty( $_GET['post_status'] ) ? ' class="current"' : '';
+$status_links[] = "<li><a href='edit.php' $class>" . __('All Posts') . '</a>';
+foreach ( $post_stati as $status => $label ) {
+	$class = '';
+
+	if ( !in_array( $status, $avail_post_stati ) )
+		continue;
+
+	if ( empty( $num_posts->$status ) )
+		continue;
+	if ( $status == $_GET['post_status'] )
+		$class = ' class="current"';
+
+	$status_links[] = "<li><a href='edit.php?post_status=$status' $class>" .
+	sprintf( __ngettext( $label[2][0], $label[2][1], $num_posts->$status ), number_format_i18n( $num_posts->$status ) ) . '</a>';
+}
+echo implode( ' |</li>', $status_links ) . '</li>';
+unset( $status_links );
+?>
+</ul>
+
+<?php if ( isset($_GET['post_status'] ) ) : ?>
+<input type="hidden" name="post_status" value="<?php echo attribute_escape($_GET['post_status']) ?>" />
+<?php
+endif;
+
+if ( isset($_GET['posted']) && $_GET['posted'] ) : $_GET['posted'] = (int) $_GET['posted']; ?>
+<div id="message" class="updated fade"><p><strong><?php _e('Your post has been saved.'); ?></strong> <a href="<?php echo get_permalink( $_GET['posted'] ); ?>"><?php _e('View post'); ?></a> | <a href="post.php?action=edit&amp;post=<?php echo $_GET['posted']; ?>"><?php _e('Edit post'); ?></a></p></div>
+<?php $_SERVER['REQUEST_URI'] = remove_query_arg(array('posted'), $_SERVER['REQUEST_URI']);
+endif;
+?>
+
+<p id="post-search">
+	<label class="hidden" for="post-search-input"><?php _e( 'Search Posts' ); ?>:</label>
+	<input type="text" id="post-search-input" name="s" value="<?php the_search_query(); ?>" />
+	<input type="submit" value="<?php _e( 'Search Posts' ); ?>" class="button" />
+</p>
+
+<div class="tablenav">
+
+<?php
+$page_links = paginate_links( array(
+	'base' => add_query_arg( 'paged', '%#%' ),
+	'format' => '',
+	'total' => $wp_query->max_num_pages,
+	'current' => $_GET['paged']
+));
+
+if ( $page_links )
+	echo "<div class='tablenav-pages'>$page_links</div>";
+?>
+
+<div class="alignleft">
+<input type="submit" value="<?php _e('Delete'); ?>" name="deleteit" class="button-secondary delete" />
+<?php wp_nonce_field('bulk-posts'); ?>
+<?php
+if ( !is_singular() ) {
+$arc_query = "SELECT DISTINCT YEAR(post_date) AS yyear, MONTH(post_date) AS mmonth FROM $wpdb->posts WHERE post_type = 'post' ORDER BY post_date DESC";
+
+$arc_result = $wpdb->get_results( $arc_query );
+
+$month_count = count($arc_result);
+
+if ( $month_count && !( 1 == $month_count && 0 == $arc_result[0]->mmonth ) ) { ?>
+<select name='m'>
+<option<?php selected( @$_GET['m'], 0 ); ?> value='0'><?php _e('Show all dates'); ?></option>
+<?php
+foreach ($arc_result as $arc_row) {
+	if ( $arc_row->yyear == 0 )
+		continue;
+	$arc_row->mmonth = zeroise( $arc_row->mmonth, 2 );
+
+	if ( $arc_row->yyear . $arc_row->mmonth == $_GET['m'] )
+		$default = ' selected="selected"';
+	else
+		$default = '';
+
+	echo "<option$default value='$arc_row->yyear$arc_row->mmonth'>";
+	echo $wp_locale->get_month($arc_row->mmonth) . " $arc_row->yyear";
+	echo "</option>\n";
 }
 ?>
-	</tr> 
+</select>
+<?php } ?>
+
 <?php
-}
-} else {
+$dropdown_options = array('show_option_all' => __('View all categories'), 'hide_empty' => 0, 'hierarchical' => 1,
+	'show_count' => 0, 'orderby' => 'name', 'selected' => $cat);
+wp_dropdown_categories($dropdown_options);
+do_action('restrict_manage_posts');
 ?>
-  <tr style='background-color: <?php echo $bgcolor; ?>'> 
-    <td colspan="8"><?php _e('No posts found.') ?></td> 
-  </tr> 
-<?php
-} // end if ($posts)
-?> 
-</table>
+<input type="submit" id="post-query-submit" value="<?php _e('Filter'); ?>" class="button-secondary" />
+
+<?php } ?>
+</div>
+
+<br class="clear" />
+</div>
+
+<br class="clear" />
+
+<?php include( 'edit-post-rows.php' ); ?>
+
+</form>
 
 <div id="ajax-response"></div>
 
-<div class="navigation">
-<div class="alignleft"><?php next_posts_link(__('&laquo; Previous Entries')) ?></div>
-<div class="alignright"><?php previous_posts_link(__('Next Entries &raquo;')) ?></div>
+<div class="tablenav">
+
+<?php
+if ( $page_links )
+	echo "<div class='tablenav-pages'>$page_links</div>";
+?>
+
+<br class="clear" />
 </div>
 
+<br class="clear" />
+
 <?php
-if ( 1 == count($posts) ) {
 
-	$comments = $wpdb->get_results("SELECT * FROM $wpdb->comments WHERE comment_post_ID = $id AND comment_approved != 'spam' ORDER BY comment_date");
-	if ($comments) {
-	?> 
-<h3><?php _e('Comments') ?></h3> 
-<ol id="comments"> 
-<?php
-foreach ($comments as $comment) {
-$comment_status = wp_get_comment_status($comment->comment_ID);
-?> 
+if ( 1 == count($posts) && is_singular() ) :
 
-<li <?php if ("unapproved" == $comment_status) echo "class='unapproved'"; ?> >
-  <?php comment_date('Y-n-j') ?> 
-  @
-  <?php comment_time('g:m:s a') ?> 
-  <?php 
-			if ( current_user_can('edit_post', $post->ID) ) {
-				echo "[ <a href=\"post.php?action=editcomment&amp;comment=".$comment->comment_ID."\">" .  __('Edit') . "</a>";
-				echo " - <a href=\"post.php?action=deletecomment&amp;p=".$post->ID."&amp;comment=".$comment->comment_ID."\" onclick=\"return confirm('" . sprintf(__("You are about to delete this comment by \'%s\'\\n  \'OK\' to delete, \'Cancel\' to stop."), $comment->comment_author) . "')\">" . __('Delete') . "</a> ";
-				if ( ('none' != $comment_status) && ( current_user_can('moderate_comments') ) ) {
-					if ('approved' == wp_get_comment_status($comment->comment_ID)) {
-						echo " - <a href=\"post.php?action=unapprovecomment&amp;p=".$post->ID."&amp;comment=".$comment->comment_ID."\">" . __('Unapprove') . "</a> ";
-					} else {
-						echo " - <a href=\"post.php?action=approvecomment&amp;p=".$post->ID."&amp;comment=".$comment->comment_ID."\">" . __('Approve') . "</a> ";
-					}
-				}
-				echo "]";
-			} // end if any comments to show
-			?> 
-  <br /> 
-  <strong> 
-  <?php comment_author() ?> 
-  (
-  <?php comment_author_email_link() ?> 
-  /
-  <?php comment_author_url_link() ?> 
-  )</strong> (IP:
-  <?php comment_author_IP() ?> 
-  )
-  <?php comment_text() ?> 
-
-</li> 
-<!-- /comment --> 
-<?php //end of the loop, don't delete
-		} // end foreach
-	echo '</ol>';
-	}//end if comments
+	$comments = $wpdb->get_results( $wpdb->prepare("SELECT * FROM $wpdb->comments WHERE comment_post_ID = %d AND comment_approved != 'spam' ORDER BY comment_date", $id) );
+	if ( $comments ) :
+		// Make sure comments, post, and post_author are cached
+		update_comment_cache($comments);
+		$post = get_post($id);
+		$authordata = get_userdata($post->post_author);
 	?>
-<?php } ?> 
-</div> 
-<?php 
- include('admin-footer.php');
-?> 
+
+<br class="clear" />
+
+<table class="widefat" style="margin-top: .5em">
+<thead>
+  <tr>
+    <th scope="col"><?php _e('Comment') ?></th>
+    <th scope="col"><?php _e('Date') ?></th>
+    <th scope="col"><?php _e('Actions') ?></th>
+  </tr>
+</thead>
+<tbody id="the-comment-list" class="list:comment">
+<?php
+	foreach ($comments as $comment)
+		_wp_comment_row( $comment->comment_ID, 'detail', false, false );
+?>
+</tbody>
+</table>
+
+<?php
+
+endif; // comments
+endif; // posts;
+
+?>
+
+</div>
+
+<?php include('admin-footer.php'); ?>
