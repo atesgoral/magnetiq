@@ -28,44 +28,38 @@ if (!empty($digg_url)):
 			
 			<h2 id="post-<?php the_ID(); ?>"><a href="<?php echo get_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
 			<small><?php the_time('F jS, Y') ?> <!-- by <?php the_author() ?> --></small>
-			<!--p class="ad">
-					<small>[Advertisement]
-<script type="text/javascript"--><!--
+			<p class="ad">
+<script type="text/javascript"><!--
 google_ad_client = "pub-2115594125871453";
-/* Text link, created 6/19/08 */
-google_ad_slot = "5693702270";
-google_ad_output = "textlink";
-google_ad_format = "ref_text";
-google_cpa_choice = ""; // on file
+/* post 468x15 */
+google_ad_slot = "5193778318";
+google_ad_width = 468;
+google_ad_height = 15;
 //-->
-<!--/script>
+</script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-					</small>
-			</p-->
+			</p>
 
 			<div class="entry">			
 				<?php the_content('<p class="serif">Read the rest of this entry &raquo;</p>'); ?>
 	
 				<?php link_pages('<p><strong>Pages:</strong> ', '</p>', 'number'); ?>
 				
-				<!--p class="ad">
-					<small>[Advertisement]
-<script type="text/javascript"--><!--
+			<p class="ad">
+<script type="text/javascript"><!--
 google_ad_client = "pub-2115594125871453";
-/* Text link, created 6/19/08 */
-google_ad_slot = "5693702270";
-google_ad_output = "textlink";
-google_ad_format = "ref_text";
-google_cpa_choice = ""; // on file
+/* post 468x15 */
+google_ad_slot = "5193778318";
+google_ad_width = 468;
+google_ad_height = 15;
 //-->
-<!--/script>
+</script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-					</small>
-				</p-->
+			</p>
 
 				<p class="postmetadata alt">
 					<small>

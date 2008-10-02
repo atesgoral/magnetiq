@@ -9,6 +9,10 @@
 
 			<?php wp_list_pages('title_li=<h2>' . __('Pages') . '</h2>' ); ?>
 
+			<li>
+				<?php include (TEMPLATEPATH . '/searchform.php'); ?>
+			</li>			
+
 			<li><h2><?php _e('Archives'); ?></h2>
 				<ul>
 				<?php wp_get_archives('type=monthly'); ?>
@@ -24,19 +28,19 @@
 <li>
 <?php tla_ads(); ?>
 </li>
-<!--li>
-<script type="text/javascript">< !--
+<li>
+<script type="text/javascript"><!--
 google_ad_client = "pub-2115594125871453";
-/* 120x240, created 7/2/08 */
-google_ad_slot = "0724765337";
+/* sidebar 120x240 */
+google_ad_slot = "4109144554";
 google_ad_width = 120;
 google_ad_height = 240;
-//-- >
+//-->
 </script>
 <script type="text/javascript"
 src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-</li-->
+</li>
 
 <!--li><p>To support my freeware projects:</p>
 <p>
@@ -55,11 +59,21 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 			<?php wp_theme_switcher(); ?>
 			</li>
 		<?php } ?>
-			
-			
-			<li>
-				<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-			</li>			
+
+<li>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2115594125871453";
+/* sidebar 120x600 */
+google_ad_slot = "8835384610";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</li>
+
 <li>
 <a class="apture_badge" href="http://www.apture.com"><img src="http://static.apture.com/media/imgs/AptureBadgeBlue.gif" width="88" height="31" border=0 alt="Apture" /></a>
 </li>
