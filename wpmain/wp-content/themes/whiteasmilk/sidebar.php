@@ -1,6 +1,9 @@
 	<div id="sidebar">
 		<ul>
 
+			<li>
+			<a href="http://www.barackobama.com/"><img src="/exports/vertjfk.jpg" width="127" height="200" border="0"/></a>
+			</li>
 			<!-- Author information is disabled per default. Uncomment and fill in your details if you want to use it.
 			<li><h2><?php _e('Author'); ?></h2>
 			<p>A little something about you, the author. Nothing lengthy, just an overview.</p>
