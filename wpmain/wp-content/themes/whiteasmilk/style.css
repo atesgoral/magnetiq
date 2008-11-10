@@ -61,7 +61,7 @@ body {
 	line-height: 1.6em;
 	}
 	
-.narrowcolumn .postmetadata, .narrowcolumn .ad {
+.narrowcolumn .postmetadata, .narrowcolumn .ad, .narrowcolumn .msg {
 	text-align: left;
 	font-size:.8em;
 	font-family: Verdana, Geneva, sans-serif;
@@ -79,7 +79,21 @@ body {
 	border-bottom: 1px solid #C6E2FF;
 	}
 
-.ad {
+.msg {
+	background-color: #FFFAF4;
+	border-top: 1px solid #FFE3C6;
+	border-bottom: 1px solid #FFE3C6;
+	}
+
+.msg a {
+	color: #CC6500;
+	}
+	
+.msg a:hover {
+	color: #774411;
+	}
+
+.ad, .msg {
 	padding: 10px;
 	}
 
@@ -226,7 +240,7 @@ h2, h2 a, h2 a:hover, h2 a:visited, h3, h3 a, h3 a:hover, h3 a:visited, #sidebar
 	font: 1em Verdana, Geneva, sans-serif;
 	}
 
-small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, .ad, blockquote, strike {
+small, #sidebar ul ul li, #sidebar ul ol li, .nocomments, .postmetadata, .ad, .msg, blockquote, strike {
 	color: #777;
 	}
 	
@@ -342,11 +356,11 @@ color:#3b6ea5;
 	margin: 0;
 	}
 
-.narrowcolumn .postmetadata, .narrowcolumn .ad {
+.narrowcolumn .postmetadata, .narrowcolumn .ad, .narrowcolumn .msg {
 	padding-top: 5px;
 	}
 
-.widecolumn .postmetadata, .widecolumn .ad {
+.widecolumn .postmetadata, .widecolumn .ad, .widecolumn .msg {
 	margin: 30px 0;
 	font-size:.8em;
 	}
