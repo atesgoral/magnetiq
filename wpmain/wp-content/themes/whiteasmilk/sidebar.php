@@ -18,7 +18,7 @@
 				</ul>
 			</li>
 
-<li>
+<!--li>
 <h2>Support Me</h2>
 <p>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -28,7 +28,7 @@
 <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 </form>
 </p>
-</li>
+</li-->
 
 			<li><h2><?php _e('Archives'); ?></h2>
 				<ul>
