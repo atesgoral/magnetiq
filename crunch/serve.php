@@ -45,7 +45,7 @@
     {
         $root = dirname($_SERVER["SCRIPT_FILENAME"]);
             
-        $filename = $root . "/crunch/" . $item;
+        $filename = $root . "/" . $item;
         
         $filesize = filesize($filename);
         $imagesize = @getimagesize($filename);
