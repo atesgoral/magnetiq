@@ -1,0 +1,162 @@
+body, input {
+    font-family: Tahoma, Arial, sans-serif;
+    color: white;
+    font-size: 12px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.opt {
+}
+
+a {
+    text-decoration: none;
+    color: #BBBBDD;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+#footnote {
+    margin-left: 20px;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #9999CC;
+    position: relative;
+    z-index: 4;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: normal;
+    padding: 0;
+    margin: 20px 0 10px 20px;
+}
+
+h5 {
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+#options {
+    position: relative;
+    margin: 398px 0 0 20px;
+    z-index: 5;
+}
+
+#tmp {
+    display: none;
+}
+
+#canvas {
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #666699;
+    background-image: url(bg_canvas.gif);
+    background-repeat: repeat-x;
+}
+
+#params {
+    position: absolute;
+    top: 20px;
+    /*left: 380px;*/
+    left: 398px;
+    z-index: 5;
+    text-align: right;
+    width: 200px;
+}
+
+.incdec {
+    position: relative;
+    border: none;
+}
+
+.inc {
+    left: -25px;
+}
+
+.dec {
+    left: -22px;
+}
+
+.incdec:hover {
+    background-color: #47476B;
+}
+
+.cb {
+    padding-left: 13px;
+    background-image: url(cb.gif);
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+}
+
+.cb:hover {
+    background-image: url(cbhover.gif);
+}
+
+.field {
+    padding: 1px;    
+}
+
+label {
+    color: #BBBBDD;
+    text-transform: uppercase;
+    padding-right: 4px;
+}
+
+input {
+    background-color: #666699;
+    background-image: url(bg_input.gif);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border: none;
+    font-size: 12px;
+    width: 96px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+}
+
+input:focus {
+    background-color: #5F5F8E;
+}
+
+.point {
+    width: 3px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.rect {
+    background-color: #666699;
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.fill {
+    background-color: #00C0FF;
+    background-image: url(bg_fill.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.tri {
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+}
