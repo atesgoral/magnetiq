@@ -43,10 +43,7 @@
 
     if ($item)
     {
-        $root = @$_SERVER["DOCUMENT_ROOT"];
-    
-        if (!strlen($root))
-            $root = dirname($_SERVER["PATH_TRANSLATED"]);
+        $root = dirname($_SERVER["SCRIPT_FILENAME"]);
             
         $filename = $root . "/crunch/" . $item;
         

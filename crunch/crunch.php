@@ -3,8 +3,7 @@
     {
         global $root;
         
-        //$filename_pre = $root . "/../crunch/";
-        $filename_pre = "/home/atesgoral/webapps/magnetiq/crunch/";
+        $filename_pre = $root . "/crunch/";
         $unique = 0;
         
         do
