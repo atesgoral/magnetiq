@@ -3,7 +3,7 @@
     {
         global $root;
         
-        $filename_pre = $root . "/crunch/";
+        $filename_pre = $root . "/";
         $unique = 0;
         
         do
