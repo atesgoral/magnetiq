@@ -21,10 +21,7 @@
         return $new_filename;
     }
 
-    $root = @$_SERVER["DOCUMENT_ROOT"];
-
-    if (!strlen($root))
-        $root = dirname($_SERVER["PATH_TRANSLATED"]);
+    $root = dirname($_SERVER["SCRIPT_FILENAME"]);
 
     $files = glob("*.jpg");
   
