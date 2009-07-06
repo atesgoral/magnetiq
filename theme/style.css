@@ -104,15 +104,18 @@ body {
 	}
 
 pre {
-	font-family: 'Lucida Console', Monaco, monospace;
+	font-family: 'Lucida Console', Monaco, monospace !important;
 	overflow: auto;
 	}	
 
 .entry pre {
-	background-color: #f8f8f8;
+	background-color: #f8f8f8 !important;
 	border-top: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
 	}
+
+.gist_data {
+}
 
 small {
 	font-family: Verdana, Geneva, sans-serif;
