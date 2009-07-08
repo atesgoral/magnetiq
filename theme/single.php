@@ -67,7 +67,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 							http://binarybonsai.com/archives/2004/08/17/time-since-plugin/ */
 							/* $entry_datetime = abs(strtotime($post->post_date) - (60*120)); echo time_since($entry_datetime); echo ' ago'; */ ?> 
 						on <?php the_time('l, F jS, Y') ?> at <?php the_time() ?>
-						and is filed under <?php the_category(', ') ?>.
+						and is filed under <?php the_category(', ') ?>. <a href="<?php trackback_url(); ?>">Trackback</a>.
 						 
 						<?php  edit_post_link('Edit this entry.','',''); ?>
 						
@@ -78,7 +78,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 		</div>
 		
 	<?php comments_template(); ?>
-	
+	<!--
+        <?php trackback_rdf(); ?>
+        -->
+
 	<?php endwhile; else: ?>
 	
 		<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>

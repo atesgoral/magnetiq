@@ -6,6 +6,8 @@
 			</li>
 			-->
 
+<!--li><script src="http://stackoverflow.com/users/flair/23501.js?theme=default" type="text/javascript"></script></li-->
+
 			<?php wp_list_pages('title_li=<h2>' . __('Pages') . '</h2>' ); ?>
 
 			<li>
@@ -36,10 +38,10 @@
 				</ul>
 			</li>
 
-<li>
+<!--li>
 <h2>Ads</h2>
-<?php tla_ads(); ?>
-</li>
+<?php //tla_ads(); ?>
+</li-->
 <!--li>
 <script type="text/javascript">
 google_ad_client = "pub-2115594125871453";
