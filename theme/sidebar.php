@@ -39,10 +39,10 @@
 				</ul>
 			</li>
 
-<!--li>
+<li>
 <h2>Ads</h2>
-<?php //tla_ads(); ?>
-</li-->
+<?php tla_ads(); ?>
+</li>
 <!--li>
 <script type="text/javascript">
 google_ad_client = "pub-2115594125871453";
