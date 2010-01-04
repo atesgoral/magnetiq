@@ -1,6 +1,6 @@
 
 <div id="footer">
-&copy; 1998 - 2008 Ates Goral and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a>.
+&copy; 1998-2010 Ates Goral and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a>.
 <br />
 <a href="http://www.mediatemple.net/go/order/?refdom=magnetiq.com">(mt) Media Temple</a> |
 <a href="http://wordpress.org">WordPress</a> |
