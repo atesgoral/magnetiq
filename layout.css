@@ -1,0 +1,68 @@
+/* Layout */
+
+body, h1, h2, h3, p, ul, li {
+	margin: 0;
+	padding: 0;
+}
+
+#nav {
+	height: 32px;
+}
+
+#nav ul {
+	list-style-type: none;
+}
+
+#nav li {
+	float: right;
+	margin-left: 1em;
+}
+
+#nav a {
+	line-height: 32px;
+	height: 32px;
+	display: inline-block;
+}
+
+#header {
+	height: 400px;
+}
+
+#intro {
+	margin-top: 40px;
+}
+
+#dip_sip_cook_enjoy {
+	margin-top: 0.5em;
+	padding-top: 47px;
+	height: 0px;
+	overflow: hidden;
+}
+
+#billboard {
+	height: 400px;
+}
+
+#billboard_text {
+    height: 280px;
+    margin-top: 40px;
+    padding: 20px 20px 20px 120px;
+}
+
+#billboard blockquote {
+    margin: 1em 0 0.5em 0;
+}
+ 
+#billboard cite {
+    display: block;
+    text-align: right;
+}
+
+#footer {
+	clear: left;
+	padding: 20px 0;
+}
+
+.clear {
+	clear: left;
+}
