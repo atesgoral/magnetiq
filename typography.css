@@ -1,21 +1,22 @@
 /* Typography */
 
 body  {
-	font: 100%/1.4 "Segoe UI",Arial,Helvetica,sans-serif;
+	font: 100%/1.2 "Segoe UI",Arial,Helvetica,sans-serif;
 }
 
 a {
 	text-decoration: none;
 }
 
+#content h2 {
+	font-size: 150%;
+	text-transform: uppercase;
+}
+
 #projects {
-	font-size: 75%;
+	font-size: 87.5%;
 }
 
-#projects a {
-	color: #333;
-}
-
-#projects a:hover {
-	color: #999;
+#projects h3 {
+	font-style: italic;
 }

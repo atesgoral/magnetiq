@@ -5,9 +5,20 @@ body {
 	color: #333;
 }
 
+#content h2 {
+	/*color: #31A3C8;*/
+}
+
 #projects a {
+	color: #333;
 	background: url(i/project_bg.gif) no-repeat;
 }
 
 #projects a:hover {
+	color: #555;
+}
+
+#projects h3 {
+	/*color: #C83D31;
+	color: #31A3C8;*/
 }

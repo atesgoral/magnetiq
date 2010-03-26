@@ -15,9 +15,16 @@ body, h1, h2, h3, p, ul, li {
 	float: left;
 }
 
-#projects {
+#content {
 	width: 720px;
-	margin-left: 250px;
+	margin: 50px 0 0 250px;
+}
+
+#content h2 {
+	margin-bottom: 25px;
+}
+
+#projects {
 }
 
 #projects li {
@@ -34,5 +41,6 @@ body, h1, h2, h3, p, ul, li {
 }
 
 #projects h3 {
-	padding-top: 136px;
+	padding-top: 145px;
+	margin-bottom: 5px;
 }
