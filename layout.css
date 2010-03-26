@@ -5,64 +5,34 @@ body, h1, h2, h3, p, ul, li {
 	padding: 0;
 }
 
-#nav {
-	height: 32px;
+#header {
+	position: absolute;
 }
 
-#nav ul {
+#nav {
+	width: 220px;
+	padding-left: 10px;
+	float: left;
+}
+
+#projects {
+	width: 720px;
+	margin-left: 250px;
+}
+
+#projects li {
+	width: 220px;
+	margin-right: 20px;
+	height: 296px;
+	float: left;
 	list-style-type: none;
 }
 
-#nav li {
-	float: right;
-	margin-left: 1em;
+#projects a {
+	display: block;
+	width: 220px;
 }
 
-#nav a {
-	line-height: 32px;
-	height: 32px;
-	display: inline-block;
-}
-
-#header {
-	height: 400px;
-}
-
-#intro {
-	margin-top: 40px;
-}
-
-#dip_sip_cook_enjoy {
-	margin-top: 0.5em;
-	padding-top: 47px;
-	height: 0px;
-	overflow: hidden;
-}
-
-#billboard {
-	height: 400px;
-}
-
-#billboard_text {
-    height: 280px;
-    margin-top: 40px;
-    padding: 20px 20px 20px 120px;
-}
-
-#billboard blockquote {
-    margin: 1em 0 0.5em 0;
-}
- 
-#billboard cite {
-    display: block;
-    text-align: right;
-}
-
-#footer {
-	clear: left;
-	padding: 20px 0;
-}
-
-.clear {
-	clear: left;
+#projects h3 {
+	padding-top: 136px;
 }

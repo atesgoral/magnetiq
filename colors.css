@@ -5,49 +5,9 @@ body {
 	color: #333;
 }
 
-#nav {
-	background: #3F3E09;
+#projects a {
+	background: url(i/project_bg.gif) no-repeat;
 }
 
-#nav a {
-	text-decoration: none;
-	color: #DFDED6;
-}
-
-#nav a:hover {
-	color: #fff;
-}
-
-#header {
-	background: #f3f3f3 url(i/header_bg.jpg) no-repeat 0 100%;
-	color: #3F3E09;
-}
-
-#zei_logo {
-	background: url(i/zei_logo.gif) no-repeat 50% 100%;
-	height: 110px;
-}
-
-#dip_sip_cook_enjoy {
-	background: transparent url(i/dip_sip_cook_enjoy.gif) 100% 0 no-repeat;
-}
-
-#billboard {
-    background: url(i/billboard.jpg) no-repeat;
-    color: #fff;
-}
-
-#content a {
-	color: #787500;
-}
-
-#content a:hover {
-	color: #B2AE1C;
-}
-
-#content h2 {
-	color: #6C0414;
-}
-
-#footer {
+#projects a:hover {
 }

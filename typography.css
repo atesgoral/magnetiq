@@ -1,47 +1,21 @@
 /* Typography */
 
 body  {
-	font: 100%/1.4 "Lucida Grande","Lucida Sans Unicode",Arial,sans-serif;
+	font: 100%/1.4 "Segoe UI",Arial,Helvetica,sans-serif;
 }
 
-p {
-	margin-bottom: 1.4em;
+a {
+	text-decoration: none;
 }
 
-#nav {
-	font-size: 87.5%;
-	text-transform: uppercase;
-}
-
-#header h2 {
-	font-weight: normal;
-	font-size: 162.5%;
-}
-
-#billboard {
-	font-family: "Segoe UI",Arial,Helvetica,sans-serif;
-}
-
-#billboard blockquote {
-	font-size: 112.5%;
-    /*font-weight: bold;*/
-}
-
-#billboard cite {
-    /*font-size: 87.5%;*/
-}
-
-#content {
-	font-size: 81.25%;
-}
-
-#content h2 {
-	/*font-family: "Palatino Linotype","Book Antiqua",Palatino,serif;*/
-	font-family: Georgia,serif;
-	font-size: 162.5%;
-	margin: 1em 0 0.5em 0;
-}
-
-#footer {
+#projects {
 	font-size: 75%;
+}
+
+#projects a {
+	color: #333;
+}
+
+#projects a:hover {
+	color: #999;
 }
