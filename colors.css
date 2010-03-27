@@ -1,5 +1,10 @@
 /* Colors and backgrounds */
 
+/*
+	#31A3C8 light blue
+	#C83D31 brick
+*/
+
 body {
 	background: #fff;
 	color: #333;
@@ -31,8 +36,6 @@ body {
 }
 
 #content h2 {
-	/*color: #31A3C8;
-	color: #C83D31;*/
 }
 
 .panels a {
@@ -56,6 +59,4 @@ body {
 }
 
 .panels h3 {
-	/*color: #C83D31;
-	color: #31A3C8;*/
 }
