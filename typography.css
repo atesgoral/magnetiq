@@ -1,22 +1,30 @@
 /* Typography */
 
 body  {
-	font: 100%/1.2 "Segoe UI",Arial,Helvetica,sans-serif;
+	font: 87.5%/1.2 "Segoe UI",Arial,Helvetica,sans-serif;
 }
 
 a {
 	text-decoration: none;
 }
 
+#nav {
+	xfont-weight: bold;
+}
+
+#nav h2 {
+	font-size: 150%;
+}
+
 #content h2 {
 	font-size: 150%;
-	text-transform: uppercase;
+	xtext-transform: uppercase;
 }
 
-#projects {
-	font-size: 87.5%;
+#panels {
+	xfont-size: 87.5%;
 }
 
-#projects h3 {
+#panels h3 {
 	font-style: italic;
 }

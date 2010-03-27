@@ -5,20 +5,47 @@ body {
 	color: #333;
 }
 
-#content h2 {
-	/*color: #31A3C8;*/
+#header {
+	background: #333;
+	color: #fff;
 }
 
-#projects a {
+#header a {
+	color: #fff;
+}
+
+#header a:hover {
+	color: #ccc;
+}
+
+#nav a {
 	color: #333;
+	color: #31A3C8;
+}
+
+#nav a:hover {
+	color: #666;
+	color: #31A3C8;
+	color: #C83D31;
+}
+
+#content h2 {
+	/*color: #31A3C8;
+	color: #C83D31;*/
+}
+
+#panels a {
+	color: #333;
+	color: #31A3C8;
 	background: url(i/project_bg.gif) no-repeat;
 }
 
-#projects a:hover {
-	color: #555;
+#panels a:hover {
+	color: #666;
+	color: #C83D31;
 }
 
-#projects h3 {
+#panels h3 {
 	/*color: #C83D31;
 	color: #31A3C8;*/
 }

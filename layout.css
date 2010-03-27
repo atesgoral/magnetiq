@@ -1,33 +1,49 @@
 /* Layout */
 
+.center_700 {
+	width: 700px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
 body, h1, h2, h3, p, ul, li {
 	margin: 0;
 	padding: 0;
 }
 
 #header {
-	position: absolute;
+	padding: 10px;
+}
+
+#header h1 {
+	margin-bottom: 10px;
 }
 
 #nav {
-	width: 220px;
-	padding-left: 10px;
+	margin-bottom: 40px;
+	padding: 5px 0;
+}
+
+#nav  li {
+	list-style-type: none;
 	float: left;
+	margin-right: 20px;
 }
 
 #content {
 	width: 720px;
-	margin: 50px 0 0 250px;
+	clear: left;
 }
 
 #content h2 {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
+	clear: left;
 }
 
-#projects {
+#panels {
 }
 
-#projects li {
+#panels li {
 	width: 220px;
 	margin-right: 20px;
 	height: 296px;
@@ -35,12 +51,19 @@ body, h1, h2, h3, p, ul, li {
 	list-style-type: none;
 }
 
-#projects a {
+#panels a {
 	display: block;
 	width: 220px;
 }
 
-#projects h3 {
+#panels h3 {
 	padding-top: 145px;
 	margin-bottom: 5px;
+}
+
+.section_end {
+	clear: left;
+	margin-bottom: 20px;
+	width: 700px;
+	border-bottom: 1px solid #ccc;
 }
