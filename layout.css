@@ -3,7 +3,7 @@
 .center_700 {
 	width: 700px;
 	margin: 0 auto;
-	overflow: hidden;
+	xoverflow: hidden;
 }
 
 body, h1, h2, h3, p, ul, li {
@@ -19,12 +19,12 @@ body, h1, h2, h3, p, ul, li {
 	margin-bottom: 10px;
 }
 
-#nav {
+.nav {
 	margin-bottom: 40px;
 	padding: 5px 0;
 }
 
-#nav  li {
+.nav  li {
 	list-style-type: none;
 	float: left;
 	margin-right: 20px;
@@ -40,30 +40,46 @@ body, h1, h2, h3, p, ul, li {
 	clear: left;
 }
 
-#panels {
+.clear {
+	clear: left;
 }
 
-#panels li {
+.grid_1 {
 	width: 220px;
-	margin-right: 20px;
-	height: 296px;
 	float: left;
-	list-style-type: none;
 }
 
-#panels a {
-	display: block;
-	width: 220px;
+.grid_2 {
+	width: 460px;
+	margin-left: 240px;
 }
 
-#panels h3 {
-	padding-top: 145px;
-	margin-bottom: 5px;
+.section {
+	margin-bottom: 20px;
 }
 
 .section_end {
 	clear: left;
-	margin-bottom: 20px;
 	width: 700px;
 	border-bottom: 1px solid #ccc;
+}
+
+.panels li {
+	width: 220px;
+	margin: 0 20px 20px 0;
+	height: 276px;
+	float: left;
+	list-style-type: none;
+	overflow: shown;
+	/*border-bottom: 1px solid #eee;*/
+}
+
+.panels a {
+	display: block;
+	width: 220px;
+}
+
+.panels h3 {
+	padding-top: 145px;
+	xmargin-bottom: 5px;
 }

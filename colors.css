@@ -8,6 +8,7 @@ body {
 #header {
 	background: #333;
 	color: #fff;
+	color: #ddd;
 }
 
 #header a {
@@ -18,12 +19,12 @@ body {
 	color: #ccc;
 }
 
-#nav a {
+.nav a {
 	color: #333;
 	color: #31A3C8;
 }
 
-#nav a:hover {
+.nav a:hover {
 	color: #666;
 	color: #31A3C8;
 	color: #C83D31;
@@ -34,18 +35,27 @@ body {
 	color: #C83D31;*/
 }
 
-#panels a {
+.panels a {
 	color: #333;
-	color: #31A3C8;
+	xcolor: #31A3C8;
 	background: url(i/project_bg.gif) no-repeat;
+	padding-bottom: 10px;
+	position: relative;
 }
 
-#panels a:hover {
-	color: #666;
-	color: #C83D31;
+.panels a:hover {
+	xcolor: #666;
+	xcolor: #C83D31;
+	background-color: #E4F3F8;
+	xwidth: 240px;
+	left: -10px;
+	top: -10px;
+	padding: 10px;
+	background-position: 10px 10px;
+	margin-bottom: -10px;
 }
 
-#panels h3 {
+.panels h3 {
 	/*color: #C83D31;
 	color: #31A3C8;*/
 }

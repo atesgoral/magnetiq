@@ -8,23 +8,10 @@ a {
 	text-decoration: none;
 }
 
-#nav {
-	xfont-weight: bold;
-}
-
-#nav h2 {
-	font-size: 150%;
-}
-
 #content h2 {
 	font-size: 150%;
-	xtext-transform: uppercase;
 }
 
-#panels {
-	xfont-size: 87.5%;
-}
-
-#panels h3 {
+.panels h3 {
 	font-style: italic;
 }
