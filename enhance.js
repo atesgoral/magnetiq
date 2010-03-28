@@ -1,13 +1,18 @@
 $(document).ready(function () {
 	// Add panel backgrounds
 	$(".panels a").each(function (i, a) {
-		(function (idx, panel) {
-			a.style.backgroundImage =
-				"url(project_images/" + panel + ".jpg)";
-		})(i, /#(.+)/.exec(a.href)[1]);
+		a.style.backgroundImage =
+			"url(project_images/" + /#(.+)/.exec(a.href)[1] + ".jpg)";
 	});
 
-	// Clone navigation
+	// Clone navigation and add top borders
 	var nav = $(".nav");
-	$(".section_end").after(nav.clone());
+	
+	$(".section").slice(1).addClass("top_border").each(function (i, sect) {
+		var h2 = $("h2", sect);
+		
+		h2.before(
+			nav.clone().attr("id", h2.attr("id"))
+		).attr("id", "");
+	});
 });

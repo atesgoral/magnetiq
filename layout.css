@@ -3,7 +3,6 @@
 .center_700 {
 	width: 700px;
 	margin: 0 auto;
-	xoverflow: hidden;
 }
 
 body, h1, h2, h3, p, ul, li {
@@ -30,14 +29,13 @@ body, h1, h2, h3, p, ul, li {
 	margin-right: 20px;
 }
 
-#content {
-	width: 720px;
-	clear: left;
-}
-
 #content h2 {
 	margin-bottom: 20px;
 	clear: left;
+}
+
+#footer {
+	padding: 10px;
 }
 
 .clear {
@@ -55,13 +53,19 @@ body, h1, h2, h3, p, ul, li {
 }
 
 .section {
-	margin-bottom: 20px;
 }
 
-.section_end {
-	clear: left;
+.section .clear {
 	width: 700px;
-	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+
+.top_border {
+	border-top: 1px solid #ccc;
+}
+
+.panels {
+	width: 720px;
 }
 
 .panels li {
@@ -70,8 +74,6 @@ body, h1, h2, h3, p, ul, li {
 	height: 276px;
 	float: left;
 	list-style-type: none;
-	overflow: shown;
-	/*border-bottom: 1px solid #eee;*/
 }
 
 .panels a {

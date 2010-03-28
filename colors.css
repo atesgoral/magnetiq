@@ -10,8 +10,8 @@ body {
 	color: #333;
 }
 
-#header {
-	background: #333;
+#header, #footer {
+	background: #383838;
 	color: #fff;
 	color: #ddd;
 }
