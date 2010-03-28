@@ -5,7 +5,7 @@ $(document).ready(function () {
 		
 		if (tokens) {
 			this.style.backgroundImage =
-				"url(project_images/" + tokens[1] + ".jpg)";
+				"url(panel_thumbs/" + tokens[1] + ".jpg)";
 		}
 	});
 
