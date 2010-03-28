@@ -40,17 +40,13 @@ body {
 
 .panels a {
 	color: #333;
-	xcolor: #31A3C8;
 	background: url(i/project_bg.gif) no-repeat;
 	padding-bottom: 10px;
 	position: relative;
 }
 
 .panels a:hover {
-	xcolor: #666;
-	xcolor: #C83D31;
 	background-color: #E4F3F8;
-	xwidth: 240px;
 	left: -10px;
 	top: -10px;
 	padding: 10px;
@@ -59,4 +55,8 @@ body {
 }
 
 .panels h3 {
+}
+
+.top_border {
+	border-top: 1px solid #ccc;
 }
