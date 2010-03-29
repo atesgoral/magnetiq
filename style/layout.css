@@ -67,7 +67,7 @@ body, h1, h2, h3, p, ul, li {
 	list-style-type: none;
 }
 
-.panels a {
+a.panel {
 	display: block;
 	width: 220px;
 }

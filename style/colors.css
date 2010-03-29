@@ -12,7 +12,6 @@ body {
 
 #header, #footer {
 	background: #383838;
-	color: #fff;
 	color: #ddd;
 }
 
@@ -24,37 +23,28 @@ body {
 	color: #ccc;
 }
 
-.nav a {
-	color: #333;
+.nav a, #content p a {
 	color: #31A3C8;
 }
 
-.nav a:hover {
-	color: #666;
-	color: #31A3C8;
+.nav a:hover, #content p a:hover {
 	color: #C83D31;
 }
 
-#content h2 {
-}
-
-.panels a {
+a.panel {
 	color: #333;
-	background: url(i/project_bg.gif) no-repeat;
+	background-repeat: no-repeat;
 	padding-bottom: 10px;
 	position: relative;
 }
 
-.panels a:hover {
+a.panel:hover {
 	background-color: #E4F3F8;
 	left: -10px;
 	top: -10px;
 	padding: 10px;
 	background-position: 10px 10px;
 	margin-bottom: -10px;
-}
-
-.panels h3 {
 }
 
 .top_border {

@@ -3,11 +3,11 @@ Cufon.replace("h1, h2");
 $(document).ready(function () {
 	// Add panel backgrounds
 	$(".panels a").each(function () {
-		var tokens = /panel_(.+)/.exec(this.className);
+		var tokens = /p_(.+)/.exec(this.className);
 		
 		if (tokens) {
 			this.style.backgroundImage =
-				"url(panel_thumbs/" + tokens[1] + ".jpg)";
+				"url(panel_thumbs/" + tokens[1] + ".png)";
 		}
 	});
 

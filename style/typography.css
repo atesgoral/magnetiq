@@ -1,11 +1,15 @@
 /* Typography */
 
 body  {
-	font: 87.5%/1.2 "Segoe UI",Arial,Helvetica,sans-serif;
+	font: 87.5%/1.2 Segoe, "Segoe UI", "Helvetica Neue", "Lucida Sans", Arial, sans-serif;
 }
 
 a {
 	text-decoration: none;
+}
+
+#header, #footer {
+	/*font-size: 85.7%;*/
 }
 
 #content h2 {
