@@ -20,11 +20,11 @@ body {
 }
 
 #header a {
-	color: #fff;
+	color: #ddd;
 }
 
 #header a:hover {
-	color: #ccc;
+	color: #fff;
 }
 
 .nav a, #content p a {
