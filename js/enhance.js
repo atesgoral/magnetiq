@@ -1,3 +1,5 @@
+SyntaxHighlighter.all();
+
 Cufon.replace("h1, h2");
 
 $(document).ready(function () {

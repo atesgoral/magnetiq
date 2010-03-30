@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Magnetiq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
+<link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeEclipse.css"/>
+
+<link rel="stylesheet" href="style/layout.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="style/typography.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="style/colors.css" type="text/css" media="screen"/>
+<!--[if IE 6]>
+<link rel="stylesheet" href="style/fix_ie6.css" type="text/css" media="screen"/>
+<![endif]-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="lib/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/Museo_700_600.font.js"></script>
+<script type="text/javascript" src="js/enhance.js"></script>
+
+</head>
+<body>
+
+<div id="content">
+	<div class="center_700">
+        <div class="grid_1">...</div>
+        <div class="grid_2">
+		<div class="post">
+			
+			<h2><a href="http://magnetiq.com/2008/10/19/timing-code-accurately/" rel="bookmark" title="Permanent Link: Timing Code Accurately">Timing Code Accurately</a></h2>
+
+			<div class="entry">			
+				<p>The most common approach to time a function or a segment of code is to repeat it a lot of times in a loop, measure the time the entire loop takes and then divide that number with the number of iterations. Illustrating this with JavaScript (although this method applies to all languages):</p>
+<pre class="brush: javascript">var start = new Date(); // Get current time
+
+for (var i = 0; i &lt; n; i++) {
+    myFunction();
+}
+
+var finish = new Date(): // Get current time
+
+var ntimes = finish - start; // Elapsed time for n iterations
+var once = ntimes / n; // Average time for one function call
+</pre>
+<p>However, this doesn't really measure just how much time <code>n</code> calls to <code>myFunction</code> took. There's also the <strong>overhead of the loop</strong> itself. What we actually end up measuring is not just the time to execute one call to myFunction but also the overhead of one iteration:<span id="more-94"></span></p>
+<pre class="brush: javascript">// function + overhead
+var ntimes = finish - start; // Elapsed time for n iterations
+var once = ntimes / n; // Average time for one function call + iteration
+</pre>
+<p>Here's a simple deviation from this approach to easily discount the loop overhead from the final measurement:</p>
+<pre class="brush: javascript">var start = new Date(); // Get current time
+
+for (var i = 0; i &lt; n; i++) {
+    myFunction();
+}
+
+var lap = new Date(): // Get current time
+
+for (var i = 0; i &lt; n; i++) {
+    myFunction();
+    myFunction(); // Call the function again
+}
+
+var finish = new Date(): // Get current time
+
+// function + overhead
+var elapsed1 = lap - start; // Elapsed time for n iterations
+
+// function + function + overhead
+var elapsed2 = finish - lap; // Elapsed time for n x 2 iterations
+
+// function + function + overhead - (function + overhead)
+// = function + function + overhead - function - overhead
+// = function
+var ntimes = elapsed2 - elapsed1; // Elapsed time for n iterations
+var once = ntimes / n; // Average time for one function call
+</pre>
+	
+			</div>
+        </div>
+        <div class="clear"></div>
+	</div>
+</div>
+
+</body>
+</html>

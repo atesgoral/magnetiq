@@ -75,3 +75,13 @@ a.panel {
 .panels h3 {
 	padding-top: 145px;
 }
+
+.post {
+    xwidth: 460px;
+}
+
+.post .syntaxhighlighter {
+    width: 700px !important;
+    margin-left: -240px !important;
+    border: 1px solid #eee !important;
+}
