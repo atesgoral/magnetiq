@@ -19,8 +19,12 @@ body {
     background: url(i/mag_icon.png) 100% 50% no-repeat;
 }
 
+#header a {
+	xcolor: #aaa;
+}
+
 #header a:hover {
-	color: #fff;
+	xcolor: #fff;
 }
 
 a {
@@ -55,5 +59,12 @@ a.panel:hover {
 }
 
 .syntaxhighlighter {
-    border: 1px solid #eee !important;
+	border: solid #ccc !important;
+	border-width: 1px 0 !important;
+    /*border: 1px solid #eee !important;*/
+}
+
+.entry code {
+	background: #eee;
+	padding: 0 0.25em;
 }
