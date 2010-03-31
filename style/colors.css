@@ -36,7 +36,7 @@ body {
 }
 
 .nav a:hover, #content p a:hover, a.panel:hover {
-	color: #C83D31;
+	color: #7546DD;
 }
 
 a.panel {
@@ -47,7 +47,7 @@ a.panel {
 }
 
 a.panel:hover {
-	background-color: #E4F3F8;
+	background-color: #F1EBFF;
 	left: -10px;
 	top: -10px;
 	padding: 10px;
