@@ -27,16 +27,20 @@ body {
 	color: #fff;
 }
 
-.nav a, #content p a {
+.nav a, #content p a, a.panel {
 	color: #31A3C8;
 }
 
-.nav a:hover, #content p a:hover {
+.nav a:visited, #content p a:visited, a.panel:visited {
+	color: #247994;
+}
+
+.nav a:hover, #content p a:hover, a.panel:hover {
 	color: #C83D31;
 }
 
 a.panel {
-	color: #333;
+	/*color: #333;*/
 	background-repeat: no-repeat;
 	padding-bottom: 10px;
 	position: relative;

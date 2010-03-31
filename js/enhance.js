@@ -1,4 +1,4 @@
-SyntaxHighlighter.all();
+//SyntaxHighlighter.all();
 
 Cufon.replace("h1, h2");
 
