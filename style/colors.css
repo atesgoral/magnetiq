@@ -12,35 +12,30 @@ body {
 
 #header, #footer {
 	background: #383838;
-	color: #ddd;
+	color: #aaa;
 }
 
 #header .center_700 {
     background: url(i/mag_icon.png) 100% 50% no-repeat;
 }
 
-#header a {
-	color: #ddd;
-}
-
 #header a:hover {
 	color: #fff;
 }
 
-.nav a, #content p a, a.panel {
+a {
 	color: #31A3C8;
 }
 
-.nav a:visited, #content p a:visited, a.panel:visited {
+a:visited {
 	color: #247994;
 }
 
-.nav a:hover, #content p a:hover, a.panel:hover {
+a:hover {
 	color: #7546DD;
 }
 
 a.panel {
-	/*color: #333;*/
 	background-repeat: no-repeat;
 	padding-bottom: 10px;
 	position: relative;
@@ -57,4 +52,8 @@ a.panel:hover {
 
 .top_border {
 	border-top: 1px solid #ccc;
+}
+
+.syntaxhighlighter {
+    border: 1px solid #eee !important;
 }
