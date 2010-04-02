@@ -12,7 +12,7 @@ body {
 
 #header, #footer {
 	background: #383838;
-	color: #aaa;
+	color: #ccc;
 }
 
 #header .center_700 {
@@ -20,11 +20,7 @@ body {
 }
 
 #header a {
-	xcolor: #aaa;
-}
-
-#header a:hover {
-	xcolor: #fff;
+	color: #eee;
 }
 
 a {
