@@ -32,11 +32,11 @@ a {
 }
 
 a:visited {
-	color: #247994;
+	color: #5E8C9B;
 }
 
 a:hover {
-	color: #7546DD;
+	color: #5B31C8;
 }
 
 a.panel {
@@ -46,7 +46,7 @@ a.panel {
 }
 
 a.panel:hover {
-	background-color: #F1EBFF;
+	background-color: #f0f0f0;
 	left: -10px;
 	top: -10px;
 	padding: 10px;

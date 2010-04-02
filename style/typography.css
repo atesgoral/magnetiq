@@ -9,7 +9,8 @@ a {
 }
 
 #header h1 {
-    font-size: 250%;
+    font-size: 275%;
+	text-transform: uppercase;
 }
 
 #content h2 {
