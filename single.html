@@ -21,6 +21,7 @@
 
 <script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/Museo_700_600.font.js"></script>
+<script type="text/javascript" src="js/enhance.js"></script>
 <script type="text/javascript">
 SyntaxHighlighter.all();
 Cufon.replace("h1, h2");
@@ -38,11 +39,11 @@ Cufon.replace("h1, h2");
 <div id="content">
 	<div class="center_700">
 		<div class="section">
-			<div class="nav" id="about">
+			<div class="nav" id="top">
 				<ul>
-					<li><a href="#about">About</a></li>
-					<li><a href="#projects">Projects</a></li>
-					<li><a href="#experiments">Experiments</a></li>
+					<li><a href="#about">Back</a></li>
+					<li><a href="#top">Top</a></li>
+					<li><a href="#bottom">Bottom</a></li>
 				</ul>
 			</div>
 			<h2><a href="http://magnetiq.com/2008/10/19/timing-code-accurately/" rel="bookmark" title="Permanent Link: Timing Code Accurately">Timing Code Accurately</a></h2>
@@ -92,15 +93,20 @@ var elapsed2 = finish - lap; // Elapsed time for n x 2 iterations
 var ntimes = elapsed2 - elapsed1; // Elapsed time for n iterations
 var once = ntimes / n; // Average time for one function call
 </pre>
+<p>Conclusive remark.</p>
 	
 			</div>
+		</div>
+		<div class="section">
+			<h2 id="bottom"></h2>
+			Posted 2009-12-23
 		</div>
 	</div>
 </div>
 
 <div id="footer">
 	<div class="center_700">
-		&copy; Ates Goral
+		&copy; Ates Goral - Licensed under a <a href="#">Creative Commons License</a> - Kick-ass hosting by <a href="#">WebFaction</a>
 	</div>
 </div>
 </body>

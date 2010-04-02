@@ -19,10 +19,6 @@ body {
     background: url(i/mag_icon.png) 100% 50% no-repeat;
 }
 
-#header a {
-	color: #eee;
-}
-
 a {
 	color: #31A3C8;
 }
@@ -33,6 +29,22 @@ a:visited {
 
 a:hover {
 	color: #5B31C8;
+}
+
+#header a {
+	color: #eee;
+}
+
+#header a:hover {
+	color: #fff;
+}
+
+#footer a {
+	color: #31A3C8;
+}
+
+#footer a:hover {
+	color: #fff;
 }
 
 a.panel {

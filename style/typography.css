@@ -1,7 +1,7 @@
 /* Typography */
 
 body  {
-	font: 87.5%/1.2 Segoe, "Segoe UI", "Helvetica Neue", "Lucida Sans", Arial, sans-serif;
+	font: 14px/1.2 Segoe, "Segoe UI", "Helvetica Neue", "Lucida Sans", Arial, sans-serif;
 }
 
 a {
@@ -18,11 +18,11 @@ a {
 }
 
 .entry code, .entry pre {
-	font: 87.5% "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	font: 14px "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 }
 
 .syntaxhighlighter {
-	font-size: 87.5% !important;
+	font-size: 14px !important;
 }
 
 h3 {
