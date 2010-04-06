@@ -42,15 +42,15 @@ SyntaxHighlighter.all();
 
 <div id="content">
 	<div class="center_700">
+        <div class="nav" id="top">
+            <ul>
+                <li><a href="/">Back</a></li>
+                <li><a href="#top">Top</a></li>
+                <li><a href="#bottom">Bottom</a></li>
+            </ul>
+        </div>
         {block:Posts}
 		<div class="section">
-			<div class="nav" id="top">
-				<ul>
-					<li><a href="#about">Back</a></li>
-					<li><a href="#top">Top</a></li>
-					<li><a href="#bottom">Bottom</a></li>
-				</ul>
-			</div>
             {block:Text}            
 			{block:Title}<h2><a href="{Permalink}" rel="bookmark" title="Permanent Link: {Title}">{Title}</a></h2>{/block:Title}
 			<div class="post_text">
@@ -68,7 +68,7 @@ SyntaxHighlighter.all();
 
 <div id="footer">
 	<div class="center_700">
-		&copy; Ates Goral - Licensed under a <a href="#">Creative Commons License</a> - Kick-ass hosting by <a href="#">WebFaction</a>
+		&copy; Ates Goral - Licensed under a <a href="#">Creative Commons License</a> - Powered by <a href="http://tumblr.com/">Tumblr</a>
 	</div>
 </div>
 </body>
