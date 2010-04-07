@@ -23,6 +23,7 @@
 
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shCore.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushPython.js"></script>
 
 <script type="text/javascript" src="http://s.magnetiq.com/js/cufon-yui.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/js/Museo_700_600.font.js"></script>
@@ -44,9 +45,20 @@ SyntaxHighlighter.all();
 	<div class="center_700">
         <div class="nav" id="top">
             <ul>
-                <li><a href="/">Back</a></li>
+                <li><a href="http://magnetiq.com/">Home</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/archive">Archives</a></li>
                 <li><a href="#top">Top</a></li>
                 <li><a href="#bottom">Bottom</a></li>
+                {block:PermalinkPagination}
+                {block:PreviousPost}<li><a href="{PreviousPost}">&#8592; Previous Post</a></li>{/block:PreviousPost}
+                {block:NextPost}<li><a href="{NextPost}">Next Post &#8594;</a></li>{/block:NextPost}
+                {/block:PermalinkPagination}                
+                {block:Pagination}
+                {block:NextPage}<li><a href="{NextPage}">&#8592; Older Entries</a></li>{/block:NextPage}
+                <li id="pages">Page {CurrentPage} of {TotalPages}</li>
+                {block:PreviousPage}<li><a href="{PreviousPage}">Newer Entries &#8594;</a></li>{/block:PreviousPage}
+                {/block:Pagination}
             </ul>
         </div>
         {block:Posts}
@@ -60,7 +72,7 @@ SyntaxHighlighter.all();
 		</div>
 		<div class="section">
 			<h2 id="bottom"></h2>
-			Posted 2009-12-23
+			Posted {block:Date}{TimeAgo}{/block:Date}
 		</div>
         {/block:Posts}        
 	</div>
