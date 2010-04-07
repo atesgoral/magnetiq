@@ -1,4 +1,4 @@
-Cufon.replace("h1, h2");
+//Cufon.replace("h1, h2");
 
 $(document).ready(function () {
 	// Add panel backgrounds
