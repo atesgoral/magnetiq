@@ -5,6 +5,7 @@
 <head>
 <title>{Title}{block:PostTitle} &mdash; {PostTitle}{/block:PostTitle}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="text:Disqus Shortname" content=""/>
 
 <link rel="shortcut icon" href="{Favicon}"/>
 <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
@@ -31,7 +32,6 @@
 Cufon.replace("h1, h2");
 SyntaxHighlighter.all();
 </script>
-
 </head>
 <body>
 <div id="header">
@@ -48,17 +48,6 @@ SyntaxHighlighter.all();
                 <li><a href="http://magnetiq.com/">Home</a></li>
                 <li><a href="/">Blog</a></li>
                 <li><a href="/archive">Archives</a></li>
-                <li><a href="#top">Top</a></li>
-                <li><a href="#bottom">Bottom</a></li>
-                {block:PermalinkPagination}
-                {block:PreviousPost}<li><a href="{PreviousPost}">&#8592; Previous Post</a></li>{/block:PreviousPost}
-                {block:NextPost}<li><a href="{NextPost}">Next Post &#8594;</a></li>{/block:NextPost}
-                {/block:PermalinkPagination}                
-                {block:Pagination}
-                {block:NextPage}<li><a href="{NextPage}">&#8592; Older Entries</a></li>{/block:NextPage}
-                <li id="pages">Page {CurrentPage} of {TotalPages}</li>
-                {block:PreviousPage}<li><a href="{PreviousPage}">Newer Entries &#8594;</a></li>{/block:PreviousPage}
-                {/block:Pagination}
             </ul>
         </div>
         {block:Posts}
@@ -74,7 +63,32 @@ SyntaxHighlighter.all();
 			<h2 id="bottom"></h2>
 			Posted {block:Date}{TimeAgo}{/block:Date}
 		</div>
-        {/block:Posts}        
+		{block:PermalinkPage}
+		{block:IfDisqusShortname}
+		<div class="section" id="disqus_thread"></div>
+		<div class="section" id="dsq-loading-problem"></div>
+		<script type="text/javascript">
+		$.ajax({
+		    url: "http://{text:Disqus Shortname}.disqus.com/embed.js",
+		    dataType: "jsonp"
+		});		
+		</script>
+		{/block:IfDisqusShortname}
+		{/block:PermalinkPage} 
+		{/block:Posts}        
+        <div class="nav" id="bottom">
+            <ul>
+				{block:PermalinkPagination}
+				{block:PreviousPost}<li><a href="{PreviousPost}">&#8592; Previous Post</a></li>{/block:PreviousPost}
+				{block:NextPost}<li><a href="{NextPost}">Next Post &#8594;</a></li>{/block:NextPost}
+				{/block:PermalinkPagination}                
+				{block:Pagination}
+				{block:NextPage}<li><a href="{NextPage}">&#8592; Older Entries</a></li>{/block:NextPage}
+				<li id="pages">Page {CurrentPage} of {TotalPages}</li>
+				{block:PreviousPage}<li><a href="{PreviousPage}">Newer Entries &#8594;</a></li>{/block:PreviousPage}
+				{/block:Pagination}
+            </ul>
+        </div>
 	</div>
 </div>
 
