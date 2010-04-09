@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="style/fix_ie6.css" type="text/css" media="screen"/>
 <![endif]-->
 
+<link rel="icon" type="image/png" href="i/favicon.png"/>
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 <script type="text/javascript" src="lib/syntaxhighlighter/scripts/shCore.js"></script>
@@ -66,36 +68,18 @@ var once = ntimes / n; // Average time for one function call
 var ntimes = finish - start; // Elapsed time for n iterations
 var once = ntimes / n; // Average time for one function call + iteration
 </pre>
-<p>Here's a simple deviation from this approach to easily discount the loop overhead from the final measurement:</p>
-<pre class="brush: javascript">var start = new Date(); // Get current time
-
-for (var i = 0; i &lt; n; i++) {
-    myFunction();
-}
-
-var lap = new Date(): // Get current time
-
-for (var i = 0; i &lt; n; i++) {
-    myFunction();
-    myFunction(); // Call the function again
-}
-
-var finish = new Date(): // Get current time
-
-// function + overhead
-var elapsed1 = lap - start; // Elapsed time for n iterations
-
-// function + function + overhead
-var elapsed2 = finish - lap; // Elapsed time for n x 2 iterations
-
-// function + function + overhead - (function + overhead)
-// = function + function + overhead - function - overhead
-// = function
-var ntimes = elapsed2 - elapsed1; // Elapsed time for n iterations
-var once = ntimes / n; // Average time for one function call
-</pre>
-<p>Conclusive remark.</p>
-	
+<p>Paragraph 1 <code>some code</code></p>
+<p>Paragraph 2 <a href="#">a link</a></p>
+<ol>
+<li>Ordered item 1</li>
+<li>Ordered ittem 2</li>
+<li>Ordered ittem with loooooooooooooooooooooooong loooooooooooooooooong looooooooooooooooooooooong text.</li>
+</ol>	
+<ul>
+<li>Unordered item 1</li>
+<li>Unordered item 2</li>
+<li>Unordered item with loooooooooooooooooooooooong loooooooooooooooooong looooooooooooooooooooooong text.</li>
+</ul>
 			</div>
 		</div>
 		<div class="section">

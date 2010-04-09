@@ -5,7 +5,7 @@
 	margin: 0 auto;
 }
 
-body, h1, h2, h3, p, ul, li {
+body, h1, h2, h3, p, ol, ul, li {
 	margin: 0;
 	padding: 0;
 }
@@ -76,6 +76,10 @@ a.panel {
 	padding-top: 145px;
 }
 
-.post_text p, #content h2 {
+#content p, #content h2, #content ul, #content ol {
 	width: 460px;
+}
+
+#content p, #content ul, #content ol {
+    margin-bottom: 1em;
 }
