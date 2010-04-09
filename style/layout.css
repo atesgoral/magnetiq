@@ -76,6 +76,6 @@ a.panel {
 	padding-top: 145px;
 }
 
-.post_text p {
+.post_text p, #content h2 {
 	width: 460px;
 }
