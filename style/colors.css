@@ -49,17 +49,11 @@ a:hover {
 
 a.panel {
 	background-repeat: no-repeat;
-	padding-bottom: 10px;
-	position: relative;
 }
 
 a.panel:hover {
 	background-color: #f0f0f0;
-	left: -10px;
-	top: -10px;
-	padding: 10px;
 	background-position: 10px 10px;
-	margin-bottom: -10px;
 }
 
 .top_border {
@@ -67,12 +61,14 @@ a.panel:hover {
 }
 
 .syntaxhighlighter {
-	border: solid #ccc !important;
-	border-width: 1px 0 !important;
-    /*border: 1px solid #eee !important;*/
+	background: #eee !important;
 }
 
 .post_text code {
 	background: #eee;
 	padding: 0 0.25em;
+}
+
+.post_meta {
+	border-top: 1px solid #ccc;
 }

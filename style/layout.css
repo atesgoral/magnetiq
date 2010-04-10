@@ -70,6 +70,15 @@ body, h1, h2, h3, p, ol, ul, li {
 a.panel {
 	display: block;
 	width: 220px;
+	padding-bottom: 10px;
+	position: relative;
+}
+
+a.panel:hover {
+	left: -10px;
+	top: -10px;
+	padding: 10px;
+	margin-bottom: -10px;
 }
 
 .panels h3 {
@@ -96,3 +105,12 @@ a.panel {
 	display: inline;
 	list-style-type: none;
 }
+
+#content h2 {
+	float: left;
+}
+
+/*.post_date {
+	position: relative;
+	left: -520px;
+}*/

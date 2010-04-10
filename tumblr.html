@@ -56,16 +56,26 @@ SyntaxHighlighter.all();
         </div>
         {block:Posts}
 		<div class="section">
-            {block:Text}            
 			{block:Title}<h2><a href="{Permalink}" rel="bookmark" title="Permanent Link: {Title}">{Title}</a></h2>{/block:Title}
+            {block:Text}            
 			<div class="post_text">
                 {Body}
 			</div>
             {block:Text}            
-		</div>
-		<div class="section">
 			<div class="post_meta">
-				Posted {block:Date}{TimeAgo}{/block:Date}
+				{block:Date}
+				<div>Posted {TimeAgo} on {ShortMonth} {DayOfMonth}, {Year}</div>
+				{/block:Date}
+				{block:HasTags}
+				<div class="tags">
+					Filed under
+					<ul>
+					{block:Tags}
+					<li><a href="{TagURLChrono}">{Tag}</a></li>
+					{/block:Tags}
+					</ul>
+				</div>
+				{/block:HasTags}
 			</div>
 		</div>
 		{block:PermalinkPage}
@@ -88,9 +98,9 @@ SyntaxHighlighter.all();
 				{block:NextPost}<li><a href="{NextPost}">Next Post &#8594;</a></li>{/block:NextPost}
 				{/block:PermalinkPagination}                
 				{block:Pagination}
-				{block:NextPage}<li><a href="{NextPage}">&#8592; Older Entries</a></li>{/block:NextPage}
+				{block:PreviousPage}<li><a href="{PreviousPage}">&#8592; Newer Entries</a></li>{/block:PreviousPage}
 				<li id="pages">Page {CurrentPage} of {TotalPages}</li>
-				{block:PreviousPage}<li><a href="{PreviousPage}">Newer Entries &#8594;</a></li>{/block:PreviousPage}
+				{block:NextPage}<li><a href="{NextPage}">Older Entries &#8594;</a></li>{/block:NextPage}
 				{/block:Pagination}
             </ul>
         </div>
@@ -99,7 +109,7 @@ SyntaxHighlighter.all();
 
 <div id="footer">
 	<div class="center_700">
-		&copy; Ates Goral - Licensed under a <a href="#">Creative Commons License</a> - Powered by <a href="http://tumblr.com/">Tumblr</a>
+		&copy; Ateş Göral - Licensed under a <a href="#">Creative Commons License</a> - Powered by <a href="http://tumblr.com/">Tumblr</a>
 	</div>
 </div>
 </body>
