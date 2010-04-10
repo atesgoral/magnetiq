@@ -17,8 +17,16 @@ a {
 	font-size: 150%;
 }
 
+#footer {
+	font-size: 85.7%;
+}
+
 .post_text code, .post_text pre {
 	font: 14px "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+}
+
+.post_meta {
+	font-size: 85.7%;
 }
 
 .syntaxhighlighter {
