@@ -76,10 +76,14 @@ a.panel {
 	padding-top: 145px;
 }
 
-#content p, #content h2, #content ul, #content ol {
+#content h2 {
 	width: 460px;
 }
 
-#content p, #content ul, #content ol {
+.post_text p, .post_text ul, .post_text ol {
+	width: 460px;
+}
+
+.post_text p, .post_text ul, .post_text ol {
     margin-bottom: 1em;
 }
