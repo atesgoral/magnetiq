@@ -87,3 +87,12 @@ a.panel {
 .post_text p, .post_text ul, .post_text ol {
     margin-bottom: 1em;
 }
+
+.tags ul {
+	display: inline;
+}
+
+.tags li {
+	display: inline;
+	list-style-type: none;
+}
