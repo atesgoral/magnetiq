@@ -70,5 +70,6 @@ a.panel:hover {
 }
 
 .post_meta {
-	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	/*border-width: 1px 0;*/
 }

@@ -89,7 +89,15 @@ a.panel:hover {
 	width: 460px;
 }
 
+#disqus_thread {
+	width: 460px;
+}
+
 .post_text p, .post_text ul, .post_text ol {
+	width: 460px;
+}
+
+.post_meta {
 	width: 460px;
 }
 
