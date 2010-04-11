@@ -105,6 +105,18 @@ a.panel:hover {
     margin-bottom: 1em;
 }
 
+.post_text dd {
+	margin-left: 2em;
+}
+
+.post_text table {
+	border-collapse: collapse;
+}
+
+.post_text th, .post_text td {
+	padding: 0 4px;
+}
+
 .tags ul {
 	display: inline;
 }

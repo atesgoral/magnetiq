@@ -54,6 +54,7 @@ a.panel {
 a.panel:hover {
 	background-color: #f0f0f0;
 	background-position: 10px 10px;
+	color: #333;
 }
 
 .top_border {
@@ -67,6 +68,27 @@ a.panel:hover {
 .post_text code {
 	background: #eee;
 	padding: 0 0.25em;
+}
+
+.post_text table {
+	background: #eee;
+	border: solid #eee;
+	border-width: 1px 1px 0 0;
+}
+
+.post_text th, .post_text td {
+	background: #fff;
+	border: solid #eee;
+	border-width: 0 0 1px 1px;
+}
+
+.post_text th {
+	background: #eee;
+}
+
+.post_text th {
+/*	background: #333;
+	color: #fff;*/
 }
 
 .post_meta {

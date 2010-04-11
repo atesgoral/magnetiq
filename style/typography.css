@@ -25,6 +25,10 @@ a {
 	font: 14px "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 }
 
+.post_text dt {
+	font-weight: bold;
+}
+
 .post_meta {
 	font-size: 85.7%;
 }
