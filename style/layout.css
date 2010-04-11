@@ -101,7 +101,7 @@ a.panel:hover {
 	width: 460px;
 }
 
-.post_text p, .post_text ul, .post_text ol {
+.post_text p, .post_text ul, .post_text ol, .post_text table {
     margin-bottom: 1em;
 }
 
