@@ -99,6 +99,7 @@ a.panel:hover {
 
 .post_meta {
 	width: 460px;
+	padding-bottom: 4px;
 }
 
 .post_text p, .post_text ul, .post_text ol, .post_text table {
@@ -134,3 +135,11 @@ a.panel:hover {
 	position: relative;
 	left: -520px;
 }*/
+
+.read_more_container {
+	margin-left: 2em;
+}
+
+.read_more:after {
+	content: " \2192";
+}
