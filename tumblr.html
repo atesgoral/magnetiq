@@ -6,12 +6,18 @@
 <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="text:Disqus Shortname" content=""/>
+<meta name="text:Google Analytics Web Property ID" content=""/>
+<meta name="text:Google Analytics Domain" content=""/>
+<meta name="if:Syntax Highlighting" content="1"/>
+<meta name="if:Font Replacement" content="1"/>
 
 <link rel="shortcut icon" href="{Favicon}"/>
 <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
 
+{if:SyntaxHighlighting}
 <link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shCore.css"/>
 <link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shThemeEclipse.css"/>
+{/if:SyntaxHighlighting}
 
 <link rel="stylesheet" href="http://s.magnetiq.com/style/layout.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="http://s.magnetiq.com/style/typography.css" type="text/css" media="screen"/>
@@ -22,16 +28,24 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
+{if:SyntaxHighlighting}
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shCore.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushPython.js"></script>
+{/if:SyntaxHighlighting}
 
+{if:FontReplacement}
 <script type="text/javascript" src="http://s.magnetiq.com/js/cufon-yui.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/js/Museo_700_600.font.js"></script>
+{/if:FontReplacement}
 <script type="text/javascript">
+{if:FontReplacement}
 Cufon.replace("h1, h2");
+{/if:FontReplacement}
+{if:SyntaxHighlighting}
 SyntaxHighlighter.all();
+{/if:SyntaxHighlighting}
 </script>
 </head>
 <body>
@@ -94,8 +108,8 @@ SyntaxHighlighter.all();
         <div class="nav" id="bottom">
             <ul>
 				{block:PermalinkPagination}
-				{block:PreviousPost}<li><a href="{PreviousPost}">&#8592; Previous Post</a></li>{/block:PreviousPost}
-				{block:NextPost}<li><a href="{NextPost}">Next Post &#8594;</a></li>{/block:NextPost}
+				{block:NextPost}<li><a href="{NextPost}">&#8592; Next Post</a></li>{/block:NextPost}
+				{block:PreviousPost}<li><a href="{PreviousPost}">Previous Post &#8594;</a></li>{/block:PreviousPost}
 				{/block:PermalinkPagination}                
 				{block:Pagination}
 				{block:PreviousPage}<li><a href="{PreviousPage}">&#8592; Newer Entries</a></li>{/block:PreviousPage}
@@ -109,8 +123,24 @@ SyntaxHighlighter.all();
 
 <div id="footer">
 	<div class="center_700">
-		&copy; Ateş Göral - Licensed under a <a href="#">Creative Commons License</a> - Powered by <a href="http://tumblr.com/">Tumblr</a>
+		&copy; Ateş Göral -
+		Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
+		Powered by <a href="http://tumblr.com/">Tumblr</a>
 	</div>
 </div>
+{block:IfGoogleAnalyticsWebPropertyID}
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("{text:Google Analytics Web Property ID}");
+{block:IfGoogleAnalyticsDomain}
+pageTracker._setDomainName("{text:Google Analytics Domain}");
+{/block:IfGoogleAnalyticsDomain}
+pageTracker._trackPageview();
+} catch(err) {}</script>
+{/block:IfGoogleAnalyticsWebPropertyID}
 </body>
 </html>
