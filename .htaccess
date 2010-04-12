@@ -30,6 +30,7 @@ RewriteRule win-res-q-10 http://magnetiq.com/win-res-q/ [R=301,L]
 RewriteRule e-res-q-13 http://magnetiq.com/e-res-q/ [R=301,L]
 RewriteRule spelling-quake-with-the-quake-logo http://blog.magnetiq.com/post/516012550/spelling-quake-with-the-quake-logo [R=301,L]
 RewriteRule browsersizecom http://blog.magnetiq.com/post/516020894/browsersize-com [R=301,L]
+RewriteRule rendering-n-sided-polygons-with-dhtml http://blog.magnetiq.com/post/516048517/rendering-n-sided-polygons-with-dhtml [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
