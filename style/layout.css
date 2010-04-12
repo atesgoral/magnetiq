@@ -97,6 +97,11 @@ a.panel:hover {
 	width: 460px;
 }
 
+.post_text blockquote  {
+	margin-left: 20px;
+	width: 440px;
+}
+
 .post_meta {
 	width: 460px;
 	padding-bottom: 4px;
