@@ -148,3 +148,12 @@ a.panel:hover {
 .read_more:after {
 	content: " \2192";
 }
+
+.center {
+	text-align: center;
+}
+
+img.border {
+    border: 1px dashed #ddd;
+    margin: 2px;
+}
