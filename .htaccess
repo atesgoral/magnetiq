@@ -17,6 +17,8 @@ RewriteRule timing-code-accurately http://blog.magnetiq.com/post/497603773/timin
 RewriteRule automatic-table-of-contents-generation http://blog.magnetiq.com/post/497600148/automatic-table-of-contents-generation [R=301,L]
 RewriteRule verifying-the-integrity-of-an-easynews-download-without-a-checksum-file http://blog.magnetiq.com/post/514910474/verifying-the-integrity-of-an-easynews-download-without [R=301,L]
 RewriteRule default-constructor-vs-empty-constructor http://blog.magnetiq.com/post/514926269/default-constructor-vs-empty-constructor [R=301,L]
+RewriteRule generating-unified-diff-files-with-clearcase http://blog.magnetiq.com/post/514935963/generating-unified-diff-files-with-clearcase [R=301,L]
+RewriteRule opt-for-pre-incrementing-iterators http://blog.magnetiq.com/post/514947507/opt-for-pre-incrementing-iterators [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
