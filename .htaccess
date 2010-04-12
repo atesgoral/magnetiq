@@ -3,6 +3,18 @@
 RewriteEngine On
 RewriteBase /
 RewriteRule when-semicolons-are-not-optional-in-javascript http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript [R=301,L]
+RewriteRule rounding-to-a-certain-significant-figures-in-javascript http://blog.magnetiq.com/post/497605344/rounding-to-a-certain-significant-figures-in-javascript [R=301,L]
+RewriteRule parsing-query-string-parameters-into-a-collection http://blog.magnetiq.com/post/493442083/parsing-query-string-parameters-into-a-collection [R=301,L]
+RewriteRule creating-todoist-items-with-voice-using-reqall http://blog.magnetiq.com/post/497423627/creating-todoist-items-with-voice-using-reqall [R=301,L]
+RewriteRule repeating-or-padding-strings-in-javascript http://blog.magnetiq.com/post/497607385/repeating-or-padding-strings-in-javascript [R=301,L]
+RewriteRule javascript-date-formatting-an-unorthodox-way http://blog.magnetiq.com/post/497609110/javascript-date-formatting-an-unorthodox-way [R=301,L]
+RewriteRule a-quick-and-dirty-xml-generator-in-javascript http://blog.magnetiq.com/post/497430951/a-quick-and-dirty-markup-generator-in-javascript [R=301,L]
+RewriteRule turkish-lette-escape-bookmarklet-for-dotsub http://blog.magnetiq.com/post/495138451/turkish-letter-escape-bookmarklet-for-dotsub [R=301,L]
+RewriteRule function-definition-inside-with http://blog.magnetiq.com/post/497447084/javascript-function-definition-inside-a-with-block [R=301,L]
+RewriteRule tostring-on-function-with-comments http://blog.magnetiq.com/post/497453111/browser-discrepancies-when-calling-tostring-on-a [R=301,L]
+RewriteRule browsersizecom-updates http://blog.magnetiq.com/post/497581970/browsersize-com-updates [R=301,L]
+RewriteRule timing-code-accurately http://blog.magnetiq.com/post/497603773/timing-code-accurately [R=301,L]
+RewriteRule automatic-table-of-contents-generation http://blog.magnetiq.com/post/497600148/automatic-table-of-contents-generation [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
