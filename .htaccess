@@ -19,6 +19,8 @@ RewriteRule verifying-the-integrity-of-an-easynews-download-without-a-checksum-f
 RewriteRule default-constructor-vs-empty-constructor http://blog.magnetiq.com/post/514926269/default-constructor-vs-empty-constructor [R=301,L]
 RewriteRule generating-unified-diff-files-with-clearcase http://blog.magnetiq.com/post/514935963/generating-unified-diff-files-with-clearcase [R=301,L]
 RewriteRule opt-for-pre-incrementing-iterators http://blog.magnetiq.com/post/514947507/opt-for-pre-incrementing-iterators [R=301,L]
+RewriteRule finding-out-class-names-of-javascript-objects http://blog.magnetiq.com/post/514962277/finding-out-class-names-of-javascript-objects [R=301,L]
+RewriteRule php-style-serialization-of-javascript-objects http://blog.magnetiq.com/post/514991691/php-style-serialization-of-javascript-objects [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
