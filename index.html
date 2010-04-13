@@ -31,7 +31,7 @@ $(function () {
 	});
 
 	// Clone navigation and add top borders
-	/*var nav = $(".nav");
+	var nav = $("#nav");
 	
 	$(".section").slice(1).addClass("top_border").each(function () {
 		var h2 = $("h2", this);
@@ -39,16 +39,16 @@ $(function () {
 		h2.before(
 			nav.clone().attr("id", h2.attr("id"))
 		).attr("id", "");
-	});*/
+	});
 });
 
-//Cufon.replace("h1, h2");
+Cufon.replace("h1, h2");
 </script>
 </head>
 <body>
 <div id="header">
 	<div class="fluid_700">
-		<div class="one column">
+		<div class="two fluid column">
 			<h1><a href="/">Magnetiq))</a></h1>
 			<div id="description">by Ateş Göral</div>
 		</div>
@@ -59,7 +59,7 @@ $(function () {
 <div id="nav" class="nav fluid_700">
 	<ul class="three fluid column">
 		<li><a href="/">Home</a></li>
-		<li><a href="#about">About</a></li>
+		<li><a href="#nav">About</a></li>
 		<li><a href="#projects">Projects</a></li>
 		<li><a href="#experiments">Experiments</a></li>
 		<li><a href="http://blog.magnetiq.com/">Blog</a></li>
@@ -84,10 +84,9 @@ $(function () {
 			<a href="http://github.com/atesgoral">GitHub</a>.
 		</div>
 		<div class="clear"></div>
-		<!--img src="i/portrait.jpg" width="700" height="433"/-->
 	</div>
-	<!--div class="section">
-		<h2 id="projects">Projects</h2>
+	<div class="section">
+		<h2 id="projects" class="column">Projects</h2>
 		<ul class="panels">
 			<li>
 				<a href="http://jsunity.com/" class="panel p_jsunity"><h3>jsUnity</h3></a>
@@ -114,7 +113,7 @@ $(function () {
 		<div class="clear"></div>
 	</div>
 	<div class="section">
-		<h2 id="experiments">Experiments</h2>
+		<h2 id="experiments" class="column">Experiments</h2>
 		<ul class="panels">
 			<li>
 				<a href="/spst/" class="panel p_spst"><h3>Subpixel Scrolltext</h3></a>
@@ -134,16 +133,19 @@ $(function () {
 			</li>
 		</ul>
 		<div class="clear"></div>
-	</div-->
+	</div>
 </div>
 
-<!--div id="footer">
-	<div class="center_700">
-		&copy; Ateş Göral -
-		Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
-		Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
+<div id="footer">
+	<div class="fluid_700">
+		<div class="three fluid column">
+			&copy; Ateş Göral -
+			Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
+			Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
+		</div>
+		<div class="clear"></div>
 	</div>
-</div-->
+</div>
 
 <!--script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
