@@ -1,7 +1,7 @@
 /* Typography */
 
 body  {
-	font: 14px/1.2 Segoe, "Segoe UI", "Helvetica Neue", "Lucida Sans", Arial, sans-serif;
+	font: 14px/18px Segoe, "Segoe UI", "Helvetica Neue", "Lucida Sans", Arial, sans-serif;
 }
 
 a {
@@ -9,7 +9,7 @@ a {
 }
 
 #header h1 {
-    font-size: 275%;
+    font-size: 250%;
 	text-transform: uppercase;
 }
 
@@ -30,7 +30,7 @@ a {
 }
 
 .post_text code, .post_text pre {
-	font: 14px "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+	font: 14px/16px "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
 }
 
 .post_text dt {
@@ -47,4 +47,5 @@ a {
 
 h3 {
 	font-style: italic;
+	font-size: 16px
 }

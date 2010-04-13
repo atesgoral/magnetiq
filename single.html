@@ -33,28 +33,31 @@ SyntaxHighlighter.all();
 </head>
 <body>
 <div id="header">
-	<div class="center_700">
-		<h1><a href="/">Magnetiq))</a></h1>
-		<div id="description">by Ateş Göral</div>
+	<div class="fluid_700">
+		<div class="one fluid column">
+			<h1><a href="/">Magnetiq))</a></h1>
+			<div id="description">by Ateş Göral</div>
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 
-<div class="nav center_700">
-	<ul>
+<div id="nav" class="nav fluid_700">
+	<ul class="three fluid column">
 		<li><a href="http://magnetiq.com/">Home</a></li>
 		<li><a href="http://magnetiq.com/#about">About</a></li>
 		<li><a href="http://magnetiq.com/#projects">Projects</a></li>
-		<li><a href="http://magnetiq.com/#experiments">Experiments</a></li>
+		<li class="break"><a href="http://magnetiq.com/#experiments">Experiments</a></li>
 		<li><a href="/">Blog</a></li>
 		<li><a href="/archive">Archive</a></li>
 	</ul>
 </div>
 
-<div id="content" class="center_700">
-	<h2><a href="#" rel="bookmark" title="Permanent Link">Title with some lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h2>
-	<div class="post_text">			
+<div id="content" class="fluid_700">
+	<div class="two fluid column post_text">			
+		<h2><a href="#" rel="bookmark" title="Permanent Link">Title with some lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h2>
 		<p>This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<pre class="brush: javascript">
+		<!--pre>
 // Some JavaScript
 var start = new Date(); // Get current time
 
@@ -66,7 +69,7 @@ var finish = new Date(): // Get current time
 
 var ntimes = finish - start; // Elapsed time for n iterations
 var once = ntimes / n; // Average time for one function call
-		</pre>
+		</pre-->
 		<p>Another paragraph with <code>inline code</code>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <code>quis</code> nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 		<p>A paragraph with <a href="#">a link</a>. Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <a href="#">laboris</a> nisi ut aliquip ex ea commodo consequat.</p>
 		<p>An ordered list:</p>
@@ -100,31 +103,36 @@ var once = ntimes / n; // Average time for one function call
 		</blockquote>
 		<p>This is another paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
 		<p class="read_more_container"><a class="read_more" href="#">Read More</a></p>
-	</div>
-	<div class="post_meta">
-		<div class="post_date">Posted 1 month ago on Dec 3, 2010</div>
-		<div class="tags">
-			Tagged
-			<ul>
-			<li><a rel="tag" href="#">javascript</a></li>
-			<li><a rel="tag" href="#">algorithms</a></li>
-			</ul>
+		<div class="post_meta">
+			<div class="post_date">Posted 1 month ago on Dec 3, 2010</div>
+			<div class="tags">
+				Tagged
+				<ul>
+				<li><a rel="tag" href="#">javascript</a></li>
+				<li><a rel="tag" href="#">algorithms</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
-	<div class="nav">
-		<ul>
-			<li><a rel="prev" href="/page/1">Previous</a></li>
-			<li id="pages">Page 2 of 3</li>
-			<li><a rel="next" href="/page/3">Next</a></li>
-		</ul>
-	</div>		
+	<div class="clear"></div>
+</div>
+
+<div class="nav fluid_700 top_border">
+	<ul class="three column fluid">
+		<li><a rel="prev" href="/page/1">Previous</a></li>
+		<li id="pages">Page 2 of 3</li>
+		<li><a rel="next" href="/page/3">Next</a></li>
+	</ul>
 </div>
 
 <div id="footer">
-	<div class="center_700">
-		&copy; Ateş Göral -
-		Licensed under a <a rel="copyright" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
-		Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
+	<div class="fluid_700">
+		<div class="three fluid column">
+			&copy; Ateş Göral -
+			Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
+			Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 </body>

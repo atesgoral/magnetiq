@@ -2,7 +2,7 @@
 
 /* Resets */
 
-body, h1, h2, h3, p, ol, ul, li {
+body, h1, h2, h3, p, ol, ul, li, dl {
 	margin: 0;
 	padding: 0;
 }
@@ -18,7 +18,7 @@ body, h1, h2, h3, p, ol, ul, li {
 	padding: 0 10px;
 }
 
-.one.column, .two.column, .three.column {
+.one.column, .two.column {
 	float: left;
 }
 
@@ -68,7 +68,7 @@ img.border {
 /* Header */
 
 #header {
-	padding: 10px 0;
+	padding: 20px 0 10px;
 }
 
 #header h1 {
@@ -79,13 +79,13 @@ img.border {
 
 .nav {
 	margin-bottom: 40px;
-	padding: 3px 0;
 }
 
 .nav  li {
 	list-style-type: none;
 	float: left;
 	margin-right: 20px;
+	padding: 2px 0;
 }
 
 /* Content */
@@ -95,7 +95,7 @@ img.border {
 }
 
 #content h3 {
-	margin-bottom: 10px;
+	margin-bottom: 18px;
 }
 
 /* Footer */
@@ -127,19 +127,20 @@ a.panel {
 	top: -10px;
 	padding: 10px;
 	margin-bottom: -10px;
+	background-position: 10px 10px;
 }
 
 /* Text */
 
 .post_text p, .post_text ul, .post_text ol, .post_text>dl  {
-	width: 460px;
+	xwidth: 460px;
 }
 
-.post_text p, .post_text ul, .post_text ol, .post_text table {
-    margin-bottom: 1em;
+.post_text p, .post_text ul, .post_text ol, .post_text dl, .post_text table {
+    margin-bottom: 18px;
 }
 
-.post_text dd {
+.post_text dd, .post_text blockquote, .post_text table {
 	margin-left: 20px;
 }
 
@@ -152,14 +153,17 @@ a.panel {
 }
 
 .post_text blockquote  {
-	margin-left: 20px;
-	width: 440px;
+	xwidth: 440px;
+}
+
+.post_text code {
+	padding: 0 2px;
 }
 
 /* Meta */
 
 .post_meta {
-	width: 460px;
+	xwidth: 460px;
 	padding-bottom: 4px;
 }
 
@@ -185,7 +189,7 @@ a.panel {
 /* Comments */
 
 #disqus_thread {
-	width: 460px;
+	xwidth: 460px;
 }
 
 /* Pagination */
@@ -196,4 +200,11 @@ a[rel="prev"]:before {
 
 a[rel="next"]:after {
 	content: " \2192";
+}
+
+/* Misc */
+
+li.break {
+	margin-right: 10px;
+	padding-right: 9px;
 }

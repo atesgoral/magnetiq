@@ -1,22 +1,25 @@
 /* Colors and backgrounds */
 
-/*
-	#31A3C8 light blue
-	#C83D31 brick
-*/
-
 body {
 	background: #fff;
 	color: #333;
 }
 
+/*.fluid_700 {
+	background: url(../i/fluid_720_rhythm_18.gif) repeat-y;
+}*/
+
 #header, #footer {
-	background: #383838;
+	background: #333;
 	color: #ccc;
 }
 
 #header .center_700 {
     /*background: url(i/mag_icon.png) 100% 50% no-repeat;*/
+}
+
+li.break {
+	border-right: 1px solid #ccc;
 }
 
 a {
@@ -29,6 +32,10 @@ a:visited {
 
 a:hover {
 	color: #5B31C8;
+}
+
+a:active {
+	color: #333;
 }
 
 #header a {
@@ -49,11 +56,10 @@ a:hover {
 
 a.panel {
 	background-repeat: no-repeat;
-	background-position: 10px 10px;
 }
 
 a.panel:hover {
-	background-color: #f0f0f0;
+	background-color: #eee;
 	color: #333;
 }
 
@@ -67,31 +73,19 @@ a.panel:hover {
 
 .post_text code {
 	background: #eee;
-	padding: 0 0.25em;
 }
 
 .post_text table {
-	background: #eee;
-	border: solid #eee;
+	border: solid #ccc;
 	border-width: 1px 1px 0 0;
 }
 
 .post_text th, .post_text td {
 	background: #fff;
-	border: solid #eee;
+	border: solid #ccc;
 	border-width: 0 0 1px 1px;
 }
 
 .post_text th {
-	background: #eee;
-}
-
-.post_text th {
-/*	background: #333;
-	color: #fff;*/
-}
-
-.post_meta {
-	border-bottom: 1px solid #ccc;
-	/*border-width: 1px 0;*/
+	background: #ccc;
 }
