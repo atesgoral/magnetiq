@@ -1,3 +1,11 @@
 .fluid_700 {
 	width: 720px;
 }
+
+.two.fluid {
+	width: 460px;
+}
+
+.three.fluid {
+	width: 700px;
+}
