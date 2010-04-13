@@ -1,11 +1,15 @@
+#content h2 {
+	float: none !important;
+}
+
 .fluid_700 {
 	width: 720px;
 }
 
 .two.fluid {
-	width: 460px;
+	width: 460px !important;
 }
 
 .three.fluid {
-	width: 700px;
+	width: 700px !important;
 }
