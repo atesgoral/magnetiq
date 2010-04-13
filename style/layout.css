@@ -2,7 +2,7 @@
 
 /* Resets */
 
-body, h1, h2, h3, p, ol, ul, li, dl {
+body, h1, h2, h3, p, ol, ul, li, dl, pre {
 	margin: 0;
 	padding: 0;
 }
@@ -78,7 +78,7 @@ img.border {
 /* Navigation */
 
 .nav {
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 
 .nav  li {
@@ -133,10 +133,6 @@ a.panel {
 
 /* Text */
 
-.post_text p, .post_text ul, .post_text ol, .post_text>dl  {
-	xwidth: 460px;
-}
-
 .post_text p, .post_text ul, .post_text ol, .post_text dl, .post_text table {
     margin-bottom: 18px;
 }
@@ -153,10 +149,6 @@ a.panel {
 	padding: 0 4px;
 }
 
-.post_text blockquote  {
-	xwidth: 440px;
-}
-
 .post_text code {
 	padding: 0 2px;
 }
@@ -164,7 +156,6 @@ a.panel {
 /* Meta */
 
 .post_meta {
-	xwidth: 460px;
 	padding-bottom: 4px;
 }
 
@@ -185,12 +176,6 @@ a.panel {
 
 .read_more:after {
 	content: " \2192";
-}
-
-/* Comments */
-
-#disqus_thread {
-	xwidth: 460px;
 }
 
 /* Pagination */

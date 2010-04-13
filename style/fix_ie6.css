@@ -1,15 +1,19 @@
 #content h2 {
-	float: none !important;
+	float: none;
 }
 
 .fluid_700 {
 	width: 720px;
 }
 
-.two.fluid {
-	width: 460px !important;
+.two {
+	width: 460px;
 }
 
-.three.fluid {
-	width: 700px !important;
+.three {
+	width: 700px;
+}
+
+.panels li {
+	overflow: hidden;
 }

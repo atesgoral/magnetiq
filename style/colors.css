@@ -14,10 +14,6 @@ body {
 	color: #ccc;
 }
 
-#header .center_700 {
-    /*background: url(i/mag_icon.png) 100% 50% no-repeat;*/
-}
-
 li.break {
 	border-right: 1px solid #ccc;
 }
