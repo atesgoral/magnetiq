@@ -39,6 +39,9 @@ $(function () {
 			nav.clone().attr("id", h2.attr("id"))
 		).attr("id", "");
 	});
+	
+	// Workaround for anchor not being in right place
+	document.location.hash = document.location.hash;
 });
 
 Cufon.replace("h1, h2");
