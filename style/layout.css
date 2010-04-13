@@ -92,6 +92,7 @@ img.border {
 
 #content h2 {
 	margin-bottom: 20px;
+	clear: left;
 }
 
 #content h3 {
