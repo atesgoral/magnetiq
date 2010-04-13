@@ -13,12 +13,10 @@
 
 <link rel="shortcut icon" href="{Favicon}"/>
 <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
-
 {block:IfSyntaxHighlighting}
 <link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shCore.css"/>
 <link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shThemeEclipse.css"/>
 {/block:IfSyntaxHighlighting}
-
 <link rel="stylesheet" href="http://s.magnetiq.com/style/layout.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="http://s.magnetiq.com/style/typography.css" type="text/css" media="screen"/>
 <link rel="stylesheet" href="http://s.magnetiq.com/style/colors.css" type="text/css" media="screen"/>
@@ -27,7 +25,6 @@
 <![endif]-->
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-
 {block:IfSyntaxHighlighting}
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shCore.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
@@ -35,7 +32,6 @@
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushPython.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushCpp.js"></script>
 {/block:IfSyntaxHighlighting}
-
 {block:IfFontReplacement}
 <script type="text/javascript" src="http://s.magnetiq.com/js/cufon-yui.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/js/Museo_700_600.font.js"></script>
@@ -51,24 +47,28 @@ SyntaxHighlighter.all();
 </head>
 <body>
 <div id="header">
-	<div class="center_700">
-		<h1><a href="/">{Title}</a></h1>
-		<div id="description">{Description}</div>
+	<div class="fluid_700">
+		<div class="one fluid column">
+			<h1><a href="/">{Title}</a></h1>
+			<div id="description">{Description}</div>
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
 
-<div id="content">
-	<div class="center_700">
-        <div class="nav center_700">
-            <ul>
-                <li><a href="http://magnetiq.com/">Home</a></li>
-                <li><a href="http://magnetiq.com/#about">About</a></li>
-                <li><a href="http://magnetiq.com/#projects">Projects</a></li>
-                <li><a href="http://magnetiq.com/#experiments">Experiments</a></li>
-                <li><a href="/">Blog</a></li>
-                <li><a href="/archive">Archive</a></li>
-            </ul>
-        </div>
+<div id="nav" class="nav fluid_700">
+	<ul class="three fluid column">
+		<li><a href="http://magnetiq.com/">Home</a></li>
+		<li><a href="http://magnetiq.com/#about">About</a></li>
+		<li><a href="http://magnetiq.com/#projects">Projects</a></li>
+		<li class="break"><a href="http://magnetiq.com/#experiments">Experiments</a></li>
+		<li><a href="/">Blog</a></li>
+		<li><a href="/archive">Archive</a></li>
+	</ul>
+</div>
+
+<div id="content" class="fluid_700">
+	<div class="two fluid column post_text">
         {block:Posts}
 		<div class="section">
 			{block:Title}<h2><a href="{Permalink}" rel="bookmark" title="Permanent Link: {Title}">{Title}</a></h2>{/block:Title}
@@ -83,10 +83,10 @@ SyntaxHighlighter.all();
 				{/block:Date}
 				{block:HasTags}
 				<div class="tags">
-					Filed under
+					Tagged
 					<ul>
 					{block:Tags}
-					<li><a href="{TagURLChrono}">{Tag}</a></li>
+					<li><a rel="tag" href="{TagURLChrono}">{Tag}</a></li>
 					{/block:Tags}
 					</ul>
 				</div>
@@ -106,29 +106,35 @@ SyntaxHighlighter.all();
 		{/block:IfDisqusShortname}
 		{/block:PermalinkPage} 
 		{/block:Posts}        
-        <div class="nav" id="bottom">
-            <ul>
-				{block:PermalinkPagination}
-				{block:NextPost}<li><a href="{NextPost}">&#8592; Next Post</a></li>{/block:NextPost}
-				{block:PreviousPost}<li><a href="{PreviousPost}">Previous Post &#8594;</a></li>{/block:PreviousPost}
-				{/block:PermalinkPagination}                
-				{block:Pagination}
-				{block:PreviousPage}<li><a href="{PreviousPage}">&#8592; Newer Entries</a></li>{/block:PreviousPage}
-				<li id="pages">Page {CurrentPage} of {TotalPages}</li>
-				{block:NextPage}<li><a href="{NextPage}">Older Entries &#8594;</a></li>{/block:NextPage}
-				{/block:Pagination}
-            </ul>
-        </div>
 	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="nav fluid_700 top_border">
+	<ul class="three column fluid">
+		{block:PermalinkPagination}
+		{block:NextPost}<li><a rel="prev" href="{PreviousPost}">Previous</a></li>{/block:NextPost}
+		{block:PreviousPost}<li><a rel="next" href="{NextPost}">Next</a></li>{/block:PreviousPost}
+		{/block:PermalinkPagination}                
+		{block:Pagination}
+		{block:PreviousPage}<li><a rel="prev" href="{PreviousPage}">Previous</a></li>{/block:PreviousPage}
+		<li id="pages">Page {CurrentPage} of {TotalPages}</li>
+		{block:NextPage}<li><a rel="next" href="{NextPage}">Next</a></li>{/block:NextPage}
+		{/block:Pagination}
+	</ul>
 </div>
 
 <div id="footer">
-	<div class="center_700">
-		&copy; Ateş Göral -
-		Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
-		Powered by <a href="http://tumblr.com/">Tumblr</a>
+	<div class="fluid_700">
+		<div class="three fluid column">
+			&copy; Ateş Göral -
+			Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
+			Powered by <a href="http://tumblr.com/">Tumblr</a>
+		</div>
+		<div class="clear"></div>
 	</div>
 </div>
+
 {block:IfGoogleAnalyticsWebPropertyID}
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");

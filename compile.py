@@ -27,9 +27,9 @@ for page in os.listdir(content_dir):
 		
 		# Insert info
 		page_html = template.format(
-			Title = info.group("title"),
+			Title = info.group("title") if info else "",
 			Content = content_html)
-		
+	
 		f = open(os.path.join(output_dir, page), "w")
 		f.write(page_html)
 		f.close

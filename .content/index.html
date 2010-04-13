@@ -1,0 +1,91 @@
+<script type="text/javascript">
+$(function () {
+	// Add panel backgrounds
+	$(".panels a").each(function () {
+		var tokens = /p_(.+)/.exec(this.className);
+		
+		if (tokens) {
+			this.style.backgroundImage =
+				"url(panel_thumbs/" + tokens[1] + ".png)";
+		}
+	});
+
+	// Clone navigation and add top borders
+	var nav = $("#nav");
+	
+	$(".section").slice(1).addClass("top_border").each(function () {
+		var h2 = $("h2", this);
+		
+		h2.before(
+			nav.clone().attr("id", h2.attr("id"))
+		).attr("id", "");
+	});
+});
+</script>
+
+<div class="section">
+	<h2 id="about" class="column">About</h2>
+	<div class="one column">
+		<h3>I'm a generalist programmer currently working at <a href="http://www.alcatel-lucent.com">Alcatel-Lucent</a> in UI architecture, design and development.</h3>
+	</div>
+	<div class="two fluid column">
+		This site is a collection of some of the work I've done over the years.
+		I sporadically <a href="http://blog.magnetiq.com/">blog</a> about mainly programming-related stuff and <a href="http://twitter.com/atesgoral">tweet</a> about more general subjects.
+		And there are always things that I keep to myself.
+		I'm also at
+		<a href="http://www.linkedin.com/in/atesgoral">LinkedIn</a>,
+		<a href="http://www.facebook.com/atesgoral">Facebook</a>,
+		<a href="http://stackoverflow.com/users/23501/ates-goral">Stack Overflow</a> and
+		<a href="http://github.com/atesgoral">GitHub</a>.
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="section">
+	<h2 id="projects" class="column">Projects</h2>
+	<ul class="panels">
+		<li>
+			<a href="http://jsunity.com/" class="panel p_jsunity"><h3>jsUnity</h3></a>
+			<p>A lightweight and extensible JavaScript testing framework that is 
+			context-agnostic. It can be used in browsers as well as server-side environments.</p>
+		</li>
+		<li>
+			<a href="http://browsersize.com/" class="panel p_browsersize"><h3>browsersize.com</h3></a>
+			<p>Online tools for web designers. See how your website would look like on different screen sizes. See the current effective dimensions.</p>
+		</li>
+		<li>
+			<a href="http://twofifty.net" class="panel p_twofifty"><h3>Twofifty</h3></a>
+			<p>A showcase for digital artwork, strictly 250 by 250 pixels in dimensions and on various platforms including GIF, PNG, JPEG, Java, DHTML, Flash and Shockwave.</p>
+		</li>
+		<li>
+			<a href="/bd20/" class="panel p_bd20"><h3>Rockford the Invincible</h3></a>
+			<p>A partially functional <a href="http://en.wikipedia.org/wiki/Boulder_Dash">Boulder Dash</a> clone in just 20 effective lines of JavaScript.</p>
+		</li>
+		<li>
+			<a href="/acb-spec/" class="panel p_acb"><h3>Photoshop Color Book Format</h3></a>
+			<p>The unofficial format specification for Adobe Photoshop color books. Reverse-engineered from binary color book files.</p>
+		</li>
+	</ul>
+	<div class="clear"></div>
+</div>
+<div class="section">
+	<h2 id="experiments" class="column">Experiments</h2>
+	<ul class="panels">
+		<li>
+			<a href="/spst/" class="panel p_spst"><h3>Subpixel Scrolltext</h3></a>
+			<p>Scrolltext with subpixel font smoothing (A.K.A. ClearType) on an HTML canvas, using the tiniest font possible. Subpixel smoothing looks surprisingly readable on moving letters!</p>
+		</li>
+		<li>
+			<a href="/poly/popup.htm" class="panel p_poly"><h3>DHTML Polygons</h3></a>
+			<p>Tutorial and demo for rendering polygons of any number of sides with DHTML, using triangles and rectangles for occlusion.</p>
+		</li>
+		<li>
+			<a href="/multiple-synthetic-lights/" class="panel p_synlight"><h3>Synthetic Lighting</h3></a>
+			<p>Simulating multiple different colored light sources with a couple of static images.</p>
+		</li>
+		<li>
+			<a href="/depth-of-field/" class="panel p_depth"><h3>Depth of Field</h3></a>
+			<p>Simulating continuous focal distances from only two static images.</p>
+		</li>
+	</ul>
+	<div class="clear"></div>
+</div>
