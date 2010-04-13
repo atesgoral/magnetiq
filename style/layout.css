@@ -133,7 +133,7 @@ a.panel {
 
 /* Text */
 
-.post_text p, .post_text ul, .post_text ol, .post_text dl, .post_text table {
+.post_text p, .post_text ul, .post_text ol, .post_text dl, .post_text table, .post_text pre {
     margin-bottom: 18px;
 }
 
