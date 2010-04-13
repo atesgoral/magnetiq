@@ -1,0 +1,40 @@
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.fluid_720 {
+	max-width: 720px;
+	margin: 0 auto;
+	background: #eeeeff;
+}
+
+.grid_1 {
+	padding: 0 10px;
+	width: 220px;
+}
+
+.panel {
+	padding: 0 10px;
+	width: 220px;
+	float: left;
+	background: #eeffee;
+}
+
+.clear {
+	clear: left;
+}
+</style>
+
+<div class="fluid_720">
+	<div class="grid_1">Header with text that shouldn't wrap</div>
+</div> 
+<div class="fluid_720">
+	<div class="panel">Panel</div>
+	<div class="panel">Panel</div>
+	<div class="panel">Panel</div>
+	<div class="panel">Panel</div>
+	<div class="clear"></div>
+</div>
+

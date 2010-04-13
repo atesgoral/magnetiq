@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC
+    "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Magnetiq</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
+<link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeEclipse.css"/>
+
+<link rel="stylesheet" href="style/layout.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="style/typography.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="style/colors.css" type="text/css" media="screen"/>
+<!--[if IE 6]>
+<link rel="stylesheet" href="style/fix_ie6.css" type="text/css" media="screen"/>
+<![endif]-->
+
+<link rel="icon" type="image/png" href="i/favicon.png"/>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="lib/syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="lib/syntaxhighlighter/scripts/shBrushCpp.js"></script>
+
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/Museo_700_600.font.js"></script>
+<script type="text/javascript">
+$(function () {
+	$.ajax({
+		url: "pages/" + document.location.search.substr(1) + ".html",
+		dataType: "html",
+		success: function (html) {
+			$("#content .post_text").html(html);
+			Cufon.replace("h1, h2");
+			setTimeout(function() { SyntaxHighlighter.all(); }, 10);
+		},
+		error: function (html) {
+		}
+	});
+});
+</script>
+
+</head>
+<body>
+<div id="header">
+	<div class="center_700">
+		<h1><a href="/">Magnetiq))</a></h1>
+		<div id="description">by Ates Goral</div>
+	</div>
+</div>
+
+<div id="content">
+	<div class="center_700">
+        <div class="nav" id="top">
+            <ul>
+                <li><a href="http://magnetiq.com/">Home</a></li>
+                <li><a href="http://magnetiq.com/#about">About</a></li>
+                <li><a href="http://magnetiq.com/#projects">Projects</a></li>
+                <li><a href="http://magnetiq.com/#experiments">Experiments</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="/archive">Archive</a></li>
+            </ul>
+        </div>
+		<div class="section">
+			<div class="post_text">
+				Loading...
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="footer">
+	<div class="center_700">
+		&copy; Ateş Göral -
+		Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
+		Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
+	</div>
+</div>
+</body>
+</html>

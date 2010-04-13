@@ -49,11 +49,11 @@ a:hover {
 
 a.panel {
 	background-repeat: no-repeat;
+	background-position: 10px 10px;
 }
 
 a.panel:hover {
 	background-color: #f0f0f0;
-	background-position: 10px 10px;
 	color: #333;
 }
 

@@ -13,6 +13,14 @@ a {
 	text-transform: uppercase;
 }
 
+#description {
+	font-style: italic;
+}
+
+.nav {
+	/*font-weight: bold;*/
+}
+
 #content h2 {
 	font-size: 150%;
 }

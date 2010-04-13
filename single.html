@@ -35,95 +35,96 @@ SyntaxHighlighter.all();
 <div id="header">
 	<div class="center_700">
 		<h1><a href="/">Magnetiq))</a></h1>
-		<i>by Ates Goral</i>
+		<div id="description">by Ateş Göral</div>
 	</div>
 </div>
 
-<div id="content">
-	<div class="center_700">
-        <div class="nav" id="top">
-            <ul>
-                <li><a href="http://magnetiq.com/">Home</a></li>
-                <li><a href="http://magnetiq.com/#about">About</a></li>
-                <li><a href="http://magnetiq.com/#projects">Projects</a></li>
-                <li><a href="http://magnetiq.com/#experiments">Experiments</a></li>
-                <li><a href="/">Blog</a></li>
-                <li><a href="/archive">Archive</a></li>
-            </ul>
-        </div>
-		<div class="section">
-			<h2><a href="http://magnetiq.com/2008/10/19/timing-code-accurately/" rel="bookmark" title="Permanent Link: Timing Code Accurately">Timing Code Accurately with Long Title to See If Wrapping Works Is This Enough?</a></h2>
-			<!--div class="post_date"><span class="month">Dec</span> <span class="day">3</span> <span class="year">2010</span></div-->
-			<div class="post_text">			
-				<p>The most common approach to time a function or a segment of code is to repeat it a lot of times in a loop, measure the time the entire loop takes and then divide that number with the number of iterations. Illustrating this with JavaScript (although this method applies to all languages):</p>
-				<pre class="brush: javascript">var start = new Date(); // Get current time
+<div class="nav center_700">
+	<ul>
+		<li><a href="http://magnetiq.com/">Home</a></li>
+		<li><a href="http://magnetiq.com/#about">About</a></li>
+		<li><a href="http://magnetiq.com/#projects">Projects</a></li>
+		<li><a href="http://magnetiq.com/#experiments">Experiments</a></li>
+		<li><a href="/">Blog</a></li>
+		<li><a href="/archive">Archive</a></li>
+	</ul>
+</div>
 
-				for (var i = 0; i &lt; n; i++) {
-					myFunction();
-				}
+<div id="content" class="center_700">
+	<h2><a href="#" rel="bookmark" title="Permanent Link">Title with some lorem ipsum dolor sit amet, consectetur adipisicing elit</a></h2>
+	<div class="post_text">			
+		<p>This is a paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<pre class="brush: javascript">
+// Some JavaScript
+var start = new Date(); // Get current time
 
-				var finish = new Date(): // Get current time
+for (var i = 0; i &lt; n; i++) {
+	myFunction();
+}
 
-				var ntimes = finish - start; // Elapsed time for n iterations
-				var once = ntimes / n; // Average time for one function call
-				</pre>
-				<p>However, this doesn't really measure just how much time <code>n</code> calls to <code>myFunction</code> took. There's also the <strong>overhead of the loop</strong> itself. What we actually end up measuring is not just the time to execute one call to myFunction but also the overhead of one iteration:<span id="more-94"></span></p>
-				<pre class="brush: javascript">// function + overhead
-				var ntimes = finish - start; // Elapsed time for n iterations
-				var once = ntimes / n; // Average time for one function call + iteration
-				</pre>
-				<p>Paragraph 1 <code>some code</code></p>
-				<p class="read_more_container"><a class="read_more" href="http://blog.magnetiq.com/post/495138451/turkish-letter-escape-bookmarklet-for-dotsub">Read More</a></p>
-				<p>Paragraph 2 <a href="#">a link</a></p>
-				<p>Ordered list:</p>
-				<ol>
-				<li>Ordered item 1</li>
-				<li>Ordered ittem 2</li>
-				<li>Ordered ittem with loooooooooooooooooooooooong loooooooooooooooooong looooooooooooooooooooooong text.</li>
-				</ol>	
-				<p>Unordered list:</p>
-				<ul>
-				<li>Unordered item 1</li>
-				<li>Unordered item 2</li>
-				<li>Unordered item with loooooooooooooooooooooooong loooooooooooooooooong looooooooooooooooooooooong text.</li>
-				</ul>
-				<p>Table:</p>
-				<table>
-				<tr><th>Column 1</th><th>Column 2</th></tr>
-				<tr><td>42</td><td>43</td></tr>
-				<tr><td>43</td><td>44</td></tr>
-				<tr><td>44</td><td>45</td></tr>
-				</table>
-				<p>Definition list:</p>
-				<dl>
-				<dt>Term 1</dt><dd>Description</dd>
-				<dt>Term 2</dt><dd>Description</dd>
-				</dl>
-			</div>
-			<div class="post_meta">
-				<div class="post_date">Posted 1 month ago on Dec 3, 2010</div>
-				<div class="tags">
-					Filed under
-					<ul>
-					<li><a href="#">javascript</a></li>
-					<li><a href="#">algorithms</a></li>
-					</ul>
-				</div>
-			</div>
-			
-		</div>
-		<div id="bottom" class="nav">
-			<ul>
-				<li id="pages">Page 1 of 2</li>
-				<li><a href="/page/2">Older Entries &#8594;</a></li>
-			</ul>
-		</div>		
+var finish = new Date(): // Get current time
+
+var ntimes = finish - start; // Elapsed time for n iterations
+var once = ntimes / n; // Average time for one function call
+		</pre>
+		<p>Another paragraph with <code>inline code</code>. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <code>quis</code> nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		<p>A paragraph with <a href="#">a link</a>. Lorem ipsum <a href="#">dolor sit amet</a>, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <a href="#">laboris</a> nisi ut aliquip ex ea commodo consequat.</p>
+		<p>An ordered list:</p>
+		<ol>
+		<li>Ordered item 1</li>
+		<li>Ordered item 2</li>
+		<li>Ordered item 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+		</ol>	
+		<p>An unordered list:</p>
+		<ul>
+		<li>Unordered item 1</li>
+		<li>Unordered item 2</li>
+		<li>Unordered item 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+		</ul>
+		<p>A table:</p>
+		<table>
+		<tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr>
+		<tr><td>42</td><td>43</td><td>43</td></tr>
+		<tr><td>43</td><td>44</td><td>43</td></tr>
+		<tr><td>44</td><td>45</td><td>43</td></tr>
+		</table>
+		<p>A definition list:</p>
+		<dl>
+		<dt>Term 1</dt><dd>Description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</dd>
+		<dt>Term 2</dt><dd>Description</dd>
+		</dl>
+		<h3>This is a header</h3>
+		<p>This is another paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+		<blockquote>
+		This is a quote. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		</blockquote>
+		<p>This is another paragraph. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+		<p class="read_more_container"><a class="read_more" href="#">Read More</a></p>
 	</div>
+	<div class="post_meta">
+		<div class="post_date">Posted 1 month ago on Dec 3, 2010</div>
+		<div class="tags">
+			Tagged
+			<ul>
+			<li><a rel="tag" href="#">javascript</a></li>
+			<li><a rel="tag" href="#">algorithms</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="nav">
+		<ul>
+			<li><a rel="prev" href="/page/1">Previous</a></li>
+			<li id="pages">Page 2 of 3</li>
+			<li><a rel="next" href="/page/3">Next</a></li>
+		</ul>
+	</div>		
 </div>
 
 <div id="footer">
 	<div class="center_700">
-		&copy; Ates Goral - Licensed under a <a href="#">Creative Commons License</a> - Kick-ass hosting by <a href="#">WebFaction</a>
+		&copy; Ateş Göral -
+		Licensed under a <a rel="copyright" href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
+		Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
 	</div>
 </div>
 </body>
