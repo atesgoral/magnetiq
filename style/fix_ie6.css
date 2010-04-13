@@ -1,5 +1,3 @@
-/* Fix overflow epanding container size */
-
-.center_700, .panels li  {
-	overflow: hidden;
+.fluid_700 {
+	width: 720px;
 }
