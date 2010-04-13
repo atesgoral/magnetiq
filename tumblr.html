@@ -33,8 +33,8 @@
 <script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushCpp.js"></script>
 {/block:IfSyntaxHighlighting}
 {block:IfFontReplacement}
-<script type="text/javascript" src="http://s.magnetiq.com/js/cufon-yui.js"></script>
-<script type="text/javascript" src="http://s.magnetiq.com/js/Museo_700_600.font.js"></script>
+<script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/cufon-yui.js"></script>
+<script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/Museo_700_600.font.js"></script>
 {/block:IfFontReplacement}
 <script type="text/javascript">
 {block:IfFontReplacement}
@@ -113,8 +113,8 @@ SyntaxHighlighter.all();
 <div class="nav fluid_700 top_border">
 	<ul class="three column fluid">
 		{block:PermalinkPagination}
-		{block:NextPost}<li><a rel="prev" href="{PreviousPost}">Previous</a></li>{/block:NextPost}
-		{block:PreviousPost}<li><a rel="next" href="{NextPost}">Next</a></li>{/block:PreviousPost}
+		{block:PreviousPost}<li><a rel="prev" href="{PreviousPost}">Previous Post</a></li>{/block:PreviousPost}
+		{block:NextPost}<li><a rel="next" href="{NextPost}">Next Post</a></li>{/block:NextPost}
 		{/block:PermalinkPagination}                
 		{block:Pagination}
 		{block:PreviousPage}<li><a rel="prev" href="{PreviousPage}">Previous</a></li>{/block:PreviousPage}
