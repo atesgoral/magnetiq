@@ -38,8 +38,15 @@ for page in os.listdir(content_dir):
 
 		# Add permalink
 		print "\t\tAdding permalink"
-		content_html = re.sub("(<h2>.+</h2>)",
-			r'<a href="#" title="Permanent Link">\1</a>', content_html)
+		page_html = re.sub("(<h2>.+</h2>)",
+			r'<a href="#" rel="bookmark" title="Permanent Link">\1</a>',
+			page_html)
+
+		# Break out <pre>s
+		print "\t\tBreaking out <pre>s"
+		page_html = re.sub("(?m)(<pre[^<]+</pre>)",
+			r'</div><div class="clear"></div><div class="three fluid column">\1</div><div class="two fluid column post_text">',
+			page_html)
 
 		print "\tWriting " + page
             

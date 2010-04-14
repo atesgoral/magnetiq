@@ -54,7 +54,7 @@ SyntaxHighlighter.all();
 </div>
 
 <div id="content" class="fluid_700">
-	<div class="two fluid column post_text"><h2>Adobe Color Book File Format Specification</h2>
+	<div class="two fluid column post_text"><a href="#" rel="bookmark" title="Permanent Link"><h2>Adobe Color Book File Format Specification</h2></a>
 
 <p><a href="http://www.adobe.com/products/photoshop/main.html">Adobe Photoshop</a>'s <em>Color Picker</em> has a <em>Custom Colors</em> dialog that offers a wide variety of colors from several industry-standard color catalogs such as ANPA, DIC, Focoltone and Pantone.</p>
 
@@ -159,11 +159,11 @@ At the time of the writing of this specification, an official specification by A
 		</tr>
 		</table>
 		<p>A byte for each of the Red, Green and Blue components. Each byte value directly translates to the corresponding level.</p>
-		<pre class="brush: cpp">
+		</div><div class="clear"></div><div class="three fluid column"><pre class="brush: cpp">
 r = r_byte; // 0 thru 255
 g = g_byte; // 0 thru 255
 b = b_byte; // 0 thru 255
-		</pre>
+		</pre></div><div class="two fluid column post_text">
 	</dd>
 	<dt>CMYK</dt>
 	<dd>
@@ -178,12 +178,12 @@ b = b_byte; // 0 thru 255
 
 		<p>A byte for each of the Cyan, Magenta, Yellow and Black components. Each is an unsigned value ranging from 0 to 255, representing 100 minus the intensity percentage, quantized to 255. To calculate the corresponding intensity percentage, subtract a byte value from 255, divide by 2.55 and then round to the nearest integer.</p>
 
-		<pre class="brush: cpp">
+		</div><div class="clear"></div><div class="three fluid column"><pre class="brush: cpp">
 c = (255 - c_byte) / 2.55 + 0.5; // 0% thru 100%
 m = (255 - m_byte) / 2.55 + 0.5; // 0% thru 100%
 y = (255 - y_byte) / 2.55 + 0.5; // 0% thru 100%
 b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
-		</pre>
+		</pre></div><div class="two fluid column post_text">
 	</dd>
 	  
 	<dt>Lab</dt>
@@ -198,11 +198,11 @@ b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
 		  
 		<p>A byte for each of the Lightness, a chrominance and b chrominance components. The lightness percentage is quantized to 255. To get the lightness level percentage, divide the byte value by 2.55 and round to the nearest integer. The a and b chrominance values are offset by 128. To calculate their values, subtract 128 from the corresponding byte values.</p>
 
-		<pre class="brush: cpp">
+		</div><div class="clear"></div><div class="three fluid column"><pre class="brush: cpp">
 l = l_byte / 2.55 + 0.5; // 0% thru 100%
 a = a_byte - 128; // -128 thru 127
 b = b_byte - 128; // -128 thru 127
-		</pre>
+		</pre></div><div class="two fluid column post_text">
 	</dd>
 	</dl>
 </dd>
@@ -216,7 +216,7 @@ b = b_byte - 128; // -128 thru 127
 
 <p>Below is a portion from the beginning of "ANPA Color.acb" that ships with Adobe Photoshop 7.0 for Windows. Separate fields have been enclosed inside rectangles. A verbal walk-through will follow.</p>
 
-<pre>
+</div><div class="clear"></div><div class="three fluid column"><pre>
           +-----------+-----+-----+-----------+------------
 00000000h:|38 42 43 42|00 01|0B B8|00 00 00 23|00 24 00 24 ; 8BCB.......#.$.$
           +-----------+-----+-----+-----------+------------
@@ -268,7 +268,7 @@ b = b_byte - 128; // -128 thru 127
  /\    /  \----/      \/    \--+-/\--/    \/    \/
 /  \01/    \0 /              \1 /  \/ 
     \/      \/                \/ 
-</pre>
+</pre></div><div class="two fluid column post_text">
 
 <p>The file starts with the mandatory "8BCB" signature. Following that, the file version comes. The version must be 1 for Photoshop 7.0 to open the file. Then comes the unique color book identifier: 0x0bb8.</p>
 
