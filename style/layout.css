@@ -50,8 +50,6 @@ body, h1, h2, h3, p, ol, ul, li, dl, pre {
 	clear: left;
 }
 
-/* */
-
 .section {
 	padding-bottom: 20px;
 }
@@ -78,7 +76,7 @@ img.border {
 /* Navigation */
 
 .nav {
-	margin-bottom: 30px;
+	padding-bottom: 30px;
 }
 
 .nav  li {
@@ -109,10 +107,14 @@ img.border {
 
 .panels li {
 	width: 220px;
-	height: 296px;
+	height: 160px;
 	padding: 0 10px;
 	float: left;
 	list-style-type: none;
+}
+
+li.panel {
+	height: 296px;
 }
 
 a.panel h3 {
@@ -187,5 +189,3 @@ a[rel="prev"]:before {
 a[rel="next"]:after {
 	content: " \2192";
 }
-
-/* Misc */

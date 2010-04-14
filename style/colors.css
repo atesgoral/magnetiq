@@ -46,6 +46,10 @@ a:active {
 	color: #fff;
 }
 
+li.panel {
+	background: url(i/ajax-loader.gif) 50% 52px no-repeat;
+}
+
 a.panel {
 	background-repeat: no-repeat;
 }

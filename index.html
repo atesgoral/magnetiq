@@ -7,9 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 <link rel="shortcut icon" href="http://s.magnetiq.com/i/favicon.png"/>
-<link rel="stylesheet" href="http://s.magnetiq.com/style/layout.css" type="text/css"/>
+<link rel="stylesheet" href="style/min.css" type="text/css"/>
+<!--link rel="stylesheet" href="style/layout.css" type="text/css"/>
 <link rel="stylesheet" href="http://s.magnetiq.com/style/typography.css" type="text/css"/>
-<link rel="stylesheet" href="http://s.magnetiq.com/style/colors.css" type="text/css"/>
+<link rel="stylesheet" href="style/colors.css" type="text/css"/-->
 <!--[if IE 6]>
 <link rel="stylesheet" href="style/fix_ie6.css" type="text/css"/>
 <![endif]-->
@@ -20,14 +21,17 @@
 <script type="text/javascript">
 $(function () {
 	// Add panel backgrounds
-	$(".panels a").each(function () {
-		var tokens = /p_(.+)/.exec(this.className);
+	$(".panels li").each(function () {
+		var a = $("a", this).get(0);
+		var tokens = /p_(.+)/.exec(a.className);
 		
 		if (tokens) {
-			this.style.backgroundImage =
+			a.style.backgroundImage =
 				"url(panel_thumbs/" + tokens[1] + ".png)";
+			$(this).addClass("panel");
+			$(a).addClass("panel");
 		}
-	}).addClass("panel");
+	});
 
 	// Clone navigation and add top borders
 	var nav = $("#about");
@@ -41,7 +45,17 @@ $(function () {
 	});
 	
 	// Workaround for anchor not being in right place
-	document.location.hash = document.location.hash;
+	setTimeout(function () {
+		with (document.location) if (hash) hash = hash;
+	}, 1);
+
+	$.ajax({
+		url: "http://twitter.com/status/user_timeline/atesgoral.json?count=2",
+		dataType: "jsonp",
+		success: function (data) {
+			$("#latest_tweet").html(data[0].text);
+		}
+	});
 });
 
 Cufon.replace("h1, h2");
@@ -53,6 +67,8 @@ Cufon.replace("h1, h2");
 		<div class="one fluid column">
 			<h1><a href="/">Magnetiq))</a></h1>
 			<div id="description">by Ateş Göral</div>
+		</div>
+		<div id="latest_tweet" class="two fluid column">		
 		</div>
 		<div class="clear"></div>
 	</div>
@@ -144,7 +160,8 @@ Cufon.replace("h1, h2");
 		<div class="three fluid column">
 			&copy; Ateş Göral -
 			Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
-			Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a>
+			Kick-ass hosting by <a href="http://www.webfaction.com/?affiliate=atesgoral">WebFaction</a> -
+			Powered by static HTML
 		</div>
 		<div class="clear"></div>
 	</div>
