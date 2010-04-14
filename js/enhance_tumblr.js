@@ -4,7 +4,7 @@ $("meta").each(function () {
     var tokens = /(.+):(.+)/.exec(this.name);
 
     if (tokens) {
-        meta[tokens[1]] = this.content;
+        meta[tokens[2]] = this.content;
     }
 });
 
