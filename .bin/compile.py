@@ -1,10 +1,10 @@
 import os
 import re
 
-template_dir = ".templates"
+template_dir = "../.templates"
 template_file = "page.html"
-content_dir = ".content"
-output_dir = "pages"
+content_dir = "../.content"
+output_dir = "../pages"
 
 f = open(os.path.join(template_dir, template_file), "r")
 template = f.read();
