@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 <link rel="shortcut icon" href="http://s.magnetiq.com/i/favicon.png"/>
-<link rel="stylesheet" href="style/min.css" type="text/css"/>
-<!--link rel="stylesheet" href="style/layout.css" type="text/css"/>
-<link rel="stylesheet" href="http://s.magnetiq.com/style/typography.css" type="text/css"/>
-<link rel="stylesheet" href="style/colors.css" type="text/css"/-->
+<!--link rel="stylesheet" href="http://s.magnetiq.com/style/min.css" type="text/css"/-->
+<link rel="stylesheet" href="style/layout.css" type="text/css"/>
+<link rel="stylesheet" href="style/typography.css" type="text/css"/>
+<link rel="stylesheet" href="style/colors.css" type="text/css"/>
 <!--[if IE 6]>
 <link rel="stylesheet" href="style/fix_ie6.css" type="text/css"/>
 <![endif]-->
@@ -44,18 +44,21 @@ $(function () {
 		).attr("id", "");
 	});
 	
-	// Workaround for anchor not being in right place
+	// Workaround for target anchor not being in right place
 	setTimeout(function () {
 		with (document.location) if (hash) hash = hash;
 	}, 1);
 
-	$.ajax({
+	// Get latest tweet
+	/*$.ajax({
 		url: "http://twitter.com/status/user_timeline/atesgoral.json?count=2",
 		dataType: "jsonp",
 		success: function (data) {
-			$("#latest_tweet").html(data[0].text);
+			$("#tweet_text").html(data[0].text);
+			$("#tweet_time").html(data[0].created_at).attr("href",
+				"http://twitter.com/atesgoral/status/" + data[0].id);
 		}
-	});
+	});*/
 });
 
 Cufon.replace("h1, h2");
@@ -64,11 +67,14 @@ Cufon.replace("h1, h2");
 <body>
 <div id="header">
 	<div class="fluid_700">
-		<div class="one fluid column">
+		<div class="one column">
 			<h1><a href="/">Magnetiq))</a></h1>
 			<div id="description">by Ateş Göral</div>
 		</div>
-		<div id="latest_tweet" class="two fluid column">		
+		<div class="one column">&nbsp;</div>
+		<div id="latest_tweet" class="one column">
+			<div id="tweet_text"></div>
+			<div><a id="tweet_time" href="#"></a></div>
 		</div>
 		<div class="clear"></div>
 	</div>

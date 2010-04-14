@@ -49,3 +49,8 @@ h3 {
 	font-style: italic;
 	font-size: 16px
 }
+
+#latest_tweet {
+	font-size: 85.7%;
+	line-height: 14px;
+}
