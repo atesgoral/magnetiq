@@ -5,9 +5,9 @@ body {
 	color: #333;
 }
 
-/*.fluid_700 {
+.show_grid .fluid_700 {
 	background: url(i/fluid_720_rhythm_18.gif) repeat-y;
-}*/
+}
 
 #header, #footer {
 	background: #333;
@@ -47,7 +47,7 @@ a:active {
 }
 
 li.panel {
-	background: url(i/ajax-loader.gif) 50% 52px no-repeat;
+	background: url(i/loading_white.gif) 50% 52px no-repeat;
 }
 
 a.panel {

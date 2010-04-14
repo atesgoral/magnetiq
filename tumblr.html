@@ -105,10 +105,7 @@ SyntaxHighlighter.all();
 		<div class="section" id="disqus_thread"></div>
 		<div class="section" id="dsq-loading-problem"></div>
 		<script type="text/javascript">
-		$.ajax({
-		    url: "http://{text:Disqus Shortname}.disqus.com/embed.js",
-		    dataType: "jsonp"
-		});		
+		$.getScript("http://{text:Disqus Shortname}.disqus.com/embed.js");		
 		</script>
 		{/block:IfDisqusShortname}
 		{/block:PermalinkPage} 
