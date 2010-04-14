@@ -6,7 +6,7 @@ $(function () {
 		
 		if (tokens) {
 			a.style.backgroundImage =
-				"url(panel_thumbs/" + tokens[1] + ".png)";
+				"url(http://s.magnetiq.com/panel_thumbs/" + tokens[1] + ".png)";
 			$(this).addClass("panel");
 			$(a).addClass("panel");
 		}

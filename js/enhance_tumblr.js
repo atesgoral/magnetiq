@@ -5,7 +5,6 @@ $("meta").each(function () {
 
     if (tokens) {
         meta[tokens[1]] = this.content;
-        console.log(this.content);
     }
 });
 
