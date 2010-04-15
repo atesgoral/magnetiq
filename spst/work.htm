@@ -4,6 +4,7 @@ body, input, textarea { background-color: #fff; font-family: Verdana; }
 #font { width: 100%; white-space: nowrap; background-color: #fff; color: #333; border: none; }
 #font { font: 6px monospace; }
 #scrolltext, #buffer { border: 1px solid #888; } 
+#buffer { display: none; }
 #font { display: none; }
 </style>
 
@@ -23,7 +24,8 @@ window.onload = function () {
 		data_end: 0,
 		ticks: 0,
 		ctx: ge("scrolltext").getContext("2d"),
-		buffer: ge("buffer").getContext("2d")
+		buffer: ge("buffer").getContext("2d"),
+		zoom: 1,
 	};
 
 	((spread = ge("spread")).onchange = function () { g_vars.spread = parseInt(this.value);	}).apply(spread);
@@ -33,7 +35,7 @@ window.onload = function () {
 	g_vars.buffer.fillStyle = "rgb(255,255,255)";
 	g_vars.buffer.fillRect(0, 0, 128, 18);
 	
-	tick();
+	setInterval(tick, 40);
 }
 
 function tick() {
@@ -65,12 +67,14 @@ function tick() {
 		g_vars.buffer.fillRect((p = Math.floor(g_vars.ticks / 3)), row + (phase = g_vars.ticks % 3) * 6, 1, 1);
 	}
 	
-	g_vars.ctx.drawImage(g_vars.buffer.canvas, 0, phase * 6, p + 1, 6, g_vars.canvas_w - p - 1, g_vars.canvas_h / 2 - 3, p + 1, 6);
-	if (p < g_vars.canvas_w - 1) g_vars.ctx.drawImage(g_vars.buffer.canvas, p + 1, phase * 6, g_vars.canvas_w - p - 1, 6, 0, g_vars.canvas_h / 2 - 3, g_vars.canvas_w - p - 1, 6);
+	g_vars.ctx.drawImage(g_vars.buffer.canvas, 0, phase * 6, p + 1, 6, (g_vars.canvas_w - p - 1) * g_vars.zoom, g_vars.canvas_h / 2 - 3 * g_vars.zoom, (p + 1) * g_vars.zoom, 6 * g_vars.zoom);
+	if (p < g_vars.canvas_w - 1) {
+		g_vars.ctx.drawImage(g_vars.buffer.canvas, p + 1, phase * 6, g_vars.canvas_w - p - 1, 6, 0, g_vars.canvas_h / 2 - 3 * g_vars.zoom, (g_vars.canvas_w - p - 1) * g_vars.zoom, 6 * g_vars.zoom);
+	}
 
 	g_vars.ticks = ++g_vars.ticks % (g_vars.canvas_w * 3);
 	
-	setTimeout(tick, 10);
+	//setTimeout(tick, 0);
 }
 
 </script>
