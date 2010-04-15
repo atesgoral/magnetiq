@@ -1,21 +1,41 @@
-<title>Scrolltext with Subpixel Rendering</title>
+<html>
+<head>
+<title>Subpixel Scrolltext Demo</title>
 <style>
-body, input, textarea { background-color: #fff; font-family: Verdana; }
-#font { width: 100%; white-space: nowrap; background-color: #fff; color: #333; border: none; }
-#font { font: 6px monospace; }
-#scrolltext, #buffer { border: 1px solid #888; } 
-#buffer { display: none; }
-#font { display: none; }
+body, input, textarea, select { background-color: #fff; color: #444; font-family: Arial, Helvetica, sans-serif; font-size: 0.85em; text-transform: lowercase; }
+body { margin: 0; padding: 0; }
+h2 { line-height: 0.9em; color: #a00; }
+#scrolltext, #buffer, select, textarea { border: 1px solid #888; } 
+select, textarea { width: 128px; }
+textarea { text-transform: uppercase; font-size: 0.8em; }
+#content { width: 130px; margin: 2em; }
+label { font-weight: bold; display: block; }
+#footer { font-size: 0.7em; text-align: center; text-transform: none; }
+a { text-decoration: none; color: #c00; }
+a:hover { color: #f00; }
 </style>
-
-<script>
+<script type="text/javascript">
+<!--
 function ge(id) { return document.getElementById(id); }
 
 window.onload = function () {
 	g_vars = {
-		font_data: ["0000000011100011110000111000111100011111001111100011110010001001110011110010001001000001100011001000100011100011110000111000111100001111001111100100010010001001001001001000100100010011111001", "0000000100010010001001000100100010010000001000000100000010001000100000010010010001000001010101001100100100010010001001000100100010010000000010000100010010001001001001000101000010100000001001", "0000000111110011110001000000100010011110001111000101110011111000100000010011100001000001001001001010100100010011110001000100111100001110000010000100010010001001001001000010000001000001110001", "0000000100010010001001000100100010010000001000000100010010001000100010010010010001000001001001001001100100010010000001010100100100000001000010000100010001010001010101000101000001000010000001", "0000000100010011110000111000111100011111001000000011100010001001110001100010001001111001001001001000100011100010000000110000100010011110000010000011100000100000100010001000100001000011111001", "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000001"],
+		font_data: [
+		    "0000000099900099990000999000999900099999009999900099990090009009990099990090009009000009900099009000900099900099990000999000999900009999009999900900090090009009009009009000900900090099999009",
+		    "0000000900090090009009000900900090090000009000000900000090009000900000090090090009000009090909009900900900090090009009000900900090090000000090000900090090009009009009000909000090900000009009",
+		    "0000000999990099990009000000900090099990009999000909990099999000900000090099900009000009009009009090900900090099990009000900999900009990000090000900090090009009009009000090000009000009990009",
+		    "0000000900090090009009000900900090090000009000000900090090009000900090090090090009000009009009009009900900090090000009090900900900000009000090000900090009090009090909000909000009000090000009",
+		    "0000000900090099990000999000999900099999009000000099900090009009990009900090009009999009009009009000900099900090000000990000900090099990000090000099900000900000900090009000900009000099999009",
+		    "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009000000000000000000000000000000000000000000000000000000000000000000009"
+		],
 		font_offs: [0, 7, 14, 21, 28, 35, 42, 49, 56, 63, 68, 74, 81, 87, 96, 103, 110, 117, 124, 131, 138, 145, 152, 159, 168, 175, 182, 189, 191],
-		filters: [[0, 0, 1, 0, 0], [0, 0.333, 0.333, 0.333, 0], [0.111, 0.222, 0.333, 0.222, 0.111]],
+		filters: [
+		    [0, 0, 1, 0, 0],
+		    [0, 0.333, 0.333, 0.333, 0],
+		    [0.111, 0.222, 0.333, 0.222, 0.111]
+		],
+        bg: [ 255, 255, 255 ],
+        fg: [ 193, 16, 11 ],
 		canvas_w: 128,
 		canvas_h: 128,
 		conveyor: [[ 0, 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0, 0 ], [ 0, 0, 0, 0, 0, 0, 0 ]],
@@ -24,18 +44,17 @@ window.onload = function () {
 		data_end: 0,
 		ticks: 0,
 		ctx: ge("scrolltext").getContext("2d"),
-		buffer: ge("buffer").getContext("2d"),
-		zoom: 1,
+		buffer: ge("buffer").getContext("2d")
 	};
 
 	((spread = ge("spread")).onchange = function () { g_vars.spread = parseInt(this.value);	}).apply(spread);
-	((text = ge("text")).onchange = function () { g_vars.str = this.value.toUpperCase().replace(/[^A-Z ]/g, "@").replace(/ /g, "@"); g_vars.str_pos = 0; }).apply(text);
+	((text = ge("text")).onchange = function () { g_vars.str = this.value.toUpperCase().replace(/[^A-Z ]/g, "@").replace(/ /g, "@") + "@"; g_vars.str_pos = 0; }).apply(text);
 	
 	/* Clear the dirt on Safari */
 	g_vars.buffer.fillStyle = "rgb(255,255,255)";
 	g_vars.buffer.fillRect(0, 0, 128, 18);
 	
-	setInterval(tick, 40);
+	tick();
 }
 
 function tick() {
@@ -49,9 +68,9 @@ function tick() {
 			g_vars.str_pos = 0;
 		}
 	}
-	
+   	
 	for (var row = 0; row < g_vars.font_data.length; row++) {
-		var font_pixel = parseInt(g_vars.font_data[row].charAt(g_vars.data_pos));
+		var font_pixel = g_vars.font_data[row].charAt(g_vars.data_pos) / 9;
 		var conveyor_row = g_vars.conveyor[row];
 		
 		/* Push subpixels from the right and apply filter */
@@ -62,38 +81,56 @@ function tick() {
 		g_vars.filters[g_vars.spread].forEach(function (filter_lev, idx) { conveyor_row[idx + 2] += filter_lev * font_pixel; });
 		
 		/* Render pixels to canvas */
+		
+		var comp = 0;
 
-		g_vars.buffer.fillStyle = "rgb(" + conveyor_row.slice(0, 3).map(function (n) { return Math.round((1 - n) * 255); }) + ")";
+		g_vars.buffer.fillStyle = "rgb("
+		    + conveyor_row.slice(0, 3).map(
+		        function (n) {
+		            return Math.round((g_vars.fg[comp] - g_vars.bg[comp]) * n
+		                + g_vars.bg[comp++]);
+		        })
+		    + ")";
 		g_vars.buffer.fillRect((p = Math.floor(g_vars.ticks / 3)), row + (phase = g_vars.ticks % 3) * 6, 1, 1);
 	}
 	
-	g_vars.ctx.drawImage(g_vars.buffer.canvas, 0, phase * 6, p + 1, 6, (g_vars.canvas_w - p - 1) * g_vars.zoom, g_vars.canvas_h / 2 - 3 * g_vars.zoom, (p + 1) * g_vars.zoom, 6 * g_vars.zoom);
+	g_vars.ctx.drawImage(g_vars.buffer.canvas, 0, phase * 6, p + 1, 6, g_vars.canvas_w - p - 1, g_vars.canvas_h / 2 - 3, p + 1, 6);
+
 	if (p < g_vars.canvas_w - 1) {
-		g_vars.ctx.drawImage(g_vars.buffer.canvas, p + 1, phase * 6, g_vars.canvas_w - p - 1, 6, 0, g_vars.canvas_h / 2 - 3 * g_vars.zoom, (g_vars.canvas_w - p - 1) * g_vars.zoom, 6 * g_vars.zoom);
+		g_vars.ctx.drawImage(g_vars.buffer.canvas, p + 1, phase * 6, g_vars.canvas_w - p - 1, 6, 0, g_vars.canvas_h / 2 - 3, g_vars.canvas_w - p - 1, 6);
 	}
 
 	g_vars.ticks = ++g_vars.ticks % (g_vars.canvas_w * 3);
 	
-	//setTimeout(tick, 0);
+	setTimeout(tick, 10);
 }
-
+-->
 </script>
-<p>
-<label>Sample text</label><br/>
-<textarea id="text" rows="8" cols="80">
-This is a very small scrolltext. You need an LCD monitor to be able to read the text because it employs subpixel rendering (aka ClearType).
-Type any text in this box. You can also play around with the filter settings below. See you back at the beginning of this text!
-</textarea>
-</p>
-<p>
-<label>Smoothing filter</label><br/>
-<select id="spread">
-	<option value="0">none (worst quality, with lots of flicker)</option>
-	<option value="1">1 (better quality, with some flicker)</option>
-	<option value="2" selected>2 (best quality, with the least flicker)</option>
-</select>
-</p>
-<hr/>
+</head>
+<body>
+<div id="content">
+<h2>Subpixel Scrolltext Demo</h2>
 <p><canvas id="scrolltext" width="128" height="128"></canvas></p>
-<p><canvas id="buffer" width="128" height="18"></canvas></p>
-
+<p>
+	<label>Buffer</label>
+	<canvas id="buffer" width="128" height="18"></canvas>
+</p>
+<p>
+	<label for="spread">Anti-aliasing</label>
+	<select id="spread">
+		<option value="0">off</option>
+		<option value="1">partial</option>
+		<option value="2" selected>full</option>
+	</select>
+</p>
+<p>
+	<label for="text">Sample text</label>
+	<textarea id="text" rows="8" cols="80">The quick brown fox jumps over the lazy dog</textarea>
+</p>
+<p id="footer">
+	&copy 2008 Ates Goral<br/>
+	<a href="http://magnetiq.com/">magnetiq.com</a><br/>
+</p>
+</div>
+</body>
+</html>
