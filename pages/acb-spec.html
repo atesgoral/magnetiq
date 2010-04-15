@@ -47,7 +47,7 @@ SyntaxHighlighter.all();
 		<li><a href="http://magnetiq.com/#about">About</a></li>
 		<li><a href="http://magnetiq.com/#projects">Projects</a></li>
 		<li><a href="http://magnetiq.com/#experiments">Experiments</a></li>
-		<li><a href="/">Blog</a></li>
+		<li><a rel="me" href="/">Blog</a></li>
 		<li><a href="/archive">Archive</a></li>
 	</ul>
 	<div class="clear"></div>
@@ -159,11 +159,11 @@ At the time of the writing of this specification, an official specification by A
 		</tr>
 		</table>
 		<p>A byte for each of the Red, Green and Blue components. Each byte value directly translates to the corresponding level.</p>
-		</div><div class="clear"></div><div class="three fluid column"><pre class="brush: cpp">
+		<pre class="brush: cpp">
 r = r_byte; // 0 thru 255
 g = g_byte; // 0 thru 255
 b = b_byte; // 0 thru 255
-		</pre></div><div class="two fluid column post_text">
+		</pre>
 	</dd>
 	<dt>CMYK</dt>
 	<dd>
@@ -178,12 +178,12 @@ b = b_byte; // 0 thru 255
 
 		<p>A byte for each of the Cyan, Magenta, Yellow and Black components. Each is an unsigned value ranging from 0 to 255, representing 100 minus the intensity percentage, quantized to 255. To calculate the corresponding intensity percentage, subtract a byte value from 255, divide by 2.55 and then round to the nearest integer.</p>
 
-		</div><div class="clear"></div><div class="three fluid column"><pre class="brush: cpp">
+		<pre class="brush: cpp">
 c = (255 - c_byte) / 2.55 + 0.5; // 0% thru 100%
 m = (255 - m_byte) / 2.55 + 0.5; // 0% thru 100%
 y = (255 - y_byte) / 2.55 + 0.5; // 0% thru 100%
 b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
-		</pre></div><div class="two fluid column post_text">
+		</pre>
 	</dd>
 	  
 	<dt>Lab</dt>
@@ -198,11 +198,11 @@ b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
 		  
 		<p>A byte for each of the Lightness, a chrominance and b chrominance components. The lightness percentage is quantized to 255. To get the lightness level percentage, divide the byte value by 2.55 and round to the nearest integer. The a and b chrominance values are offset by 128. To calculate their values, subtract 128 from the corresponding byte values.</p>
 
-		</div><div class="clear"></div><div class="three fluid column"><pre class="brush: cpp">
+		<pre class="brush: cpp">
 l = l_byte / 2.55 + 0.5; // 0% thru 100%
 a = a_byte - 128; // -128 thru 127
 b = b_byte - 128; // -128 thru 127
-		</pre></div><div class="two fluid column post_text">
+		</pre>
 	</dd>
 	</dl>
 </dd>
@@ -216,7 +216,7 @@ b = b_byte - 128; // -128 thru 127
 
 <p>Below is a portion from the beginning of "ANPA Color.acb" that ships with Adobe Photoshop 7.0 for Windows. Separate fields have been enclosed inside rectangles. A verbal walk-through will follow.</p>
 
-</div><div class="clear"></div><div class="three fluid column"><pre>
+<pre>
           +-----------+-----+-----+-----------+------------
 00000000h:|38 42 43 42|00 01|0B B8|00 00 00 23|00 24 00 24 ; 8BCB.......#.$.$
           +-----------+-----+-----+-----------+------------
@@ -268,7 +268,7 @@ b = b_byte - 128; // -128 thru 127
  /\    /  \----/      \/    \--+-/\--/    \/    \/
 /  \01/    \0 /              \1 /  \/ 
     \/      \/                \/ 
-</pre></div><div class="two fluid column post_text">
+</pre>
 
 <p>The file starts with the mandatory "8BCB" signature. Following that, the file version comes. The version must be 1 for Photoshop 7.0 to open the file. Then comes the unique color book identifier: 0x0bb8.</p>
 
@@ -292,15 +292,6 @@ If you're in need of a <strong>custom color book</strong> for your business, lea
 <li><a href="http://javastruct.googlecode.com/svn/trunk/javastruct/samples/photoshop/">AdobeColorBook Java class</a> by <a href="http://parduspardus.blogspot.com/">Mehmet D. Akin</a></li>
 <li><a href="http://magnetiq.com/2007/05/08/acb2xml/">ACB2XML - Tool for exporting color book data as XML</a></li>
 </ul></div>
-	<div class="clear"></div>
-</div>
-
-<div class="nav fluid_700 top_border">
-	<ul class="three column fluid">
-		<li><a rel="prev" href="/page/1">Previous</a></li>
-		<li id="pages">Page 2 of 3</li>
-		<li><a rel="next" href="/page/3">Next</a></li>
-	</ul>
 	<div class="clear"></div>
 </div>
 

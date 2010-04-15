@@ -43,10 +43,10 @@ for page in os.listdir(content_dir):
 			page_html)
 
 		# Break out <pre>s
-		print "\t\tBreaking out <pre>s"
-		page_html = re.sub("(?m)(<pre[^<]+</pre>)",
-			r'</div><div class="clear"></div><div class="three fluid column">\1</div><div class="two fluid column post_text">',
-			page_html)
+		# print "\t\tBreaking out <pre>s"
+		# page_html = re.sub("(?m)(<pre[^<]+</pre>)",
+		#	r'</div><div class="clear"></div><div class="three fluid column">\1</div><div class="two fluid column post_text">',
+		#	page_html)
 
 		print "\tWriting " + page
             
