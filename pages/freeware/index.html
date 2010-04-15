@@ -132,7 +132,71 @@ SyntaxHighlighter.all();
 <ul>
 <li>After the system wakes up from hibernation/suspension, the FTP listen port becomes unresponsive. Momentarily chaning the <em>FTP server listen mode</em> in the <em>Security</em> tab to some other mode may (depending on the mode change) reset the listen port.</li>
 </ul>
-</div>
+
+<h3>ACB2XML</h3>
+
+<p>Here's a freeware tool that I had written back in 2003, shortly after reverse-engineering the <a href="http://magnetiq.com/pages/acb-spec">Adobe Color Book Format</a>. This command-line Windows application extracts color data from color book files and generates XML. Once the color data is safely in XML domain, the rest is up to your imagination...</p>
+
+<p class="download">Download <a href="http://magnetiq.com/downloads/acb2xml20.zip">acb2xml20.zip</a> (30 KB)</p>
+
+<p>If you don't already know what color books are, there's the <em>Custom Colors</em> dialog which appears when you click the <em>Custom</em> button on the <em>Color Picker</em> dialog. There, you can pick colors from a variety of color books which represent standard color catalogs by organizations like <a href="http://pantone.com/">Pantone</a>, <a href="http://toyocolor.com/">Toyo</a>, <a href="http://trumatch.com/">Trumatch</a>, etc. The color book data is kept in files under the <em>Presets/Color Books</em> folder of your Photoshop installation. On Windows, they have the <em>.acb</em> extension.</p>
+
+<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2008/06/custom_colors.jpg" width="400" height="279" alt="Custom Colors Dialog"/></p>
+<p class="center"><small>Custom Colors Dialog</small></p>
+
+<p>To extract data, just pass in the filename of a color book. The resulting XML will go to standard output. To capture to a file, just redirect the output:</p>
+
+<pre>acb2xml focoltone.acb &gt; focoltone.xml</pre>
+
+<p>For long filenames or filenames with spaces, quote the filenames:</p>
+
+<pre>acb2xml "PANTONE process coated.acb" > "PANTONE process coated.xml"</pre>
+
+<p>The resulting output will look something like this:</p>
+
+<pre class="brush: xml">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;color-book version=&quot;1.0&quot; xmlns=&quot;http://magnetiq.com/ns/2007/05/colorbook&quot;&gt;
+    &lt;version&gt;1&lt;/version&gt;
+    &lt;id&gt;0bb9&lt;/id&gt;
+    &lt;title&gt;&lt;![CDATA[$$$/colorbook/FOCOLTONE/title=FOCOLTONE]]&gt;&lt;/title&gt;
+    &lt;prefix&gt;&lt;![CDATA[$$$/colorbook/FOCOLTONE/prefix=FOCOLTONE ]]&gt;&lt;/prefix&gt;
+    &lt;postfix&gt;&lt;![CDATA[$$$/colorbook/FOCOLTONE/postfix=]]&gt;&lt;/postfix&gt;
+    &lt;description&gt;&lt;![CDATA[$$$/colorbook/FOCOLTONE/description=]]&gt;&lt;/description&gt;
+    &lt;colors&gt;860&lt;/colors&gt;
+    &lt;page-size&gt;5&lt;/page-size&gt;
+    &lt;page-offset&gt;2&lt;/page-offset&gt;
+    &lt;color-space&gt;CMYK&lt;/color-space&gt;
+    &lt;color&gt;
+        &lt;name&gt;1070&lt;/name&gt;
+        &lt;alias&gt;&lt;![CDATA[1070  ]]&gt;&lt;/alias&gt;
+        &lt;cyan&gt;100&lt;/cyan&gt;
+        &lt;magenta&gt;0&lt;/magenta&gt;
+        &lt;yellow&gt;0&lt;/yellow&gt;
+        &lt;black&gt;0&lt;/black&gt;
+    &lt;/color&gt;
+    &lt;color&gt;
+        &lt;name&gt;1071&lt;/name&gt;
+        &lt;alias&gt;&lt;![CDATA[1071  ]]&gt;&lt;/alias&gt;
+        &lt;cyan&gt;0&lt;/cyan&gt;
+        &lt;magenta&gt;100&lt;/magenta&gt;
+        &lt;yellow&gt;0&lt;/yellow&gt;
+        &lt;black&gt;0&lt;/black&gt;
+    &lt;/color&gt;
+    ...
+</pre>
+
+<p>ACB2XML currently supports <a href="http://en.wikipedia.org/wiki/Cmyk">CMYK</a>, <a href="http://en.wikipedia.org/wiki/Rgb">RGB</a> and <a href="http://en.wikipedia.org/wiki/Lab_color_space">Lab</a> color spaces.</p>
+
+<h4>Known Issues</h4>
+
+<ul>
+<li>Some textual information is enclosed in CDATA blocks, instead of doing proper XML escaping. While this has no harm whatsoever, I may fix it in the future.</li>
+</ul>
+
+<h4>Legalese</h4>
+
+<p><em>Adobe&reg; and Photoshop&reg; are either registered trademarks or trademarks of Adobe Systems Incorporated in the United States and/or other countries.</em></p></div>
 	<div class="clear"></div>
 </div>
 
