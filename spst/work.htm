@@ -1,138 +1,100 @@
+<title>Scrolltext with Subpixel Rendering</title>
 <style>
-body { background-color: #888; }
-#font, #buffer, #text { width: 100%; white-space: nowrap; background-color: black; color: #888; border: none; }
+body, input, textarea { background-color: #fff; font-family: Verdana; }
+#font, #buffer { width: 100%; white-space: nowrap; background-color: #fff; color: #333; border: none; }
 #font, #buffer { font: 6px monospace; }
-#scrolltext { /*border: 1px solid #000;*/ } 
+#scrolltext { border: 1px solid #888; } 
+#font { display: none; }
 </style>
 
 <script>
-var g_levels = [120, 100, 255];
-var g_ctx;
-var g_str;
-var g_str_pos = 0;
-var g_data_pos;
-var g_ch_width = -1;
-var g_font_data;
-var g_starts = [ 0 ];
-var g_widths;
-var g_colors = new Object();
+function ge(id) { return document.getElementById(id); }
 
-var g_buffer = new Array();
+window.onload = function () {
+	g_vars = {
+		font_data: ["0000000111001111000111001111001111101111100111101000101110111101000101000011000110100010011100111100011100111100011110111110100010100010100100101000101000101111101", "0000001000101000101000101000101000001000001000001000100100000101001001000010101010110010100010100010100010100010100000001000100010100010100100100101000101000000101", "0000001111101111001000001000101111001111001011101111100100000101110001000010010010101010100010111100100010111100011100001000100010100010100100100010000010000111001", "0000001000101000101000101000101000001000001000101000100100100101001001000010010010100110100010100000101010100100000010001000100010010100101010100101000010001000001", "0000001000101111000111001111001111101000000111001000101110011001000101111010010010100010011100100000011000100010111100001000011100001000010001001000100010001111101", "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000001"],
+		font_offs: [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 58, 63, 69, 74, 82, 88, 94, 100, 106, 112, 118, 124, 130, 136, 144, 150, 156, 162, 164],
+		filters: [[0, 0, 1, 0, 0], [0, 0.333, 0.333, 0.333, 0], [0.111, 0.222, 0.333, 0.222, 0.111]],
+		buffer: [],
+		str_pos: 0,
+		data_pos: -1,
+		data_end: 0,
+		ctx: ge("scrolltext").getContext("2d")
+	};
 
-window.onload = function() {
-	g_str = document.getElementById("text").value.toUpperCase().replace(/[^A-Z ]/g, "");
-	g_font_data = document.getElementById("font").value.split(/\r?\n/);
-	g_widths = g_font_data[0].split(" ").map(function(tok) {
-		var len = tok.length;
-		
-		g_starts.push(g_starts[g_starts.length - 1] + len + 1);
-		
-		return len;
-	});
-	
-	var buffer_row = "";
-	
-	for (var j = 0; j < 100 * 3; j++) {
-		buffer_row += " ";
-	}
+	((spread = ge("spread")).onchange = function () { g_vars.spread = parseInt(this.value);	}).apply(spread);
+	((text = ge("text")).onchange = function () { g_vars.str = this.value.toUpperCase().replace(/[^A-Z ]/g, "@").replace(/ /g, "@"); g_vars.str_pos = 0; }).apply(text);
 	
 	for (var i = 0; i < 6; i++) {
-		g_buffer.push(buffer_row);
-	}
-
-	var triple = new Array(3);
-	var rgb = new Array(3);
-	
-	for (var i = 0; i < 8; i++) {
-		var mask = 4;
+		var buff_row = new Array();
 		
-		for (var bit = 0; bit < 3; bit++) {
-			if (i & mask) {
-				triple[bit] = "#";
-				rgb[bit] = g_levels[bit];
-			} else {
-				triple[bit] = " ";
-				rgb[bit] = 0;
-			}
-			
-			mask >>= 1;
+		for (var j = 0; j < 100 * 3 + 2; j++) {
+			buff_row.push(0);
 		}
-		
-		g_colors[triple.join("")] = "rgb(" + rgb.join(",") + ")";
-	}
-	
-	var canvas = document.getElementById("scrolltext");
-	var buffer = new Array(600);
-	
-	if (canvas.getContext) {		
-		g_ctx = canvas.getContext('2d');
 
-		g_ctx.fillStyle = "rgb(0,0,0)";
-		g_ctx.fillRect (0, 0, 100, 20);
-		
-		setInterval(tick, 10);
+		g_vars.buffer.push(buff_row);
 	}
+	
+	setInterval(tick, 0);
 }
 
 function tick() {
-	if (g_ch_width == -1) {
-		var ch = g_str.charCodeAt(g_str_pos);
+	if (++g_vars.data_pos == g_vars.data_end) {
+		var ch = g_vars.str.charCodeAt(g_vars.str_pos) - 64;
 		
-		if (ch == 32) {
-			g_data_pos = -1; // space
-			g_ch_width = 4;
-		} else {
-			g_data_pos = g_starts[ch - 65];
-			g_ch_width = g_widths[ch - 65];
-		}
+		g_vars.data_pos = g_vars.font_offs[ch];
+		g_vars.data_end = g_vars.font_offs[ch + 1];
 		
-		if (++g_str_pos == g_str.length) {
-			g_str_pos = 0;
+		if (++g_vars.str_pos == g_vars.str.length) {
+			g_vars.str_pos = 0;
 		}
 	}
 	
 	for (var row = 0; row < 6; row++) {
-		var pixel = g_data_pos != -1 ?
-			g_font_data[row + 1].charAt(g_data_pos) : " ";
-
-		g_buffer[row] =  (g_buffer[row] + pixel).substr(1);
+		var pixel = parseInt(g_vars.font_data[row].charAt(g_vars.data_pos));
+		var buff_row = g_vars.buffer[row];
+		
+		buff_row.shift();
+		buff_row.push(0);
+		
+		g_vars.filters[g_vars.spread].forEach(function (p, i) { buff_row[buff_row.length - 1 - i] += p * pixel; })
+		
 	}
-
-	if (g_data_pos != -1) {
-		g_data_pos++;
-	}
-	
-	g_ch_width--;
-	
-	//document.getElementById("buffer").value = g_buffer.join("\n");
 
 	for (var row = 0; row < 6; row++) {
-		var buff_row = g_buffer[row];
+		var buff_row = g_vars.buffer[row];
 		var num_triples = Math.floor(buff_row.length / 3);
+		var idx = 0;
 		
 		for (var triple = 0; triple < num_triples; triple++) {
-			g_ctx.fillStyle = g_colors[buff_row.substr(triple * 3, 3)];
-			g_ctx.fillRect(triple, row + 7, 1, 1);
+			g_vars.ctx.fillStyle = "rgb(" +
+				compValue(buff_row[idx++]) + "," +
+				compValue(buff_row[idx++]) + "," +
+				compValue(buff_row[idx++]) + ")";
+			g_vars.ctx.fillRect(triple, row + 7, 1, 1);
 		}
 	}
 }
 
+function compValue(n) {
+	return Math.round((1 - n) * 255);
+}
+
 </script>
-
-Accents Redensek by Fontalicious
-
-<textarea id="font" rows="7">
------ ----- ----- ----- ----- ----- ----- ----- --- ---- ----- ---- ------- ----- ----- ----- ----- ----- ----- ----- ----- ----- ------- ----- ----- ----- -
- ###  ####   ###  ####  ##### #####  #### #   # ### #### #   # #    ##   ## #   #  ###  ####   ###  ####   #### ##### #   # #   # #  #  # #   # #   # ##### #
-#   # #   # #   # #   # #     #     #     #   #  #     # #  #  #    # # # # ##  # #   # #   # #   # #   # #       #   #   # #   # #  #  #  # #   # #      # #
-##### ####  #     #   # ####  ####  # ### #####  #     # ###   #    #  #  # # # # #   # ####  #   # ####   ###    #   #   # #   # #  #  #   #     #    ###  #
-#   # #   # #   # #   # #     #     #   # #   #  #  #  # #  #  #    #  #  # #  ## #   # #     # # # #  #      #   #   #   #  # #  # # # #  # #    #   #     #
-#   # ####   ###  ####  ##### #      ###  #   # ###  ##  #   # #### #  #  # #   #  ###  #      ##   #   # ####    #    ###    #    #   #  #   #   #   ##### #
-                                                                                                 #                                                          #
+<p>
+<label>Sample text</label><br/>
+<textarea id="text" rows="8" cols="80">
+This is a very small scrolltext. You need an LCD monitor to be able to read the text because it employs subpixel rendering (aka ClearType).
+Type any text in this box. You can also play around with the filter settings below. See you back at the beginning of this text!
 </textarea>
-<!--textarea id="buffer" rows="6">
-</textarea-->
-<textarea id="text">
-This is a very small scrolltext. It's probably one of the smallest of its kind. It's even possible that this is the smallest one, ever. See you all back at the beginning of this text. 
-</textarea>
+</p>
+<p>
+<label>Smoothing filter</label><br/>
+<select id="spread">
+	<option value="0">none (worst quality, with lots of flicker)</option>
+	<option value="1">1 (better quality, with some flicker)</option>
+	<option value="2" selected>2 (best quality, with the least flicker)</option>
+</select>
+</p>
+<hr/>
 <p><canvas id="scrolltext" width="100" height="20"></canvas></p>
