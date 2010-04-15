@@ -42,7 +42,8 @@ RewriteRule acb2xml http://magnetiq.com/pages/freeware#acb2xml [NE,R=301,L]
 RewriteRule burr?ito http://magnetiq.com/pages/freeware#burrito [NE,R=301,L]
 RewriteRule e-?res-?q http://magnetiq.com/pages/freeware#eresq [NE,R=301,L]
 RewriteRule win-?res-?q http://magnetiq.com/pages/freeware#winresq [NE,R=301,L]
-RewriteRule \d/multiple-synthetic-lights|multi_light http://magnetiq.com/pages/multiple-synthetic-lights [R=301,L]
+RewriteRule \d/multiple-synthetic-lights http://magnetiq.com/pages/multiple-synthetic-lights [R=301,L]
+#multi_light
 RewriteRule \d/depth-of-field|Depth_of_Field http://magnetiq.com/pages/depth-of-field [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
