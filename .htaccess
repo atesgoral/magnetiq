@@ -1,12 +1,8 @@
 Options -Indexes
 
-# BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
 
 # Blog posts
 RewriteRule when-semicolons-are-not-optional-in-javascript http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript [R=301,L]
@@ -49,7 +45,8 @@ RewriteRule win-?res-?q http://magnetiq.com/pages/freeware#winresq [NE,R=301,L]
 RewriteRule multiple-synthetic-lights http://magnetiq.com/pages/multiple-synthetic-lights [R=301,L]
 RewriteRule depth-of-field http://magnetiq.com/pages/depth-of-field [R=301,L]
 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
 RewriteRule . /index.php [L]
 </IfModule>
-
-# END WordPress
