@@ -38,7 +38,11 @@ RewriteRule rendering-n-sided-polygons-with-dhtml http://blog.magnetiq.com/post/
 RewriteRule ^/bear http://ozakinci.net/ [R=301,L]
 RewriteRule ^/twofifty http://twofifty.net/ [R=301,L]
 RewriteRule ^acb-spec|acb_format|PhotoshopColorBook|photoshopcolorbook http://magnetiq.com/pages/acb-spec [R=301,L]
-RewriteRule win-?res-?q|e-?res-?q|burr?ito|acb2xml|programs|^freeware http://magnetiq.com/pages/freeware [R=301,L]
+RewriteRule programs|^freeware http://magnetiq.com/pages/freeware [R=301,L]
+RewriteRule acb2xml http://magnetiq.com/pages/freeware#acb2xml [R=301,L]
+RewriteRule burr?ito http://magnetiq.com/pages/freeware#burrito [R=301,L]
+RewriteRule e-?res-?q http://magnetiq.com/pages/freeware#eresq [R=301,L]
+RewriteRule win-?res-?q http://magnetiq.com/pages/freeware#winresq [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
