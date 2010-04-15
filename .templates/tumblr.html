@@ -5,15 +5,19 @@
 <head>
 <title>{Title}{block:PostTitle} - {PostTitle}{/block:PostTitle}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="text:Disqus Shortname" content="{text:Disqus Shortname}"/>
-<meta name="text:Google Analytics Web Property ID" content="{text:Google Analytics Web Property ID}"/>
-<meta name="text:Google Analytics Domain" content="{text:Google Analytics Domain}"/>
-<meta name="if:Syntax Highlighting" content="{block:IfSyntaxHighlighting}true{/block:IfSyntaxHighlighting}"/>
-<meta name="if:Font Replacement" content="{block:IfFontReplacement}true{/block:IfFontReplacement}"/>
-<meta name="custom:Permalink Page" content="{block:PermalinkPage}true{/block:PermalinkPage}"/>
+
+<meta name="text:Disqus Shortname" content=""/>
+<meta name="text:Google Profile ID" content=""/>
+<meta name="text:Google Analytics Web Property ID" content=""/>
+<meta name="text:Google Analytics Domain" content=""/>
+<meta name="if:Syntax Highlighting" content="1"/>
+<meta name="if:Font Replacement" content="1"/>
 
 <link rel="shortcut icon" href="{Favicon}"/>
 <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+{block:IfGoogleProfileID}
+<link rel="me" href="http://www.google.com/profiles/{text:Google Profile ID}"/>
+{/block:IfGoogleProfileID}
 {block:PermalinkPage}
     {block:IfSyntaxHighlighting}
 <link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shCore.css"/>
@@ -41,6 +45,23 @@
 <script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/cufon-yui.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/Museo_700_600.font.js"></script>
 {/block:IfFontReplacement}
+<script type="text/javascript">
+var meta = {
+    DisqusShortname: "{text:Disqus Shortname}",
+    GoogleProfileID: "{text:Google Profile ID}",
+    GoogleAnalyticsWebPropertyID: "{text:Google Analytics Web Property ID}",
+    GoogleAnalyticsDomain: "{text:Google Analytics Domain}",
+{block:IfSyntaxHighlighting}
+    SyntaxHighlighting: true,
+{/block:IfSyntaxHighlighting}
+{block:IfFontReplacement}
+    FontReplacement: true,
+{/block:IfFontReplacement}
+{block:PermalinkPage}
+    PermalinkPage: true
+{/block:PermalinkPage}
+};
+</script>
 <script type="text/javascript" src="http://s.magnetiq.com/js/enhance_tumblr.js"></script>
 </head>
 <body>
