@@ -41,7 +41,7 @@ for page in os.listdir(content_dir):
 		page_html = re.sub("(<h2>.+</h2>)",
 			r'<a href="#" rel="bookmark" title="Permanent Link">\1</a>',
 			page_html)
-
+			
 		# Break out <pre>s
 		# print "\t\tBreaking out <pre>s"
 		# page_html = re.sub("(?m)(<pre[^<]+</pre>)",
