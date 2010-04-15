@@ -30,3 +30,49 @@
 
 <p>For a more comprehensive taskbar icon rescue solution, you can use <a href="http://www.mlin.net/TraySaver.shtml">TraySaver</a> by <a href="http://www.mlin.net/">Mike Lin</a>.</p>
 
+<h3>Burrito</h3>
+
+<p>With Burrito you can read and manage your e-mails with any FTP client! It acts as a POP3/FTP protocol translator -- it's actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files. You can view, delete and copy your e-mail messages as if they were files on an FTP server.</p>
+
+<p class="download">Download <a href="http://magnetiq.com/downloads/burrito10b.exe">burrito10b.exe</a> (479 KB)</p>
+
+<p>This is a programming experiment that dates back to 2002. Having played around with POP3 for a while (see <a href="/2006/07/10/e-res-q-13/">E-Res-Q</a>), I just wanted to prove to myself that POP3/FTP protocol translation could work (and I guess I also had more free time back then). Burrito is certainly not a utility that would appeal to the general public, due to its obscure function. The only real-life scenario I can think of is an employee trying to circumvent the company firewall that blocks POP3 traffic (which is something I've experienced first-hand).</p>
+
+<h4>Very Brief Usage Instructions</h4>
+
+<p>The <em>About</em> tab has an <em>Check for update</em> button which takes you back to this site to tell you that you're using the most recent version of Burrito (since I currently don't have any intentions of releasing updates).</p>
+
+<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/idle.jpg" width="400" height="313" alt="About Tab"/></p>
+<p class="center"><small>About Tab</small></p>
+
+<p>In the <em>Options</em> tab, you can determine how you'll be passing the POP3 username and server to your FTP server. The password that you use for the FTP connection is used as the POP3 server password, so Burrito doesn't have to know your password in advance. However, the POP3 username and password must be combined and used as the FTP username. You can change the username-server separator here (defaults to "\").</p>
+
+<p>You can also configure how filenames for individual messages are to be composed. The default is to use the name of the sender, followed by a dash, followed by the message subject. The default file extension is ".eml". After copying files to your local disk, you should be able to simply double click to view them in Outlook Express. Use ".msg" etc. to match whatever e-mail client you're actually using.</p>
+
+<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/options.jpg" width="400" height="313" alt="Options Tab"/></p>
+<p class="center"><small>Options Tab</small></p>
+
+<p>By default, Burrito listens on port 21, on all IP addresses. The <em>Security</em> tab allows you to tweak the FTP server listen settings.</p>
+
+<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/security.jpg" width="400" height="313" alt="Security Tab"/></p>
+<p class="center"><small>Security Tab</small></p>
+
+<p>Here's how a typical FTP client configuration looks like (I use <a href="http://ghisler.com" target="_blank">Total Commander</a>):</p>
+
+<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/ftpsettings.jpg" width="373" height="403" alt="FTP Client Settings"/></p>
+<p class="center"><small>FTP Client Settings</small></p>
+
+<p>And here's how your e-mail messages appear as files in your FTP client:</p>
+
+<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/ftpaction.jpg" width="400" height="300" alt="FTP Client in Action"/></p>
+<p class="center"><small>FTP Client in Action</small></p>
+
+<p>For every FTP connection you establish with Burrito, it will typically open a POP3 connection to the server that specified in the FTP username. It has a connection sharing feature for when multiple FTP clients access the same POP3 account.</p>
+
+<p>Because Burrito doesn't download entire messages until you attempt to do an FTP-copy, simply listing and deleting messages are typically faster than a normal POP3 client. Therefore, it can actually be used for cleaning up a POP3 account after it gets choked by a huge messages or spam.</p>
+
+<h4>Known Issues</h4>
+
+<ul>
+<li>After the system wakes up from hibernation/suspension, the FTP listen port becomes unresponsive. Momentarily chaning the <em>FTP server listen mode</em> in the <em>Security</em> tab to some other mode may (depending on the mode change) reset the listen port.</li>
+</ul>
