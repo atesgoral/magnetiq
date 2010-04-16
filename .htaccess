@@ -9,10 +9,10 @@ RewriteBase /
 RewriteRule ^\.|/\. - [F,L]
 
 # Blog posts
-RewriteMap legacy txt:.rewrite/legacy.txt
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond (${legacy:$1|unknown}) !unknown
-RewriteRule %1 http://blog.magnetiq.com/post/${legacy:$2} [R=301,L]
+#RewriteMap legacy txt:.rewrite/legacy.txt
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond (${legacy:$1|unknown}) !unknown
+#RewriteRule %1 http://blog.magnetiq.com/post/${legacy:$2} [R=301,L]
 
 # Other paths
 RewriteRule ^bear http://ozakinci.net/ [R=301,L]
