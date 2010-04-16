@@ -1,5 +1,11 @@
 Options -Indexes
 
+<Files ~ "^\.">
+Order allow,deny
+Deny from all
+Satisfy All
+</Files>
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
