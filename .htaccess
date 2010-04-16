@@ -1,16 +1,10 @@
 Options -Indexes
 
-#<DirectoryMatch "^\.">
-#Deny from all
-#</DirectoryMatch>
-
-<FilesMatch "^\.">
-Deny from all
-</FilesMatch>
-
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
+RewriteRule ^\.|/. - [F,L]
 
 # Blog posts
 RewriteRule when-semicolons-are-not-optional-in-javascript http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript [R=301,L]
@@ -56,6 +50,5 @@ RewriteRule \d/depth-of-field|Depth_of_Field http://magnetiq.com/pages/depth-of-
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
 RewriteRule . /index.php [L]
 </IfModule>
