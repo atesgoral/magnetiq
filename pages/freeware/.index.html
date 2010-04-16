@@ -11,13 +11,13 @@
 
 <h3 id="acb2xml">ACB2XML</h3>
 
-<p>Here's a freeware tool that I had written back in 2003, shortly after reverse-engineering the <a href="http://magnetiq.com/pages/acb-spec">Adobe Color Book Format</a>. This command-line Windows application extracts color data from color book files and generates XML. Once the color data is safely in XML domain, the rest is up to your imagination...</p>
+<p>Here's a freeware tool that I had written back in 2003, shortly after reverse-engineering the <a href="/pages/acb-spec">Adobe Color Book Format</a>. This command-line Windows application extracts color data from color book files and generates XML. Once the color data is safely in XML domain, the rest is up to your imagination...</p>
 
-<p class="download">Download <a href="http://magnetiq.com/downloads/acb2xml20.zip">acb2xml20.zip</a> (30 KB)</p>
+<p class="download">Download <a href="/downloads/acb2xml20.zip">acb2xml20.zip</a> (30 KB)</p>
 
 <p>If you don't already know what color books are, there's the <em>Custom Colors</em> dialog which appears when you click the <em>Custom</em> button on the <em>Color Picker</em> dialog. There, you can pick colors from a variety of color books which represent standard color catalogs by organizations like <a href="http://pantone.com/">Pantone</a>, <a href="http://toyocolor.com/">Toyo</a>, <a href="http://trumatch.com/">Trumatch</a>, etc. The color book data is kept in files under the <em>Presets/Color Books</em> folder of your Photoshop installation. On Windows, they have the <em>.acb</em> extension.</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2008/06/custom_colors.jpg" width="400" height="279" alt="Custom Colors Dialog"/></p>
+<p class="center"><img src="i/custom_colors.jpg" width="400" height="279" alt="Custom Colors Dialog"/></p>
 <p class="center"><small>Custom Colors Dialog</small></p>
 
 <p>To extract data, just pass in the filename of a color book. The resulting XML will go to standard output. To capture to a file, just redirect the output:</p>
@@ -78,7 +78,7 @@
 
 <p>With Burrito you can read and manage your e-mails with any FTP client! It acts as a POP3/FTP protocol translator -- it's actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files. You can view, delete and copy your e-mail messages as if they were files on an FTP server.</p>
 
-<p class="download">Download <a href="http://magnetiq.com/downloads/burrito10b.exe">burrito10b.exe</a> (479 KB)</p>
+<p class="download">Download <a href="/downloads/burrito10b.exe">burrito10b.exe</a> (479 KB)</p>
 
 <p>This is a programming experiment that dates back to 2002. Having played around with POP3 for a while (see <a href="/2006/07/10/e-res-q-13/">E-Res-Q</a>), I just wanted to prove to myself that POP3/FTP protocol translation could work (and I guess I also had more free time back then). Burrito is certainly not a utility that would appeal to the general public, due to its obscure function. The only real-life scenario I can think of is an employee trying to circumvent the company firewall that blocks POP3 traffic (which is something I've experienced first-hand).</p>
 
@@ -86,29 +86,29 @@
 
 <p>The <em>About</em> tab has an <em>Check for update</em> button which takes you back to this site to tell you that you're using the most recent version of Burrito (since I currently don't have any intentions of releasing updates).</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/idle.jpg" width="400" height="313" alt="About Tab"/></p>
+<p class="center"><img src="i/burrito_idle.jpg" width="400" height="313" alt="About Tab"/></p>
 <p class="center"><small>About Tab</small></p>
 
 <p>In the <em>Options</em> tab, you can determine how you'll be passing the POP3 username and server to your FTP server. The password that you use for the FTP connection is used as the POP3 server password, so Burrito doesn't have to know your password in advance. However, the POP3 username and password must be combined and used as the FTP username. You can change the username-server separator here (defaults to "\").</p>
 
 <p>You can also configure how filenames for individual messages are to be composed. The default is to use the name of the sender, followed by a dash, followed by the message subject. The default file extension is ".eml". After copying files to your local disk, you should be able to simply double click to view them in Outlook Express. Use ".msg" etc. to match whatever e-mail client you're actually using.</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/options.jpg" width="400" height="313" alt="Options Tab"/></p>
+<p class="center"><img src="i/burrito_options.jpg" width="400" height="313" alt="Options Tab"/></p>
 <p class="center"><small>Options Tab</small></p>
 
 <p>By default, Burrito listens on port 21, on all IP addresses. The <em>Security</em> tab allows you to tweak the FTP server listen settings.</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/security.jpg" width="400" height="313" alt="Security Tab"/></p>
+<p class="center"><img src="i/burrito_security.jpg" width="400" height="313" alt="Security Tab"/></p>
 <p class="center"><small>Security Tab</small></p>
 
 <p>Here's how a typical FTP client configuration looks like (I use <a href="http://ghisler.com" target="_blank">Total Commander</a>):</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/ftpsettings.jpg" width="373" height="403" alt="FTP Client Settings"/></p>
+<p class="center"><img src="i/burrito_ftpsettings.jpg" width="373" height="403" alt="FTP Client Settings"/></p>
 <p class="center"><small>FTP Client Settings</small></p>
 
 <p>And here's how your e-mail messages appear as files in your FTP client:</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2007/05/ftpaction.jpg" width="400" height="300" alt="FTP Client in Action"/></p>
+<p class="center"><img src="i/burrito_ftpaction.jpg" width="400" height="300" alt="FTP Client in Action"/></p>
 <p class="center"><small>FTP Client in Action</small></p>
 
 <p>For every FTP connection you establish with Burrito, it will typically open a POP3 connection to the server that specified in the FTP username. It has a connection sharing feature for when multiple FTP clients access the same POP3 account.</p>
@@ -127,9 +127,9 @@
 
 <p class="msg">If <strong>E-Res-Q has saved your life</strong> in more than one occasion, feel free to <strong>express your appreciation</strong> through a small <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=1037532">PayPal donation</a>. Your donation will help towards the hosting expenses I've had over the years for serving this completely free utility.</p>
 
-<p class="download">Download <a href="http://magnetiq.com/downloads/eresq13.zip">eresq13.zip</a> (225.7 KB)</p>
+<p class="download">Download <a href="/downloads/eresq13.zip">eresq13.zip</a> (225.7 KB)</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2008/06/e-res-q-ss.jpg" alt="E-Res-Q Screenshot" height="295" width="400"/></p>
+<p class="center"><img src="i/e-res-q-ss.jpg" alt="E-Res-Q Screenshot" height="295" width="400"/></p>
 <p class="center"><small>E-Res-Q Main Window</small></p>
 
 <p>This small program has proved very useful back in the times when most of us still had dial-up connections. It's still a very useful utility for setting up quick access to your POP3 mailbox when you're temporarily using someone else's computer. The fact that it doesn't require installation is a plus. You just download the zip file, extract the binary and run it, punch in your account settings and you're ready to go!</p>
@@ -140,9 +140,9 @@
 
 <p class="msg">If <strong>Win-Res-Q has saved your life</strong> on more than one occasion, feel free to <strong>express your appreciation</strong> through a small <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=1037532">PayPal donation</a>. Your donation will help towards the hosting expenses I've had over the years for serving this completely free utility.</p>
 
-<p class="download">Download <a href="http://magnetiq.com/downloads/winresq10.zip">winresq10.zip</a> (136.5 KB)</p>
+<p class="download">Download <a href="/downloads/winresq10.zip">winresq10.zip</a> (136.5 KB)</p>
 
-<p class="center"><img src="http://magnetiq.com/wp-content/uploads/2008/06/win-res-q-ss.gif" alt="Win-Res-Q Screenshot" height="344" width="295"/></p>
+<p class="center"><img src="i/win-res-q-ss.gif" alt="Win-Res-Q Screenshot" height="344" width="295"/></p>
 <p class="center"><small>Win-Res-Q Main Window</small></p>
 
 <p>This was one of the first Windows applications that I had written using Delphi. I forgot exactly when I wrote it but the file date hints that it's around August 1998. Back then, I was still using the nickname "HeaT" and I also thought that splash screens were cool. When you launch the program, an annoying splash screen pops up with the name "HeaT" on it . It automatically goes away after a few seconds or as soon as you click on it. An installer is not available since it's only a single executable (and I was lazy).</p>
