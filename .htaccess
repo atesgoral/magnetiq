@@ -49,12 +49,13 @@ RewriteRule rendering-n-sided-polygons-with-dhtml http://blog.magnetiq.com/post/
 # Other paths
 RewriteRule ^acb-spec|acb_format|PhotoshopColorBook|photoshopcolorbook /pages/acb-spec [R=301,L]
 RewriteRule programs|^freeware /pages/freeware [R=301,L]
+RewriteRule (?:^|\d/)multiple-synthetic-lights|multi_light /pages/multiple-synthetic-lights [R=301,L]
+RewriteRule (?:^|\d/)depth-of-field|Depth_of_Field /pages/depth-of-field [R=301,L]
+
 RewriteRule acb2xml /pages/freeware#acb2xml [NE,R=301,L]
 RewriteRule burr?ito /pages/freeware#burrito [NE,R=301,L]
 RewriteRule e-?res-?q /pages/freeware#eresq [NE,R=301,L]
 RewriteRule win-?res-?q /pages/freeware#winresq [NE,R=301,L]
-RewriteRule multiple-synthetic-lights|multi_light /pages/multiple-synthetic-lights [R=301,L]
-RewriteRule depth-of-field|Depth_of_Field /pages/depth-of-field [R=301,L]
 
 RewriteRule ^bear http://ozakinci.net/ [R=301,L]
 RewriteRule ^twofifty http://twofifty.net/ [R=301,L]
