@@ -2,43 +2,22 @@ Options -Indexes
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteOptions MaxRedirects=1
 RewriteBase /
 
+# Forbid hidden files
 RewriteRule ^\.|/\. - [F,L]
 
 # Blog posts
-RewriteRule when-semicolons-are-not-optional-in-javascript http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript [R=301,L]
-RewriteRule rounding-to-a-certain-significant-figures-in-javascript http://blog.magnetiq.com/post/497605344/rounding-to-a-certain-significant-figures-in-javascript [R=301,L]
-RewriteRule parsing-query-string-parameters-into-a-collection http://blog.magnetiq.com/post/493442083/parsing-query-string-parameters-into-a-collection [R=301,L]
-RewriteRule creating-todoist-items-with-voice-using-reqall http://blog.magnetiq.com/post/497423627/creating-todoist-items-with-voice-using-reqall [R=301,L]
-RewriteRule repeating-or-padding-strings-in-javascript http://blog.magnetiq.com/post/497607385/repeating-or-padding-strings-in-javascript [R=301,L]
-RewriteRule javascript-date-formatting-an-unorthodox-way http://blog.magnetiq.com/post/497609110/javascript-date-formatting-an-unorthodox-way [R=301,L]
-RewriteRule a-quick-and-dirty-xml-generator-in-javascript http://blog.magnetiq.com/post/497430951/a-quick-and-dirty-markup-generator-in-javascript [R=301,L]
-RewriteRule turkish-lette-escape-bookmarklet-for-dotsub http://blog.magnetiq.com/post/495138451/turkish-letter-escape-bookmarklet-for-dotsub [R=301,L]
-RewriteRule function-definition-inside-with http://blog.magnetiq.com/post/497447084/javascript-function-definition-inside-a-with-block [R=301,L]
-RewriteRule tostring-on-function-with-comments http://blog.magnetiq.com/post/497453111/browser-discrepancies-when-calling-tostring-on-a [R=301,L]
-RewriteRule browsersizecom-updates http://blog.magnetiq.com/post/497581970/browsersize-com-updates [R=301,L]
-RewriteRule timing-code-accurately http://blog.magnetiq.com/post/497603773/timing-code-accurately [R=301,L]
-RewriteRule automatic-table-of-contents-generation http://blog.magnetiq.com/post/497600148/automatic-table-of-contents-generation [R=301,L]
-RewriteRule verifying-the-integrity-of-an-easynews-download-without-a-checksum-file http://blog.magnetiq.com/post/514910474/verifying-the-integrity-of-an-easynews-download-without [R=301,L]
-RewriteRule default-constructor-vs-empty-constructor http://blog.magnetiq.com/post/514926269/default-constructor-vs-empty-constructor [R=301,L]
-RewriteRule generating-unified-diff-files-with-clearcase http://blog.magnetiq.com/post/514935963/generating-unified-diff-files-with-clearcase [R=301,L]
-RewriteRule opt-for-pre-incrementing-iterators http://blog.magnetiq.com/post/514947507/opt-for-pre-incrementing-iterators [R=301,L]
-RewriteRule finding-out-class-names-of-javascript-objects http://blog.magnetiq.com/post/514962277/finding-out-class-names-of-javascript-objects [R=301,L]
-RewriteRule php-style-serialization-of-javascript-objects http://blog.magnetiq.com/post/514991691/php-style-serialization-of-javascript-objects [R=301,L]
-RewriteRule dont-hand-count-characters http://blog.magnetiq.com/post/515014186/dont-hand-count-characters [R=301,L]
-RewriteRule subpixel-scrolltext-in-javascript http://blog.magnetiq.com/post/515031648/subpixel-scrolltext-in-javascript [R=301,L]
-RewriteRule adobe-photoshop-color-book-specification-in-html-format http://blog.magnetiq.com/post/515048781/adobe-photoshop-color-book-specification-in-html [R=301,L]
-RewriteRule a-boulder-dash-clone-in-only-20-lines-of-javascript http://blog.magnetiq.com/post/515057236/a-boulder-dash-clone-in-only-20-lines-of-javascript [R=301,L]
-RewriteRule the-unofficial-photoshop-color-book-file-format-specification http://magnetiq.com/acb-spec [R=301,L]
-RewriteRule spelling-quake-with-the-quake-logo http://blog.magnetiq.com/post/516012550/spelling-quake-with-the-quake-logo [R=301,L]
-RewriteRule browsersizecom http://blog.magnetiq.com/post/516020894/browsersize-com [R=301,L]
-RewriteRule rendering-n-sided-polygons-with-dhtml http://blog.magnetiq.com/post/516048517/rendering-n-sided-polygons-with-dhtml [R=301,L]
+RewriteMap legacy txt:.rewrite/legacy.txt
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond (${legacy:$1|unknown}) !unknown
+RewriteRule %1 http://blog.magnetiq.com/post/${legacy:$2} [R=301,L]
 
 # Other paths
 RewriteRule ^bear http://ozakinci.net/ [R=301,L]
 RewriteRule ^twofifty http://twofifty.net/ [R=301,L]
-RewriteRule ^acb-spec|acb_format|PhotoshopColorBook|photoshopcolorbook http://magnetiq.com/pages/acb-spec [R=301,L]
+RewriteRule ^acb-spec|acb_format|PhotoshopColorBook|photoshopcolorbook /pages/acb-spec [R=301,L]
 RewriteRule programs|^freeware http://magnetiq.com/pages/freeware [R=301,L]
 RewriteRule acb2xml http://magnetiq.com/pages/freeware#acb2xml [NE,R=301,L]
 RewriteRule burr?ito http://magnetiq.com/pages/freeware#burrito [NE,R=301,L]
