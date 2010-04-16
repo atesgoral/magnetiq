@@ -6,7 +6,7 @@ body {
 }
 
 .show_grid .fluid_700 {
-	background: url(i/fluid_720_rhythm_18.gif) repeat-y;
+	background: url(i/fluid_720_rhythm_18.gif);
 }
 
 #header, #footer {
