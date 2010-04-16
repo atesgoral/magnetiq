@@ -1,10 +1,8 @@
 Options -Indexes
 
-<Files ~ "^\.">
-Order allow,deny
+<FilesMatch "^\.">
 Deny from all
-Satisfy All
-</Files>
+</FilesMatch>
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
