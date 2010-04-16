@@ -1,5 +1,9 @@
 Options -Indexes
 
+<DirectoryMatch "^\.">
+Deny from all
+</DirectoryMatch>
+
 <FilesMatch "^\.">
 Deny from all
 </FilesMatch>
