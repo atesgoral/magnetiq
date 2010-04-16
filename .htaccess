@@ -4,7 +4,7 @@ Options -Indexes
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^\.|/. - [F,L]
+RewriteRule ^\.|/\. - [F,L]
 
 # Blog posts
 RewriteRule when-semicolons-are-not-optional-in-javascript http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript [R=301,L]
