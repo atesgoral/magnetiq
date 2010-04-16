@@ -17,6 +17,7 @@ RewriteRule . - [L]
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond (${legacy:$1|unknown}) !unknown
 #RewriteRule %1 http://blog.magnetiq.com/post/${legacy:$2} [R=301,L]
+
 RewriteRule when-semicolons-are-not-optional-in-javascript http://blog.magnetiq.com/post/493356934/when-semicolons-are-not-optional-in-javascript [R=301,L]
 RewriteRule rounding-to-a-certain-significant-figures-in-javascript http://blog.magnetiq.com/post/497605344/rounding-to-a-certain-significant-figures-in-javascript [R=301,L]
 RewriteRule parsing-query-string-parameters-into-a-collection http://blog.magnetiq.com/post/493442083/parsing-query-string-parameters-into-a-collection [R=301,L]
@@ -57,11 +58,10 @@ RewriteRule burr?ito http://magnetiq.com/pages/freeware#burrito [NE,R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule e-?res-?q http://magnetiq.com/pages/freeware#eresq [NE,R=301,L]
 RewriteRule win-?res-?q http://magnetiq.com/pages/freeware#winresq [NE,R=301,L]
-RewriteRule \d/multiple-synthetic-lights http://magnetiq.com/pages/multiple-synthetic-lights [R=301,L]
-#multi_light
+RewriteRule \d/multiple-synthetic-lights|multi_light http://magnetiq.com/pages/multiple-synthetic-lights [R=301,L]
 RewriteRule \d/depth-of-field|Depth_of_Field http://magnetiq.com/pages/depth-of-field [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . /index.php [L]
 </IfModule>
