@@ -1,14 +1,19 @@
 Options -Indexes
 
-<IfModule mod_rewrite.c>
+ErrorDocument 404 /pages/404.html
+
 RewriteEngine On
 RewriteOptions MaxRedirects=1
 RewriteBase /
+
+RewriteCond %{HTTP_HOST} ^www\.magnetiq\.com [NC]
+RewriteRule (.*) http://magnetiq.com/$1 [R=301,L]
 
 # Forbid hidden files
 RewriteRule ^\.|/\. - [F,L]
 
 # Directly serve existing files
+# Everything below this rule is for files that are not found
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule . - [L]
 
@@ -63,4 +68,3 @@ RewriteRule ^twofifty http://twofifty.net/ [R=301,L]
 #RewriteCond %{REQUEST_FILENAME} !-f
 #RewriteCond %{REQUEST_FILENAME} !-d
 #RewriteRule . /index.php [L]
-</IfModule>
