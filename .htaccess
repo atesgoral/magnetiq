@@ -63,6 +63,10 @@ RewriteRule burr?ito /pages/freeware#burrito [NE,R=301,L]
 RewriteRule e-?res-?q /pages/freeware#eresq [NE,R=301,L]
 RewriteRule win-?res-?q /pages/freeware#winresq [NE,R=301,L]
 
+#/wp-content/images/poly_ss.png
+#/wp-content/images/custom_colors.jpg
+#/wp-content/images/yaprak_bw_color.png
+
 RewriteRule ^bear http://ozakinci.net/ [R=301,L]
 RewriteRule ^twofifty http://twofifty.net/ [R=301,L]
 
