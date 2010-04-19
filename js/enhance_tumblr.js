@@ -1,5 +1,5 @@
 if (meta.FontReplacement) {
-    Cufon.replace("h1, h2");
+    Cufon.replace("h2");
 }
 
 if (meta.PermalinkPage && meta.SyntaxHighlighting) {

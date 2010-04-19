@@ -30,12 +30,16 @@ a:active {
 	color: #333;
 }
 
-#header a {
-	color: #eee;
+#header h1 a {
+	background: url(i/logo_sprites.gif);
 }
 
-#header a:hover {
-	color: #fff;
+#header h1 a:hover {
+	background-position: 0 -30px;
+}
+
+#title_desc.blog {
+	background: url(i/desc_blog.gif) 100% 100% no-repeat;
 }
 
 #footer a {
@@ -56,7 +60,7 @@ a.panel {
 
 a.panel:hover {
 	background-color: #eee;
-	color: #333;
+	color: #666;
 }
 
 .top_border {

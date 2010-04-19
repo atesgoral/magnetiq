@@ -46,4 +46,4 @@ $(function () {
 	});*/
 });
 
-Cufon.replace("h1, h2");
+Cufon.replace("h2");
