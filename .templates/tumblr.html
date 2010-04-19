@@ -126,6 +126,13 @@ var meta = {
             {/block:Tags}
             </ul>
             {/block:HasTags}
+            {block:PermalinkPage}
+                {block:IfDisqusShortname}
+            <div>
+                <a id="comment_count" href="{Permalink}#disqus_thread">Comments and Reactions</a>
+            </div>
+                {/block:IfDisqusShortname}
+            {/block:PermalinkPage} 
             {block:PostNotes}
                 {PostNotes}
             {/block:PostNotes}        

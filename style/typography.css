@@ -9,7 +9,7 @@ a {
 }
 
 #header h1 {
-    font-size: 250%;
+    font-size: 35px;
 	text-transform: uppercase;
 }
 
@@ -22,11 +22,12 @@ a {
 }
 
 #content h2 {
-	font-size: 150%;
+	font-size: 21px;
+    line-height: 21px;
 }
 
 #footer {
-	font-size: 85.7%;
+	font-size: 12px;
 }
 
 .post_text code, .post_text pre {
@@ -38,7 +39,7 @@ a {
 }
 
 .post_meta {
-	font-size: 85.7%;
+	font-size: 12px;
 }
 
 .syntaxhighlighter {
@@ -51,6 +52,6 @@ h3 {
 }
 
 #latest_tweet {
-	font-size: 85.7%;
+	font-size: 12px;
 	line-height: 14px;
 }
