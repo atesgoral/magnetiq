@@ -100,22 +100,7 @@ var meta = {
 			<div class="post_text">
                 {Body}
 			</div>
-            {block:Text}            
-			<div class="post_meta">
-				{block:Date}
-				<div>Posted {TimeAgo} on {ShortMonth} {DayOfMonth}, {Year}</div>
-				{/block:Date}
-				{block:HasTags}
-				<div class="tags">
-					Tagged
-					<ul>
-					{block:Tags}
-					<li><a rel="tag" href="{TagURLChrono}">{Tag}</a></li>
-					{/block:Tags}
-					</ul>
-				</div>
-				{/block:HasTags}
-			</div>
+            {/block:Text}            
 		</div>
 		{block:PermalinkPage}
             {block:IfDisqusShortname}
@@ -123,15 +108,31 @@ var meta = {
 		<div class="section" id="dsq-loading-problem"></div>
         <script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
             {/block:IfDisqusShortname}
-        {block:PostNotes}
-        <div class="section" id="notes">
-            <h3>Notes</h3>
-            {PostNotes}
-        </div>
-        {/block:PostNotes}        
 		{/block:PermalinkPage} 
 		{/block:Posts}        
 	</div>
+    {block:PermalinkPage}
+    <div class="one column">
+        {block:Posts}
+        <div class="post_meta">
+            {block:Date}
+            <div>Posted {TimeAgo} on {ShortMonth} {DayOfMonth}, {Year}</div>
+            {/block:Date}
+            {block:HasTags}
+            Tagged
+            <ul class="tags">
+            {block:Tags}
+                <li><a rel="tag" href="{TagURLChrono}">{Tag}</a></li>
+            {/block:Tags}
+            </ul>
+            {/block:HasTags}
+            {block:PostNotes}
+                {PostNotes}
+            {/block:PostNotes}        
+        </div>
+        {/block:Posts}    
+    </div>
+    {/block:PermalinkPage} 
 	<div class="clear"></div>
 </div>
 

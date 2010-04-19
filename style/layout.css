@@ -170,26 +170,18 @@ a.panel {
 /* Meta */
 
 .post_meta {
-	padding-bottom: 4px;
+	margin-bottom: 20px;
 }
 
 /* Tags */
 
-.tags ul {
+ul.tags {
 	display: inline;
 }
 
-.tags li {
+ul.tags li {
 	display: inline;
 	list-style-type: none;
-}
-
-.read_more_container {
-	margin-left: 20px;
-}
-
-.read_more:after {
-	content: " \2192";
 }
 
 /* Pagination */
@@ -200,4 +192,26 @@ a[rel="prev"]:before {
 
 a[rel="next"]:after {
 	content: " \2192";
+}
+
+/* Tumblr Ream More link */
+
+.read_more_container {
+	margin-left: 20px;
+}
+
+.read_more:after {
+	content: " \2192";
+}
+
+/* Tumblr notes */
+
+ol.notes {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+ol.notes img {
+    border: none;
+    vertical-align: middle;
 }
