@@ -208,16 +208,9 @@ a[rel="next"]:after {
 
 ol.notes {
     list-style-type: none;
-    margin-top: 20px;
 }
 
 ol.notes img {
     border: none;
     vertical-align: middle;
-}
-
-/* */
-
-#comment_count {
-    margin-top: 20px;
 }

@@ -115,6 +115,7 @@ var meta = {
     <div class="one column">
         {block:Posts}
         <div class="post_meta">
+            <div class="section">
             {block:Date}
             <div>Posted {TimeAgo} on {ShortMonth} {DayOfMonth}, {Year}</div>
             {/block:Date}
@@ -126,15 +127,18 @@ var meta = {
             {/block:Tags}
             </ul>
             {/block:HasTags}
-            {block:PermalinkPage}
-                {block:IfDisqusShortname}
-            <div>
-                <a id="comment_count" href="{Permalink}#disqus_thread">Comments and Reactions</a>
             </div>
+            {block:PermalinkPage}
+            <div class="section">
+                {block:IfDisqusShortname}
+                <a id="comment_count" href="{Permalink}#disqus_thread">Comments and Reactions</a>
                 {/block:IfDisqusShortname}
+            </div>
             {/block:PermalinkPage} 
             {block:PostNotes}
+            <div class="section">
                 {PostNotes}
+            </div>
             {/block:PostNotes}        
         </div>
         {/block:Posts}    
