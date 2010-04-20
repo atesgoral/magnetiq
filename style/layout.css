@@ -220,3 +220,17 @@ ol.notes img {
     border: none;
     vertical-align: middle;
 }
+
+/* Handheld overrides */
+
+@media screen and (max-device-width: 480px) {
+    .fluid_700 {
+        max-width: 480px;
+    }
+}
+
+@media screen and (max-device-width: 320px) {
+    .fluid_700 {
+        max-width: 240px;
+    }
+}
