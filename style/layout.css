@@ -50,6 +50,8 @@ body, h1, h2, h3, p, ol, ul, li, dl, pre {
 	clear: left;
 }
 
+/* Generic */
+
 .section {
 	padding-bottom: 20px;
 }
@@ -61,6 +63,14 @@ body, h1, h2, h3, p, ol, ul, li, dl, pre {
 img.border {
     border: 1px dashed #ddd;
     margin: 2px;
+}
+
+.pad_bottom {
+	padding-bottom: 30px;
+}
+
+.pad_top {
+	padding-top: 30px;
 }
 
 /* Header */
@@ -86,10 +96,6 @@ img.border {
 }
 
 /* Navigation */
-
-.nav {
-	padding-bottom: 30px;
-}
 
 .nav  li {
 	list-style-type: none;
