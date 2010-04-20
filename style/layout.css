@@ -223,14 +223,14 @@ ol.notes img {
 
 /* Handheld overrides */
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 240px) {
     .fluid_700 {
-        max-width: 480px;
+        max-width: 240px;
     }
 }
 
-@media screen and (max-device-width: 320px) {
+@media screen and (min-device-width: 241px) and (max-device-width: 480px) {
     .fluid_700 {
-        max-width: 240px;
+        max-width: 480px;
     }
 }
