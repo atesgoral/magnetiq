@@ -18,4 +18,4 @@ $(function () {
 });
 
 Cufon.replace("h2");
-SyntaxHighlighter.all();
+//SyntaxHighlighter.all();

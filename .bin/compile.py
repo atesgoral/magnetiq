@@ -23,6 +23,8 @@ for dir in os.listdir(pages_dir):
 		continue
 
 	print "\tCompiling " + page_dir
+	
+	error_page = dir == "404"
 
 	content_path = os.path.join(page_dir, content_filename)
 
@@ -40,23 +42,23 @@ for dir in os.listdir(pages_dir):
 		print "\t\tExtracted info:"
 		print "\t\t\tTitle: " + info.group("title")
 
+	if not error_page:
+		# Add permalink
+		print "\t\tAdding permalink"
+		content_html = re.sub("<h2>.+</h2>",
+			r'<h2><a href="/pages/' + dir
+				+ '" rel="bookmark" title="Permanent Link: '
+				+ info.group("title") + '">' + info.group("title")
+				+ '</a></h2>',
+			content_html)
+		
 	# Replace tokens
 	print "\t\tReplacing tokens"
 	page_html = template.format(
-		Title = info.group("title") if info else "",
+		ExtraClasses = "" if error_page else "disqus",
+		Permalink = "/pages/" + dir,
+		Title = info.group("title"),
 		Content = content_html)
-
-	# Add permalink
-	print "\t\tAdding permalink"
-	page_html = re.sub("(<h2>.+</h2>)",
-		r'<a href="#" rel="bookmark" title="Permanent Link">\1</a>',
-		page_html)
-		
-	# Break out <pre>s
-	# print "\t\tBreaking out <pre>s"
-	# page_html = re.sub("(?m)(<pre[^<]+</pre>)",
-	#	r'</div><div class="clear"></div><div class="three fluid column">\1</div><div class="two fluid column post_text">',
-	#	page_html)
 
 	page_path = os.path.join(page_dir, page_filename)
 	

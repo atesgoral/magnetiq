@@ -7,26 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 <meta name="text:Disqus Shortname" content=""/>
+<meta name="text:Twitter Username" content=""/>
 <meta name="text:Google Profile ID" content=""/>
 <meta name="text:Google Analytics Web Property ID" content=""/>
 <meta name="text:Google Analytics Domain" content=""/>
-<meta name="if:Syntax Highlighting" content="1"/>
 <meta name="if:Font Replacement" content="1"/>
 
 <link rel="shortcut icon" href="{Favicon}"/>
-<link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/magnetiq_rss"/>
+<link rel="alternate" type="application/rss+xml" href="{RSS}"/>
 {block:IfGoogleProfileID}
 <link rel="me" href="http://www.google.com/profiles/{text:Google Profile ID}"/>
 {/block:IfGoogleProfileID}
-{block:PermalinkPage}
-    {block:IfSyntaxHighlighting}
-<link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shCore.css"/>
-<link rel="stylesheet" href="http://s.magnetiq.com/lib/syntaxhighlighter/styles/shThemeEclipse.css"/>
-    {/block:IfSyntaxHighlighting}
-{/block:PermalinkPage}
-<link rel="stylesheet" href="http://s.magnetiq.com/style/layout.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="http://s.magnetiq.com/style/typography.css" type="text/css" media="screen"/>
-<link rel="stylesheet" href="http://s.magnetiq.com/style/colors.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="http://s.magnetiq.com/style/style.css?1" type="text/css" media="screen"/>
 <!--[if IE 6]>
 <link rel="stylesheet" href="http://s.magnetiq.com/style/fix_ie6.css" type="text/css" media="screen"/>
 <![endif]-->
@@ -35,40 +27,21 @@
 </style>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-{block:PermalinkPage}
-    {block:IfSyntaxHighlighting}
-<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shCore.js"></script>
-<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushJScript.js"></script>
-<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushXml.js"></script>
-<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushPython.js"></script>
-<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushCpp.js"></script>
-<script type="text/javascript" src="http://s.magnetiq.com/lib/syntaxhighlighter/scripts/shBrushCss.js"></script>
-    {/block:IfSyntaxHighlighting}
-{/block:PermalinkPage}
 {block:IfFontReplacement}
 <script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/cufon-yui.js"></script>
 <script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/Museo_700_600.font.js"></script>
 {/block:IfFontReplacement}
 <script type="text/javascript">
 var meta = {
-    GoogleProfileID: "{text:Google Profile ID}",
+    DisqusShortname: "{text:Disqus Shortname}",
+    TwitterUsername: "{text:Twitter Username}",
     GoogleAnalyticsWebPropertyID: "{text:Google Analytics Web Property ID}",
-    GoogleAnalyticsDomain: "{text:Google Analytics Domain}",
-{block:IfSyntaxHighlighting}
-    SyntaxHighlighting: true,
-{/block:IfSyntaxHighlighting}
-{block:IfFontReplacement}
-    FontReplacement: true,
-{/block:IfFontReplacement}
-{block:PermalinkPage}
-    PermalinkPage: true,
-{/block:PermalinkPage}
-    DisqusShortname: "{text:Disqus Shortname}"
+    GoogleAnalyticsDomain: "{text:Google Analytics Domain}"
 };
 </script>
-<script type="text/javascript" src="http://s.magnetiq.com/js/enhance_tumblr.js"></script>
+<script type="text/javascript" src="http://s.magnetiq.com/js/enhance.js"></script>
 </head>
-<body>
+<body class="tumblr{block:PermalinkPage} permalink{/block:PermalinkPage}{block:IfFontReplacement} cufon{/block:IfFontReplacement}">
 <div id="header">
 	<div class="fluid_700">
 		<div id="title_desc" class="one column blog">
@@ -105,7 +78,7 @@ var meta = {
 		{block:PermalinkPage}
             {block:IfDisqusShortname}
 		<div class="section" id="disqus_thread"></div>
-		<div class="section" id="dsq-loading-problem"></div>
+		<div id="dsq-loading-problem"></div>
         <script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
             {/block:IfDisqusShortname}
 		{/block:PermalinkPage} 
@@ -129,11 +102,11 @@ var meta = {
             {/block:HasTags}
             </div>
             {block:PermalinkPage}
+				{block:IfDisqusShortname}
             <div class="section">
-                {block:IfDisqusShortname}
                 <a id="comment_count" href="{Permalink}#disqus_thread">Comments and Reactions</a>
-                {/block:IfDisqusShortname}
             </div>
+                {/block:IfDisqusShortname}
             {/block:PermalinkPage} 
             {block:PostNotes}
             <div class="section">
@@ -169,7 +142,8 @@ var meta = {
 			&copy; Ateş Göral -
 			Licensed under a <a href="http://creativecommons.org/licenses/by-nc/2.0/">Creative Commons License</a> -
 			Powered by <a href="http://tumblr.com/">Tumblr</a> -
-            <a rel="alternate" href="http://blog.magnetiq.com/rss">RSS feed</a>
+            <a rel="alternate" href="{RSS}">RSS feed</a> -
+            <a id="toggle_grid" href="#">Grid</a>
 		</div>
 		<div class="clear"></div>
 	</div>
@@ -182,10 +156,10 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 </script>
 <script type="text/javascript">
 try {
-var pageTracker = _gat._getTracker("{text:Google Analytics Web Property ID}");
-{block:IfGoogleAnalyticsDomain}
-pageTracker._setDomainName("{text:Google Analytics Domain}");
-{/block:IfGoogleAnalyticsDomain}
+var pageTracker = _gat._getTracker(meta.GoogleAnalyticsWebPropertyID);
+if (meta.GoogleAnalyticsDomain) {
+	pageTracker._setDomainName(meta.GoogleAnalyticsDomain);
+}
 pageTracker._trackPageview();
 } catch(err) {}</script>
 {/block:IfGoogleAnalyticsWebPropertyID}
