@@ -32,12 +32,12 @@
 <script type="text/javascript" src="http://s.magnetiq.com/lib/cufon/Museo_700_600.font.js"></script>
 {/block:IfFontReplacement}
 <script type="text/javascript">
-var meta = {
+var meta = {{
     DisqusShortname: "{text:Disqus Shortname}",
     TwitterUsername: "{text:Twitter Username}",
     GoogleAnalyticsWebPropertyID: "{text:Google Analytics Web Property ID}",
     GoogleAnalyticsDomain: "{text:Google Analytics Domain}"
-};
+}};
 </script>
 <script type="text/javascript" src="http://s.magnetiq.com/js/enhance.js"></script>
 </head>
@@ -155,13 +155,13 @@ var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "htt
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-try {
+try {{
 var pageTracker = _gat._getTracker(meta.GoogleAnalyticsWebPropertyID);
-if (meta.GoogleAnalyticsDomain) {
+if (meta.GoogleAnalyticsDomain) {{
 	pageTracker._setDomainName(meta.GoogleAnalyticsDomain);
-}
+}}
 pageTracker._trackPageview();
-} catch(err) {}</script>
+}} catch(err) {{}}</script>
 {/block:IfGoogleAnalyticsWebPropertyID}
 </body>
 </html>

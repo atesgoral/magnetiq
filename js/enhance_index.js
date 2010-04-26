@@ -25,6 +25,6 @@ $(function () {
 
 	// Workaround for target anchor not being in right place
 	setTimeout(function () {
-		with (document.location) if (hash) hash = hash;
+		with (document.location) hash && (hash = hash);
 	}, 1);
 });
