@@ -1,5 +1,5 @@
 Cufon.replace("h2");
-	var disqus_developer = 1;
+var disqus_developer = 1;
 
 $(function () {
     // Add grid toggler

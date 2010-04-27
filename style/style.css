@@ -1,7 +1,5 @@
 /* Layout */
 
-/* Resets */
-
 body, h1, h2, h3, p, ol, ul, li, dl, pre {
 	margin: 0;
 	padding: 0;
@@ -116,9 +114,8 @@ img.border {
 }
 
 #content pre {
-	max-width: 700px;
+	max-width: 680px;
 	margin-right: -480px;
-	/*overflow: auto;*/
 }
 
 /* Footer */
@@ -163,7 +160,7 @@ a.panel {
     margin-bottom: 18px;
 }
 
-.post_text dd, .post_text blockquote, .post_text table {
+.post_text dd, .post_text blockquote, .post_text table, .post_text pre {
 	margin-left: 20px;
 }
 
@@ -206,7 +203,7 @@ a[rel="next"]:after {
 	content: " \2192";
 }
 
-/* Tumblr Ream More link */
+/* Tumblr Read More link */
 
 .read_more_container {
 	margin-left: 20px;
@@ -240,6 +237,7 @@ ol.notes img {
         max-width: 480px;
     }
 }
+
 /* Typography */
 
 body  {
@@ -257,10 +255,6 @@ a {
 
 #description {
 	font-style: italic;
-}
-
-.nav {
-	/*font-weight: bold;*/
 }
 
 #content h2 {
@@ -284,19 +278,20 @@ a {
 	font-size: 12px;
 }
 
-.syntaxhighlighter {
-	font-size: 14px !important;
+h2, h3, h4, dt, th, blockquote {
+	font-style: italic;
 }
 
 h3 {
-	font-style: italic;
-	font-size: 16px
+	font-size: 16px;
 }
 
 #latest_tweet {
 	font-size: 12px;
 	line-height: 14px;
-}/* Colors and backgrounds */
+}
+
+/* Colors and backgrounds */
 
 body {
 	background: #fff;
@@ -326,6 +321,30 @@ a:hover {
 
 a:active {
 	color: #333;
+}
+
+pre {
+	color: #524080;
+}
+
+.nav ::selection {
+	color: #524080;
+	background: #EEE8FF;
+}
+
+.nav ::-moz-selection {
+	color: #524080;
+	background: #EEE8FF;
+}
+
+#content ::selection {
+	color: #524080;
+	background: #EEE8FF;
+}
+
+#content ::-moz-selection {
+	color: #524080;
+	background: #EEE8FF;
 }
 
 #header h1 a {
@@ -362,28 +381,26 @@ a.panel:hover {
 }
 
 .top_border {
-	border-top: 1px solid #ccc;
-}
-
-.syntaxhighlighter {
-	background: #eee !important;
+	border-top: 1px solid #D1C0FF;
 }
 
 .post_text code {
-	background: #eee;
+	background: #EEE8FF;
+	color: #524080;
 }
 
 .post_text table {
-	border: solid #ccc;
+	border: solid #D1C0FF;
 	border-width: 1px 1px 0 0;
 }
 
 .post_text th, .post_text td {
 	background: #fff;
-	border: solid #ccc;
+	border: solid #D1C0FF;
 	border-width: 0 0 1px 1px;
 }
 
 .post_text th {
-	background: #ccc;
+	color: #524080;
+	background: #EEE8FF;
 }
