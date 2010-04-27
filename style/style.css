@@ -294,7 +294,7 @@ h3 {
 /* Colors and backgrounds */
 
 body {
-	background: #fff;
+	background: #333;
 	color: #333;
 }
 
@@ -303,8 +303,11 @@ body {
 }
 
 #header, #footer {
-	background: #333;
 	color: #ccc;
+}
+
+#content {
+	background: #fff;
 }
 
 a {
@@ -325,16 +328,6 @@ a:active {
 
 pre {
 	color: #524080;
-}
-
-.nav ::selection {
-	color: #524080;
-	background: #EEE8FF;
-}
-
-.nav ::-moz-selection {
-	color: #524080;
-	background: #EEE8FF;
 }
 
 #content ::selection {
