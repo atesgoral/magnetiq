@@ -1,3 +1,14 @@
+// Collect meta data
+var meta = {}, name;
+
+$("meta").each(function () {
+	var m = $(this);
+	
+	if (name = m.attr("name")) {
+		meta[name] = m.attr("content");
+	}
+});
+
 Cufon.replace("h2");
 //var disqus_developer = 1;
 
