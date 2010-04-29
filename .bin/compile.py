@@ -56,7 +56,7 @@ for dir in os.listdir(pages_dir):
 	print "\t\tReplacing tokens"
 	page_html = template.format(
 		ExtraClasses = "" if error_page else "disqus",
-		Permalink = "/pages/" + dir,
+		Permalink = "/pages/" + dir + "/",
 		Title = info.group("title"),
 		Content = content_html)
 
