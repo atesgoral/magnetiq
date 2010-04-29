@@ -37,7 +37,7 @@
 {/block:IfFontReplacement}
 <script type="text/javascript" src="http://s.magnetiq.com/js/enhance.js?1"></script>
 </head>
-<body class="tumblr{block:PermalinkPage} permalink disqus{/block:PermalinkPage}{block:IfFontReplacement} cufon{/block:IfFontReplacement}">
+<body class="tumblr{block:PermalinkPage} permalink{/block:PermalinkPage}{block:IfDisqusShortname} disqus{/block:IfDisqusShortname}{block:IfFontReplacement} cufon{/block:IfFontReplacement}">
 <div id="header">
 	<div class="fluid_700">
 		<div id="title_desc" class="one column blog">
@@ -62,8 +62,8 @@
 	</div>
 
 	<div class="fluid_700">
+		{block:Posts}
 		<div class="two fluid column post_text">
-			{block:Posts}
 			<div class="section">
 				{block:Title}<h2><a href="{Permalink}" rel="bookmark" title="Permanent Link: {Title}">{Title}</a></h2>{/block:Title}
 				{block:Text}            
@@ -72,18 +72,15 @@
 				</div>
 				{/block:Text}            
 			</div>
-			{block:PermalinkPage}
-				{block:IfDisqusShortname}
+			{block:IfDisqusShortname}
+				{block:PermalinkPage}
 			<div class="section" id="disqus_thread"></div>
 			<div id="dsq-loading-problem"></div>
 			<script type="text/javascript" src="http://{text:Disqus Shortname}.disqus.com/embed.js"></script>
-				{/block:IfDisqusShortname}
-			{/block:PermalinkPage} 
-			{/block:Posts}        
+				{/block:PermalinkPage} 
+			{/block:IfDisqusShortname}
 		</div>
-		{block:PermalinkPage}
 		<div class="one column">
-			{block:Posts}
 			<div class="post_meta">
 				<div class="section">
 				{block:Date}
@@ -98,13 +95,11 @@
 				</ul>
 				{/block:HasTags}
 				</div>
-				{block:PermalinkPage}
-					{block:IfDisqusShortname}
+				{block:IfDisqusShortname}
 				<div class="section">
-					<a id="comment_count" href="{Permalink}#disqus_thread">Comments and Reactions</a>
+					<a class="comment_count" href="{Permalink}#disqus_thread">Comments and Reactions</a>
 				</div>
-					{/block:IfDisqusShortname}
-				{/block:PermalinkPage} 
+				{/block:IfDisqusShortname}
 				{block:PostNotes}
 				<div class="section">
 					{NoteCountWithLabel}
@@ -112,10 +107,11 @@
 				</div>
 				{/block:PostNotes}        
 			</div>
-			{/block:Posts}    
 		</div>
-		{/block:PermalinkPage} 
 		<div class="clear"></div>
+		{/block:Posts}    
+		{block:IfDisqusShortname}
+		{/block:IfDisqusShortname}
 	</div>
 
 	<div class="nav fluid_700 pad_top">
