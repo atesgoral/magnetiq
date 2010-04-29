@@ -63,9 +63,23 @@ $(function () {
 		});
 	}*/
 	
+	// Get Disqus comment counts
 	if ($("body").hasClass("disqus")) {
-        $.getScript("http://disqus.com/forums/" + meta.DisqusShortname
-            + "/get_num_replies.js?url0="
-            + encodeURIComponent($("#comment_count").attr("href")));
+		var idx = 0, data = {};
+
+		$("a.comment_count").each(function () {
+			var href = $(this).attr("href");
+			
+			if (/#disqus_thread$/.test(href)) {
+				data["url" + idx++] = href;
+			}
+		});
+
+        $.ajax({
+			url: "http://disqus.com/forums/" + meta.DisqusShortname
+				+ "/get_num_replies.js",
+			data: data,
+			dataType: "script"
+        });
 	}
 });
