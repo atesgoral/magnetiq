@@ -189,6 +189,7 @@ a.panel {
     display: block;
     width: 45px;
 	margin-bottom: 5px;
+	line-height: 14px;
 }
 
 .date span {
@@ -202,7 +203,7 @@ a.panel {
 }
 
 .date_day {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     background: #eee url(i/date_day_bg.png) repeat-y;
     padding: 5px 0;
