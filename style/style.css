@@ -5,6 +5,8 @@ body, h1, h2, h3, p, ol, ul, li, dl, pre {
 	padding: 0;
 }
 
+iframe { border: none; }
+
 /* Grid system */
 
 .fluid_700 {
