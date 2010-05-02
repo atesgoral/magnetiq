@@ -182,15 +182,60 @@ a.panel {
 	margin-bottom: 20px;
 }
 
+/* Date */
+
+.date {
+    clear: left;
+    display: block;
+    width: 45px;
+	margin-bottom: 5px;
+}
+
+.date span {
+    display: block;
+    text-align: center;
+}
+
+.date_month {
+    background: url(date_month_bg.png);
+	height: 17px;
+}
+.date_day {
+    font-size: 24px;
+    font-weight: bold;
+    background: #eee url(date_day_bg.png) repeat-y;
+    padding: 5px 0;
+}
+
+.date_comma {
+    display: none !important;
+}
+
+.date_year {
+    background: url(date_year_bg.png);
+	height: 17px;
+}
+
 /* Tags */
 
 ul.tags {
-	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
 ul.tags li {
-	display: inline;
-	list-style-type: none;
+	float: left;
+	height: 17px;
+	background: url(i/tag_bg.png) no-repeat;
+	margin: 0 2px 2px 0;
+}
+
+ul.tags a {
+	display: inline-block;
+	height: 17px;
+	padding: 0 10px 0 5px;
+	background: url(i/tag_tip.png) 100% 0 no-repeat;
 }
 
 /* Pagination */
