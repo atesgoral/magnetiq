@@ -195,7 +195,7 @@ a.panel {
     display: block;
     width: 45px;
 	margin-bottom: 5px;
-	line-height: 14px;
+	line-height: 17px;
 }
 
 .date span {
@@ -230,12 +230,12 @@ ul.tags {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	line-height: 14px;
 }
 
 ul.tags li {
 	float: left;
 	height: 17px;
+	line-height: 17px;
 	background: url(i/tag_bg.png) no-repeat;
 	margin: 0 2px 2px 0;
 }
