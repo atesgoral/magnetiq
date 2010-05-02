@@ -197,13 +197,14 @@ a.panel {
 }
 
 .date_month {
-    background: url(date_month_bg.png);
+    background: url(i/date_month_bg.png);
 	height: 17px;
 }
+
 .date_day {
     font-size: 24px;
     font-weight: bold;
-    background: #eee url(date_day_bg.png) repeat-y;
+    background: #eee url(i/date_day_bg.png) repeat-y;
     padding: 5px 0;
 }
 
@@ -212,7 +213,7 @@ a.panel {
 }
 
 .date_year {
-    background: url(date_year_bg.png);
+    background: url(i/date_year_bg.png);
 	height: 17px;
 }
 
