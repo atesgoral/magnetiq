@@ -14,6 +14,33 @@ Cufon.replace(".date_day");
 //var disqus_developer = 1;
 
 $(function () {
+	// Add popup handlers
+	$("a.popup").click(function () {
+		var attrs = {
+			resizable: "no",
+			scrollbars: "no",
+			status: "no",
+			dialog: "yes"
+		};
+		
+		var dim = /\bd(\d+)x(\d+)\b/.exec(this.className);
+		
+		if (dim) {
+			attrs.width = dim[1];
+			attrs.height = dim[2];
+		}
+	
+		var attrs_arr = [];
+		
+		for (var attr in attrs) {
+			attrs_arr.push(attr + "=" + attrs[attr]);
+		}
+	
+		window.open(this.href, "poly", attrs_arr.toString());
+
+		return false;
+	});
+	
 	// Add panel backgrounds
 	$(".panels li").each(function () {
 		var a = $("a", this).get(0);
