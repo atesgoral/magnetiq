@@ -10,6 +10,7 @@ $("meta").each(function () {
 });
 
 Cufon.replace("h2");
+Cufon.replace(".date_day");
 //var disqus_developer = 1;
 
 $(function () {
