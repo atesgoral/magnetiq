@@ -176,6 +176,10 @@ a.panel {
 	padding: 0 2px;
 }
 
+.post_text a img {
+	border: none;
+}
+
 /* Meta */
 
 .post_meta {
