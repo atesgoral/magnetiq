@@ -15,6 +15,18 @@ Cufon.replace(".date_day");
 //var disqus_developer = 1;
 
 $(function () {
+    // Add grid toggler
+    $("#toggle_grid").click(function () {
+        $("body").toggleClass("show_grid");
+        return false;
+    });
+
+	// Tumblr 404 page customization workaround
+	if ($("body").hasClass("tumblr") && meta.PostTitle === "Not Found") {
+		$("#content h2").html(meta.PostTitle);
+		return;
+	}
+
 	// Add popup handlers
 	$("a.popup").click(function () {
 		var attrs = {
@@ -42,20 +54,20 @@ $(function () {
 		return false;
 	});
 	
-	// Add panel backgrounds
-	$(".panels li").each(function () {
-		var a = $("a", this).get(0);
-		var tokens = /p_(.+)/.exec(a.className);
-		
-		if (tokens) {
-			a.style.backgroundImage =
-				"url(http://s.magnetiq.com/panel_thumbs/" + tokens[1] + ".png)";
-			$(this).addClass("panel");
-			$(a).addClass("panel");
-		}
-	});
-
 	if ($("body").hasClass("index")) {
+		// Add panel backgrounds
+		$(".panels li").each(function () {
+			var a = $("a", this).get(0);
+			var tokens = /p_(.+)/.exec(a.className);
+			
+			if (tokens) {
+				a.style.backgroundImage =
+					"url(http://s.magnetiq.com/panel_thumbs/" + tokens[1] + ".png)";
+				$(this).addClass("panel");
+				$(a).addClass("panel");
+			}
+		});
+
 		// Clone navigation and add top borders
 		var nav = $("#about");
 		
@@ -72,12 +84,6 @@ $(function () {
 			with (document.location) hash && (hash = hash);
 		}, 1);
 	}
-
-    // Add grid toggler
-    $("#toggle_grid").click(function () {
-        $("body").toggleClass("show_grid");
-        return false;
-    });
 	
 	/*if ($("#latest_tweet").length) {
 		// Get latest tweet
@@ -125,7 +131,7 @@ $(function () {
 					sum += parseInt(tokens[0]);
 				}
 				
-				$a.attr("title", orig).html(sum)
+				$a.attr("title", orig.toLowerCase()).html(sum)
 					.css({ display: "block", opacity: 0 })
 					.fadeTo("slow", 1);
 			});

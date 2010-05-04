@@ -55,10 +55,13 @@ for dir in os.listdir(pages_dir):
 	# Replace tokens
 	print "\t\tReplacing tokens"
 	page_html = template.format(
-		ExtraClasses = "" if error_page else "disqus",
+		ExtraClasses = " error" if error_page else " disqus",
 		Permalink = "/pages/" + dir + "/",
 		Title = info.group("title"),
-		Content = content_html)
+		Content = content_html,
+		DisqusShortname = "magnetiq",
+		RSS = "http://feeds.feedburner.com/magnetiq_rss",
+		Favicon = "http://s.magnetiq.com/i/icon_16.png")
 
 	page_path = os.path.join(page_dir, page_filename)
 	
