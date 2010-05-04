@@ -112,13 +112,14 @@ $(function () {
 			}
 			
 			$.each(nodes, function (i, $a) {
-				var tokens, sum = 0;
+				var orig = $a.html(), tokens, sum = 0;
 
-				while (tokens = /\d+/g.exec($a.html())) {
+				while (tokens = /\d+/g.exec(orig)) {
 					sum += parseInt(tokens[0]);
 				}
 				
-				$a.html(sum).css("display", "block");
+				$a.attr("title", orig).html(sum)
+					.css("display", "block").fadeIn();
 			});
 		}
 
