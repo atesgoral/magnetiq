@@ -353,6 +353,7 @@ h3 {
 #latest_tweet {
 	font-size: 12px;
 	line-height: 14px;
+	margin-top: 5px;
 }
 
 /* Colors and backgrounds */
@@ -416,11 +417,7 @@ pre {
 	background: url(i/desc_blog.gif) 100% 100% no-repeat;
 }
 
-#footer a {
-	color: #31A3C8;
-}
-
-#footer a:hover {
+#header a:hover, #footer a:hover {
 	color: #fff;
 }
 
@@ -465,4 +462,14 @@ a.panel:hover {
 #content p.error {
 	padding-bottom: 240px;
 	background: url(i/sad.gif) 50% 100% no-repeat;
+}
+
+#tweet_meta {
+	margin-top: 5px;
+}
+
+.flat {
+	height: 1px;
+	overflow: hidden;
+	text-indent: -9999px;
 }

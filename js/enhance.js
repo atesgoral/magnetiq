@@ -14,6 +14,23 @@ Cufon.replace(".date_day");
 
 //var disqus_developer = 1;
 
+// Based on JavaScript Pretty Date by John Resig
+function prettyDate(date) {
+	var diff = (((new Date()).getTime() - date.getTime()) / 1000);
+	var day_diff = Math.floor(diff / 86400);
+			
+	return day_diff == 0 && (
+			diff < 60 && "Just now" ||
+			diff < 120 && "1 minute ago" ||
+			diff < 3600 && Math.floor( diff / 60 ) + " minutes ago" ||
+			diff < 7200 && "1 hour ago" ||
+			diff < 86400 && Math.floor( diff / 3600 ) + " hours ago") ||
+		day_diff == 1 && "Yesterday" ||
+		day_diff < 7 && day_diff + " days ago" ||
+		day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago" ||
+		date.toLocaleDateString();
+}
+
 $(function () {
     // Add grid toggler
     $("#toggle_grid").click(function () {
@@ -96,18 +113,28 @@ $(function () {
 		}, 1);
 	}
 	
-	/*if ($("#latest_tweet").length) {
-		// Get latest tweet
+	// Get latest tweet
+	if ($("#latest_tweet").length) {
 		$.ajax({
 			url: "http://twitter.com/status/user_timeline/atesgoral.json?count=2",
 			dataType: "jsonp",
 			success: function (data) {
-				$("#tweet_text").html(data[0].text);
-				$("#tweet_time").html(data[0].created_at).attr("href",
-					"http://twitter.com/atesgoral/status/" + data[0].id);
+				var tweet = data[0];
+				var hyper = tweet.text
+					.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1">$1</a>')
+					.replace(/@(.+?)\b/g,
+						'@<a href="http://twitter.com/$1">$1</a>');
+				var date = new Date(tweet.created_at.replace("+0000 ", "")
+					+ " GMT")
+
+				$("#tweet_text").html(hyper);
+				$("#tweet_meta")
+					.html('<a href="' + "http://twitter.com/atesgoral/status/"
+						+ tweet.id + '" title="' + date.toLocaleString() + '">'
+						+ prettyDate(date) + '</a> via ' + tweet.source);
 			}
 		});
-	}*/
+	}
 	
 	// Get Disqus comment counts
 	if ($("body").hasClass("disqus")) {
