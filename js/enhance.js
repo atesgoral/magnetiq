@@ -11,7 +11,7 @@ $("meta").each(function () {
 
 Cufon.replace("h2");
 Cufon.replace(".date_day");
-//var disqus_developer = 1;
+var disqus_developer = 1;
 
 $(function () {
 	// Add popup handlers
@@ -93,21 +93,44 @@ $(function () {
 	
 	// Get Disqus comment counts
 	if ($("body").hasClass("disqus")) {
-		var idx = 0, data = {};
+		var idx = 0, data = {}, nodes = [];
 
 		$("a.comment_count").each(function () {
-			var href = $(this).attr("href");
+			var $a = $(this);
+			var href = $a.attr("href");
 			
 			if (/#disqus_thread$/.test(href)) {
 				data["url" + idx++] = href;
+				nodes.push($a);
 			}
 		});
+		
+		function probe() {
+			if (!/^\d/.test(nodes[0].html())) {
+				setTimeout(probe, 1000);
+				return;
+			}
+			
+			$.each(nodes, function (i, $a) {
+				var tokens, sum = 0;
 
-        $.ajax({
-			url: "http://disqus.com/forums/" + meta.DisqusShortname
-				+ "/get_num_replies.js",
-			data: data,
-			dataType: "script"
-        });
+				while (tokens = /\d+/g.exec($a.html())) {
+					sum += parseInt(tokens[0]);
+				}
+				
+				$a.html(sum).css({ visibility: "visible" });;
+			});
+		}
+
+		if (nodes.length) {
+			$.ajax({
+				url: "http://disqus.com/forums/" + meta.DisqusShortname
+					+ "/get_num_replies.js",
+				data: data,
+				dataType: "script"
+			});
+			
+			probe();
+		}
 	}
 });

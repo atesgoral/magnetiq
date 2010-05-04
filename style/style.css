@@ -247,6 +247,17 @@ ul.tags a {
 	background: url(i/tag_tip.png) 100% 0 no-repeat;
 }
 
+/* Comment counts */
+
+.comment_count {
+	visibility: hidden;
+	display: block;
+	width: 30px;
+	line-height: 17px;
+	text-align: center;
+	background: url(i/comments_bg.png) no-repeat;
+}
+
 /* Pagination */
 
 a[rel="prev"]:before {
