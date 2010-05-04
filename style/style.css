@@ -250,8 +250,7 @@ ul.tags a {
 /* Comment counts */
 
 .comment_count {
-	visibility: hidden;
-	display: block;
+	display: none;
 	width: 30px;
 	line-height: 17px;
 	text-align: center;

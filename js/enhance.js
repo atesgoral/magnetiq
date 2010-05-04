@@ -118,7 +118,7 @@ $(function () {
 					sum += parseInt(tokens[0]);
 				}
 				
-				$a.html(sum).css({ visibility: "visible" });;
+				$a.html(sum).css("display", "block");
 			});
 		}
 
