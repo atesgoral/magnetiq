@@ -23,8 +23,11 @@ $(function () {
 	
 	var title = meta.PostTitle || meta.PageTitle;
 
+	// Tumblr 404 page customization workaround
 	if (title === "Not Found") {
+		$("#content h2").html(title);
 		$("#content p:first").addClass("error")
+			.html("Sorry, but what you're looking for is not here.")
 			.after("<p>Please try retyping the URL. If you've come here by \
 				clicking a link on another website, please report the link as \
 				a broken link to the website owner.</p>\
@@ -32,12 +35,6 @@ $(function () {
 				portfolio</a> or <a href=\"http://blog.magnetiq.com/\">blog</a>\
 				to see if what you're looking for has moved to another \
 				location.</p>");
-		
-		// Tumblr 404 page customization workaround
-		if ($("body").hasClass("tumblr")) {
-			$("#content h2").html(title);
-		}
-	
 		return;
 	}
 
