@@ -20,10 +20,14 @@ $(function () {
         $("body").toggleClass("show_grid");
         return false;
     });
+	
+	var title = meta.PostTitle || meta.PageTitle;
 
-	// Tumblr 404 page customization workaround
-	if ($("body").hasClass("tumblr") && meta.PostTitle === "Not Found") {
-		$("#content h2").html(meta.PostTitle);
+	if (title === "Not Found") {
+		// Tumblr 404 page customization workaround
+		if ($("body").hasClass("tumblr")) {
+			$("#content h2").html(title);
+		}
 		return;
 	}
 
