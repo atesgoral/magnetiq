@@ -24,10 +24,20 @@ $(function () {
 	var title = meta.PostTitle || meta.PageTitle;
 
 	if (title === "Not Found") {
+		$("#content p:first").addClass("error")
+			.after("<p>Please try retyping the URL. If you've come here by \
+				clicking a link on another website, please report the link as \
+				a broken link to the website owner.</p>\
+				<p>You can also browse <a href=\"http://magnetiq.com/\">my \
+				portfolio</a> or <a href=\"http://blog.magnetiq.com/\">blog</a>\
+				to see if what you're looking for has moved to another \
+				location.</p>");
+		
 		// Tumblr 404 page customization workaround
 		if ($("body").hasClass("tumblr")) {
 			$("#content h2").html(title);
 		}
+	
 		return;
 	}
 

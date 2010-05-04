@@ -461,3 +461,8 @@ a.panel:hover {
 	color: #524080;
 	background: #EEE8FF;
 }
+
+#content p.error {
+	padding-bottom: 240px;
+	background: url(i/sad.gif) 50% 100% no-repeat;
+}
