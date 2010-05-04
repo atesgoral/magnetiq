@@ -114,6 +114,7 @@ $(function () {
 	}
 	
 	// Get latest tweet
+	/*
 	if ($("#latest_tweet").length) {
 		$.ajax({
 			url: "http://twitter.com/status/user_timeline/atesgoral.json?count=2",
@@ -135,8 +136,10 @@ $(function () {
 			}
 		});
 	}
+	*/
 	
 	// Get Disqus comment counts
+	/*
 	if ($("body").hasClass("disqus")) {
 		if ($("body").hasClass("permalink")) {
 			window.disqus_no_style = true;
@@ -186,4 +189,5 @@ $(function () {
 			probe();
 		}
 	}
+	*/
 });
