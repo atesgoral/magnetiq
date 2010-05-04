@@ -31,6 +31,12 @@ function prettyDate(date) {
 		date.toLocaleDateString();
 }
 
+function parseTwitterDate(s) {
+	var date = new Date(s.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/,
+		"$1 $2 $4 $3 UTC"));
+	return isNaN(date.getTime()) ? s : date;
+}
+
 $(function () {
     // Add grid toggler
     $("#toggle_grid").click(function () {
@@ -114,7 +120,6 @@ $(function () {
 	}
 	
 	// Get latest tweet
-	/*
 	if ($("#latest_tweet").length) {
 		$.ajax({
 			url: "http://twitter.com/status/user_timeline/atesgoral.json?count=2",
@@ -125,8 +130,7 @@ $(function () {
 					.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1">$1</a>')
 					.replace(/@(.+?)\b/g,
 						'@<a href="http://twitter.com/$1">$1</a>');
-				var date = new Date(tweet.created_at.replace("+0000 ", "")
-					+ " GMT")
+				var date = parseTwitterDate(tweet.created_at);
 
 				$("#tweet_text").html(hyper);
 				$("#tweet_meta")
@@ -136,7 +140,6 @@ $(function () {
 			}
 		});
 	}
-	*/
 	
 	// Get Disqus comment counts
 	/*
