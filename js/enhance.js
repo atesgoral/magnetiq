@@ -142,7 +142,6 @@ $(function () {
 	}
 	
 	// Get Disqus comment counts
-	/*
 	if ($("body").hasClass("disqus")) {
 		if ($("body").hasClass("permalink")) {
 			window.disqus_no_style = true;
@@ -167,11 +166,12 @@ $(function () {
 				setTimeout(probe, 1000);
 				return;
 			}
-			
+
 			$.each(nodes, function (i, $a) {
 				var orig = $a.html(), tokens, sum = 0;
+				var re = /\d+/g;
 
-				while (tokens = /\d+/g.exec(orig)) {
+				while (tokens = re.exec(orig)) {
 					sum += parseInt(tokens[0]);
 				}
 				
@@ -192,5 +192,4 @@ $(function () {
 			probe();
 		}
 	}
-	*/
 });
