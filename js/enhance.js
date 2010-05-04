@@ -119,7 +119,8 @@ $(function () {
 				}
 				
 				$a.attr("title", orig).html(sum)
-					.css("display", "block").fadeIn();
+					.css({ display: "block", opacity: 0 })
+					.fadeTo("slow", 1);
 			});
 		}
 
