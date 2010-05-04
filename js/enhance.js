@@ -11,7 +11,8 @@ $("meta").each(function () {
 
 Cufon.replace("h2");
 Cufon.replace(".date_day");
-var disqus_developer = 1;
+
+//var disqus_developer = 1;
 
 $(function () {
 	// Add popup handlers
@@ -93,6 +94,12 @@ $(function () {
 	
 	// Get Disqus comment counts
 	if ($("body").hasClass("disqus")) {
+		if ($("body").hasClass("permalink")) {
+			window.disqus_no_style = true;
+			$.getScript("http://" + meta.DisqusShortname
+				+ ".disqus.com/embed.js");
+		}
+	
 		var idx = 0, data = {}, nodes = [];
 
 		$("a.comment_count").each(function () {
