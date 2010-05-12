@@ -161,21 +161,22 @@ $(function () {
 			}
 		});
 		
+		var probe_cnt = 0;
+		
 		function probe() {
+			if (++probe_cnt > 20) {
+				return;
+			}
+
 			if (!/^\d/.test(nodes[0].html())) {
 				setTimeout(probe, 1000);
 				return;
 			}
 
 			$.each(nodes, function (i, $a) {
-				var orig = $a.html(), tokens, sum = 0;
-				var re = /\d+/g;
-
-				while (tokens = re.exec(orig)) {
-					sum += parseInt(tokens[0]);
-				}
+				var orig = $a.html();
 				
-				$a.attr("title", orig.toLowerCase()).html(sum)
+				$a.attr("title", orig).html(parseInt(orig))
 					.css({ display: "block", opacity: 0 })
 					.fadeTo("slow", 1);
 			});
