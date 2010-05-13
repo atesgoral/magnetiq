@@ -129,7 +129,9 @@ $(function () {
 				var hyper = tweet.text
 					.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1">$1</a>')
 					.replace(/@(.+?)\b/g,
-						'@<a href="http://twitter.com/$1">$1</a>');
+						'@<a href="http://twitter.com/$1">$1</a>')
+					.replace(/#(.+?)\b/g,
+						'<a href="http://twitter.com/search?q=%23$1">#$1</a>');
 				var date = parseTwitterDate(tweet.created_at);
 
 				$("#tweet_text").html(hyper);
