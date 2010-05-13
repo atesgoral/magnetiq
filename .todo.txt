@@ -1,0 +1,50 @@
+http://about.digg.com/button
+http://developers.facebook.com/docs/reference/plugins/like 
+http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html
+
+SVN backup!
+SVN auto-update
+
+Disqus lost comments!
+
+conditional CSS for iPhone, print etc.
+text-only resize fubard
+404 page + search?
+googleXXXX.html?
+try again RewriteMap
+iPhone zoom issue
+show Disqus when scrolled/clicked
+Add Twitter bird/balloon
+Tweet + follower count, screen name?
+Tweet + hashtag link!
+meta to left column, right aligned?
+
+Portfolio:
+sitemap.xml
+Freeware + ICQCP, ArchTidy
+No need for .folder names if only pages etc. exposed/symlinked
+index nav anchors point to section div instead of headers
+rewrite rule for pages/indes/ -> / ?
+index: remove sections, add margin to ul
+
+Tumlbr:
+Add Following?, Likes?
+Support: <meta> values
+Day page, tag page, search page
+<- Prev link; put arrow outside margin
+Tumblr Complr
+blog: tumblr custom 404
+blog: disqus comment count styling
+blog: IE /re/.exec in while loop goes infinite
+blog: tweet date formatting
+blog: progressive popups
+
+Maintenance:
+Check and fix blog links & images
+Check and remove target=_blank, <!--more-->
+
+
+Compiler:
+HTML5 semantics for content HTML -> compile into HTML4
+
+.htaccess best practices on SO
