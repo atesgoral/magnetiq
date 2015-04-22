@@ -25,3 +25,7 @@ the-unofficial-photoshop-color-book-file-format-specification http://magnetiq.co
 spelling-quake-with-the-quake-logo 516012550/spelling-quake-with-the-quake-logo
 browsersizecom 516020894/browsersize-com
 rendering-n-sided-polygons-with-dhtml 516048517/rendering-n-sided-polygons-with-dhtml
+using-less-images 525240630/css-sprites-using-fewer-images
+poly 516048517/rendering-n-sided-polygons-with-dhtml
+spst 515031648/subpixel-scrolltext-in-javascript
+bd20 515057236/a-boulder-dash-clone-in-only-20-lines-of

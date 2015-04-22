@@ -54,6 +54,9 @@ RewriteRule spelling-quake-with-the-quake-logo http://blog.magnetiq.com/post/516
 RewriteRule browsersizecom http://blog.magnetiq.com/post/516020894/browsersize-com [R=301,L]
 RewriteRule rendering-n-sided-polygons-with-dhtml http://blog.magnetiq.com/post/516048517/rendering-n-sided-polygons-with-dhtml [R=301,L]
 RewriteRule using-less-images http://blog.magnetiq.com/post/525240630/css-sprites-using-fewer-images [R=301,L]
+RewriteRule poly http://blog.magnetiq.com/post/516048517/rendering-n-sided-polygons-with-dhtml
+RewriteRule spst http://blog.magnetiq.com/post/515031648/subpixel-scrolltext-in-javascript
+RewriteRule bd20 http://blog.magnetiq.com/post/515057236/a-boulder-dash-clone-in-only-20-lines-of
 
 # Other paths
 RewriteRule ^acb-spec|acb_format|PhotoshopColorBook|photoshopcolorbook /pages/acb-spec [R=301,L]
