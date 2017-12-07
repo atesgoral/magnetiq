@@ -157,6 +157,7 @@ This field was probably added in Photoshop CS and beyond. 8 characters (bytes), 
 Below is a portion from the beginning of "ANPA Color.acb" that ships with Adobe Photoshop 7.0 for Windows. Separate fields have been enclosed inside rectangles. A verbal walk-through will follow.
 
 ```
+{% raw %}
           +-----------+-----+-----+-----------+------------
 00000000h:|38 42 43 42|00 01|0B B8|00 00 00 23|00 24 00 24 ; 8BCB.......#.$.$
           +-----------+-----+-----+-----------+------------
@@ -208,6 +209,7 @@ Below is a portion from the beginning of "ANPA Color.acb" that ships with Adobe 
  /\    /  \----/      \/    \--+-/\--/    \/    \/
 /  \01/    \0 /              \1 /  \/
     \/      \/                \/
+{% endraw %}
 ```
 
 The file starts with the mandatory "8BCB" signature. Following that, the file version comes. The version must be 1 for Photoshop 7.0 to open the file. Then comes the unique color book identifier: 0x0bb8.
