@@ -99,11 +99,11 @@ The structure of a single color record is as follows:
 		</tr>
 		</table>
 		A byte for each of the Red, Green and Blue components. Each byte value directly translates to the corresponding level.
-		<pre class="brush:javascript">
+```
 r = r_byte; // 0 thru 255
 g = g_byte; // 0 thru 255
 b = b_byte; // 0 thru 255
-		</pre>
+```
 	</dd>
 	<dt>CMYK</dt>
 	<dd>
@@ -118,12 +118,12 @@ b = b_byte; // 0 thru 255
 
 		A byte for each of the Cyan, Magenta, Yellow and Black components. Each is an unsigned value ranging from 0 to 255, representing 100 minus the intensity percentage, quantized to 255. To calculate the corresponding intensity percentage, subtract a byte value from 255, divide by 2.55 and then round to the nearest integer.
 
-		<pre class="brush:javascript">
+```
 c = (255 - c_byte) / 2.55 + 0.5; // 0% thru 100%
 m = (255 - m_byte) / 2.55 + 0.5; // 0% thru 100%
 y = (255 - y_byte) / 2.55 + 0.5; // 0% thru 100%
 b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
-		</pre>
+```
 	</dd>
 
 	<dt>Lab</dt>
@@ -138,11 +138,11 @@ b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
 
 		A byte for each of the Lightness, a chrominance and b chrominance components. The lightness percentage is quantized to 255. To get the lightness level percentage, divide the byte value by 2.55 and round to the nearest integer. The a and b chrominance values are offset by 128. To calculate their values, subtract 128 from the corresponding byte values.
 
-		<pre class="brush:javascript">
+```
 l = l_byte / 2.55 + 0.5; // 0% thru 100%
 a = a_byte - 128; // -128 thru 127
 b = b_byte - 128; // -128 thru 127
-		</pre>
+```
 	</dd>
 	</dl>
 </dd>
