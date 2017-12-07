@@ -5,7 +5,7 @@ Adobe Photoshop's **Color Picker** has a **Custom Colors** dialog that offers a 
 <center>
 ![Custom Colors Dialog](i/custom_colors.jpg)
 
-[Adobe Photoshop's Custom Colors Dialog]
+Adobe Photoshop's Custom Colors Dialog
 </center>
 
 The color catalog data comes from **Adobe Color Book** files. These file have the **.ACB** file extension on Windows and reside inside the ".../Presets/Color Books" folder in a typical installation.
