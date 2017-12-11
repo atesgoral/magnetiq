@@ -7,4 +7,3 @@ To keep things short:
 * [Twitter](https://twitter.com/atesgoral)
 * [Dwitter](https://www.dwitter.net/u/magna)
 * [LinkedIn](https://www.linkedin.com/in/atesgoral)
-* [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral)
