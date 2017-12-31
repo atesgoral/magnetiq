@@ -2,7 +2,8 @@
 
 Adobe Photoshop's **Color Picker** has a **Custom Colors** dialog that offers a wide variety of colors from several industry-standard color catalogs such as ANPA, DIC, Focoltone and Pantone.
 
-![Custom Colors Dialog](i/custom_colors.jpg "Adobe Photoshop's Custom Colors Dialog")
+![Custom Colors Dialog](i/custom_colors.jpg)
+{: .center }
 
 The color catalog data comes from **Adobe Color Book** files. These file have the **.ACB** file extension on Windows and reside inside the ".../Presets/Color Books" folder in a typical installation.
 
@@ -12,110 +13,107 @@ Partly out of curiosity and partly because I needed the color data for a job, I 
 
 There are three main data types used throughout a color book file. 16-bit and 32-bit integers and strings.
 
-Integers are in <a href="http://en.wikipedia.org/wiki/Endianness">big-endian</a> arrangement, so make sure you swap the bytes as necessary when reading/writing. I don't know whether they should be treated as signed or unsigned. Signed has worked for me.
+Integers are in [big-endian](http://en.wikipedia.org/wiki/Endianness) arrangement, so make sure you swap the bytes as necessary when reading/writing. I don't know whether they should be treated as signed or unsigned. Signed has worked for me.
 
-Strings are like <a href="http://en.wikipedia.org/wiki/String_(computer_science)">Pascal strings</a>, starting with a 32-bit integer that gives the string length, followed by a sequence of <a href="http://en.wikipedia.org/wiki/Utf-16"><abbr title="Unicode Transformation Format">UTF</abbr>-16</a> characters (as kindly pointed out by <a href="http://spike.grobste.in/">Spike Grobstein</a>). Strings are not null-terminated therefore the string length gives the exact length of the string (without the length field). The UTF-16 characters are in big-endian order. Again, some byte swapping may be necessary.
-
-<table>
-<tr><td>Length</td><td>UTF-16 characters</td></tr>
-</table>
+Strings are like [Pascal strings](http://en.wikipedia.org/wiki/String_(computer_science)), starting with a 32-bit integer that gives the string length, followed by a sequence of UTF-16 characters (as kindly pointed out by [Spike Grobstein](http://spike.grobste.in/). Strings are not null-terminated therefore the string length gives the exact length of the string (without the length field). The UTF-16 characters are in big-endian order. Again, some byte swapping may be necessary.
 
 ### Header
 
 The file starts with a header that contains general information about the color book. The fields in the header are:
 
-<dl>
-<dt id="acb_file_signature">Signature</dt>
-<dd>4 consecutive characters that always read "8BCB". This probably stands for "8B Color Book".</dd>
-<dt id="acb_file_version">Book Version</dt>
-<dd>This is a 16-bit integer denoting the file version. Photoshop 7.0 only opens files of version 1.</dd>
-<dt id="acb_identifier">Book Identifier</dt>
-<dd>A 16-bit integer. This is probably a unique identifier assigned by Adobe to each official color book. The most significant byte always seems to be 0x0b.</dd>
-<dt id="acb_title">Book Title</dt>
-<dd>A string. The title of the color book as it appears in Photoshop's color picker. A "^R" within the string stands for a registered trademark (&reg;) symbol.</dd>
-<dt id="acb_prefix">Color Name Prefix</dt>
-<dd>This string is prepended to the beginning of the name of each color in the book.</dd>
-<dt id="acb_suffix">Color Name Suffix</dt>
-<dd>This string is appended to the end of the name of each color in the book.</dd>
-<dt id="acb_description">Book Description</dt>
-<dd>This string usually contains copyright information. A "^C" stands for the copyright symbol (&copy;). "^R" is for the registered trademark symbol (&reg;). I don't know if there are any other special sequences.</dd>
-<dt id="acb_color_count">Color Count</dt>
-<dd>A 16-bit integer. This can be more than the colors visible within Photoshop. Some color records can be dummy records (see <a href="#acb_color_name">Color Name</a>) that are used as padding in order to control how colors get grouped in pages.</dd>
-<dt id="acb_page_size">Page Size</dt>
-<dd>A 16-bit integer that specifies the maximum number of colors that can appear on a page.</dd>
-<dt id="acb_page_offset">Page Selector Offset</dt>
-<dd>The page selector in Photoshop's color picker display a sample color from each page. This offset specifies which of the colors on a page will be used as the page sample. "0" means the first (topmost) color. "1" means the second one and so on. If the offset exceeds or is equal to the number of colors on the page, the last color is used.</dd>
-<dt id="acb_color_space">Color Space/Library Identifier</dt>
-<dd>
-	A 16-bit integer that specifies the color space/library. Values that Photoshop 7.0 recognizes are:
-	<table>
-	<tr><th>Value</th><th>Meaning</th></tr>
-	<tr><td>0</td><td>RGB</td></tr>
-	<tr><td>2</td><td>CMYK</td></tr>
-	<tr><td>7</td><td>Lab</td></tr>
-	</table>
-	The rest of the values can be found in the official "Adobe Photoshop 6.0 File Formats Specification", but they apparently don't work for color books. Note that the 6.0 specification has no information on color book files. The full range of color space/library identifier values are:
-	<table>
-	<tr><th>Value</th><th>Meaning</th></tr>
-	<tr><td>0</td><td><a href="http://en.wikipedia.org/wiki/Rgb"><abbr title="Red, Green, Blue">RGB</abbr></a></td></tr>
-	<tr><td>1</td><td><a href="http://en.wikipedia.org/wiki/HSV_color_space"><abbr title="Hue, Saturation, Brightness">HSB</abbr></a></td></tr>
-	<tr><td>2</td><td><a href="http://en.wikipedia.org/wiki/CMYK"><abbr title="Cyan, Magenta, Yellow, Key (black)">CMYK</abbr></a></td></tr>
-	<tr><td>3</td><td><a href="http://www.pantone.com/">Pantone</a></td></tr>
-	<tr><td>4</td><td><a href="http://www.focoltone.com/">Focoltone</a></td></tr>
-	<tr><td>5</td><td><a href="http://www.trumatch.com/">Trumatch</a></td></tr>
-	<tr><td>6</td><td><a href="http://www.toyoink.com/">Toyo</a></td></tr>
-	<tr><td>7</td><td><a href="http://en.wikipedia.org/wiki/Lab_color_space"><abbr title="Lightness, a chrominance, b chrominance">Lab</abbr></a> (CIELAB D50)</td></tr>
-	<tr><td>8</td><td><a href="http://en.wikipedia.org/wiki/Grayscale">Grayscale</a></td></tr>
-	<tr><td>10</td><td><a href="http://en.wikipedia.org/wiki/HKS_(colour_system)">HKS</a></td></tr>
-	</table>
-</dd>
-</dl>
+#### Signature
+
+4 consecutive characters that always read "8BCB". This probably stands for "8B Color Book".
+
+#### Book Version
+
+This is a 16-bit integer denoting the file version. Photoshop 7.0 only opens files of version 1.
+
+#### Book Identifier
+A 16-bit integer. This is probably a unique identifier assigned by Adobe to each official color book. The most significant byte always seems to be `0x0b`.
+
+#### Book Title
+
+A string. The title of the color book as it appears in Photoshop's color picker. A "^R" within the string stands for a registered trademark (&reg;) symbol.
+
+#### Color Name Prefix
+
+This string is prepended to the beginning of the name of each color in the book.
+
+#### Color Name Suffix
+
+This string is appended to the end of the name of each color in the book.
+
+#### Book Description
+
+This string usually contains copyright information. A "^C" stands for the copyright symbol (&copy;). "^R" is for the registered trademark symbol (&reg;). I don't know if there are any other special sequences.
+
+#### Color Count
+
+A 16-bit integer. This can be more than the colors visible within Photoshop. Some color records can be dummy records (see [Color Name](#color-name)) that are used as padding in order to control how colors get grouped in pages.
+
+#### Page Size
+
+A 16-bit integer that specifies the maximum number of colors that can appear on a page.
+
+#### Page Selector Offset
+
+The page selector in Photoshop's color picker display a sample color from each page. This offset specifies which of the colors on a page will be used as the page sample. "0" means the first (topmost) color. "1" means the second one and so on. If the offset exceeds or is equal to the number of colors on the page, the last color is used.
+
+#### Color Space/Library Identifier
+
+A 16-bit integer that specifies the color space/library. Values that Photoshop 7.0 recognizes are:
+
+* 0 -- RGB
+* 2 -- CMYK
+* 7 -- Lab
+
+The rest of the values can be found in the official "Adobe Photoshop 6.0 File Formats Specification", but they apparently don't work for color books. Note that the 6.0 specification has no information on color book files. The full range of color space/library identifier values are:
+
+* 0 -- RGB
+* 1 -- HSB (HSV)
+* 2 -- CMYK
+* 3 -- Pantone
+* 4 -- Focoltone
+* 5 -- Trumatch
+* 6 -- Toyo
+* 7 -- Lab (CIELAB D50)
+* 8 -- Grayscale
+* 10 -- HKS
 
 ### Color Records
 
-Immediately following the header are the individual color records. There are exactly as many color records as there was specified by the <a href="#acb_color_count">Color Count</a> field.
+Immediately following the header are the individual color records. There are exactly as many color records as there was specified by the [Color Count](#color-count) field.
 
-Photoshop may display fewer colors then there are in the color book file because some color records are dummy records used for padding purposes. When a page has to contain fewer colors than the number specified by <a href="#acb_page_size">Page Size</a>, dummy records are inserted. Photoshop doesn't display these records.
+Photoshop may display fewer colors then there are in the color book file because some color records are dummy records used for padding purposes. When a page has to contain fewer colors than the number specified by [Page Size](#page-size), dummy records are inserted. Photoshop doesn't display these records.
 
 The structure of a single color record is as follows:
 
-<dl>
-<dt id="acb_color_name">Color Name</dt>
-<dd>A string. Concatenating the <a href="#acb_prefix">Color Name Prefix</a>, the Color Name and the <a href="#acb_suffix">Color Name Suffix</a> gives us the full name of a color as it appears in Photoshop's color picker. If the length of this string is zero, the entire color record is for padding (see <a href="#acb_color_count">Color Count</a>.) The remaining fields of the color record are ignored.</dd>
-<dt>Color Code</dt>
-<dd>6 consecutive characters. This is probably a catalog code or short name. Sometimes they are padded with spaces on either side. Photoshop doesn't seem to be displaying this information to the user at all.</dd>
-<dt>Color Components</dt>
-<dd>
-	Depending on the color space, there can be 3 or 4 bytes, one byte for each color component:
-	<dl>
-	<dt>RGB</dt>
-	<dd>
-		<table>
-		<tr>
-		<td>Red</td>
-		<td>Green</td>
-		<td>Blue</td>
-		</tr>
-		</table>
-		A byte for each of the Red, Green and Blue components. Each byte value directly translates to the corresponding level.
+#### Color Name
+
+A string. Concatenating the [Color Name Prefix](#color-name-prefix), the Color Name and the [Color Name Suffix](#color-name-suffix) gives us the full name of a color as it appears in Photoshop's color picker. If the length of this string is zero, the entire color record is for padding (see [Color Count](#color-count).) The remaining fields of the color record are ignored.
+
+#### Color Code
+
+6 consecutive characters. This is probably a catalog code or short name. Sometimes they are padded with spaces on either side. Photoshop doesn't seem to be displaying this information to the user at all.
+
+#### Color Components
+
+Depending on the color space, there can be 3 or 4 bytes, one byte for each color component:
+
+##### RGB
+
+A byte for each of the Red, Green and Blue components. Each byte value directly translates to the corresponding level.
+
 ```
 r = r_byte; // 0 thru 255
 g = g_byte; // 0 thru 255
 b = b_byte; // 0 thru 255
 ```
-	</dd>
-	<dt>CMYK</dt>
-	<dd>
-		<table>
-		<tr>
-		<td>Cyan</td>
-		<td>Magenta</td>
-		<td>Yellow</td>
-		<td>Black</td>
-		</tr>
-		</table>
 
-		A byte for each of the Cyan, Magenta, Yellow and Black components. Each is an unsigned value ranging from 0 to 255, representing 100 minus the intensity percentage, quantized to 255. To calculate the corresponding intensity percentage, subtract a byte value from 255, divide by 2.55 and then round to the nearest integer.
+##### CMYK
+
+A byte for each of the Cyan, Magenta, Yellow and Black components. Each is an unsigned value ranging from 0 to 255, representing 100 minus the intensity percentage, quantized to 255. To calculate the corresponding intensity percentage, subtract a byte value from 255, divide by 2.55 and then round to the nearest integer.
 
 ```
 c = (255 - c_byte) / 2.55 + 0.5; // 0% thru 100%
@@ -123,29 +121,16 @@ m = (255 - m_byte) / 2.55 + 0.5; // 0% thru 100%
 y = (255 - y_byte) / 2.55 + 0.5; // 0% thru 100%
 b = (255 - b_byte) / 2.55 + 0.5; // 0% thru 100%
 ```
-	</dd>
 
-	<dt>Lab</dt>
-	<dd>
-		<table>
-		<tr>
-		<td>Lightness</td>
-		<td>a chrominance</td>
-		<td>b chrominance</td>
-		</tr>
-		</table>
+##### Lab
 
-		A byte for each of the Lightness, a chrominance and b chrominance components. The lightness percentage is quantized to 255. To get the lightness level percentage, divide the byte value by 2.55 and round to the nearest integer. The a and b chrominance values are offset by 128. To calculate their values, subtract 128 from the corresponding byte values.
+A byte for each of the Lightness, a chrominance and b chrominance components. The lightness percentage is quantized to 255. To get the lightness level percentage, divide the byte value by 2.55 and round to the nearest integer. The a and b chrominance values are offset by 128. To calculate their values, subtract 128 from the corresponding byte values.
 
 ```
 l = l_byte / 2.55 + 0.5; // 0% thru 100%
 a = a_byte - 128; // -128 thru 127
 b = b_byte - 128; // -128 thru 127
 ```
-	</dd>
-	</dl>
-</dd>
-</dl>
 
 ### Spot/Process Identifier
 
@@ -223,7 +208,5 @@ Immediately after this, the second color record starts. The name length is again
 
 ### See Also
 
-* <a href="http://www.nomodes.com/aco.html">Adobe Photoshop Color File Format</a> by <a href="http://www.nomodes.com/">Larry Tesler</a></li>
-* <a href="http://www.duo-creative.com/chrisb/aco/">Reverse-Engineering of the Adobe Color File Format</a> by <a href="http://www.duo-creative.com/chrisb/">Chris Berry</a></li>
-* <a href="http://javastruct.googlecode.com/svn/trunk/javastruct/samples/photoshop/">AdobeColorBook Java class</a> by <a href="http://parduspardus.blogspot.com/">Mehmet D. Akin</a></li>
-* <a href="http://magnetiq.com/pages/freeware#acb2xml">ACB2XML - Tool for exporting color book data as XML</a></li>
+* [Adobe Photoshop Color File Format](http://www.nomodes.com/aco.html) by [Larry Tesler](http://www.nomodes.com/)
+* [ACB2XML](/pages/freeware#acb2xml) -- Tool for exporting color book data as XML
