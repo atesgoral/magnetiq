@@ -23,14 +23,14 @@ This was done using [Processing.js](http://processingjs.org/). You can download 
 
 The original images I used are below. <del>I had snatched them a while ago from a search result on Google Images but I can't find the actual source anymore. So, this will have to go without credit. Please drop me a comment if you know the source of these images.</del> <ins>They're from the ["Lighting direction" article](http://www.megapixel.net/html/articles/article-lightdir.php) at [megapixel.net](http://www.megapixel.net/). I've submitted a belated request for permission to use these images in this article and I'm waiting for their response.</ins>
 
-![Ambient light](i/lighting-11.jpg "Ambient light")
+![Ambient light](i/lighting-11.jpg)
 {: .center }
 
-![Light coming from the left](i/lighting-09.jpg "Light coming from the left")
+![Light coming from the left](i/lighting-09.jpg)
 {: .center }
 
-![Light coming from the top](i/lighting-10.jpg "Light coming from the top")
+![Light coming from the top](i/lighting-10.jpg)
 {: .center }
 
-![Light coming from the right](i/lighting-14.jpg "Light coming from the right")
+![Light coming from the right](i/lighting-14.jpg)
 {: .center }

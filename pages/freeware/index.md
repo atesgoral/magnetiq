@@ -19,7 +19,7 @@ Download [acb2xml20.zip](https://github.com/atesgoral/acb2xml/releases/download/
 
 If you don't already know what color books are, there's the **Custom Colors** dialog which appears when you click the **Custom** button on the **Color Picker** dialog. There, you can pick colors from a variety of color books which represent standard color catalogs like Pantone, Toyo, Trumatch, etc. The color book data is kept in files under the **Presets/Color Books** folder of your Photoshop installation. On Windows, they have the **.acb** extension.
 
-![Custom Colors Dialog](i/custom_colors.jpg "Adobe Photoshop's Custom Colors Dialog")
+![Custom Colors Dialog](i/custom_colors.jpg)
 {: .center }
 
 To extract data, just pass in the filename of a color book. The resulting XML will go to standard output. To capture to a file, just redirect the output:
@@ -86,29 +86,29 @@ This is a programming experiment that dates back to 2002. Having played around w
 
 The **About** tab has an **Check for update** button which takes you back to this site to tell you that you're using the most recent version of Burrito (since I currently don't have any intentions of releasing updates).
 
-![About Tab](i/burrito_idle.jpg "About Tab")
+![About Tab](i/burrito_idle.jpg)
 {: .center }
 
 In the **Options** tab, you can determine how you'll be passing the POP3 username and server to your FTP server. The password that you use for the FTP connection is used as the POP3 server password, so Burrito doesn't have to know your password in advance. However, the POP3 username and password must be combined and used as the FTP username. You can change the username-server separator here (defaults to "\").
 
 You can also configure how filenames for individual messages are to be composed. The default is to use the name of the sender, followed by a dash, followed by the message subject. The default file extension is ".eml". After copying files to your local disk, you should be able to simply double click to view them in Outlook Express. Use ".msg" etc. to match whatever e-mail client you're actually using.
 
-![Options Tab](i/burrito_options.jpg "Options Tab")
+![Options Tab](i/burrito_options.jpg)
 {: .center }
 
 By default, Burrito listens on port 21, on all IP addresses. The **Security** tab allows you to tweak the FTP server listen settings.
 
-![Security Tab](i/burrito_security.jpg "Security Tab")
+![Security Tab](i/burrito_security.jpg)
 {: .center }
 
 Here's how a typical FTP client configuration looks like (I use [Total Commander](https://www.ghisler.com/)):
 
-![FTP Client Settings](i/burrito_ftpsettings.jpg "FTP Client Settings")
+![FTP Client Settings](i/burrito_ftpsettings.jpg)
 {: .center }
 
 And here's how your e-mail messages appear as files in your FTP client:
 
-![FTP Client in Action](i/burrito_ftpaction.jpg "FTP Client in Action")
+![FTP Client in Action](i/burrito_ftpaction.jpg)
 {: .center }
 
 For every FTP connection you establish with Burrito, it will typically open a POP3 connection to the server that specified in the FTP username. It has a connection sharing feature for when multiple FTP clients access the same POP3 account.
@@ -125,7 +125,7 @@ E-Res-Q (pronounced "ee rescue") is a very simple, portable POP3 mail reader. It
 
 Download [eresq13.zip](https://github.com/atesgoral/e-res-q/releases/download/v1.3/eresq13.zip)
 
-![E-Res-Q Main Window](i/e-res-q-ss.jpg "E-Res-Q Main Window")
+![E-Res-Q Main Window](i/e-res-q-ss.jpg)
 {: .center }
 
 This small program has proved very useful back in the times when most of us still had dial-up connections. It's still a very useful utility for setting up quick access to your POP3 mailbox when you're temporarily using someone else's computer. The fact that it doesn't require installation is a plus. You just download the zip file, extract the binary and run it, punch in your account settings and you're ready to go!
@@ -136,7 +136,7 @@ Win-Res-Q (pronounced "win rescue") is a simple utility that restores (shows) hi
 
 Download [winresq10.zip](https://github.com/atesgoral/win-res-q/releases/download/v1.0/winresq10.zip)
 
-![Win-Res-Q Main Window](i/win-res-q-ss.gif "Win-Res-Q Main Window")
+![Win-Res-Q Main Window](i/win-res-q-ss.gif)
 {: .center }
 
 This was one of the first Windows applications that I had written using Delphi. I forgot exactly when I wrote it but the file date hints that it's around August 1998. Back then, I was still using the nickname "HeaT" and I also thought that splash screens were cool. When you launch the program, an annoying splash screen pops up with the name "HeaT" on it . It automatically goes away after a few seconds or as soon as you click on it. An installer is not available since it's only a single executable (and I was lazy).
