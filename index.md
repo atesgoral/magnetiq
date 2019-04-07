@@ -13,13 +13,21 @@ This is my low-effort attempt at maintaining a portfolio site, but more importan
 * [Dwitter](https://www.dwitter.net/u/magna)
 * [CodePen](https://codepen.io/atesgoral/)
 
-## Projects
+## Live Projects
 
 * [dweet player](https://dweetplayer.net) (Currently broken due to auto-playback restriction of modern browsers)
 * [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
 * [browsersize.com](https://browsersize.com) (Needs to be either updated or abandoned because modern browsers are restrictive about resizing the window)
-* [twofifty.net](http://twofifty.net) (Static snapshot)
 * [#direnturkce](https://direnturkce.org)
+
+## Stalled Projects
+
+* [Air Gap](https://github.com/atesgoral/airgap)
+* [Transmitter](https://github.com/atesgoral/transmitter)
+
+## Archived Projects
+
+* [twofifty.net](http://twofifty.net) (Static snapshot)
 
 ## Talks
 
