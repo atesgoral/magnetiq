@@ -1,4 +1,6 @@
-Hi! I'm Ates Goral. I enjoy crafting beautiful software and building development environments that improve the experiences of other developers.
+Hi! I'm Ateş Göral (and as I often transliterate: Ates Goral.) I enjoy crafting subjectively beautiful software and building development environments that improve the experiences of other developers.
+
+This is my low-effort attempt at maintaining a portfolio site, but more importantly, a bookmarking mechanism for myself to keep track of ongoing/blocked/forgotten projects and ideas.
 
 ## Open Source
 
