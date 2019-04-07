@@ -1,13 +1,23 @@
 Hi! I'm Ates Goral. I enjoy crafting beautiful software and building development environments that improve the experiences of other developers.
 
-## Elsewhere
+## Open Source
 
 * [GitHub](https://github.com/atesgoral)
 * [npm](https://www.npmjs.com/~atesgoral)
+
+## Elsewhere
+
 * [Twitter](https://twitter.com/atesgoral)
 * [Dwitter](https://www.dwitter.net/u/magna)
-* [Medium](https://medium.com/@atesgoral)
 * [CodePen](https://codepen.io/atesgoral/)
+
+## Projects
+
+* [dweet player](https://dweetplayer.net) (Currently broken due to auto-playback restriction of modern browsers)
+* [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
+* [browsersize.com](https://browsersize.com) (Needs to be either updated or abandoned because modern browsers are restrictive about resizing the window)
+* [twofifty.net](http://twofifty.net) (Static snapshot)
+* [#direnturkce](https://direnturkce.org)
 
 ## Talks
 
