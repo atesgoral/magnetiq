@@ -7,10 +7,15 @@ This is my low-effort attempt at maintaining a portfolio site, but more importan
 * [GitHub](https://github.com/atesgoral)
 * [npm](https://www.npmjs.com/~atesgoral)
 
+## Hardware + Software Hacking
+
+* [Hackaday](https://hackaday.io/atesgoral)
+
 ## Elsewhere
 
 * [Twitter](https://twitter.com/atesgoral)
 * [Dwitter](https://www.dwitter.net/u/magna)
+* [Observable](https://observablehq.com/@atesgoral)
 * [CodePen](https://codepen.io/atesgoral/)
 
 ## Live Projects
@@ -19,11 +24,6 @@ This is my low-effort attempt at maintaining a portfolio site, but more importan
 * [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
 * [browsersize.com](https://browsersize.com) (Needs to be either updated or abandoned because modern browsers are restrictive about resizing the window)
 * [#direnturkce](https://direnturkce.org)
-
-## Stalled Projects
-
-* [Air Gap](https://github.com/atesgoral/airgap)
-* [Transmitter](https://github.com/atesgoral/transmitter)
 
 ## Archived Projects
 
