@@ -74,7 +74,7 @@ I won a Raspberry Pi as an audience award.
 
 ### Backend-less UI Development
 
-Mar 16, 2014 &middot; [jQueryTO](http://jqueryto.com/) &middot; [Slides](https://speakerdeck.com/atesgoral/backend-less-ui-development)
+Mar 16, 2014 &middot; jQueryTO &middot; [Slides](https://speakerdeck.com/atesgoral/backend-less-ui-development)
 {: .meta }
 
 ![Demock diagram](i/backend-less-ui-development.png "Diagram showing where Demock sits in the development environment")
