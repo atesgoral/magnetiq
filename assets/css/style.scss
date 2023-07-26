@@ -104,3 +104,19 @@ a:active {
   max-width: 50rem;
   margin: auto;
 }
+
+img {
+  float: left;
+}
+
+.image-240x135 > img {
+  width: 240px;
+  height: 135px;
+  margin-right: 16px; /* Get it to 256x144, in 24px vertical rhythm */
+}
+
+// Decor
+
+img {
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
+}

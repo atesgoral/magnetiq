@@ -65,6 +65,9 @@ Talking about some best practices for unit testing in Node.js.
 Jun 7, 2016 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/doorbell-ringer)
 {: .meta }
 
+![Doorbell Ringer](i/doorbell-ringer.jpg "A doorbell, a mobile phone, and an Onion Omega")
+{: .image-240x135 }
+
 A very roundabout way of ringing a doorbell through a mixture of: electronics hacking, Onion Omega, Python, Node.js, Twitter streaming API, QR codes, TOTP, Travis CI. A story of learning through self-inflicted problems.
 
 I won a Raspberry Pi as an audience award.
@@ -73,5 +76,8 @@ I won a Raspberry Pi as an audience award.
 
 Mar 16, 2014 &middot; [jQueryTO](http://jqueryto.com/) &middot; [Slides](https://speakerdeck.com/atesgoral/backend-less-ui-development)
 {: .meta }
+
+![Demock diagram](i/backend-less-ui-development.png "Diagram showing where Demock sits in the development environment")
+{: .image-240x135 }
 
 While the modern web development environment has many tools for easily setting up and running your backend (via package managers, dependency managers, migrations, etc.), there are still some advantages to having a simple mock backend that allows a single-page application to be run literally after a simple checkout. I will show a simple exploit to use any static web server as your mock backend. An HTTP transport adaptor for your favourite library (jQuery being one) can also be used for the best effect; simulating HTTP verbs, HTTP response codes, as well as latency.
