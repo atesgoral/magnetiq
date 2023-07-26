@@ -40,7 +40,7 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 
 - [twofifty.net](http://twofifty.net) (Static snapshot)
 
-## Ancients Talks
+## Talks
 
 I'm not really an active speaker. I've only given a few talks in the past. Here are the slides for those talks.
 
