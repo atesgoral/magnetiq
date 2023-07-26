@@ -105,14 +105,20 @@ a:active {
   margin: auto;
 }
 
-img {
-  float: left;
-}
-
 .image-240x135 > img {
+  float: left;
   width: 240px;
   height: 135px;
   margin-right: 16px; /* Get it to 256x144, in 24px vertical rhythm */
+}
+
+@media (max-width: 40rem) {
+  .image-240x135 > img {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
 }
 
 // Decor
