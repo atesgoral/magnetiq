@@ -1,14 +1,101 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+// Typography
 
-.center {
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+
+body {
+  font-family: "Varela Round", Arial, sans-serif;
 }
 
-.meta {
-  font-size: 75%;
+// Colors
+
+body {
+  background-color: #1a091a; /* very dark violet, almost black */
+  color: #f5ddf5; /* light pink, almost white */
+}
+
+a {
+  color: #7f50ff; /* moderate violet */
+}
+
+// Sizes
+
+body {
+  font-size: 1rem; /* equals 16px for most browsers */
+  line-height: 1.5; /* equals 24px */
+}
+
+h1 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.5rem; /* 24px */
+}
+
+h2 {
+  font-size: 1.75rem; /* 28px */
+  line-height: 1.714rem; /* closest to 24px while being an even number */
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.2rem; /* closest to 24px while being an even number */
+}
+
+h5 {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+
+h6 {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.714rem; /* closest to 24px while being an even number */
+}
+
+p,
+li,
+dd {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+
+dt {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  font-weight: bold;
+}
+
+// Spacing
+
+body {
+  padding: 2rem; /* 32px */
+}
+
+// Links
+
+a {
+  color: #7f50ff; /* moderate violet */
+  text-decoration: none; /* removes underline */
+  transition: color 0.3s ease, text-decoration 0.3s ease; /* adds transition */
+}
+
+a:hover {
+  color: #ff7f50; /* changes color on hover, to a vibrant coral */
+  text-decoration: underline; /* adds underline on hover */
+}
+
+a:active {
+  color: #50ffab;
+}
+
+// Layout
+
+.markdown-body {
+  max-width: 35rem;
+  margin: auto;
 }

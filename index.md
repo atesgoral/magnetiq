@@ -1,33 +1,44 @@
-Hi!
+Hi! I'm Ateş Göral. I enjoy writing code and tinkering with graphics and electronics. I'm currently working at [Shopify](https://www.shopify.com) on AI stuff.
 
 ## Open Source
 
-* [GitHub](https://github.com/atesgoral)
-* [npm](https://www.npmjs.com/~atesgoral)
+- [GitHub](https://github.com/atesgoral)
+- [npm](https://www.npmjs.com/~atesgoral)
 
 ## Hardware + Software Hacking
 
-* [Hackaday](https://hackaday.io/atesgoral)
+- [Hackaday](https://hackaday.io/atesgoral)
 
 ## Elsewhere
 
-* [Twitter](https://twitter.com/atesgoral)
-* [Dwitter](https://www.dwitter.net/u/magna)
-* [Observable](https://observablehq.com/@atesgoral)
-* [CodePen](https://codepen.io/atesgoral/)
+- [Twitter](https://twitter.com/atesgoral)
+- [Observable](https://observablehq.com/@atesgoral)
+- [CodePen](https://codepen.io/atesgoral/)
+- [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral)
+- [LinkedIn](https://www.linkedin.com/in/atesgoral/)
+
+## JavaScript Golfing
+
+I write verbose, readable code at work, and go nuts with unreadable JavaScript in my spare time.
+
+- [Dwitter](https://www.dwitter.net/u/magna)
+- [BD1K](https://atesgoral.github.io/bd1k/)
 
 ## Live Projects
 
-* [dweet player](https://dweetplayer.net) (Currently broken due to auto-playback restriction of modern browsers)
-* [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
-* [browsersize.com](https://browsersize.com) (Needs to be either updated or abandoned because modern browsers are restrictive about resizing the window)
-* [#direnturkce](https://direnturkce.org)
+- [dweet player](https://dweetplayer.net)
+- [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
+- [browsersize.com](https://browsersize.com) (Needs to be either updated or archived because modern browsers are restrictive about resizing the window)
+- [#direnturkce](https://direnturkce.org)
+- [Binary Versioning](https://binver.org/)
 
 ## Archived Projects
 
-* [twofifty.net](http://twofifty.net) (Static snapshot)
+- [twofifty.net](http://twofifty.net) (Static snapshot)
 
-## Talks
+## Ancients Talks
+
+I'm not really an active speaker. I've only given a few talks in the past. Here are the slides for those talks.
 
 ### dweet player
 
