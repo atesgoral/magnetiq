@@ -30,7 +30,22 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 
 ## Live Projects
 
-- [dweet player](https://dweetplayer.net)
+### Dweet Player
+
+![Dweet Player](i/dweet-player.png "UI showing a dweet along with its code")
+{: .image-240x135 }
+
+[dweetplayer.net](https://dweetplayer.net) &middot; 2017
+{: .meta}
+
+[Dweet Player](https://dweetplayer.net) is an audiovisual sequencer for [dweets](https://www.dwitter.net) (visual effects in 140 characters of JavaScript, in the [demoscene](https://en.wikipedia.org/wiki/Demoscene) spirit).
+
+I love looking at and [writing my own dweets](https://www.dwitter.net/u/magna/top). I wanted to string together a bunch of dweets and make them dance to some music. I created Dweet Player to sate that appetite.
+
+Using an esoteric language in the query string, you sequence a bunch of dweets and apply timing and effects, and then specify an audio track. Dweet Player performs real-time beat detection of the audio track to make the dweets dance to the beat by morphing space (trig function outputs) and time (the `requestAnimationFrame` time stamp), as well applying some post-processing effects.
+
+I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/). [Here are the slides.](https://speakerdeck.com/atesgoral/dweet-player) I won a Raspberry Pi as an audience award.
+
 - [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
 - [browsersize.com](https://browsersize.com) (Needs to be either updated or archived because modern browsers are restrictive about resizing the window)
 - [#direnturkce](https://direnturkce.org)
@@ -40,20 +55,6 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 ## Talks
 
 I'm not really an active speaker. I've only given a few talks in the past. Here are the slides for those talks.
-
-### dweet player
-
-![dweet player](i/dweet-player.png "UI showing a dweet along with its code")
-{: .image-240x135 }
-
-Oct 17, 2017 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/dweet-player)
-{: .meta }
-
-An audiovisual sequencer for dweets (tweet-sized JavaScript visual effects).
-
-I won (another) Raspberry Pi as an audience award.
-
----
 
 ### Unit Testing—The Whys, Whens and Hows
 
