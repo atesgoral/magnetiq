@@ -132,3 +132,46 @@ hr {
 img {
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
 }
+
+// Detects user preference for light mode
+@media (prefers-color-scheme: light) {
+
+  // Typography remains the same
+
+  // Colors
+
+  body {
+    background-color: #faf0e6; /* light beige as a light alternative for the very dark violet */
+    color: #080808; /* almost black as a light alternative for light pink */
+  }
+
+  a {
+    color: #6a5acd; /* slate blue as a light alternative for moderate violet */
+  }
+
+  // Sizes remain the same
+
+  // Links
+
+  a {
+    color: #6a5acd; /* slate blue as a light alternative for moderate violet */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+
+  a:hover {
+    color: #ffa07a; /* light salmon as a light alternative for vibrant coral */
+    text-decoration: underline;
+  }
+
+  a:active {
+    color: #adff2f; /* green yellow as a light alternative for vibrant green */
+  }
+
+  // Layout remains the same
+
+  // Decor
+
+  img {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1); /* add a little black shadow as an alternative for white */
+  }
+}
