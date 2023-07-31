@@ -35,9 +35,6 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 - [browsersize.com](https://browsersize.com) (Needs to be either updated or archived because modern browsers are restrictive about resizing the window)
 - [#direnturkce](https://direnturkce.org)
 - [Binary Versioning](https://binver.org/)
-
-## Archived Projects
-
 - [twofifty.net](http://twofifty.net) (Static snapshot)
 
 ## Talks
