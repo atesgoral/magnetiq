@@ -136,8 +136,6 @@ img {
 // Detects user preference for light mode
 @media (prefers-color-scheme: light) {
 
-  // Typography remains the same
-
   // Colors
 
   body {
@@ -146,28 +144,23 @@ img {
   }
 
   a {
-    color: #6a5acd; /* slate blue as a light alternative for moderate violet */
+    color: #0080af; /* slate blue as a light alternative for moderate violet */
   }
-
-  // Sizes remain the same
 
   // Links
 
   a {
-    color: #6a5acd; /* slate blue as a light alternative for moderate violet */
     transition: color 0.3s ease, text-decoration 0.3s ease;
   }
 
   a:hover {
-    color: #9ACD32; /* yellow green */
+    color: #80af00; /* yellow green */
     text-decoration: underline;
   }
 
   a:active {
-    color: #C71585; /* green yellow as a light alternative for vibrant green */
+    color: #af0054; /* raspberry */
   }
-
-  // Layout remains the same
 
   // Decor
 
