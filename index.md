@@ -28,7 +28,12 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 - [Dwitter](https://www.dwitter.net/u/magna/top)
 - [BD1K](https://atesgoral.github.io/bd1k/)
 
-## Live Projects
+## Projects
+
+### Binary Versioning
+
+[https://binver.org/](https://binver.org/) &middot; 2020
+{: .meta}
 
 ### Dweet Player
 
@@ -53,28 +58,23 @@ I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https
 
 Human Resource Machine solutions and size/speed hacks.
 
+### #direnturkce
+
+[https://direnturkce.org](https://direnturkce.org) &middot; 2013
+{: .meta}
+
 ### browsersize.com
 
-[https://browsersize.com](https://browsersize.com)
+[https://browsersize.com](https://browsersize.com) &middot; 2005
 {: .meta}
 
 Browser resizing utility to aid in responsive web development.
 
 It needs to be either updated or archived because modern browsers are restrictive about programmatically resizing the window.
 
-### #direnturkce
-
-[https://direnturkce.org](https://direnturkce.org)
-{: .meta}
-
-### Binary Versioning
-
-[https://binver.org/](https://binver.org/)
-{: .meta}
-
 ### Twofifty
 
-[twofifty.net](http://twofifty.net)
+[twofifty.net](http://twofifty.net) &middot; 2000
 {: .meta}
 
 Static snapshot.
