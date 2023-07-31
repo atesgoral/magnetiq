@@ -46,11 +46,38 @@ Using an esoteric language in the query string, you sequence a bunch of dweets a
 
 I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/). [Here are the slides.](https://speakerdeck.com/atesgoral/dweet-player) I won a Raspberry Pi as an audience award.
 
-- [Human Resource Machine Solutions](http://atesgoral.github.io/hrm-solutions/)
-- [browsersize.com](https://browsersize.com) (Needs to be either updated or archived because modern browsers are restrictive about resizing the window)
-- [#direnturkce](https://direnturkce.org)
-- [Binary Versioning](https://binver.org/)
-- [twofifty.net](http://twofifty.net) (Static snapshot)
+### Human Resource Machine Solutions
+
+[http://atesgoral.github.io/hrm-solutions/](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
+{: .meta}
+
+Human Resource Machine solutions and size/speed hacks.
+
+### browsersize.com
+
+[https://browsersize.com](https://browsersize.com)
+{: .meta}
+
+Browser resizing utility to aid in responsive web development.
+
+It needs to be either updated or archived because modern browsers are restrictive about programmatically resizing the window.
+
+### #direnturkce
+
+[https://direnturkce.org](https://direnturkce.org)
+{: .meta}
+
+### Binary Versioning
+
+[https://binver.org/](https://binver.org/)
+{: .meta}
+
+### Twofifty
+
+[twofifty.net](http://twofifty.net)
+{: .meta}
+
+Static snapshot.
 
 ## Talks
 
