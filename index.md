@@ -35,6 +35,8 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 [https://binver.org/](https://binver.org/) &middot; 2020
 {: .meta}
 
+A silly take on [Semantic Versioning](https://semver.org/). I apparently had too much free time on my hands (and disposable income to buy a new domain).
+
 ### Dweet Player
 
 ![Dweet Player](i/dweet-player.png "UI showing a dweet along with its code")
@@ -53,10 +55,15 @@ I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https
 
 ### Human Resource Machine Solutions
 
+![Human Resource Machine Solutions](i/human-resource-machine.png "A screenshot from the game, Human Resource Machine")
+{: .image-240x135 }
+
 [http://atesgoral.github.io/hrm-solutions/](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
 {: .meta}
 
-Human Resource Machine solutions and size/speed hacks.
+[Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) is a fun, little, dark-humoured puzzle game that either can teach you assembly from the ground up or allow you to put your existing assembly knowledge into practice in coming up with speed/size optimized solutions to increasingly hard problems.
+
+This project started with me [publishing my own solutions](https://github.com/atesgoral/hrm-solutions) and then snowballed into a massive collaborative repository of solutions from some 80+ contributors. I've never had any of my open-source projects forked and PR'd this much.
 
 ### #direnturkce
 
