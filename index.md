@@ -30,6 +30,16 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 
 ## Projects
 
+### IKEA OBEGRÄNSAD Hack
+
+![IKEA OBEGRÄNSAD Hack](i/obegransad-hack.jpg "Collage showing electronics, a Mario scene, and a metaballs scene")
+{: .image-240x135 }
+
+[https://github.com/atesgoral/obegraensad-hack](https://github.com/atesgoral/obegraensad-hack) &middot; 2022
+{: .meta}
+
+I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
+
 ### Binary Versioning
 
 [https://binver.org/](https://binver.org/) &middot; 2020
