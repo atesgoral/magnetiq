@@ -121,8 +121,11 @@ a:active {
   }
 }
 
-hr {
+hr, h2, h3 {
   clear: left;
+}
+
+hr {
   border: 0;
   margin: 0;
 }
