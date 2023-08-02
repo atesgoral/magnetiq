@@ -40,12 +40,16 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 
 I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
 
+---
+
 ### Binary Versioning
 
 [https://binver.org/](https://binver.org/) &middot; 2020
 {: .meta}
 
 A silly take on [Semantic Versioning](https://semver.org/). I apparently had too much free time on my hands (and disposable income to buy a new domain).
+
+---
 
 ### Dweet Player
 
@@ -63,6 +67,8 @@ Using an esoteric language in the query string, you sequence a bunch of dweets a
 
 I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/). [Here are the slides.](https://speakerdeck.com/atesgoral/dweet-player) I won a Raspberry Pi as an audience award.
 
+---
+
 ### Human Resource Machine Solutions
 
 ![Human Resource Machine Solutions](i/human-resource-machine.png "A screenshot from the game, Human Resource Machine")
@@ -75,10 +81,14 @@ I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https
 
 This project started with me [publishing my own solutions](https://github.com/atesgoral/hrm-solutions) and then snowballed into a massive collaborative repository of solutions from some 80+ contributors. I've never had any of my open-source projects forked and PR'd this much.
 
+---
+
 ### #direnturkce
 
 [https://direnturkce.org](https://direnturkce.org) &middot; 2013
 {: .meta}
+
+---
 
 ### browsersize.com
 
@@ -88,6 +98,8 @@ This project started with me [publishing my own solutions](https://github.com/at
 Browser resizing utility to aid in responsive web development.
 
 It needs to be either updated or archived because modern browsers are restrictive about programmatically resizing the window.
+
+---
 
 ### Twofifty
 
