@@ -42,6 +42,18 @@ I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an 
 
 ---
 
+### IKEA FREKVENS Hack
+
+![IKEA FREKVENS Hack](i/frekvens-hack.jpg "TBD")
+{: .image-240x135 }
+
+[https://github.com/atesgoral/node-omega-frekvens](https://github.com/atesgoral/node-omega-frekvens) &middot; 2020
+{: .meta}
+
+I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Onion Omega 2+ and wrote some C++, JavaScript to run my own graphics on it.
+
+---
+
 ### Binary Versioning
 
 [https://binver.org/](https://binver.org/) &middot; 2020
