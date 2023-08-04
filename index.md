@@ -51,7 +51,7 @@ A source image is scanned pixel-by-pixel and the pixel value is drawn as a large
 ![IKEA FREKVENS Hack](i/frekvens-hack.jpg "Collage showing the original cube, electronics, and some scenes")
 {: .image-240x135 }
 
-[https://github.com/atesgoral/node-omega-frekvens](https://github.com/atesgoral/node-omega-frekvens) &middot; 2020
+[https://hackaday.io/project/171034-frekvens-fjrrkontroll](https://hackaday.io/project/171034-frekvens-fjrrkontroll) &middot; [https://github.com/atesgoral/node-omega-frekvens](https://github.com/atesgoral/node-omega-frekvens) &middot; 2020
 {: .meta}
 
 I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Onion Omega 2+ and wrote some C++, JavaScript to run my own graphics on it.
@@ -125,6 +125,18 @@ I presented it at a talk on June 7, 2016 at the [Toronto Hack && Tell](https://w
 [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) is a fun, little, dark-humoured puzzle game that either can teach you assembly from the ground up or allow you to put your existing assembly knowledge into practice in coming up with speed/size optimized solutions to increasingly hard problems.
 
 This project started with me [publishing my own solutions](https://github.com/atesgoral/hrm-solutions) and then snowballed into a massive collaborative repository of solutions from some 80+ contributors. I've never had any of my open-source projects forked and PR'd this much.
+
+---
+
+### Autonomous Cockroach
+
+![Autonomous Cockroach](i/autonomous-cockroach.jpg "A collage showing LEGO, electronics, and an IKEA lamp.")
+{: .image-240x135 }
+
+[https://hackaday.io/project/171720-cockroach](https://hackaday.io/project/171720-cockroach) &middot; [https://github.com/atesgoral/autonomous-cockroach](https://github.com/atesgoral/autonomous-cockroach) &middot; 2015
+{: .meta}
+
+This is the very first microcontroller (and IKEA lamp hack) project I did with an Arduino starter kit and (mostly) found parts. A LEGO drivetrain + two motors controlled by an Arduino Uno.
 
 ---
 
