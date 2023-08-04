@@ -70,6 +70,20 @@ A silly take on [Semantic Versioning](https://semver.org/). I apparently had too
 
 ---
 
+### put.io Starry Night
+
+![Starry Night](i/starry-night.png "The Starry Night animation of put.io")
+{: .image-240x135 }
+
+[put.io Starry Night](https://atesgoral.github.io/put.io.starry.night/) &middot; 2017
+{: .meta}
+
+This is a canvas-based animation I created to replace a large MP4 movie on the landing page of [put.io](https://put.io/). The project was a freelance commission by put.io.
+
+I developed a tweakable version for the client to fine-tune the animation to their liking.
+
+---
+
 ### Dweet Player
 
 ![Dweet Player](i/dweet-player.png "UI showing a dweet along with its code")
