@@ -84,7 +84,7 @@ I love looking at and [writing my own dweets](https://www.dwitter.net/u/magna/to
 
 Using an esoteric language in the query string, you sequence a bunch of dweets and apply timing and effects, and then specify an audio track. Dweet Player performs real-time beat detection of the audio track to make the dweets dance to the beat by morphing space (trig function outputs) and time (the `requestAnimationFrame` time stamp), as well applying some post-processing effects.
 
-I gave [a talk](#foo) about this project.
+I gave [a talk](#dweet-player-1) about this project.
 
 ---
 
@@ -110,7 +110,7 @@ A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the
 
 A very roundabout way of ringing a doorbell through a mixture of: electronics hacking, Onion Omega, Python, Node.js, Twitter streaming API, QR codes, TOTP, Travis CI. A story of learning through self-inflicted problems.
 
-I gave [a talk](#foo) about this project.
+I gave [a talk](#doorbell-ringeran-intentionally-complex-iot-project-1) about this project.
 
 ---
 
@@ -194,7 +194,7 @@ I'm not really an active public speaker. I've only given a few talks in the past
 October 17, 2017 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/dweet-player)
 {: .meta }
 
-A talk about my [Dweet Player project](#foo). I won a Raspberry Pi as an audience award.
+A talk about my [Dweet Player project](#dweet-player). I won a Raspberry Pi as an audience award.
 
 ---
 
@@ -212,13 +212,13 @@ Talking about some best practices for unit testing in Node.js.
 
 ### Doorbell Ringer—An Intentionally Complex IoT Project
 
-![Doorbell Ringer](i/doorbell-ringer.jpg "A doorbell, a mobile phone, and an Onion Omega")
+![Doorbell Ringer](i/doorbell-ringer-talk.jpg "Photo of me presenting")
 {: .image-240x135 }
 
 June 7, 2016 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/doorbell-ringer)
 {: .meta }
 
-A talk about my [Doorbell Ringer project](#foo). I won a Raspberry Pi as an audience award.
+A talk about my [Doorbell Ringer project](#doorbell-ringeran-intentionally-complex-iot-project). I won a Raspberry Pi as an audience award.
 
 ---
 
