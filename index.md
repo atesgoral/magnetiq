@@ -184,7 +184,7 @@ This is a static snapshot of the once PHP+MySQL-powered website.
 
 ## Talks
 
-I'm not really an active public speaker. I've only given a few talks in the past. Here are the slides for those talks.
+I'm not really an active public speaker. I've only given a few talks in the past.
 
 ### Dweet Player
 
