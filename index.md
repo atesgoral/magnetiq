@@ -1,4 +1,10 @@
-Hi! I'm Ateş Göral. I enjoy writing code and tinkering with graphics and electronics. I'm currently working at [Shopify](https://www.shopify.com) on AI stuff.
+Hi! I'm <abbr title="IPA: [ɑˈt̪eʃ ɟœɾɑɫ]">Ateş Göral</abbr>. I enjoy writing code, tinkering with graphics and electronics, and executing ambitious DIY projects.
+
+I'm a self-taught programmer with 25+ years of professional and 35+ years of hobbyist experience. I'm a telco and web veteran with both breadth and depth, spanning multiple programming languages, disciplines, and technologies. I also have a functionless Associate of Science degree in Molecular Biology and Genetics.
+
+I'm currently working at [Shopify](https://www.shopify.com) on AI stuff ([Sidekick](https://www.shopify.com/magic)).
+
+Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/) (Alcatel-Lucent, VoiceGenie), PhonoClick, Turk Nokta Net. And a whole bunch of odd jobs.
 
 ## Elsewhere
 
