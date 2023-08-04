@@ -2,30 +2,15 @@ Hi! I'm Ateş Göral. I enjoy writing code and tinkering with graphics and elect
 
 ## Elsewhere
 
-- [Twitter](https://twitter.com/atesgoral)
-- [Observable](https://observablehq.com/@atesgoral)
-- [CodePen](https://codepen.io/atesgoral/)
-- [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral)
-- [LinkedIn](https://www.linkedin.com/in/atesgoral/)
-
-### Open Source
-
-I open-source whatever I can. Usually fringe stuff.
-
-- [GitHub](https://github.com/atesgoral)
-- [npm](https://www.npmjs.com/~atesgoral)
-
-### Hardware + Software Hacking
-
-I've developed a penchant for ripping open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
-
-- [Hackaday](https://hackaday.io/atesgoral)
-
-### JavaScript Golfing
-
-I write verbose, readable code at work, and go nuts with unreadable JavaScript in my spare time.
-
-- [Dwitter](https://www.dwitter.net/u/magna/top)
+- [Twitter / <del>X</del>](https://twitter.com/atesgoral): I project-log, dad-joke, and sub-tweet.
+- [Dwitter](https://www.dwitter.net/u/magna/top) (JavaScript golfing): I write verbose, readable code at work, and go nuts with unreadable JavaScript in my spare time.
+- [GitHub](https://github.com/atesgoral): I open-source whatever I can. Usually fringe stuff.
+- [npm](https://www.npmjs.com/~atesgoral): I publish whatever I can. Usually fringe stuff.
+- [Hackaday](https://hackaday.io/atesgoral): I've developed a penchant for ripping open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
+- [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral): I used to actively post answers. I attained a high reach and moderator status. I just edit people's typos nowadays.
+- [LinkedIn](https://www.linkedin.com/in/atesgoral/): I'm happy where I am, but open to expanding my network.
+- [Observable](https://observablehq.com/@atesgoral): I just created a Dwitter runtime.
+- [CodePen](https://codepen.io/atesgoral/): An unorganized mess of pens.
 
 ## Projects
 
