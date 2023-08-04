@@ -16,6 +16,10 @@ body {
   color: #f5ddf5; /* light pink, almost white */
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #84ddff;
+}
+
 // Sizes
 
 body {
@@ -145,6 +149,6 @@ h2, h3, h4, h5, h6 {
     width: 100%;
     height: 0.125rem;
     border-radius: 0.0625rem;
-    background: #f5ddf5;
+    background: #84ddff;
   }
 }
