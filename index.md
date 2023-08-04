@@ -110,7 +110,7 @@ A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the
 
 A very roundabout way of ringing a doorbell through a mixture of: electronics hacking, Onion Omega, Python, Node.js, Twitter streaming API, QR codes, TOTP, Travis CI. A story of learning through self-inflicted problems.
 
-I presented it at a talk on June 7, 2016 at the [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/). [Here are the slides.](https://speakerdeck.com/atesgoral/doorbell-ringer) I won a Raspberry Pi as an audience award.
+I gave [a talk](#foo) about this project.
 
 ---
 
@@ -207,6 +207,18 @@ October 11, 2016 &middot; [Toronto Node.js](https://www.meetup.com/toronto-node-
 {: .meta }
 
 Talking about some best practices for unit testing in Node.js.
+
+---
+
+### Doorbell Ringer—An Intentionally Complex IoT Project
+
+![Doorbell Ringer](i/doorbell-ringer.jpg "A doorbell, a mobile phone, and an Onion Omega")
+{: .image-240x135 }
+
+June 7, 2016 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/doorbell-ringer)
+{: .meta }
+
+A talk about my [Doorbell Ringer project](#foo). I won a Raspberry Pi as an audience award.
 
 ---
 
