@@ -42,7 +42,7 @@ I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an 
 
 ---
 
-### Airgap--True Analog Glitching by Transmitting Pixel Data Through Air
+### Airgap—True Analog Glitching by Transmitting Pixel Data Through Air
 
 ![Airgap](i/airgap.jpg "Photo of a laptop screen with a piece of aluminum over the camera, showing an image being transmitted through reflection")
 {: .image-240x135 }
