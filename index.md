@@ -1,6 +1,6 @@
-Hi! I'm <abbr title="IPA: [ɑˈt̪eʃ ɟœɾɑɫ]">Ateş Göral</abbr>. I enjoy writing code, tinkering with graphics and electronics, and executing ambitious DIY projects.
+Hi! I'm <abbr title="IPA: [ɑˈt̪eʃ ɟœɾɑɫ]">Ateş Göral</abbr>. I enjoy writing code, tinkering with graphics, experimenting with electronics, and executing ambitious DIY projects.
 
-I'm a self-taught programmer with 25+ years of professional and 35+ years of hobbyist experience. I'm a telco and web veteran with both breadth and depth, spanning multiple programming languages, disciplines, and technologies. I also have a functionless Associate of Science degree in Molecular Biology and Genetics.
+I'm a self-taught programmer with 25+ years of professional and 35+ years of hobbyist experience. I'm a telco and web veteran with both breadth and depth, spanning multiple programming languages, disciplines, and technologies. I also have an ornamental Associate of Science degree in Molecular Biology and Genetics.
 
 I'm currently working at [Shopify](https://www.shopify.com) on AI stuff ([Sidekick](https://www.shopify.com/magic)).
 
@@ -9,10 +9,10 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 ## Elsewhere
 
 - [Twitter / <del>X</del>](https://twitter.com/atesgoral): I project-log, dad-joke, and sub-tweet.
-- [Dwitter](https://www.dwitter.net/u/magna/top) (JavaScript golfing): I write verbose, readable code at work, and go nuts with unreadable JavaScript in my spare time.
+- [Dwitter](https://www.dwitter.net/u/magna/top) (JavaScript golfing): By day, a paragon of verbose, readable code – by night, a wizard of terse, cryptic JavaScript.
 - [GitHub](https://github.com/atesgoral): I open-source whatever I can. Usually fringe stuff.
 - [npm](https://www.npmjs.com/~atesgoral): I publish whatever I can. Usually fringe stuff.
-- [Hackaday](https://hackaday.io/atesgoral): I've developed a penchant for ripping open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
+- [Hackaday](https://hackaday.io/atesgoral): I've developed a penchant for cracking open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
 - [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral): I used to actively post answers. I attained a high reach and moderator status. I just edit people's typos nowadays.
 - [LinkedIn](https://www.linkedin.com/in/atesgoral/): I'm happy where I am, but open to expanding my network.
 - [Observable](https://observablehq.com/@atesgoral): I just created a Dwitter runtime.
@@ -122,7 +122,7 @@ I gave [a talk](#doorbell-ringeran-intentionally-complex-iot-project-1) about th
 [http://atesgoral.github.io/hrm-solutions](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
 {: .meta}
 
-[Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) is a fun, little, dark-humoured puzzle game that either can teach you assembly from the ground up or allow you to put your existing assembly knowledge into practice in coming up with speed/size optimized solutions to increasingly hard problems.
+[Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) is a fun, little, dark-humoured puzzle game that can either teach you assembly from the ground up, or allow you to apply your existing assembly knowledge in order to devise speed/size-optimized solutions to increasingly challenging problems.
 
 This project started with me [publishing my own solutions](https://github.com/atesgoral/hrm-solutions) and then snowballed into a massive collaborative repository of solutions from some 80+ contributors. I've never had any of my open-source projects forked and PR'd this much.
 
@@ -162,7 +162,7 @@ I have many pet peeves. I created a quick reference page for the most common mis
 
 Browser resizing utility to aid in responsive web development.
 
-It needs to be either updated or archived because modern browsers are restrictive about programmatically resizing the window.
+It needs to be either updated or archived, as modern browsers have become more restrictive regarding the programmatic resizing of windows.
 
 ---
 
@@ -174,7 +174,7 @@ It needs to be either updated or archived because modern browsers are restrictiv
 [twofifty.net](https://twofifty.net) &middot; 2000
 {: .meta}
 
-Constraints stoke creativity. This is a showcase of digital art, strictly 250x250 pixels in dimensions, contributed by many different artists. (My own works are published as "MaGnA".)
+Constraints stoke creativity. In that spirit, this is a showcase of digital art, strictly 250x250 pixels in dimensions, contributed by many different artists. (My own works are published as "MaGnA".)
 
 Twofifty garnered popularity in the early 2000's and was featured in several websites and print publications.
 
@@ -184,7 +184,7 @@ This is a static snapshot of the once PHP+MySQL-powered website.
 
 ## Talks
 
-I'm not really an active public speaker. I've only given a few talks in the past.
+While I'm not a frequent public speaker, I have had the opportunity to present a few talks in the past.
 
 ### Dweet Player
 
