@@ -40,11 +40,23 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 
 I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
 
+### Airgap--True Analog Glitching by Transmitting Pixel Data Through Air
+
+![Airgap](i/airgap.jpg "Photo of a laptop screen with a piece of aluminum over the camera, showing an image being transmitted through reflection")
+{: .image-240x135 }
+
+[https://atesgoral.github.io/airgap/](https://atesgoral.github.io/airgap/) &middot; 2021
+{: .meta}
+
+Can we really get true analog/chaotic glitching with an entirely digital device? Using the screen as a signal source and the camera as a receiver, I experimented with transmitting a digital signal through the air, bouncing off random surfaces.
+
+A source image is scanned pixel-by-pixel and the pixel value is drawn as a large square on the screen, close to where the webcam is. Something reflective (even the palm of a hand works) is cupped around the webcam and where the "signal" square is. After a calibration run, the image is transmitted through the reflector, picking up gnarly analog glitches.
+
 ---
 
 ### IKEA FREKVENS Hack
 
-![IKEA FREKVENS Hack](i/frekvens-hack.jpg "TBD")
+![IKEA FREKVENS Hack](i/frekvens-hack.jpg "Collage showing the original cube, electronics, and some scenes")
 {: .image-240x135 }
 
 [https://github.com/atesgoral/node-omega-frekvens](https://github.com/atesgoral/node-omega-frekvens) &middot; 2020
