@@ -84,7 +84,7 @@ I love looking at and [writing my own dweets](https://www.dwitter.net/u/magna/to
 
 Using an esoteric language in the query string, you sequence a bunch of dweets and apply timing and effects, and then specify an audio track. Dweet Player performs real-time beat detection of the audio track to make the dweets dance to the beat by morphing space (trig function outputs) and time (the `requestAnimationFrame` time stamp), as well applying some post-processing effects.
 
-I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/). [Here are the slides.](https://speakerdeck.com/atesgoral/dweet-player) I won a Raspberry Pi as an audience award.
+I gave [a talk](#foo) about this project.
 
 ---
 
@@ -186,12 +186,24 @@ This is a static snapshot of the once PHP+MySQL-powered website.
 
 I'm not really an active public speaker. I've only given a few talks in the past. Here are the slides for those talks.
 
+### Dweet Player
+
+![Dweet Player](i/dweet-player-talk.jpg "Photo of me presenting")
+{: .image-240x135 }
+
+October 17, 2017 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/dweet-player)
+{: .meta }
+
+A talk about my [Dweet Player project](#foo). I won a Raspberry Pi as an audience award.
+
+---
+
 ### Unit Testing—The Whys, Whens and Hows
 
 ![Unit Testing—The Whys, Whens and Hows](i/unit-testing.jpg "Photo of me presenting")
 {: .image-240x135 }
 
-Oct 11, 2016 &middot; [Toronto Node.js](https://www.meetup.com/toronto-node-js/) &middot; [Slides](https://speakerdeck.com/atesgoral/unit-testing-the-whys-whens-and-hows)
+October 11, 2016 &middot; [Toronto Node.js](https://www.meetup.com/toronto-node-js/) &middot; [Slides](https://speakerdeck.com/atesgoral/unit-testing-the-whys-whens-and-hows)
 {: .meta }
 
 Talking about some best practices for unit testing in Node.js.
@@ -203,7 +215,7 @@ Talking about some best practices for unit testing in Node.js.
 ![Backend-less UI Development using Demock](i/demock.jpg "Photo of me presenting")
 {: .image-240x135 }
 
-Mar 16, 2014 &middot; jQueryTO &middot; [Slides](https://speakerdeck.com/atesgoral/backend-less-ui-development)
+March 16, 2014 &middot; jQueryTO &middot; [Slides](https://speakerdeck.com/atesgoral/backend-less-ui-development)
 {: .meta }
 
 A technique to transform any static web server into a simulated backend, capable of emulating various HTTP methods, generating different HTTP response codes, and mimicking latency.
