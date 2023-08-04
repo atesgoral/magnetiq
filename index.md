@@ -40,6 +40,8 @@ I write verbose, readable code at work, and go nuts with unreadable JavaScript i
 
 I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
 
+---
+
 ### Airgap--True Analog Glitching by Transmitting Pixel Data Through Air
 
 ![Airgap](i/airgap.jpg "Photo of a laptop screen with a piece of aluminum over the camera, showing an image being transmitted through reflection")
