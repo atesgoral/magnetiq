@@ -165,10 +165,19 @@ It needs to be either updated or archived because modern browsers are restrictiv
 
 ### Twofifty
 
-[twofifty.net](http://twofifty.net) &middot; 2000
+![Twofifty](i/twofifty.png "Screenshot of the website")
+{: .image-240x135 }
+
+[twofifty.net](https://twofifty.net) &middot; 2000
 {: .meta}
 
-Static snapshot.
+Constraints stoke creativity. This is a showcase of digital art, strictly 250x250 pixels in dimensions, contributed by many different artists. (My own works are published as "MaGnA".)
+
+Twofifty garnered popularity in the early 2000's and was featured in several websites and print publications.
+
+I used hidden iframes to inject JavaScript into the parent frame to achieve a SPA (Single Page Application) before AJAX was a thing.
+
+This is a static snapshot of the once PHP+MySQL-powered website.
 
 ## Talks
 
