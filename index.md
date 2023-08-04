@@ -68,6 +68,9 @@ I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Oni
 
 ### Binary Versioning
 
+![Binary Versioning](i/binver.png "Screenshot of binver.org")
+{: .image-240x135 }
+
 [https://binver.org/](https://binver.org/) &middot; 2020
 {: .meta}
 
