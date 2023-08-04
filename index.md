@@ -25,7 +25,7 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 ![IKEA OBEGRÄNSAD Hack](i/obegransad-hack.jpg "Collage showing electronics, a Mario scene, and a metaballs scene")
 {: .image-240x135 }
 
-[https://github.com/atesgoral/obegraensad-hack](https://github.com/atesgoral/obegraensad-hack) &middot; 2022
+[github.com/atesgoral/obegraensad-hack](https://github.com/atesgoral/obegraensad-hack) &middot; 2022
 {: .meta}
 
 I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
@@ -37,7 +37,7 @@ I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an 
 ![Airgap](i/airgap.jpg "Photo of a laptop screen with a piece of aluminum over the camera, showing an image being transmitted through reflection")
 {: .image-240x135 }
 
-[https://atesgoral.github.io/airgap/](https://atesgoral.github.io/airgap/) &middot; 2021
+[atesgoral.github.io/airgap](https://atesgoral.github.io/airgap/) &middot; 2021
 {: .meta}
 
 Can we really get true analog/chaotic glitching with an entirely digital device? Using the screen as a signal source and the camera as a receiver, I experimented with transmitting a digital signal through the air, bouncing off random surfaces.
@@ -51,7 +51,7 @@ A source image is scanned pixel-by-pixel and the pixel value is drawn as a large
 ![IKEA FREKVENS Hack](i/frekvens-hack.jpg "Collage showing the original cube, electronics, and some scenes")
 {: .image-240x135 }
 
-[https://hackaday.io/project/171034-frekvens-fjrrkontroll](https://hackaday.io/project/171034-frekvens-fjrrkontroll) &middot; [https://github.com/atesgoral/node-omega-frekvens](https://github.com/atesgoral/node-omega-frekvens) &middot; 2020
+[hackaday.io/project/171034-frekvens-fjrrkontroll](https://hackaday.io/project/171034-frekvens-fjrrkontroll) &middot; [github.com/atesgoral/node-omega-frekvens](https://github.com/atesgoral/node-omega-frekvens) &middot; 2020
 {: .meta}
 
 I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Onion Omega 2+ and wrote some C++, JavaScript to run my own graphics on it.
@@ -63,7 +63,7 @@ I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Oni
 ![Binary Versioning](i/binver.png "Screenshot of binver.org")
 {: .image-240x135 }
 
-[https://binver.org/](https://binver.org/) &middot; 2020
+[binver.org](https://binver.org/) &middot; 2020
 {: .meta}
 
 A silly take on [Semantic Versioning](https://semver.org/). I apparently had too much free time on my hands (and disposable income to buy a new domain).
@@ -93,7 +93,7 @@ I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https
 ![BD1K](i/bd1k.png "Screenshot from the game")
 {: .image-240x135 }
 
-[https://atesgoral.github.io/bd1k/](https://atesgoral.github.io/bd1k/) &middot; 2017
+[atesgoral.github.io/bd1k](https://atesgoral.github.io/bd1k/) &middot; 2017
 {: .meta}
 
 A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the original game). My contribution to [JS1k 2017 - Magic](https://js1k.com/2017-magic/).
@@ -105,7 +105,7 @@ A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the
 ![Doorbell Ringer](i/doorbell-ringer.jpg "A doorbell, a mobile phone, and an Onion Omega")
 {: .image-240x135 }
 
-[https://github.com/atesgoral/doorbell-ringer](https://github.com/atesgoral/doorbell-ringer) &middot; [https://github.com/atesgoral/doorbell-nudger](https://github.com/atesgoral/doorbell-nudger) &middot; 2016
+[github.com/atesgoral/doorbell-ringer](https://github.com/atesgoral/doorbell-ringer) &middot; [github.com/atesgoral/doorbell-nudger](https://github.com/atesgoral/doorbell-nudger) &middot; 2016
 {: .meta }
 
 A very roundabout way of ringing a doorbell through a mixture of: electronics hacking, Onion Omega, Python, Node.js, Twitter streaming API, QR codes, TOTP, Travis CI. A story of learning through self-inflicted problems.
@@ -119,7 +119,7 @@ I presented it at a talk on June 7, 2016 at the [Toronto Hack && Tell](https://w
 ![Human Resource Machine Solutions](i/human-resource-machine.png "A screenshot from the game, Human Resource Machine")
 {: .image-240x135 }
 
-[http://atesgoral.github.io/hrm-solutions/](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
+[http://atesgoral.github.io/hrm-solutions](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
 {: .meta}
 
 [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) is a fun, little, dark-humoured puzzle game that either can teach you assembly from the ground up or allow you to put your existing assembly knowledge into practice in coming up with speed/size optimized solutions to increasingly hard problems.
@@ -133,7 +133,7 @@ This project started with me [publishing my own solutions](https://github.com/at
 ![Autonomous Cockroach](i/autonomous-cockroach.jpg "A collage showing LEGO, electronics, and an IKEA lamp.")
 {: .image-240x135 }
 
-[https://hackaday.io/project/171720-cockroach](https://hackaday.io/project/171720-cockroach) &middot; [https://github.com/atesgoral/autonomous-cockroach](https://github.com/atesgoral/autonomous-cockroach) &middot; 2015
+[hackaday.io/project/171720-cockroach](https://hackaday.io/project/171720-cockroach) &middot; [github.com/atesgoral/autonomous-cockroach](https://github.com/atesgoral/autonomous-cockroach) &middot; 2015
 {: .meta}
 
 This is the very first microcontroller (and IKEA lamp hack) project I did with an Arduino starter kit and (mostly) found parts. A LEGO drivetrain + two motors controlled by an Arduino Uno.
@@ -142,14 +142,14 @@ This is the very first microcontroller (and IKEA lamp hack) project I did with a
 
 ### #direnturkce
 
-[https://direnturkce.org](https://direnturkce.org) &middot; 2013
+[direnturkce.org](https://direnturkce.org) &middot; 2013
 {: .meta}
 
 ---
 
 ### browsersize.com
 
-[https://browsersize.com](https://browsersize.com) &middot; 2005
+[browsersize.com](https://browsersize.com) &middot; 2005
 {: .meta}
 
 Browser resizing utility to aid in responsive web development.
