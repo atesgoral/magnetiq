@@ -154,6 +154,9 @@ I have many pet peeves. I created a quick reference page for the most common mis
 
 ### browsersize.com
 
+![browsersize.com](i/browsersize.png "Screenshot of the website")
+{: .image-240x135 }
+
 [browsersize.com](https://browsersize.com) &middot; 2005
 {: .meta}
 
