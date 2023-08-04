@@ -98,6 +98,18 @@ I presented it at a talk on Octobor 17, 2017 at the [Toronto Hack && Tell](https
 
 ---
 
+### BD1K—A Boulder Dash Clone in 1024 Bytes of JavaScript
+
+![BD1K](i/bd1k.png "Screenshot from the game")
+{: .image-240x135 }
+
+[https://atesgoral.github.io/bd1k/](https://atesgoral.github.io/bd1k/) &middot; 2017
+{: .meta}
+
+A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the original game). My contribution to [JS1k 2017 - Magic](https://js1k.com/2017-magic/).
+
+---
+
 ### Human Resource Machine Solutions
 
 ![Human Resource Machine Solutions](i/human-resource-machine.png "A screenshot from the game, Human Resource Machine")
