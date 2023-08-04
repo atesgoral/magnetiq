@@ -16,10 +16,6 @@ body {
   color: #f5ddf5; /* light pink, almost white */
 }
 
-a {
-  color: #7f50ff; /* moderate violet */
-}
-
 // Sizes
 
 body {
@@ -84,18 +80,18 @@ body {
 // Links
 
 a {
-  color: #7f50ff; /* moderate violet */
-  text-decoration: none; /* removes underline */
-  transition: color 0.3s ease, text-decoration 0.3s ease; /* adds transition */
+  color: #a484ff;
+  text-decoration: none;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
-  color: #ff7f50; /* changes color on hover, to a vibrant coral */
-  text-decoration: underline; /* adds underline on hover */
+  color: #ffa484;
+  text-decoration: underline;
 }
 
 a:active {
-  color: #50ffab;
+  color: #84ffa4;
 }
 
 // Layout
