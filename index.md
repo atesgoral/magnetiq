@@ -184,11 +184,11 @@ This is a static snapshot of the once PHP+MySQL-powered website.
 
 ## Talks
 
-I'm not really an active speaker. I've only given a few talks in the past. Here are the slides for those talks.
+I'm not really an active public speaker. I've only given a few talks in the past. Here are the slides for those talks.
 
 ### Unit Testing—The Whys, Whens and Hows
 
-![Unit Testing—The Whys, Whens and Hows](i/unit-testing-the-whys-whens-and-hows.png "Example of a passing but faulty unit test")
+![Unit Testing—The Whys, Whens and Hows](i/unit-testing.jpg "Photo of me presenting")
 {: .image-240x135 }
 
 Oct 11, 2016 &middot; [Toronto Node.js](https://www.meetup.com/toronto-node-js/) &middot; [Slides](https://speakerdeck.com/atesgoral/unit-testing-the-whys-whens-and-hows)
