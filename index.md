@@ -200,7 +200,7 @@ Talking about some best practices for unit testing in Node.js.
 
 ### Backend-less UI Development using Demock
 
-![Demock diagram](i/backend-less-ui-development.png "Diagram showing where Demock sits in the development environment")
+![Backend-less UI Development using Demock](i/demock.jpg "Photo of me presenting")
 {: .image-240x135 }
 
 Mar 16, 2014 &middot; jQueryTO &middot; [Slides](https://speakerdeck.com/atesgoral/backend-less-ui-development)
