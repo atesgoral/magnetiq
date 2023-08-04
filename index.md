@@ -142,8 +142,13 @@ This is the very first microcontroller (and IKEA lamp hack) project I did with a
 
 ### #direnturkce
 
+![#direnturkce](i/diren-turkce.png "Screenshot of the website")
+{: .image-240x135 }
+
 [direnturkce.org](https://direnturkce.org) &middot; 2013
 {: .meta}
+
+I have many pet peeves. I created a quick reference page for the most common misspellings in Turkish.
 
 ---
 
