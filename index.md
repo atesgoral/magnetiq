@@ -8,25 +8,24 @@ Hi! I'm Ateş Göral. I enjoy writing code and tinkering with graphics and elect
 - [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral)
 - [LinkedIn](https://www.linkedin.com/in/atesgoral/)
 
-## Open Source
+### Open Source
 
 I open-source whatever I can. Usually fringe stuff.
 
 - [GitHub](https://github.com/atesgoral)
 - [npm](https://www.npmjs.com/~atesgoral)
 
-## Hardware + Software Hacking
+### Hardware + Software Hacking
 
 I've developed a penchant for ripping open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
 
 - [Hackaday](https://hackaday.io/atesgoral)
 
-## JavaScript Golfing
+### JavaScript Golfing
 
 I write verbose, readable code at work, and go nuts with unreadable JavaScript in my spare time.
 
 - [Dwitter](https://www.dwitter.net/u/magna/top)
-- [BD1K](https://atesgoral.github.io/bd1k/)
 
 ## Projects
 
