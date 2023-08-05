@@ -20,6 +20,8 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 
 ## Projects
 
+Finished personal projects in reverse chronological order.
+
 ### IKEA OBEGRÄNSAD Hack
 
 ![IKEA OBEGRÄNSAD Hack](i/obegransad-hack.jpg "Collage showing electronics, a Mario scene, and a metaballs scene")
