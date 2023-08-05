@@ -180,6 +180,20 @@ It needs to be either updated or archived, as modern browsers have become more r
 
 ---
 
+### The Unofficial Adobe Color Book File Format Specification
+
+![Photoshop Color Picker](i/custom-colors.png "The color picker dialog of Adobe Photoshop")
+{: .image-240x135 }
+
+[Adobe Color Book File Format Specification](pages/acb-spec) &middot; 2003
+{: .meta}
+
+Adobe Photoshop's **Color Picker** has a **Custom Colors** dialog that offers a wide variety of colors from several industry-standard color catalogs such as ANPA, DIC, Focoltone and Pantone. The color catalog data comes from **Adobe Color Book** files.
+
+Partly out of curiosity and partly because I needed the color data for a job, I went through reverse-engineering the file format since an official file format specification wasn't readily available. I have put together what I've come up with into an [unofficial file format specification](pages/acb-spec).
+
+---
+
 ### Twofifty
 
 ![Twofifty](i/twofifty.png "Screenshot of the website")
