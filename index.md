@@ -201,7 +201,7 @@ Partly out of curiosity and partly because I needed the color data for a job, I 
 ![Burrito](i/burrito.png "Screenshot of the app")
 {: .image-240x135 }
 
-[Download Burrito 1.0 beta](downloads/Burrito10b.zip) &middot; 2002
+[Download Burrito 1.0 beta Installer](downloads/burrito10b.exe) &middot; 2002
 {: .meta}
 
 With Burrito you can read and manage your e-mails with any FTP client! It acts as a POP3/FTP protocol translator -- it's actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files. You can view, delete and copy your e-mail messages as if they were files on an FTP server.
