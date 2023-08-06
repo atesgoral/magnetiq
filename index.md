@@ -226,6 +226,18 @@ This is a static snapshot of the once PHP+MySQL-powered website.
 
 ---
 
+### Win-Res-Q
+
+![Win-Res-Q](i/win-res-q.png "Screenshot of the app")
+{: .image-240x135 }
+
+[Download Win-Res-Q 1.0](downloads/WinResQ10.zip) &middot; 1998
+{: .meta}
+
+Win-Res-Q (pronounced "win rescue") is a simple utility that restores (shows) hidden windows. It can be used for bringing back your "lost" applications after their taskbar icons disappear following Explorer crashes that used to frequently occur on Windows 98. It's also useful for exposing strange, hidden windows lurking around your desktop.
+
+---
+
 ### E-Res-Q
 
 ![E-Res-Q](i/e-res-q.png "Screenshot of the app")
