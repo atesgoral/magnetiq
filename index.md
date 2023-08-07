@@ -83,35 +83,13 @@ The project, one of the most tangible and satisfying undertakings in my career (
 
 The JavaScript libraries developed include functionality for manipulating Diameter AVPs, encoding/decoding ASN.1 structures, 3GPP authentication and key generation, and more.
 
-#### milenage
-
-3GPP authentication and key generation functions. JavaScript implementation based on the C reference implementation from Annex 3 of ETSI TS 135 206 V14.0.0 (2017-04).
-
-#### asn1-tree
-
-Yet another ASN.1 encoder/decoder in JavaScript. Parses a binary ASN.1 buffer into a JavaScript object that describes the ASN.1 structure. Nested elements form a tree, and hence the name "asn1-tree", and a primitive value would just result in an object. This is just an encoder/decoder. The interpretation of the structure (i.e. matching against a schema) is beyond the scope of this library. See asn1-mapper, an ASN.1 schema mapper, for that purpose.
-
-#### asn1-mapper
-
-ASN.1 schema mapper for semantic translation between asn1-tree structures and human-readable JavaScript values, using an ASN.1 expanded module definition (schema) that is converted with asn1exp (e.g. map-modules).
-
-#### asn1exp
-
-ASN.1 expanded module parser. This is not a universal parser. It was specifically made for parsing Expanded ASN.1 modules for Mobile Application Part (MAP) (3GPP TS 29.002) found at http://www.3gpp.org/ftp/specs/archive/29_series/29.002/ASN.1/. It will most likely not work for other expanded ASN.1 modules.
-
-#### map-modules
-
-Expanded ASN.1 modules for Mobile Application Part (MAP) (3GPP TS 29.002) in JSON format. Converted using asn1exp from http://www.3gpp.org/ftp/specs/archive/29_series/29.002/ASN.1/.
-
-#### diameter-avp-object
-
-Syntactical sugar for manipulating node-diameter AVP arrays.
-
-I contributed this to the diameter organization and I'm a maintainer of the node-diameter project.
-
-#### js0xn
-
-A Buffer encoding/decoding scheme for JSON with the aim of: Keeping the payload human-readable and minimizing bloat. It's still standard JSON. Buffers are encoded as strings.
+* [MILENAGE](https://www.npmjs.com/package/milenage): 3GPP authentication and key generation functions. JavaScript implementation based on the C reference implementation from Annex 3 of [ETSI TS 135 206 V14.0.0 (2017-04)](http://www.etsi.org/deliver/etsi_ts/135200_135299/135206/14.00.00_60/ts_135206v140000p.pdf).
+* [asn1-tree](https://www.npmjs.com/package/asn1-tree): Yet another ASN.1 encoder/decoder in JavaScript. Parses a binary ASN.1 buffer into a JavaScript object that describes the ASN.1 structure. Nested elements form a tree, and hence the name "asn1-tree", and a primitive value would just result in an object.
+* [asn1-mapper](https://www.npmjs.com/package/asn1-mapper): ASN.1 schema mapper for semantic translation between [asn1-tree](https://www.npmjs.com/package/asn1-tree) structures and human-readable JavaScript values, using an ASN.1 expanded module definition (schema) that is converted with [asn1exp](https://www.npmjs.com/package/asn1exp) (e.g. [map-modules](https://www.npmjs.com/package/map-modules)).
+* [asn1exp](https://www.npmjs.com/package/asn1exp): ASN.1 expanded module parser. This is not a universal parser. It was specifically made for parsing Expanded ASN.1 modules for [Mobile Application Part (MAP) (3GPP TS 29.002)](http://www.3gpp.org/ftp/specs/archive/29_series/29.002/ASN.1/).
+* [map-modules](https://www.npmjs.com/package/map-modules): Expanded ASN.1 modules for [Mobile Application Part (MAP) (3GPP TS 29.002)](http://www.3gpp.org/ftp/specs/archive/29_series/29.002/ASN.1/) in JSON format. Converted using [asn1exp](https://www.npmjs.com/package/asn1exp).
+* [diameter-avp-object](https://www.npmjs.com/package/diameter-avp-object): Syntactical sugar for manipulating node-diameter AVP arrays. I contributed this to the [node-diameter organization](https://github.com/node-diameter) and I'm a maintainer of [node-diameter](https://www.npmjs.com/package/diameter).
+* [js0xn](https://www.npmjs.com/package/js0xn): A Buffer encoding/decoding scheme for JSON with the aim of keeping the payload human-readable and minimizing bloat. It's still standard JSON. Buffers are encoded as strings with the "0x" prefix.
 
 ---
 
