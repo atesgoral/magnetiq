@@ -77,11 +77,11 @@ A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had
 2016-2017
 {: .meta}
 
-While working at Myplanet (Orium), I had the unique and exciting opportunity to design and implement a collection of specialized JavaScript packages for one of Canada's largest mobile carriers, and open-source them with their blessing. This work focused on creating critical telecommunication components, providing a narrow waist of JSON structures to tie both Diameter and SIGTRAN protocols.
+While working at Myplanet (Orium), I had the unique and exciting opportunity to implement major components of a cloud-based iMVNO solution for one of Canada's largest mobile carriers, subsequently open-sourcing several JavaScript packages with the client's consent. This endeavor focused on creating critical telecommunication components, bridging both Diameter and SS7/SIGTRAN through a narrow waist of JSON structures.
 
-The project, one of the most tangible and satisfying undertakings in my career (because testing things involved a physical phone and SIM card).
+The project was among the most tangible and satisfying undertakings of my career. The real-time testing involved a physical phone and SIM card, and witnessing a successful registration blip on my real-time React dashboard the moment I inserted the SIM card was consistently thrilling.
 
-The JavaScript libraries developed include functionality for manipulating Diameter AVPs, encoding/decoding ASN.1 structures, 3GPP authentication and key generation, and more.
+The JavaScript libraries I published encapsulate functionality for manipulating Diameter AVPs, encoding/decoding ASN.1 structures, handling 3GPP authentication and key generation, among other tasks.
 
 * [MILENAGE](https://www.npmjs.com/package/milenage): 3GPP authentication and key generation functions. JavaScript implementation based on the C reference implementation from Annex 3 of [ETSI TS 135 206 V14.0.0 (2017-04)](http://www.etsi.org/deliver/etsi_ts/135200_135299/135206/14.00.00_60/ts_135206v140000p.pdf).
 * [asn1-tree](https://www.npmjs.com/package/asn1-tree): Yet another ASN.1 encoder/decoder in JavaScript. Parses a binary ASN.1 buffer into a JavaScript object that describes the ASN.1 structure. Nested elements form a tree, and hence the name "asn1-tree", and a primitive value would just result in an object.
