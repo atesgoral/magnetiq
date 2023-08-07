@@ -74,10 +74,13 @@ A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had
 
 ### JavaScript Libraries for Mobile Telecommunication Protocols
 
+![MILENAGE](i/milenage.png "Diagram of MILENAGE functions")
+{: .image-240x135 }
+
 2016-2017
 {: .meta}
 
-While working at Myplanet (Orium), I had the unique and exciting opportunity to implement major components of a cloud-based iMVNO solution for one of Canada's largest mobile carriers, subsequently open-sourcing several JavaScript packages with the client's consent. This endeavor focused on creating critical telecommunication components, bridging both Diameter and SS7/SIGTRAN through a narrow waist of JSON structures.
+While working at Myplanet (now [Orium](https://orium.com/)), I had the unique and exciting opportunity to implement major components of a cloud-based iMVNO solution for one of Canada's largest mobile carriers, subsequently open-sourcing several JavaScript packages with the client's consent. This endeavor focused on creating critical telecommunication components, bridging both Diameter and SS7/SIGTRAN through a narrow waist of JSON structures.
 
 The project was among the most tangible and satisfying undertakings of my career. The real-time testing involved a physical phone and SIM card, and witnessing a successful registration blip on my real-time React dashboard the moment I inserted the SIM card was consistently thrilling.
 
