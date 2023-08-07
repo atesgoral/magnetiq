@@ -276,6 +276,22 @@ This small program has proved very useful back in the times when most of us stil
 
 ---
 
+### Bootsector Columns
+
+![Bootsector Columns](i/columns.png "Screenshot of the app")
+{: .image-240x135 }
+
+[github.com/atesgoral/bootsector-columns](https://github.com/atesgoral/bootsector-columns) &middot; 1992
+{: .meta}
+
+A [Columns](http://en.wikipedia.org/wiki/Columns_%28video_game%29) clone in 68000 assembly, for the Atari ST.
+
+My initial intent was to fit it into the bootsector of a floppy disk (without any compression), but I overran the 450 or so free bytes I would have in the bootsector. I therefore ended up adding a bunch of text, graphics, and sound effects; and intentionally overran the limit even further (I went up to a whopping 1832 bytes).
+
+The code could still run from the bootsector with a bit of cheating: I was storing the overrun in the FAT backup and therefore keeping the disk operational until a write operation on the disk would overwrite the FAT backup and screw up the game.
+
+---
+
 ## Talks
 
 While I'm not a frequent public speaker, I have had the opportunity to present a few talks in the past.
