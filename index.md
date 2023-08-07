@@ -68,7 +68,7 @@ I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Oni
 [binver.org](https://binver.org/) &middot; 2020
 {: .meta}
 
-A silly take on [Semantic Versioning](https://semver.org/). I apparently had too much free time on my hands (and disposable income to buy a new domain).
+A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had too much free time on my hands (and disposable income to buy a new domain).
 
 ---
 
