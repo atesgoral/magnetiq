@@ -1,0 +1,4 @@
+name: magnetiq
+type: ruby
+up:
+  - ruby: 2.7.5
