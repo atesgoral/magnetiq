@@ -204,6 +204,20 @@ I have many pet peeves. I created a quick reference page for the most common mis
 
 ---
 
+### jsUnity
+
+![jsUnity.com](i/jsunity.png "jsUnity logo")
+{: .image-240x135 }
+
+[jsunity.com capture](https://web.archive.org/web/20120822153729/http://jsunity.com:80/) &middot; [github.com/atesgoral/jsunity](https://github.com/atesgoral/jsunity) &middot; 2009
+{: .meta}
+
+jsUnity is a lightweight, environment-agnostic JavaScript testing framework: It doesn’t rely on any browser capabilities and therefore can be used in any client-side or server-side JavaScript environment.
+
+There were already several unit testing frameworks for JavaScript that were browser-centric. jsUnity aimed to just focus on JavaScript as a language that’s used beyond the browser context, at a time when Node.js was still in its infancy.
+
+---
+
 ### browsersize.com
 
 ![browsersize.com](i/browsersize.png "Screenshot of the website")
