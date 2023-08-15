@@ -80,7 +80,7 @@ A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had
 [github.com/psygnoscapes3000/midnight-tactix-3000](https://github.com/psygnoscapes3000/midnight-tactix-3000) &middot; 2018
 {: .meta}
 
-A multiplayer turn-based retro racing game we made with my friend [Nick Matantsev](https://unframework.com/) during Toronto Game Jam (TOJam) 13. Using mobile phones as controllers over time-synched WebSocket connections, with the game rendered in GLSL.
+A multiplayer turn-based retro racing game we made with my friend [Nick Matantsev](https://unframework.com/) during [Toronto Game Jam (TOJam)](https://www.tojam.ca/) 13. Using mobile phones as controllers over time-synched WebSocket connections, with the game rendered in GLSL.
 
 ---
 
