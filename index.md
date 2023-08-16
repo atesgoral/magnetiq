@@ -20,7 +20,7 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 
 ## Projects
 
-Finished personal projects in reverse chronological order.
+Finished (mostly personal) projects in reverse chronological order.
 
 ### IKEA OBEGRÄNSAD Hack
 
@@ -89,7 +89,7 @@ A multiplayer turn-based retro racing game we made with my friend [Nick Matantse
 ![MILENAGE](i/milenage.png "Diagram of MILENAGE functions")
 {: .image-240x135 }
 
-2016-2017
+2017
 {: .meta}
 
 While working at Myplanet (now [Orium](https://orium.com/)), I had the unique and exciting opportunity to implement major components of a cloud-based iMVNO solution for one of Canada's largest mobile carriers, subsequently open-sourcing several JavaScript packages with the client's consent. This endeavor focused on creating critical telecommunication components, bridging both Diameter and SS7/SIGTRAN through a narrow waist of JSON structures.
