@@ -197,10 +197,12 @@ This is the very first microcontroller (and IKEA lamp hack) project I did with a
 ![AngularJS Modules](i/angular-modules.png "Screenshots of several components")
 {: .image-240x135 }
 
-[http://atesgoral.github.io/hrm-solutions](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
+2015
 {: .meta}
 
 While working at Myplanet (now [Orium](https://orium.com/)), I wrote or co-wrote several AngularJS modules that we published as packages. They are all pure CSS & JS and are compatible with IE8+.
+
+I also created their live documentation and demo pages.
 
 - [angular-color-picker](https://atesgoral.github.io/angular-color-picker/): A lightweight color picker that acts like a custom input element through regular [ngModel](https://docs.angularjs.org/api/ng/directive/ngModel) bindings.
 - [angular-date-picker](https://atesgoral.github.io/angular-date-picker/): A lightweight date picker that acts like a custom input element through regular [ngModel](https://docs.angularjs.org/api/ng/directive/ngModel) bindings.
