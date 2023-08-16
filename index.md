@@ -192,6 +192,26 @@ This is the very first microcontroller (and IKEA lamp hack) project I did with a
 
 ---
 
+### AngularJS Modules
+
+![AngularJS Modules](i/angular-modules.png "Screenshots of several components")
+{: .image-240x135 }
+
+[http://atesgoral.github.io/hrm-solutions](http://atesgoral.github.io/hrm-solutions/) &middot; 2015
+{: .meta}
+
+While working at Myplanet (now [Orium](https://orium.com/)), I wrote or co-wrote several AngularJS modules that we published as packages. They are all pure CSS & JS and are compatible with IE8+.
+
+- [angular-color-picker](https://atesgoral.github.io/angular-color-picker/): A lightweight color picker that acts like a custom input element through regular [ngModel](https://docs.angularjs.org/api/ng/directive/ngModel) bindings.
+- [angular-date-picker](https://atesgoral.github.io/angular-date-picker/): A lightweight date picker that acts like a custom input element through regular [ngModel](https://docs.angularjs.org/api/ng/directive/ngModel) bindings.
+- [angular-deep-blur](https://atesgoral.github.io/angular-deep-blur/): Detects when neither the element nor any of its children are in focus (i.e. the element is blurred by the focusing of another element outside the element.) This is especially useful if you want to hide a dropdown on blur.
+- [angular-tab-trap](https://atesgoral.github.io/angular-tab-trap/): Disallows tabbing out of a designated area. This is especially useful when implementing modal dialogs to prevent the user from interacting with what's behind a dialog / modal mask by simply tabbing out of the dialog.
+- [angular-esc-action](https://atesgoral.github.io/angular-esc-action/): Allows you to attach an escape key handler to an element without having to locate the element within the DOM.
+- [angular-auto-focus](https://atesgoral.github.io/angular-auto-focus/): The HTML autofocus attribute doesn't consistently work across different browsers when an element is inserted into the DOM after the initial page load. **angular-auto-focus** introduces the `auto-focus`` attribute that works consistently.
+- [angular-pxy](https://atesgoral.github.io/angular-pxy/): Extends scope objects with a `$pxy()`` method that proxies promises through a [Pxy](https://github.com/atesgoral/pxy) instance that is automatically invalidated when the scope is destroyed.
+
+---
+
 ### #direnturkce
 
 ![#direnturkce](i/diren-turkce.png "Screenshot of the website")
