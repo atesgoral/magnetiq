@@ -13,7 +13,7 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 - [GitHub](https://github.com/atesgoral): I open-source whatever I can. Usually fringe stuff.
 - [npm](https://www.npmjs.com/~atesgoral): I publish whatever I can. Usually fringe stuff.
 - [Hackaday](https://hackaday.io/atesgoral): I've developed a penchant for cracking open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
-- [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral): I used to actively post answers. I attained a high reach and moderator status. I just edit people's typos nowadays.
+- [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral): I used to actively post answers. After attaining moderator status, I just edit typos nowadays.
 - [LinkedIn](https://www.linkedin.com/in/atesgoral/): I'm happy where I am, but open to expanding my network.
 - [Observable](https://observablehq.com/@atesgoral): I just created a Dwitter runtime.
 - [CodePen](https://codepen.io/atesgoral/): An unorganized mess of pens.
