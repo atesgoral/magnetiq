@@ -39,12 +39,9 @@ let mouseX = null;
 let mouseY = null;
 
 document.body.addEventListener("mousemove", (evt) => {
-  // if (evt.currentTarget !== document.body) {
-  //   return;
-  // }
   lastMouseMove = performance.now();
-  mouseX = evt.offsetX;
-  mouseY = evt.offsetY;
+  mouseX = evt.clientX;
+  mouseY = evt.clientY;
 
   trailsCanvas.style.left = `${mouseX - trailsCanvas.clientWidth / 2}px`;
   trailsCanvas.style.top = `${mouseY - trailsCanvas.clientHeight / 2}px`;
@@ -81,9 +78,9 @@ function renderTrails(t) {
 
   trailsCtx.fillStyle = "#a484ff";
 
-  const subs = 10;
+  const subs = 15;
   const spacing = trailsCanvas.clientWidth / subs;
-  const size = 2;
+  const size = 3;
 
   for (let i = 0; i < subs; i++) {
     for (let j = 0; j < subs; j++) {
