@@ -12,8 +12,8 @@ body {
 // Colors
 
 body {
-  background-color: #1a091a; /* very dark violet, almost black */
-  color: #f5ddf5; /* light pink, almost white */
+  background-color: #1a091a;
+  color: #f5ddf5;
 }
 
 h1,
@@ -207,23 +207,6 @@ h6 {
     }
   }
 
-  // h1 {
-  //   position: relative;
-
-  //   &:before {
-  //     content: "";
-  //     position: absolute;
-  //     display: block;
-  //     width: 3rem;
-  //     height: 3rem;
-  //     border-radius: 1.5rem;
-  //     background: url(/assets/css/avatar.png);
-  //     background-size: contain;
-  //     left: -5rem;
-  //     top: -0.75rem;
-  //   }
-  // }
-
   h3 {
     position: absolute;
     margin-left: -6rem;
@@ -261,5 +244,53 @@ body {
     height: 2px;
     border-radius: 1px;
     background: #84ddff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #fff;
+    color: #333;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #666;
+  }
+
+  a {
+    color: #3800d4;
+  }
+
+  a:hover {
+    color: #d43800;
+  }
+
+  a:active {
+    color: #00d438;
+  }
+
+  img {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:before {
+      background: #666;
+    }
+  }
+
+  .footer {
+    &:before {
+      background: #666;
+    }
   }
 }
