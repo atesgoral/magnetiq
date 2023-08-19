@@ -34,19 +34,29 @@ const dpr = window.devicePixelRatio;
 trailsCanvas.width = trailsCanvas.clientWidth * dpr;
 trailsCanvas.height = trailsCanvas.clientHeight * dpr;
 
-let lastMouseMove = null;
-let mouseX = null;
-let mouseY = null;
+let lastTrailsMove = null;
+let trailsX = null;
+let trailsY = null;
+
+function moveTrails(x, y) {
+  lastTrailsMove = performance.now();
+  trailsX = x;
+  trailsY = y;
+
+  trailsCanvas.style.left = `${trailsX - trailsCanvas.clientWidth / 2}px`;
+  trailsCanvas.style.top = `${trailsY - trailsCanvas.clientHeight / 2}px`;
+}
 
 document.body.addEventListener("mousemove", (evt) => {
-  lastMouseMove = performance.now();
-  mouseX = evt.clientX;
-  mouseY = evt.clientY;
+  moveTrails(evt.clientX, evt.clientY);
+});
 
-  trailsCanvas.style.left = `${mouseX - trailsCanvas.clientWidth / 2}px`;
-  trailsCanvas.style.top = `${mouseY - trailsCanvas.clientHeight / 2}px`;
+document.body.addEventListener("touchstart", (evt) => {
+  moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
+});
 
-  trailsCanvas;
+document.body.addEventListener("touchmove", (evt) => {
+  moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
 });
 
 const trailsCtx = trailsCanvas.getContext("2d");
@@ -54,13 +64,13 @@ const trailsCtx = trailsCanvas.getContext("2d");
 function renderTrails(t) {
   requestAnimationFrame(renderTrails);
 
-  if (lastMouseMove === null) {
+  if (lastTrailsMove === null) {
     return;
   }
 
   const maxAge = 1000;
 
-  const elapsed = performance.now() - lastMouseMove;
+  const elapsed = performance.now() - lastTrailsMove;
 
   if (elapsed > maxAge) {
     return;
@@ -84,8 +94,8 @@ function renderTrails(t) {
 
   for (let i = 0; i < subs; i++) {
     for (let j = 0; j < subs; j++) {
-      const x = i / subs - 0.5 - (mouseX % spacing) / trailsCanvas.clientWidth;
-      const y = j / subs - 0.5 - (mouseY % spacing) / trailsCanvas.clientWidth;
+      const x = i / subs - 0.5 - (trailsX % spacing) / trailsCanvas.clientWidth;
+      const y = j / subs - 0.5 - (trailsY % spacing) / trailsCanvas.clientWidth;
 
       const distanceAlpha = 1 - Math.min(Math.hypot(x, y), 0.5) / 0.5;
 
