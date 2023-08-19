@@ -23,11 +23,14 @@ function toggleImageZoom(imageEl) {
 //   imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
 // }
 
+const trailsContainer = document.createElement("div");
 const trailsCanvas = document.createElement("canvas");
 
+trailsContainer.className = "trails-container";
 trailsCanvas.className = "trails";
 
-document.body.appendChild(trailsCanvas);
+trailsContainer.appendChild(trailsCanvas);
+document.querySelector(".markdown-body").appendChild(trailsContainer);
 
 const dpr = window.devicePixelRatio;
 
@@ -43,8 +46,12 @@ function moveTrails(x, y) {
   trailsX = x;
   trailsY = y;
 
-  trailsCanvas.style.left = `${trailsX - trailsCanvas.clientWidth / 2}px`;
-  trailsCanvas.style.top = `${trailsY - trailsCanvas.clientHeight / 2}px`;
+  trailsCanvas.style.left = `${
+    trailsX - trailsCanvas.clientWidth / 2 + window.scrollX
+  }px`;
+  trailsCanvas.style.top = `${
+    trailsY - trailsCanvas.clientHeight / 2 + window.scrollY
+  }px`;
 }
 
 document.body.addEventListener("mousemove", (evt) => {
