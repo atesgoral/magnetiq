@@ -51,6 +51,10 @@ document.body.addEventListener("mousemove", (evt) => {
   moveTrails(evt.clientX, evt.clientY);
 });
 
+document.body.addEventListener("mousedown", (evt) => {
+  moveTrails(evt.clientX, evt.clientY);
+});
+
 document.body.addEventListener("touchstart", (evt) => {
   moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
 });
@@ -97,13 +101,18 @@ function renderTrails(t) {
       const x = i / subs - 0.5 - (trailsX % spacing) / trailsCanvas.clientWidth;
       const y = j / subs - 0.5 - (trailsY % spacing) / trailsCanvas.clientWidth;
 
-      const distanceAlpha = 1 - Math.min(Math.hypot(x, y), 0.5) / 0.5;
+      const distance = Math.hypot(x, y);
+      const distanceAlpha = 1 - Math.min(distance, 0.5) / 0.5;
 
       trailsCtx.globalAlpha = decayAlpha * distanceAlpha;
 
+      const displacement = distanceAlpha ** 0.5;
+      const x2 = x / displacement;
+      const y2 = y / displacement;
+
       trailsCtx.fillRect(
-        x - (size / 2) * pixel,
-        y - (size / 2) * pixel,
+        x2 - (size / 2) * pixel,
+        y2 - (size / 2) * pixel,
         size * pixel,
         size * pixel
       );
