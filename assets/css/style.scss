@@ -164,14 +164,15 @@ h6 {
   }
 }
 
-// Progressive enhancement
+@media (min-width: 63rem) {
+  h3 {
+    position: absolute;
+    margin-left: -6rem;
+    text-align: right;
+    font-family: monospace;
 
-.image-240x135 > img {
-  cursor: pointer;
-}
-
-.image-240x135 > img.zoomed {
-  position: absolute;
-  top: 0;
-  left: 0;
+    &:before {
+      display: none;
+    }
+  }
 }

@@ -22,19 +22,25 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 
 Finished (mostly personal) projects in reverse chronological order.
 
-### IKEA OBEGRÄNSAD Hack
+---
+
+### 2023
+
+#### IKEA OBEGRÄNSAD Hack
 
 ![IKEA OBEGRÄNSAD Hack](i/obegransad-hack.jpg "Collage showing electronics, a Mario scene, and a metaballs scene")
 {: .image-240x135}
 
-[github.com/atesgoral/obegraensad-hack](https://github.com/atesgoral/obegraensad-hack) &middot; 2022
+[github.com/atesgoral/obegraensad-hack](https://github.com/atesgoral/obegraensad-hack) &middot; 2023
 {: .meta}
 
 I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
 
 ---
 
-### Airgap—True Analog Glitching by Transmitting Pixel Data Through Air
+### 2021
+
+#### Airgap—True Analog Glitching by Transmitting Pixel Data Through Air
 
 ![Airgap](i/airgap.jpg "Photo of a laptop screen with a piece of aluminum over the camera, showing an image being transmitted through reflection")
 {: .image-240x135}
@@ -48,7 +54,9 @@ A source image is scanned pixel-by-pixel and the pixel value is drawn as a large
 
 ---
 
-### IKEA FREKVENS Hack
+### 2020
+
+#### IKEA FREKVENS Hack
 
 ![IKEA FREKVENS Hack](i/frekvens-hack.jpg "Collage showing the original cube, electronics, and some scenes")
 {: .image-240x135}
@@ -60,7 +68,7 @@ I hacked an IKEA FREKVENS LED cube lamp to replace its graphics chip with an Oni
 
 ---
 
-### Binary Versioning
+#### Binary Versioning
 
 ![Binary Versioning](i/binver.png "Screenshot of binver.org")
 {: .image-240x135}
@@ -72,7 +80,9 @@ A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had
 
 ---
 
-### MIDNIGHT TACTIX 3000
+### 2018
+
+#### MIDNIGHT TACTIX 3000
 
 ![Binary Versioning](i/midnight-tactix-3000.jpg "Screenshot of the game")
 {: .image-240x135}
@@ -84,7 +94,9 @@ A multiplayer turn-based retro racing game we made with my friend [Nick Matantse
 
 ---
 
-### JavaScript Libraries for Mobile Telecommunication Protocols
+### 2017
+
+#### JavaScript Libraries for Mobile Telecommunication Protocols
 
 ![MILENAGE](i/milenage.png "Diagram of MILENAGE functions")
 {: .image-240x135}
@@ -108,7 +120,7 @@ The JavaScript libraries I published encapsulate functionality for manipulating 
 
 ---
 
-### put.io Starry Night
+#### put.io Starry Night
 
 ![Starry Night](i/starry-night.png "The Starry Night animation of put.io")
 {: .image-240x135}
@@ -122,7 +134,7 @@ I developed a tweakable version for the client to fine-tune the animation to the
 
 ---
 
-### Dweet Player
+#### Dweet Player
 
 ![Dweet Player](i/dweet-player.png "UI showing a dweet along with its code")
 {: .image-240x135}
@@ -140,7 +152,7 @@ I gave [a talk](#dweet-player-1) about this project.
 
 ---
 
-### BD1K
+#### BD1K
 
 ![BD1K](i/bd1k.png "Screenshot from the game")
 {: .image-240x135}
@@ -152,7 +164,9 @@ A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the
 
 ---
 
-### Doorbell Ringer—An Intentionally Complex IoT Project
+### 2016
+
+#### Doorbell Ringer—An Intentionally Complex IoT Project
 
 ![Doorbell Ringer](i/doorbell-ringer.jpg "A doorbell, a mobile phone, and an Onion Omega")
 {: .image-240x135}
@@ -166,7 +180,9 @@ I gave [a talk](#doorbell-ringeran-intentionally-complex-iot-project-1) about th
 
 ---
 
-### Human Resource Machine Solutions
+### 2015
+
+#### Human Resource Machine Solutions
 
 ![Human Resource Machine Solutions](i/human-resource-machine.png "A screenshot from the game, Human Resource Machine")
 {: .image-240x135}
@@ -180,7 +196,7 @@ This project started with me [publishing my own solutions](https://github.com/at
 
 ---
 
-### Autonomous Cockroach
+#### Autonomous Cockroach
 
 ![Autonomous Cockroach](i/autonomous-cockroach.jpg "A collage showing LEGO, electronics, and an IKEA lamp.")
 {: .image-240x135}
@@ -192,7 +208,7 @@ This is the very first microcontroller (and IKEA lamp hack) project I did with a
 
 ---
 
-### AngularJS Modules
+#### AngularJS Modules
 
 ![AngularJS Modules](i/angular-modules.png "Screenshots of several components")
 {: .image-240x135}
@@ -214,7 +230,9 @@ I also created their live documentation and demo pages.
 
 ---
 
-### #direnturkce
+### 2013
+
+#### #direnturkce
 
 ![#direnturkce](i/diren-turkce.png "Screenshot of the website")
 {: .image-240x135}
@@ -226,7 +244,9 @@ I have many pet peeves. I created a quick reference page for the most common mis
 
 ---
 
-### jsUnity
+### 2009
+
+#### jsUnity
 
 ![jsUnity.com](i/jsunity.png "jsUnity logo")
 {: .image-240x135}
@@ -240,7 +260,9 @@ There were already several unit testing frameworks for JavaScript that were brow
 
 ---
 
-### browsersize.com
+### 2005
+
+#### browsersize.com
 
 ![browsersize.com](i/browsersize.png "Screenshot of the website")
 {: .image-240x135}
@@ -254,7 +276,9 @@ It needs to be either updated or archived, as modern browsers have become more r
 
 ---
 
-### The Unofficial Adobe Color Book File Format Specification
+### 2003
+
+#### The Unofficial Adobe Color Book File Format Specification
 
 ![Photoshop Color Picker](i/custom-colors.png "The color picker dialog of Adobe Photoshop")
 {: .image-240x135}
@@ -268,7 +292,9 @@ Partly out of curiosity and partly because I needed the color data for a job, I 
 
 ---
 
-### Burrito
+### 2002
+
+#### Burrito
 
 ![Burrito](i/burrito.png "Screenshot of the app")
 {: .image-240x135}
@@ -280,7 +306,9 @@ With Burrito you can read and manage your e-mails with any FTP client! It acts a
 
 ---
 
-### Twofifty
+### 2000
+
+#### Twofifty
 
 ![Twofifty](i/twofifty.png "Screenshot of the website")
 {: .image-240x135}
@@ -298,7 +326,9 @@ This is a static snapshot of the once PHP+MySQL-powered website.
 
 ---
 
-### Win-Res-Q
+### 1998
+
+#### Win-Res-Q
 
 ![Win-Res-Q](i/win-res-q.png "Screenshot of the app")
 {: .image-240x135}
@@ -310,7 +340,7 @@ Win-Res-Q (pronounced "win rescue") is a simple utility that restores (shows) hi
 
 ---
 
-### E-Res-Q
+#### E-Res-Q
 
 ![E-Res-Q](i/e-res-q.png "Screenshot of the app")
 {: .image-240x135}
@@ -324,7 +354,9 @@ This small program has proved very useful back in the times when most of us stil
 
 ---
 
-### Bootsector Columns
+### 1992
+
+#### Bootsector Columns
 
 ![Bootsector Columns](i/columns.png "Screenshot of the app")
 {: .image-240x135}
@@ -344,7 +376,9 @@ The code could still run from the bootsector with a bit of cheating: I was stori
 
 While I'm not a frequent public speaker, I have had the opportunity to present a few talks in the past.
 
-### Dweet Player
+### 2017
+
+#### Dweet Player
 
 ![Dweet Player](i/dweet-player-talk.jpg "Photo of me presenting")
 {: .image-240x135}
@@ -356,7 +390,9 @@ A talk about my [Dweet Player project](#dweet-player). I won a Raspberry Pi as a
 
 ---
 
-### Unit Testing—The Whys, Whens and Hows
+### 2016
+
+#### Unit Testing—The Whys, Whens and Hows
 
 ![Unit Testing—The Whys, Whens and Hows](i/unit-testing.jpg "Photo of me presenting")
 {: .image-240x135}
@@ -368,7 +404,7 @@ Talking about some best practices for unit testing in Node.js.
 
 ---
 
-### Doorbell Ringer—An Intentionally Complex IoT Project
+#### Doorbell Ringer—An Intentionally Complex IoT Project
 
 ![Doorbell Ringer](i/doorbell-ringer-talk.jpg "Photo of me presenting")
 {: .image-240x135}
@@ -380,7 +416,9 @@ A talk about my [Doorbell Ringer project](#doorbell-ringeran-intentionally-compl
 
 ---
 
-### Backend-less UI Development using Demock
+### 2014
+
+#### Backend-less UI Development using Demock
 
 ![Backend-less UI Development using Demock](i/demock.jpg "Photo of me presenting")
 {: .image-240x135}
