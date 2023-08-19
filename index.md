@@ -433,4 +433,9 @@ March 16, 2014 &middot; jQueryTO &middot; [Slides](https://speakerdeck.com/atesg
 
 A technique to transform any static web server into a simulated backend, capable of emulating various HTTP methods, generating different HTTP response codes, and mimicking latency.
 
+---
+
+&copy; Ateş Göral &middot; [github.com/atesgoral/magnetiq](https://github.com/atesgoral/magnetiq)
+{: .footer .meta}
+
 <script src="/assets/js/prog.js"></script>
