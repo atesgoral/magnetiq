@@ -1,3 +1,6 @@
+![Avatar](i/avatar.png "My noggin")
+{: .avatar}
+
 Hi! I'm <abbr title="IPA: [ɑˈt̪eʃ ɟœɾɑɫ]">Ateş Göral</abbr>. I enjoy writing code, tinkering with graphics, experimenting with electronics, and executing ambitious DIY projects.
 
 I'm a self-taught programmer with 25+ years of professional and 35+ years of hobbyist experience. I'm a telco and web veteran with both breadth and depth, spanning multiple programming languages, disciplines, and technologies. I also have an ornamental Associate of Science degree in Molecular Biology and Genetics.
