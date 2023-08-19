@@ -100,13 +100,17 @@ a {
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
+a:visited {
+  color: #7543ff;
+}
+
 a:hover {
   color: #ffa484;
-  text-decoration: underline;
+  // text-shadow: 0 0 10px 20px rgba(255, 164, 132, 0.1);
 }
 
 a:active {
-  color: #84ffa4;
+  color: #ff7543;
 }
 
 // Layout
@@ -259,19 +263,23 @@ body {
   h4,
   h5,
   h6 {
-    color: #666;
+    color: #3fb2e7;
   }
 
   a {
-    color: #3800d4;
+    color: #8356ff;
+  }
+
+  a:visited {
+    color: #652dff;
   }
 
   a:hover {
-    color: #d43800;
+    color: #ff8356;
   }
 
   a:active {
-    color: #00d438;
+    color: #ff652d;
   }
 
   img {
@@ -284,13 +292,13 @@ body {
   h5,
   h6 {
     &:before {
-      background: #666;
+      background: #3fb2e7;
     }
   }
 
   .footer {
     &:before {
-      background: #666;
+      background: #3fb2e7;
     }
   }
 }
