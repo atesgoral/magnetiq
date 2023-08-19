@@ -432,3 +432,5 @@ March 16, 2014 &middot; jQueryTO &middot; [Slides](https://speakerdeck.com/atesg
 {: .meta }
 
 A technique to transform any static web server into a simulated backend, capable of emulating various HTTP methods, generating different HTTP response codes, and mimicking latency.
+
+<script src="/assets/js/prog.js"></script>

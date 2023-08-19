@@ -234,3 +234,15 @@ h6 {
     }
   }
 }
+
+body {
+  position: relative;
+}
+
+.trails {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  z-index: -1;
+  pointer-events: none;
+}
