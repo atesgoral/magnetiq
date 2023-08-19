@@ -94,7 +94,7 @@ function renderTrails(t) {
 
   const subs = 15;
   const spacing = trailsCanvas.clientWidth / subs;
-  const size = 3;
+  const size = 2;
 
   for (let i = 0; i < subs; i++) {
     for (let j = 0; j < subs; j++) {
@@ -107,15 +107,18 @@ function renderTrails(t) {
       trailsCtx.globalAlpha = decayAlpha * distanceAlpha;
 
       const displacement = distanceAlpha ** 0.5;
-      const x2 = x / displacement;
-      const y2 = y / displacement;
+      const dispX = x / displacement;
+      const dispY = y / displacement;
 
-      trailsCtx.fillRect(
-        x2 - (size / 2) * pixel,
-        y2 - (size / 2) * pixel,
+      trailsCtx.beginPath();
+      trailsCtx.arc(
+        dispX - (size / 2) * pixel,
+        dispY - (size / 2) * pixel,
         size * pixel,
-        size * pixel
+        0,
+        Math.PI * 2
       );
+      trailsCtx.fill();
     }
   }
 }
