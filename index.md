@@ -376,6 +376,8 @@ The code could still run from the bootsector with a bit of cheating: I was stori
 
 While I'm not a frequent public speaker, I have had the opportunity to present a few talks in the past.
 
+---
+
 ### 2017
 
 #### Dweet Player
