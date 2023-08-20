@@ -97,7 +97,7 @@ ol {
 a {
   color: #a484ff;
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration 0.3s ease;
+  transition: color 0.3s ease, text-decoration 0.3s ease, text-shadow 0.3s ease;
 }
 
 a:visited {
@@ -106,11 +106,12 @@ a:visited {
 
 a:hover {
   color: #ffa484;
-  // text-shadow: 0 0 10px 20px rgba(255, 164, 132, 0.1);
+  text-shadow: 0 0 5px rgba(255, 164, 132, 0.5);
 }
 
 a:active {
   color: #ff7543;
+  text-shadow: 0 0 5px rgba(255, 117, 67, 0.5);
 }
 
 // Layout
@@ -284,10 +285,12 @@ body {
 
   a:hover {
     color: #ff8356;
+    text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
   }
 
   a:active {
     color: #ff652d;
+    text-shadow: 0 0 5px rgba(255, 101, 45, 0.5);
   }
 
   img {
