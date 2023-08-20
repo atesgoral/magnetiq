@@ -9,6 +9,9 @@ I'm currently working at [Shopify](https://www.shopify.com) on AI stuff ([Sideki
 
 Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/) (Alcatel-Lucent, VoiceGenie), PhonoClick, Turk Nokta Net. And a whole bunch of odd jobs.
 
+Jump to: [Projects](#projects) &middot; [Talks](#talks)
+{: .meta}
+
 ## Elsewhere
 
 - [Twitter / <del>X</del>](https://twitter.com/atesgoral): I project-log, dad-joke, and sub-tweet.
@@ -25,6 +28,9 @@ Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/
 ## Projects
 
 Finished (mostly personal) projects in reverse chronological order.
+
+Jump to: [2021](#2021) &middot; [2020](#2020) &middot; [2018](#2018) &middot; [2017](#2017) &middot; [2016](#2016) &middot; [2015](#2015) &middot; [2013](#2013) &middot; [2009](#2009) &middot; [2005](#2005) &middot; [2003](#2003) &middot; [2002](#2002) &middot; [2000](#2000) &middot; [1998](#1998) &middot; [1992](#1992) &middot; [Talks](#talks)
+{: .meta}
 
 ---
 
