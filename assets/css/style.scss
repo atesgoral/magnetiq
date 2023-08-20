@@ -105,11 +105,6 @@ a:visited {
   color: #7543ff;
 }
 
-a:hover {
-  color: #ffa484;
-  text-shadow: 0 0 5px rgba(255, 164, 132, 0.5);
-}
-
 a:active {
   color: #ff7543;
   text-shadow: 0 0 5px rgba(255, 117, 67, 0.5);
@@ -122,6 +117,24 @@ a:active {
   margin: auto;
 }
 
+@media (hover: hover) {
+  a:hover {
+    color: #ffa484;
+    text-shadow: 0 0 5px rgba(255, 164, 132, 0.5);
+  }
+
+  .image-240x135 {
+    & > img {
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
 .image-240x135 {
   & > img {
     float: left;
@@ -129,12 +142,6 @@ a:active {
     height: 135px;
     margin-right: 16px; /* Get it to 256x144, in 24px vertical rhythm */
     cursor: zoom-in;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
-      transform: scale(1.05);
-    }
 
     &.zoomed {
       position: fixed;
@@ -307,11 +314,6 @@ body {
     color: #652dff;
   }
 
-  a:hover {
-    color: #ff8356;
-    text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
-  }
-
   a:active {
     color: #ff652d;
     text-shadow: 0 0 5px rgba(255, 101, 45, 0.5);
@@ -340,6 +342,13 @@ body {
   ::selection {
     color: #fff;
     background-color: #3fb2e7;
+  }
+}
+
+@media (prefers-color-scheme: light) and (hover: hover) {
+  a:hover {
+    color: #ff8356;
+    text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
   }
 
   .image-240x135 {
