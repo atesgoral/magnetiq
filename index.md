@@ -412,7 +412,7 @@ How to improve LLM chatbot UX by utilizing a stateful markdown stream processor.
 April 6, 2017 &middot; [HackerNoon](https://hackernoon.com/a-javascript-interview-question-and-a-digression-into-xor-3f88bb5ab3be)
 {: .meta }
 
-An intriguing JavaScript interview question about finding a missing number in an array of integers without sorting, and the unexpected elegance of a soution with XOR.
+An intriguing JavaScript interview question about finding a missing number in an array of integers without sorting, and the unexpected elegance of a solution utilizing XOR.
 
 ---
 
