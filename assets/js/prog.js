@@ -18,6 +18,9 @@ function toggleImageZoom(imageEl) {
 }
 
 function initializeZoom() {
+  const zoomMaskEl = document.createElement("div");
+  zoomMaskEl.setAttribute("id", "zoom-mask");
+
   const imageEls = document.querySelectorAll(".image-240x135 > img");
 
   for (const imageEl of imageEls) {
@@ -29,8 +32,8 @@ function initializeTrails() {
   const trailsContainer = document.createElement("div");
   const trailsCanvas = document.createElement("canvas");
 
-  trailsContainer.className = "trails-container";
-  trailsCanvas.className = "trails";
+  trailsContainer.setAttribute("id", "trails-container");
+  trailsCanvas.setAttribute("id", "trails");
 
   trailsContainer.appendChild(trailsCanvas);
   document.querySelector(".markdown-body").appendChild(trailsContainer);

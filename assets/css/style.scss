@@ -253,7 +253,7 @@ body {
   position: relative;
 }
 
-.trails-container {
+#trails-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -261,12 +261,12 @@ body {
   bottom: 0;
   overflow: hidden;
   z-index: -1;
-}
 
-.trails {
-  position: absolute;
-  width: 25rem;
-  height: 25rem;
+  > #trails {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+  }
 }
 
 .footer {
