@@ -17,117 +17,128 @@ function toggleImageZoom(imageEl) {
   toggleClass(imageEl, "zoomed");
 }
 
-const imageEls = document.querySelectorAll(".image-240x135 > img");
+function initializeZoom() {
+  const imageEls = document.querySelectorAll(".image-240x135 > img");
 
-for (const imageEl of imageEls) {
-  imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
+  for (const imageEl of imageEls) {
+    imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
+  }
 }
 
-const trailsContainer = document.createElement("div");
-const trailsCanvas = document.createElement("canvas");
+function initializeTrails() {
+  const trailsContainer = document.createElement("div");
+  const trailsCanvas = document.createElement("canvas");
 
-trailsContainer.className = "trails-container";
-trailsCanvas.className = "trails";
+  trailsContainer.className = "trails-container";
+  trailsCanvas.className = "trails";
 
-trailsContainer.appendChild(trailsCanvas);
-document.querySelector(".markdown-body").appendChild(trailsContainer);
+  trailsContainer.appendChild(trailsCanvas);
+  document.querySelector(".markdown-body").appendChild(trailsContainer);
 
-const dpr = window.devicePixelRatio;
+  const dpr = window.devicePixelRatio;
 
-trailsCanvas.width = trailsCanvas.clientWidth * dpr;
-trailsCanvas.height = trailsCanvas.clientHeight * dpr;
+  trailsCanvas.width = trailsCanvas.clientWidth * dpr;
+  trailsCanvas.height = trailsCanvas.clientHeight * dpr;
 
-let lastTrailsMove = null;
-let trailsX = null;
-let trailsY = null;
+  let lastTrailsMove = null;
+  let trailsX = null;
+  let trailsY = null;
 
-function moveTrails(x, y) {
-  lastTrailsMove = performance.now();
-  trailsX = x;
-  trailsY = y;
+  function moveTrails(x, y) {
+    lastTrailsMove = performance.now();
+    trailsX = x;
+    trailsY = y;
 
-  trailsCanvas.style.left = `${
-    trailsX - trailsCanvas.clientWidth / 2 + window.scrollX
-  }px`;
-  trailsCanvas.style.top = `${
-    trailsY - trailsCanvas.clientHeight / 2 + window.scrollY
-  }px`;
-}
-
-document.body.addEventListener("mousemove", (evt) => {
-  moveTrails(evt.clientX, evt.clientY);
-});
-
-document.body.addEventListener("mousedown", (evt) => {
-  moveTrails(evt.clientX, evt.clientY);
-});
-
-document.body.addEventListener("touchstart", (evt) => {
-  moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
-});
-
-document.body.addEventListener("touchmove", (evt) => {
-  moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
-});
-
-const trailsCtx = trailsCanvas.getContext("2d");
-
-function renderTrails(t) {
-  requestAnimationFrame(renderTrails);
-
-  if (lastTrailsMove === null) {
-    return;
+    trailsCanvas.style.left = `${
+      trailsX - trailsCanvas.clientWidth / 2 + window.scrollX
+    }px`;
+    trailsCanvas.style.top = `${
+      trailsY - trailsCanvas.clientHeight / 2 + window.scrollY
+    }px`;
   }
 
-  const maxAge = 1000;
+  document.body.addEventListener("mousemove", (evt) => {
+    moveTrails(evt.clientX, evt.clientY);
+  });
 
-  const elapsed = performance.now() - lastTrailsMove;
+  document.body.addEventListener("mousedown", (evt) => {
+    moveTrails(evt.clientX, evt.clientY);
+  });
 
-  if (elapsed > maxAge) {
-    return;
-  }
+  document.body.addEventListener("touchstart", (evt) => {
+    moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
+  });
 
-  const decayAlpha = 1 - elapsed / maxAge;
+  document.body.addEventListener("touchmove", (evt) => {
+    moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
+  });
 
-  const scale = trailsCanvas.width;
+  const trailsCtx = trailsCanvas.getContext("2d");
 
-  trailsCanvas.width |= 0;
-  trailsCtx.scale(scale, scale);
-  trailsCtx.translate(0.5, 0.5);
+  function renderTrails(t) {
+    requestAnimationFrame(renderTrails);
 
-  const pixel = 1 / scale;
+    if (lastTrailsMove === null) {
+      return;
+    }
 
-  trailsCtx.fillStyle = "#a484ff";
+    const maxAge = 1000;
 
-  const subs = 15;
-  const spacing = trailsCanvas.clientWidth / subs;
-  const size = 2;
+    const elapsed = performance.now() - lastTrailsMove;
 
-  for (let i = 0; i < subs; i++) {
-    for (let j = 0; j < subs; j++) {
-      const x = i / subs - 0.5 - (trailsX % spacing) / trailsCanvas.clientWidth;
-      const y = j / subs - 0.5 - (trailsY % spacing) / trailsCanvas.clientWidth;
+    if (elapsed > maxAge) {
+      return;
+    }
 
-      const distance = Math.hypot(x, y);
-      const distanceAlpha = 1 - Math.min(distance, 0.5) / 0.5;
+    const decayAlpha = 1 - elapsed / maxAge;
 
-      trailsCtx.globalAlpha = decayAlpha * distanceAlpha;
+    const scale = trailsCanvas.width;
 
-      const displacement = distanceAlpha ** 0.5;
-      const dispX = x / displacement;
-      const dispY = y / displacement;
+    trailsCanvas.width |= 0;
+    trailsCtx.scale(scale, scale);
+    trailsCtx.translate(0.5, 0.5);
 
-      trailsCtx.beginPath();
-      trailsCtx.arc(
-        dispX - (size / 2) * pixel,
-        dispY - (size / 2) * pixel,
-        size * pixel,
-        0,
-        Math.PI * 2
-      );
-      trailsCtx.fill();
+    const pixel = 1 / scale;
+
+    trailsCtx.fillStyle = "#a484ff";
+
+    const subs = 15;
+    const spacing = trailsCanvas.clientWidth / subs;
+    const size = 2;
+
+    for (let i = 0; i < subs; i++) {
+      for (let j = 0; j < subs; j++) {
+        const x =
+          i / subs - 0.5 - (trailsX % spacing) / trailsCanvas.clientWidth;
+        const y =
+          j / subs - 0.5 - (trailsY % spacing) / trailsCanvas.clientWidth;
+
+        const distance = Math.hypot(x, y);
+        const distanceAlpha = 1 - Math.min(distance, 0.5) / 0.5;
+
+        trailsCtx.globalAlpha = decayAlpha * distanceAlpha;
+
+        const displacement = distanceAlpha ** 0.5;
+        const dispX = x / displacement;
+        const dispY = y / displacement;
+
+        trailsCtx.beginPath();
+        trailsCtx.arc(
+          dispX - (size / 2) * pixel,
+          dispY - (size / 2) * pixel,
+          size * pixel,
+          0,
+          Math.PI * 2
+        );
+        trailsCtx.fill();
+      }
     }
   }
+
+  requestAnimationFrame(renderTrails);
 }
 
-requestAnimationFrame(renderTrails);
+document.addEventListener("DOMContentLoaded", () => {
+  initializeTrails();
+  initializeZoom();
+});
