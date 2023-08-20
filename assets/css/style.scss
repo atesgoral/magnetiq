@@ -127,7 +127,11 @@ a:active {
     & > img {
       transition: transform 0.3s ease-in-out;
 
-      &:hover {
+      &.zoomed {
+        transition: none;
+      }
+
+      &:not(.zoomed):hover {
         box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
         transform: scale(1.05);
       }
@@ -150,8 +154,9 @@ a:active {
       width: 100vw;
       height: 100vh;
       object-fit: contain;
-      z-index: 9999;
+      z-index: 30;
       cursor: zoom-out;
+      background-color: #1a091a;
     }
   }
 }
@@ -163,6 +168,59 @@ a:active {
     height: 6rem;
     border-radius: 3rem;
     margin-right: 16px; /* Get it to 256x144, in 24px vertical rhythm */
+  }
+}
+
+#close {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+  background-color: #1a091a;
+  border: none;
+  border-radius: 0.25rem;
+  text-indent: -9999px;
+  z-index: 40;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 0.125rem;
+    background-color: #f5ddf5;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: rotate(45deg);
+  }
+
+  &:before {
+    height: 0.25rem;
+    left: 0.25rem;
+    right: 0.25rem;
+    top: 50%;
+    margin-top: -0.125rem;
+  }
+
+  &:after {
+    width: 0.25rem;
+    left: 50%;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    margin-left: -0.125rem;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.visible {
+    display: inline-block;
   }
 }
 
@@ -223,7 +281,7 @@ h6 {
     width: 100%;
     height: 2px;
     border-radius: 1px;
-    background: #84ddff;
+    background-color: #84ddff;
   }
 }
 
@@ -260,7 +318,7 @@ body {
   right: 0;
   bottom: 0;
   overflow: hidden;
-  z-index: -1;
+  z-index: -10;
 
   > #trails {
     position: absolute;
@@ -282,7 +340,7 @@ body {
     width: 100%;
     height: 2px;
     border-radius: 1px;
-    background: #84ddff;
+    background-color: #84ddff;
   }
 }
 
@@ -321,6 +379,10 @@ body {
 
   img {
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+
+    &.zoomed {
+      background-color: #fff;
+    }
   }
 
   h2,
@@ -329,19 +391,28 @@ body {
   h5,
   h6 {
     &:before {
-      background: #3fb2e7;
+      background-color: #3fb2e7;
     }
   }
 
   .footer {
     &:before {
-      background: #3fb2e7;
+      background-color: #3fb2e7;
     }
   }
 
   ::selection {
     color: #fff;
     background-color: #3fb2e7;
+  }
+
+  #close {
+    background-color: #fff;
+
+    &:before,
+    &:after {
+      background-color: #333;
+    }
   }
 }
 

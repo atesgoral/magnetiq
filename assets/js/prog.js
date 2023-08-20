@@ -1,31 +1,54 @@
-function toggleClass(el, className) {
-  let classNames = el.getAttribute("class");
-  const classes = new Set(classNames && classNames.split(" "));
+function toggleClass(el, classToToggle) {
+  let className = el.className;
+  const classes = new Set(className && className.split(" "));
 
-  if (classes.has(className)) {
-    classes.delete(className);
+  if (classes.has(classToToggle)) {
+    classes.delete(classToToggle);
   } else {
-    classes.add(className);
+    classes.add(classToToggle);
   }
 
-  classNames = [...classes.keys()].join(" ");
+  className = [...classes.keys()].join(" ");
 
-  el.setAttribute("class", classNames);
-}
-
-function toggleImageZoom(imageEl) {
-  toggleClass(imageEl, "zoomed");
+  el.className = className;
 }
 
 function initializeZoom() {
-  const zoomMaskEl = document.createElement("div");
-  zoomMaskEl.setAttribute("id", "zoom-mask");
+  const closeButton = document.createElement("button");
+
+  closeButton.setAttribute("id", "close");
+  closeButton.setAttribute("type", "button");
+  closeButton.setAttribute("title", "Close (Esc)");
+  closeButton.appendChild(document.createTextNode("Close"));
+
+  document.querySelector(".markdown-body").appendChild(closeButton);
+
+  function toggleImageZoom(imageEl) {
+    toggleClass(imageEl, "zoomed");
+    toggleClass(closeButton, "visible");
+  }
+
+  function closeZoomedImage() {
+    const zoomedEl = document.querySelector(".zoomed");
+
+    if (zoomedEl) {
+      toggleImageZoom(zoomedEl);
+    }
+  }
 
   const imageEls = document.querySelectorAll(".image-240x135 > img");
 
   for (const imageEl of imageEls) {
     imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
   }
+
+  closeButton.addEventListener("click", closeZoomedImage);
+
+  document.body.addEventListener("keyup", (evt) => {
+    if (evt.key === "Escape") {
+      closeZoomedImage();
+    }
+  });
 }
 
 function initializeTrails() {
