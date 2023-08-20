@@ -1,4 +1,4 @@
-![Avatar](i/avatar.png "My noggin")
+![Profile picture](i/profile-picture.jpg "Side shot of my head")
 {: .avatar}
 
 Hi! I'm **Ateş Göral**. I enjoy writing code, tinkering with graphics, experimenting with electronics, and executing ambitious DIY projects.
