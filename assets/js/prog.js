@@ -17,11 +17,11 @@ function toggleImageZoom(imageEl) {
   toggleClass(imageEl, "zoomed");
 }
 
-// const imageEls = document.querySelectorAll(".image-240x135 > img");
+const imageEls = document.querySelectorAll(".image-240x135 > img");
 
-// for (const imageEl of imageEls) {
-//   imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
-// }
+for (const imageEl of imageEls) {
+  imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
+}
 
 const trailsContainer = document.createElement("div");
 const trailsCanvas = document.createElement("canvas");

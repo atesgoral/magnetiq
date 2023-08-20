@@ -97,7 +97,8 @@ ol {
 a {
   color: #a484ff;
   text-decoration: none;
-  transition: color 0.3s ease, text-decoration 0.3s ease, text-shadow 0.3s ease;
+  transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out,
+    text-shadow 0.3s ease-in-out;
 }
 
 a:visited {
@@ -127,6 +128,24 @@ a:active {
     width: 240px;
     height: 135px;
     margin-right: 16px; /* Get it to 256x144, in 24px vertical rhythm */
+    cursor: zoom-in;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
+      transform: scale(1.05);
+    }
+
+    &.zoomed {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      z-index: 9999;
+      cursor: zoom-out;
+    }
   }
 }
 
@@ -321,5 +340,13 @@ body {
   ::selection {
     color: #fff;
     background-color: #3fb2e7;
+  }
+
+  .image-240x135 {
+    & > img {
+      &:hover {
+        box-shadow: 0 0 10px 2px rgba(255, 131, 86, 0.5);
+      }
+    }
   }
 }
