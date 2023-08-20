@@ -14,18 +14,8 @@ function toggleClass(el, classToToggle) {
 }
 
 function initializeZoom() {
-  const closeButton = document.createElement("button");
-
-  closeButton.setAttribute("id", "close");
-  closeButton.setAttribute("type", "button");
-  closeButton.setAttribute("title", "Close (Esc)");
-  closeButton.appendChild(document.createTextNode("Close"));
-
-  document.querySelector(".markdown-body").appendChild(closeButton);
-
   function toggleImageZoom(imageEl) {
     toggleClass(imageEl, "zoomed");
-    toggleClass(closeButton, "visible");
   }
 
   function closeZoomedImage() {
@@ -41,8 +31,6 @@ function initializeZoom() {
   for (const imageEl of imageEls) {
     imageEl.addEventListener("click", () => toggleImageZoom(imageEl));
   }
-
-  closeButton.addEventListener("click", closeZoomedImage);
 
   document.body.addEventListener("keyup", (evt) => {
     if (evt.key === "Escape") {
