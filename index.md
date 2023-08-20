@@ -9,7 +9,7 @@ I'm currently working at [Shopify](https://www.shopify.com) on AI stuff ([Sideki
 
 Past: [Orium](https://orium.com/) (Myplanet), [Genesys](https://www.genesys.com/) (Alcatel-Lucent, VoiceGenie), PhonoClick, Turk Nokta Net. And a whole bunch of odd jobs.
 
-Jump to: [Projects](#projects) &middot; [Talks](#talks)
+Jump to: [Projects](#projects) &middot; [Blog Posts](#blog-posts) &middot; [Talks](#talks)
 {: .meta}
 
 ## Elsewhere
@@ -29,7 +29,7 @@ Jump to: [Projects](#projects) &middot; [Talks](#talks)
 
 Finished (mostly personal) projects in reverse chronological order.
 
-Jump to: [2021](#2021) &middot; [2020](#2020) &middot; [2018](#2018) &middot; [2017](#2017) &middot; [2016](#2016) &middot; [2015](#2015) &middot; [2013](#2013) &middot; [2009](#2009) &middot; [2005](#2005) &middot; [2003](#2003) &middot; [2002](#2002) &middot; [2000](#2000) &middot; [1998](#1998) &middot; [1992](#1992) &middot; [Talks](#talks)
+Jump to: [2021](#2021) &middot; [2020](#2020) &middot; [2018](#2018) &middot; [2017](#2017) &middot; [2016](#2016) &middot; [2015](#2015) &middot; [2013](#2013) &middot; [2009](#2009) &middot; [2005](#2005) &middot; [2003](#2003) &middot; [2002](#2002) &middot; [2000](#2000) &middot; [1998](#1998) &middot; [1992](#1992) &middot; [Blog Posts](#blog-posts) &middot; [Talks](#talks)
 {: .meta}
 
 ---
@@ -379,6 +379,40 @@ A [Columns](http://en.wikipedia.org/wiki/Columns_%28video_game%29) clone in 6800
 My initial intent was to fit it into the bootsector of a floppy disk (without any compression), but I overran the 450 or so free bytes I would have in the bootsector. I therefore ended up adding a bunch of text, graphics, and sound effects; and intentionally overran the limit even further (I went up to a whopping 1832 bytes).
 
 The code could still run from the bootsector with a bit of cheating: I was storing the overrun in the FAT backup and therefore keeping the disk operational until a write operation on the disk would overwrite the FAT backup and screw up the game.
+
+---
+
+## Blog Posts
+
+I don't have my own blog, but I occasionally write posts for other blogs.
+
+---
+
+### 2023
+
+#### Sidekick’s Improved Streaming Experience
+
+![Sidekick](i/sidekick.jpg "Sidekick logo")
+{: .image-240x135}
+
+August 1, 2023 &middot; [Shopify Engineering Blog](https://shopify.engineering/sidekicks-improved-streaming)
+{: .meta }
+
+How to improve LLM chatbot UX by utilizing a stateful markdown stream processor.
+
+---
+
+### 2017
+
+#### A JavaScript Interview Question and a Digression into XOR
+
+![Find the missing number](i/missing-item-with-xor.png "A grid of numbers")
+{: .image-240x135}
+
+April 6, 2017 &middot; [HackerNoon](https://hackernoon.com/a-javascript-interview-question-and-a-digression-into-xor-3f88bb5ab3be)
+{: .meta }
+
+An intriguing JavaScript interview question about finding a missing number in an array of integers without sorting, and the unexpected elegance of a soution with XOR.
 
 ---
 
