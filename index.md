@@ -445,4 +445,4 @@ A technique to transform any static web server into a simulated backend, capable
 &copy; Ateş Göral &middot; [github.com/atesgoral/magnetiq](https://github.com/atesgoral/magnetiq)
 {: .footer .meta}
 
-<script src="/assets/js/prog.js"></script>
+<script src="/assets/js/prog.js?bust=1"></script>
