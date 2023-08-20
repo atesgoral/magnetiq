@@ -260,6 +260,11 @@ body {
   }
 }
 
+::selection {
+  color: #1a091a;
+  background-color: #84ddff;
+}
+
 @media (prefers-color-scheme: light) {
   body {
     background-color: #fff;
@@ -311,5 +316,10 @@ body {
     &:before {
       background: #3fb2e7;
     }
+  }
+
+  ::selection {
+    color: #fff;
+    background-color: #3fb2e7;
   }
 }
