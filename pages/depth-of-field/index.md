@@ -22,7 +22,7 @@ To get a natural, focus-back-and-forth experience, move the mouse from the top r
 
 This was originally done using [Processing](https://processing.org/), then ported to Processing.js (deprecated) and I've recently ported it to [p5.js](https://p5js.org/) with GPT-4. You can download the original [PDE file](multi_focus.pde) or the ported [p5.js file](sketch.js).
 
-The images I've used are below. They're taken from the ["Lighting direction" article](http://www.megapixel.net/html/articles/article-lightdir.php).
+The images I've used are below. They're taken from the original article.
 
 ![Far in focus](i/far_in_focus.gif)
 {: .center}
