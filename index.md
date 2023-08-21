@@ -324,6 +324,18 @@ Partly out of curiosity and partly because I needed the color data for a job, I 
 
 ---
 
+#### GRAFICA Obscura Experiments
+
+![GRAFICA Obscura Experiments](i/grafica-obscura.png "Screenshots of two p5.js experiments")
+{: .image-240x135}
+
+[Morphing Depth of Field](pages/depth-of-field) &middot; [Multiple Synthetic Lights](pages/multiple-synthetic-lights) &middot; 2003
+{: .meta}
+
+Two [Processing](https://processing.org/) (ported to [p5.js](https://p5js.org/)) experiments building on [GRAPHICA Obscura](https://www.graficaobscura.com/) articles by [Paul Haeberli](https://en.wikipedia.org/wiki/Paul_Haeberli).
+
+---
+
 {: .year}
 
 ### 2002

@@ -20,7 +20,7 @@ Hover over the image to change the intensities of the three light sources.
 
 This was originally done using [Processing](https://processing.org/), then ported to Processing.js (deprecated) and I've recently ported it to [p5.js](https://p5js.org/) with GPT-4. You can download the original [PDE file](multi_focus.pde) or the ported [p5.js file](sketch.js).
 
-The images I've used are below. They're taken from the ["Lighting direction" article](http://www.megapixel.net/html/articles/article-lightdir.php).
+The images I've used are below. They're taken from the original article.
 
 ![Ambient light](i/lighting-11.jpg)
 {: .center}
