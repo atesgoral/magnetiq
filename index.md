@@ -34,6 +34,8 @@ Jump to: [2021](#2021) &middot; [2020](#2020) &middot; [2018](#2018) &middot; [2
 
 ---
 
+{: .year}
+
 ### 2023
 
 #### IKEA OBEGRÄNSAD Hack
@@ -47,6 +49,8 @@ Jump to: [2021](#2021) &middot; [2020](#2020) &middot; [2018](#2018) &middot; [2
 I hacked an IKEA OBEGRÄNSAD LED wall lamp to replace its graphics chip with an ESP32 and wrote some C++, JavaScript and WebAssembly to run my own graphics on it.
 
 ---
+
+{: .year}
 
 ### 2021
 
@@ -63,6 +67,8 @@ Can we really get true analog/chaotic glitching with an entirely digital device?
 A source image is scanned pixel-by-pixel and the pixel value is drawn as a large square on the screen, close to where the webcam is. Something reflective (even the palm of a hand works) is cupped around the webcam and where the "signal" square is. After a calibration run, the image is transmitted through the reflector, picking up gnarly analog glitches.
 
 ---
+
+{: .year}
 
 ### 2020
 
@@ -90,6 +96,8 @@ A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had
 
 ---
 
+{: .year}
+
 ### 2018
 
 #### MIDNIGHT TACTIX 3000
@@ -103,6 +111,8 @@ A humourous spin on [Semantic Versioning](https://semver.org/). I apparently had
 A multiplayer turn-based retro racing game we made with my friend [Nick Matantsev](https://unframework.com/) during [Toronto Game Jam (TOJam)](https://www.tojam.ca/) 13. Using mobile phones as controllers over time-synched WebSocket connections, with the game rendered in GLSL.
 
 ---
+
+{: .year}
 
 ### 2017
 
@@ -174,6 +184,8 @@ A Boulder Dash clone in 1024 bytes of JavaScript (including the sprites from the
 
 ---
 
+{: .year}
+
 ### 2016
 
 #### Doorbell Ringer—An Intentionally Complex IoT Project
@@ -189,6 +201,8 @@ A very roundabout way of ringing a doorbell through a mixture of: electronics ha
 I gave [a talk](#doorbell-ringeran-intentionally-complex-iot-project-1) about this project.
 
 ---
+
+{: .year}
 
 ### 2015
 
@@ -240,6 +254,8 @@ I also created their live documentation and demo pages.
 
 ---
 
+{: .year}
+
 ### 2013
 
 #### #direnturkce
@@ -253,6 +269,8 @@ I also created their live documentation and demo pages.
 I have many pet peeves. I created a quick reference page for the most common misspellings in Turkish.
 
 ---
+
+{: .year}
 
 ### 2009
 
@@ -270,6 +288,8 @@ There were already several unit testing frameworks for JavaScript that were brow
 
 ---
 
+{: .year}
+
 ### 2005
 
 #### browsersize.com
@@ -285,6 +305,8 @@ Browser resizing utility to aid in responsive web development.
 It needs to be either updated or archived, as modern browsers have become more restrictive regarding the programmatic resizing of windows.
 
 ---
+
+{: .year}
 
 ### 2003
 
@@ -302,6 +324,8 @@ Partly out of curiosity and partly because I needed the color data for a job, I 
 
 ---
 
+{: .year}
+
 ### 2002
 
 #### Burrito
@@ -315,6 +339,8 @@ Partly out of curiosity and partly because I needed the color data for a job, I 
 With Burrito you can read and manage your e-mails with any FTP client! It acts as a POP3/FTP protocol translator -- it's actually an FTP server that translates FTP commands to POP3 commands and serves your e-mail messages as individual files. You can view, delete and copy your e-mail messages as if they were files on an FTP server.
 
 ---
+
+{: .year}
 
 ### 2000
 
@@ -335,6 +361,8 @@ I used hidden iframes to inject JavaScript into the parent frame to achieve a SP
 This is a static snapshot of the once PHP+MySQL-powered website.
 
 ---
+
+{: .year}
 
 ### 1998
 
@@ -364,6 +392,8 @@ This small program has proved very useful back in the times when most of us stil
 
 ---
 
+{: .year}
+
 ### 1992
 
 #### Bootsector Columns
@@ -388,6 +418,8 @@ I don't have my own blog, but I occasionally write posts for other blogs.
 
 ---
 
+{: .year}
+
 ### 2023
 
 #### Sidekick’s Improved Streaming Experience
@@ -401,6 +433,8 @@ August 1, 2023 &middot; [Shopify Engineering Blog](https://shopify.engineering/s
 How to improve LLM chatbot UX by utilizing a stateful markdown stream processor.
 
 ---
+
+{: .year}
 
 ### 2017
 
@@ -422,6 +456,8 @@ While I'm not a frequent public speaker, I have had the opportunity to present a
 
 ---
 
+{: .year}
+
 ### 2017
 
 #### Dweet Player
@@ -435,6 +471,8 @@ October 17, 2017 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-
 A talk about my [Dweet Player project](#dweet-player). I won a Raspberry Pi as an audience award.
 
 ---
+
+{: .year}
 
 ### 2016
 
@@ -461,6 +499,8 @@ June 7, 2016 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack
 A talk about my [Doorbell Ringer project](#doorbell-ringeran-intentionally-complex-iot-project). I won a Raspberry Pi as an audience award.
 
 ---
+
+{: .year}
 
 ### 2014
 
