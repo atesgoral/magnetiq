@@ -470,11 +470,27 @@ While I'm not a frequent public speaker, I have had the opportunity to present a
 
 {: .year}
 
+### 2018
+
+#### Dweet Player
+
+![Killing Characters while Making Art](i/dweet-talk.jpg "Photo of me presenting")
+{: .image-240x135}
+
+July 25, 2018 &middot; [CreateInTO](https://www.meetup.com/createinto/) &middot; [Slides](https://speakerdeck.com/atesgoral/killing-characters-while-making-art)
+{: .meta }
+
+A talk about [Dwitter](https://www.dwitter.net/), JavaScript golfing, and dweet rendering techniques.
+
+---
+
+{: .year}
+
 ### 2017
 
 #### Dweet Player
 
-![Dweet Player](i/dweet-player-talk.jpg "Photo of me presenting")
+![Dweet Player](i/dweet-player.png "Screenshot of Dweet Player")
 {: .image-240x135}
 
 October 17, 2017 &middot; [Toronto Hack && Tell](https://www.meetup.com/Toronto-Hack-and-Tell/) &middot; [Slides](https://speakerdeck.com/atesgoral/dweet-player)
