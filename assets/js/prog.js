@@ -106,6 +106,10 @@ function initializeTrails() {
     moveTrails(evt.touches[0].clientX, evt.touches[0].clientY);
   });
 
+  window.addEventListener("scroll", () => {
+    moveTrails(trailsX, trailsY);
+  });
+
   const trailsCtx = trailsCanvas.getContext("2d");
 
   function renderTrails(t) {
