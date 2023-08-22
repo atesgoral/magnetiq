@@ -20,6 +20,7 @@ body {
 body {
   background-color: #1a091a;
   color: #f5ddf5;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 h1,
@@ -29,6 +30,7 @@ h4,
 h5,
 h6 {
   color: #84ddff;
+  transition: color 0.3s ease-in-out;
 }
 
 // Sizes
@@ -302,11 +304,9 @@ body {
   background-color: #84ddff;
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #fff;
-    color: #333;
-  }
+body.light-mode {
+  background-color: #fff;
+  color: #333;
 
   h1,
   h2,
@@ -364,16 +364,18 @@ body {
   }
 }
 
-@media (prefers-color-scheme: light) and (hover: hover) {
-  a:hover {
-    color: #ff8356;
-    text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
-  }
+@media (hover: hover) {
+  body.light-mode {
+    a:hover {
+      color: #ff8356;
+      text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
+    }
 
-  .image-240x135 {
-    & > img {
-      &:hover {
-        box-shadow: 0 0 10px 2px rgba(255, 131, 86, 0.5);
+    .image-240x135 {
+      & > img {
+        &:hover {
+          box-shadow: 0 0 10px 2px rgba(255, 131, 86, 0.5);
+        }
       }
     }
   }
@@ -387,7 +389,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#mode-toggle-label {
+#theme-toggle-label {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -395,17 +397,17 @@ html {
   width: 2.5rem;
   height: 1.5rem;
   border-radius: 0.75rem;
-  background-color: skyblue;
+  background-color: #84ddff;
   color: transparent;
   user-select: none;
   transition: background-color 0.3s ease-in-out;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
 
-  &:has(#mode-toggle:checked) {
+  &:has(#theme-toggle:checked) {
     background-color: black;
   }
 
-  > #mode-toggle {
+  > #theme-toggle {
     position: absolute;
     margin: 0;
     top: -2rem;
@@ -424,9 +426,26 @@ html {
       background: yellow;
       box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.1);
       box-sizing: border-box;
-      border: 3px solid skyblue;
+      border: 3px solid #84ddff;
       transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out,
         background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 0.5rem;
+      box-sizing: border-box;
+      border: 3px solid #84ddff;
+      background-color: #84ddff;
+      top: 2.25rem;
+      left: 0;
+      transform: translateX(1.5rem);
+      transition: border-color 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
     }
 
     &:checked {
@@ -438,15 +457,8 @@ html {
       }
 
       &:after {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 0.75rem;
         background-color: black;
-        top: 2rem;
-        right: 0;
+        border-color: black;
       }
     }
   }

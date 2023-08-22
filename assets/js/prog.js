@@ -1,8 +1,25 @@
+function setClass(el, classToToggle, set) {
+  let className = el.className;
+  const classes = new Set(className && className.split(" "));
+
+  if (set) {
+    classes.add(classToToggle);
+  } else {
+    classes.delete(classToToggle);
+  }
+
+  className = [...classes.keys()].join(" ");
+
+  el.className = className;
+}
+
 function toggleClass(el, classToToggle) {
   let className = el.className;
   const classes = new Set(className && className.split(" "));
 
-  if (classes.has(classToToggle)) {
+  const classWasPresent = classes.has(classToToggle);
+
+  if (classWasPresent) {
     classes.delete(classToToggle);
   } else {
     classes.add(classToToggle);
@@ -11,6 +28,8 @@ function toggleClass(el, classToToggle) {
   className = [...classes.keys()].join(" ");
 
   el.className = className;
+
+  return !classWasPresent;
 }
 
 function initializeZoom() {
@@ -152,23 +171,48 @@ function initializeTrails() {
   requestAnimationFrame(renderTrails);
 }
 
-function initializeModeToggle() {
+function initializeThemeToggle() {
   const toggleLabel = document.createElement("label");
 
-  toggleLabel.setAttribute("id", "mode-toggle-label");
-  toggleLabel.appendChild(document.createTextNode("Toggle dark mode"));
+  toggleLabel.setAttribute("id", "theme-toggle-label");
+  toggleLabel.appendChild(document.createTextNode("Toggle theme"));
 
   const toggle = document.createElement("input");
 
   toggle.setAttribute("type", "checkbox");
-  toggle.setAttribute("id", "mode-toggle");
+  toggle.setAttribute("id", "theme-toggle");
+  toggle.setAttribute("title", "Toggle theme");
 
   toggleLabel.appendChild(toggle);
   document.querySelector(".markdown-body").appendChild(toggleLabel);
+
+  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+  const prefersLightMode = window.matchMedia("(prefers-color-scheme: light)");
+
+  function applyPrefs() {
+    const themeOverride = localStorage.getItem("theme-override");
+    const lightMode = themeOverride
+      ? themeOverride === "light"
+      : prefersLightMode.matches || !prefersDarkMode.matches;
+
+    setClass(document.body, "light-mode", lightMode);
+    toggle.checked = !lightMode;
+  }
+
+  applyPrefs();
+
+  prefersDarkMode.addEventListener("change", applyPrefs);
+  prefersLightMode.addEventListener("change", applyPrefs);
+  window.addEventListener("storage", applyPrefs);
+
+  toggle.addEventListener("change", () => {
+    setClass(document.body, "light-mode", !toggle.checked);
+    localStorage.setItem("theme-override", toggle.checked ? "dark" : "light");
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initializeTrails();
   initializeZoom();
-  // initializeModeToggle();
+  initializeThemeToggle();
 });
