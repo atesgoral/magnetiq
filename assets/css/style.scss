@@ -125,28 +125,6 @@ a:active {
   margin: auto;
 }
 
-@media (hover: hover) {
-  a:hover {
-    color: #ffa484;
-    text-shadow: 0 0 5px rgba(255, 164, 132, 0.5);
-  }
-
-  .image-240x135 {
-    & > img {
-      transition: transform 0.3s ease-in-out;
-
-      &.zoomed {
-        transition: none;
-      }
-
-      &:not(.zoomed):hover {
-        box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
-        transform: scale(1.05);
-      }
-    }
-  }
-}
-
 .image-240x135 {
   & > img {
     float: left;
@@ -342,6 +320,10 @@ body.light-mode {
     }
   }
 
+  #theme-toggle-label {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+  }
+
   h2,
   h3,
   h4,
@@ -364,23 +346,6 @@ body.light-mode {
   }
 }
 
-@media (hover: hover) {
-  body.light-mode {
-    a:hover {
-      color: #ff8356;
-      text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
-    }
-
-    .image-240x135 {
-      & > img {
-        &:hover {
-          box-shadow: 0 0 10px 2px rgba(255, 131, 86, 0.5);
-        }
-      }
-    }
-  }
-}
-
 .center {
   text-align: center;
 }
@@ -400,8 +365,9 @@ html {
   background-color: #84ddff;
   color: transparent;
   user-select: none;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.1);
+  text-indent: -9999px;
 
   &:has(#theme-toggle:checked) {
     background-color: black;
@@ -423,7 +389,7 @@ html {
       width: 1.5rem;
       height: 1.5rem;
       border-radius: 0.75rem;
-      background: yellow;
+      background: white;
       box-shadow: 0 0 10px 2px rgba(255, 255, 0, 0.1);
       box-sizing: border-box;
       border: 3px solid #84ddff;
@@ -459,6 +425,55 @@ html {
       &:after {
         background-color: black;
         border-color: black;
+      }
+    }
+  }
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: #ffa484;
+    text-shadow: 0 0 5px rgba(255, 164, 132, 0.5);
+  }
+
+  .image-240x135 {
+    & > img {
+      transition: transform 0.3s ease-in-out;
+
+      &.zoomed {
+        transition: none;
+      }
+
+      &:not(.zoomed):hover {
+        box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  #theme-toggle-label {
+    &:hover {
+      box-shadow: 0 0 10px 2px rgba(255, 164, 132, 0.5);
+    }
+  }
+
+  body.light-mode {
+    a:hover {
+      color: #ff8356;
+      text-shadow: 0 0 5px rgba(255, 131, 86, 0.5);
+    }
+
+    .image-240x135 {
+      & > img {
+        &:hover {
+          box-shadow: 0 0 10px 2px rgba(255, 131, 86, 0.5);
+        }
+      }
+    }
+
+    #theme-toggle-label {
+      &:hover {
+        box-shadow: 0 0 10px 2px rgba(255, 131, 86, 0.5);
       }
     }
   }
