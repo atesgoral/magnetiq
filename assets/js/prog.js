@@ -186,14 +186,9 @@ function initializeThemeToggle() {
   toggleLabel.appendChild(toggle);
   document.querySelector(".markdown-body").appendChild(toggleLabel);
 
-  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-  const prefersLightMode = window.matchMedia("(prefers-color-scheme: light)");
-
   function applyPrefs() {
     const themeOverride = localStorage.getItem("theme-override");
-    const lightMode = themeOverride
-      ? themeOverride === "light"
-      : prefersLightMode.matches || !prefersDarkMode.matches;
+    const lightMode = themeOverride && themeOverride === "light";
 
     setClass(document.body, "light-mode", lightMode);
     toggle.checked = !lightMode;
@@ -201,8 +196,6 @@ function initializeThemeToggle() {
 
   applyPrefs();
 
-  prefersDarkMode.addEventListener("change", applyPrefs);
-  prefersLightMode.addEventListener("change", applyPrefs);
   window.addEventListener("storage", applyPrefs);
 
   toggle.addEventListener("change", () => {
