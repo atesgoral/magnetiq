@@ -115,6 +115,8 @@ function initializeTrails() {
       return;
     }
 
+    const debug = window.location.search.includes("debug");
+
     const maxAge = 1000;
 
     const elapsed = performance.now() - lastTrailsMove;
@@ -128,6 +130,16 @@ function initializeTrails() {
     const scale = trailsCanvas.width;
 
     trailsCanvas.width |= 0;
+
+    if (debug) {
+      trailsCtx.strokeStyle = "#fff";
+      trailsCtx.strokeRect(0, 0, trailsCanvas.width, trailsCanvas.height);
+      trailsCtx.fillStyle = "#fff";
+      trailsCtx.font = "40px sans-serif";
+      trailsCtx.fillText(`window.scrollY: ${window.scrollY}`, 20, 60);
+      trailsCtx.fillText(`trailsY: ${trailsY}`, 20, 120);
+    }
+
     trailsCtx.scale(scale, scale);
     trailsCtx.translate(0.5, 0.5);
 
