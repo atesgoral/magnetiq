@@ -472,7 +472,7 @@ While I'm not a frequent public speaker, I have had the opportunity to present a
 
 ### 2018
 
-#### Dweet Player
+#### Killing Characters while Making Art
 
 ![Killing Characters while Making Art](i/dweet-talk.jpg "Photo of me presenting")
 {: .image-240x135}
