@@ -152,7 +152,23 @@ function initializeTrails() {
   requestAnimationFrame(renderTrails);
 }
 
+function initializeModeToggle() {
+  const toggleLabel = document.createElement("label");
+
+  toggleLabel.setAttribute("id", "mode-toggle-label");
+  toggleLabel.appendChild(document.createTextNode("Toggle dark mode"));
+
+  const toggle = document.createElement("input");
+
+  toggle.setAttribute("type", "checkbox");
+  toggle.setAttribute("id", "mode-toggle");
+
+  toggleLabel.appendChild(toggle);
+  document.querySelector(".markdown-body").appendChild(toggleLabel);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initializeTrails();
   initializeZoom();
+  // initializeModeToggle();
 });
