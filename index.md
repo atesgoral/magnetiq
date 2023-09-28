@@ -20,6 +20,7 @@ Jump to: [Projects](#projects) &middot; [Blog Posts](#blog-posts) &middot; [Talk
 - [GitHub](https://github.com/atesgoral): I open-source whatever I can. Usually fringe stuff.
 - [npm](https://www.npmjs.com/~atesgoral): I publish whatever I can. Usually fringe stuff.
 - [Hackaday](https://hackaday.io/atesgoral): I've developed a penchant for cracking open IKEA LED lamps to replace their graphics chips with single-board computers to run my own animations.
+- [Instagram](https://www.instagram.com/atesgoral): I take artsy photos once a year.
 - [Stack Overflow](https://stackoverflow.com/users/23501/ates-goral): I used to actively post answers. After attaining moderator status, I just edit typos nowadays.
 - [LinkedIn](https://www.linkedin.com/in/atesgoral/): I'm happy where I am, but open to expanding my network.
 - [Observable](https://observablehq.com/@atesgoral): I just created a Dwitter runtime.
